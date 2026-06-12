@@ -561,8 +561,6 @@
       
         
       
-        
-      
     
     
     
@@ -710,34 +708,6 @@
     
   
     Collision Setup
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scene Organization
   
 
     
@@ -1272,8 +1242,9 @@
 <h2 id="export-buttons">Export buttons<a class="headerlink" href="#export-buttons" title="Permanent link">&para;</a></h2>
 <p><strong>Export Active Object</strong> exports the active (last selected) mesh as a single FBX file. The filename is <code>&lt;prefix&gt;&lt;object name&gt;.fbx</code>. Any <code>UCX_</code> and <code>UBX_</code> collision meshes with a matching name are included in the same FBX automatically.</p>
 <p>If the <a href="../fbx-tools/">Better FBX Importer &amp; Exporter</a> addon is installed, this button opens Better FBX's full export dialog instead of exporting silently. All of Better FBX's settings — FBX version, axis preset, smoothing groups, tangents, and more — are available there.</p>
-<p><strong>Batch Export Selected</strong> exports every selected mesh object as a separate FBX. Each object is exported individually with its associated collision meshes. If <strong>Collection as Catalog</strong> is enabled in <a href="../scene-organization/">Scene Organization</a>, each collection is exported into its own subfolder.</p>
+<p><strong>Batch Export Selected</strong> exports every selected mesh object as a separate FBX. Each object is exported individually with its associated collision meshes. Enable <strong>Subfolders per Collection</strong> (the toggle below the button) to place each FBX inside a subfolder named after its collection — useful when assets are organised into collections in the Outliner.</p>
 <p>Batch export always runs silently. When Better FBX is installed it is used automatically with axis settings matched to the active engine preset.</p>
+<p>A <strong>progress bar</strong> appears in the Blender header while batch export is running. When all objects are processed, a <strong>summary popup</strong> appears showing how many assets were exported, any warnings, and a list of failed objects if applicable.</p>
 <div class="admonition note">
 <p class="admonition-title">Collision meshes are included automatically</p>
 <p>You do not need to select collision meshes separately. The exporter finds <code>UCX_&lt;name&gt;</code> and <code>UBX_&lt;name&gt;</code> objects and includes them in the same FBX as the render mesh.</p>
@@ -1284,7 +1255,7 @@
 </div>
 <hr />
 <h2 id="auto-cleanup-on-export">Auto-cleanup on Export<a class="headerlink" href="#auto-cleanup-on-export" title="Permanent link">&para;</a></h2>
-<p>Four toggles control what happens to the mesh during export. These operate on a temporary copy — the original scene objects are not modified.</p>
+<p>These toggles control what happens to the mesh during export. They operate on a temporary copy — the original scene objects are not modified.</p>
 <table>
 <thead>
 <tr>
@@ -1314,6 +1285,11 @@
 <td>On</td>
 <td>Copies used textures to a <code>/Textures</code> subfolder next to the FBX</td>
 </tr>
+<tr>
+<td><strong>Rename Textures</strong></td>
+<td>Off</td>
+<td>Renames the copied textures to <code>AssetName_TextureType</code> (only available when Collect Textures is on)</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition tip">
@@ -1323,6 +1299,10 @@
 <div class="admonition info">
 <p class="admonition-title">Collect Textures copies, not moves</p>
 <p>Original texture files in the <code>.blend</code> project are not touched. The copies in <code>/Textures</code> are what go to the engine.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Rename Textures uses the material node graph</p>
+<p>When enabled, each texture's type (BaseColor, Normal, Roughness, Metallic, and so on) is detected by following its connections in the material's shader nodes, falling back to filename keywords. A texture used by asset <code>Rock_01</code> becomes e.g. <code>Rock_01_Normal.png</code> in the <code>/Textures</code> folder.</p>
 </div>
 
 

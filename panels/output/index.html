@@ -561,8 +561,6 @@
       
         
       
-        
-      
     
     
     
@@ -721,6 +719,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#preview-isolate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview / Isolate
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -801,34 +810,6 @@
     
   
     Collision Setup
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scene Organization
   
 
     
@@ -1236,6 +1217,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#preview-isolate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview / Isolate
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1342,6 +1334,64 @@
 <p><strong>Forward Axis</strong> draws an arrow showing the direction that will be "forward" in the target engine after export. It updates automatically when you change the engine preset. Use it to align your mesh correctly without guessing.</p>
 <p><strong>Scale Ref</strong> draws two reference boxes — a 1×1×1 metre cube and a 1.8 m tall human-height box — so you can check your asset's scale against real-world proportions at a glance.</p>
 <p>Both overlays are display-only and have no effect on the exported file.</p>
+<hr />
+<h2 id="preview-isolate">Preview / Isolate<a class="headerlink" href="#preview-isolate" title="Permanent link">&para;</a></h2>
+<p>The <strong>Preview / Isolate</strong> button starts a modal browser that walks through the mesh objects in your scene one at a time, hiding everything else so you can inspect each asset in isolation — with or without its collision meshes. Collision objects (<code>UCX_</code>/<code>UBX_</code>) are never listed as their own entries; they are shown as part of the mesh they belong to.</p>
+<p>While the modal is running, the viewport header shows the current object, its index, and the controls:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mouse wheel · <code>↑</code> / <code>↓</code></td>
+<td>Move to the previous / next mesh</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Cycle the isolation mode</td>
+</tr>
+<tr>
+<td><code>Enter</code> · <code>LMB</code></td>
+<td>Keep the current isolation and exit</td>
+</tr>
+<tr>
+<td><code>Esc</code> · <code>RMB</code></td>
+<td>Restore all objects and exit</td>
+</tr>
+</tbody>
+</table>
+<p>The isolation mode cycles through three states, and your choice is remembered for the next session:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mesh only</strong></td>
+<td>Just the render mesh</td>
+</tr>
+<tr>
+<td><strong>Mesh + Collider</strong></td>
+<td>The render mesh and its <code>UCX_</code>/<code>UBX_</code> colliders</td>
+</tr>
+<tr>
+<td><strong>Collider only</strong></td>
+<td>Just the colliders (useful for checking hull shape)</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Restore All</strong> button next to Preview un-hides every object in the scene. Use it if a preview session was interrupted and some objects are still hidden.</p>
+<div class="admonition note">
+<p class="admonition-title">Preview only changes visibility</p>
+<p>Isolating objects toggles their viewport visibility — it never moves, deletes, or modifies geometry. Exiting with <code>Esc</code> (or pressing Restore All) returns the scene to a fully visible state.</p>
+</div>
 
 
 

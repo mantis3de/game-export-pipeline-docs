@@ -18,7 +18,7 @@
         <link rel="prev" href="../individual-steps/">
       
       
-        <link rel="next" href="../scene-organization/">
+        <link rel="next" href="../validation/">
       
       
         
@@ -561,8 +561,6 @@
       
         
       
-        
-      
     
     
     
@@ -770,6 +768,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-collision-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic collision behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -784,10 +799,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-all-collision" class="md-nav__link">
+  <a href="#remove-all-collision-dissolve-collections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remove All Collision
+        Remove All Collision / Dissolve Collections
       
     </span>
   </a>
@@ -798,34 +813,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scene Organization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1190,6 +1177,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-collision-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic collision behaviour
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1204,10 +1208,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remove-all-collision" class="md-nav__link">
+  <a href="#remove-all-collision-dissolve-collections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remove All Collision
+        Remove All Collision / Dissolve Collections
       
     </span>
   </a>
@@ -1235,13 +1239,32 @@
 <p>The <strong>Collision Setup</strong> panel generates collision meshes for your render mesh using the naming convention recognised automatically by both Unreal Engine and Unity on import.</p>
 <hr />
 <h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
-<p><strong>Decimate Ratio</strong> controls how much the generated collision mesh is simplified before it is created. A value of <code>0.3</code> reduces the face count to 30% of the original. A value of <code>0</code> skips decimation entirely (full-resolution collision).</p>
-<p>Lower values produce simpler, faster collision shapes at the cost of accuracy. For most game props, a ratio of <code>0.2</code>–<code>0.4</code> gives a good balance.</p>
-<p><strong>Colliders as Children (Unity)</strong> changes how the collision mesh is parented after creation. When enabled, the collision object is parented to the render mesh — which is the convention Unity requires for collision to be recognised on import. When disabled, the collision object is created as a sibling at the scene root — which is the Unreal Engine convention.</p>
-<div class="admonition tip">
-<p class="admonition-title">Unreal or Unity?</p>
-<p>Leave this off for Unreal Engine exports. Turn it on when your engine preset is Unity.</p>
-</div>
+<p><strong>Decimate Ratio</strong> controls how much the generated collision mesh is simplified. A value of <code>0.3</code> reduces the face count to 30% of the original. A value of <code>0</code> skips decimation entirely.</p>
+<p>Lower values produce simpler, faster collision shapes at the cost of accuracy. For most game props <code>0.2</code>–<code>0.4</code> gives a good balance.</p>
+<h3 id="automatic-collision-behaviour">Automatic collision behaviour<a class="headerlink" href="#automatic-collision-behaviour" title="Permanent link">&para;</a></h3>
+<p>The collision workflow adapts automatically to the active engine preset — no manual toggle needed:</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Behaviour on generate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unity</strong></td>
+<td>Collision mesh is parented as a child of the render mesh — required by Unity for collision to be recognised on import</td>
+</tr>
+<tr>
+<td><strong>Unreal Engine</strong></td>
+<td>Render mesh and its collision object are automatically grouped into a collection — matching Unreal's expected scene structure</td>
+</tr>
+<tr>
+<td><strong>Godot / Custom</strong></td>
+<td>Collision mesh is created at scene root alongside the render mesh</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="generate">Generate<a class="headerlink" href="#generate" title="Permanent link">&para;</a></h2>
 <table>
@@ -1264,18 +1287,19 @@
 <td><strong>UBX_ Box</strong></td>
 <td><code>UBX_</code></td>
 <td>Aligned bounding box</td>
-<td>Crates, doors, architectural pieces, anything boxy</td>
+<td>Crates, doors, architectural pieces</td>
 </tr>
 </tbody>
 </table>
-<p>Both buttons create a new mesh object and name it <code>UCX_&lt;original name&gt;</code> or <code>UBX_&lt;original name&gt;</code>. If the object already has a collision mesh with that name, it is replaced.</p>
+<p>Both buttons create a new mesh object named <code>UCX_&lt;original name&gt;</code> or <code>UBX_&lt;original name&gt;</code>. If a collision mesh with that name already exists it is replaced.</p>
 <p>→ How engines interpret these names: <a href="../../reference/collision-naming/">Collision Naming</a></p>
 <hr />
-<h2 id="remove-all-collision">Remove All Collision<a class="headerlink" href="#remove-all-collision" title="Permanent link">&para;</a></h2>
-<p><strong>Remove All Collision</strong> deletes every <code>UCX_</code> and <code>UBX_</code> object in the scene. Use it to clean up and regenerate if the collision meshes are no longer needed or need to be rebuilt.</p>
+<h2 id="remove-all-collision-dissolve-collections">Remove All Collision / Dissolve Collections<a class="headerlink" href="#remove-all-collision-dissolve-collections" title="Permanent link">&para;</a></h2>
+<p><strong>Remove All Collision</strong> deletes every <code>UCX_</code> and <code>UBX_</code> object in the scene.</p>
+<p><strong>Dissolve Collections</strong> removes the auto-generated collections created for Unreal and moves all objects back to the scene root. The objects themselves are not deleted.</p>
 <div class="admonition warning">
-<p class="admonition-title">This removes all collision in the entire scene</p>
-<p>Remove All Collision is not limited to the current selection — it finds and deletes every object whose name starts with <code>UCX_</code> or <code>UBX_</code>. Make sure that is what you want before clicking.</p>
+<p class="admonition-title">Remove All Collision affects the entire scene</p>
+<p>It is not limited to the current selection — it finds and deletes every object whose name starts with <code>UCX_</code> or <code>UBX_</code>.</p>
 </div>
 
 
@@ -1329,13 +1353,13 @@
         
         
           
-          <a href="../scene-organization/" class="md-footer__link md-footer__link--next" aria-label="Next: Scene Organization">
+          <a href="../validation/" class="md-footer__link md-footer__link--next" aria-label="Next: Validation">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Scene Organization
+                Validation
               </div>
             </div>
             <div class="md-footer__button md-icon">
