@@ -561,6 +561,8 @@
       
         
       
+        
+      
     
     
     
@@ -946,6 +948,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fbx-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FBX Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1307,10 +1337,7 @@
 <li>Add missing collision</li>
 </ol>
 <p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
-<div class="admonition tip">
-<p class="admonition-title">Run validation after Fix All</p>
-<p>Fix All resolves the issues it can handle automatically. Some issues — like a texture that is genuinely missing from disk, or a poly count that exceeds the threshold — require manual attention. Re-run <strong>Validation</strong> after Fix All to see what remains.</p>
-</div>
+<p>After all steps complete, <strong>Validation runs automatically</strong> so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.</p>
 
 
 

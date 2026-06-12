@@ -18,7 +18,7 @@
         <link rel="prev" href="../fix/">
       
       
-        <link rel="next" href="../../reference/validation-checks/">
+        <link rel="next" href="../fbx-tools/">
       
       
         
@@ -561,6 +561,8 @@
       
         
       
+        
+      
     
     
     
@@ -924,6 +926,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fbx-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FBX Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1241,10 +1271,16 @@
 <hr />
 <h2 id="export-buttons">Export buttons<a class="headerlink" href="#export-buttons" title="Permanent link">&para;</a></h2>
 <p><strong>Export Active Object</strong> exports the active (last selected) mesh as a single FBX file. The filename is <code>&lt;prefix&gt;&lt;object name&gt;.fbx</code>. Any <code>UCX_</code> and <code>UBX_</code> collision meshes with a matching name are included in the same FBX automatically.</p>
+<p>If the <a href="../fbx-tools/">Better FBX Importer &amp; Exporter</a> addon is installed, this button opens Better FBX's full export dialog instead of exporting silently. All of Better FBX's settings — FBX version, axis preset, smoothing groups, tangents, and more — are available there.</p>
 <p><strong>Batch Export Selected</strong> exports every selected mesh object as a separate FBX. Each object is exported individually with its associated collision meshes. If <strong>Collection as Catalog</strong> is enabled in <a href="../scene-organization/">Scene Organization</a>, each collection is exported into its own subfolder.</p>
+<p>Batch export always runs silently. When Better FBX is installed it is used automatically with axis settings matched to the active engine preset.</p>
 <div class="admonition note">
 <p class="admonition-title">Collision meshes are included automatically</p>
 <p>You do not need to select collision meshes separately. The exporter finds <code>UCX_&lt;name&gt;</code> and <code>UBX_&lt;name&gt;</code> objects and includes them in the same FBX as the render mesh.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Relative export path requires a saved .blend file</p>
+<p>If your export path starts with <code>//</code>, Blender resolves it relative to the saved <code>.blend</code> file. If the file has not been saved yet, export will fail with a path error. Either save the file first or set an absolute path.</p>
 </div>
 <hr />
 <h2 id="auto-cleanup-on-export">Auto-cleanup on Export<a class="headerlink" href="#auto-cleanup-on-export" title="Permanent link">&para;</a></h2>
@@ -1340,13 +1376,13 @@
         
         
           
-          <a href="../../reference/validation-checks/" class="md-footer__link md-footer__link--next" aria-label="Next: Validation Checks">
+          <a href="../fbx-tools/" class="md-footer__link md-footer__link--next" aria-label="Next: FBX Tools">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Validation Checks
+                FBX Tools
               </div>
             </div>
             <div class="md-footer__button md-icon">
