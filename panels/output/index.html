@@ -12,9 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/systems/party-bobbing/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/output/">
       
       
+        <link rel="prev" href="../../getting-started/quick-start/">
+      
+      
+        <link rel="next" href="../quick-reset/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Party Bobbing - Game Export Pipeline Documentation</title>
+        <title>Output & Engine - Game Export Pipeline Documentation</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#party-bobbing" class="md-skip">
+        <a href="#output-engine" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Party Bobbing
+              Output & Engine
             
           </span>
         </div>
@@ -263,11 +267,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../panels/output/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -532,8 +538,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -557,19 +565,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -587,7 +598,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -602,10 +613,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../panels/output/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Output & Engine
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -621,6 +659,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#output-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output folder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engine-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engine preset
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prefix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewport-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewport helpers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -633,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
+      <a href="../quick-reset/" class="md-nav__link">
         
   
   
@@ -661,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/individual-steps/" class="md-nav__link">
+      <a href="../individual-steps/" class="md-nav__link">
         
   
   
@@ -689,7 +791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/collision-setup/" class="md-nav__link">
+      <a href="../collision-setup/" class="md-nav__link">
         
   
   
@@ -717,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/scene-organization/" class="md-nav__link">
+      <a href="../scene-organization/" class="md-nav__link">
         
   
   
@@ -745,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/validation/" class="md-nav__link">
+      <a href="../validation/" class="md-nav__link">
         
   
   
@@ -773,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/fix/" class="md-nav__link">
+      <a href="../fix/" class="md-nav__link">
         
   
   
@@ -801,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/export/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         
   
   
@@ -1061,10 +1163,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#output-folder" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        Output folder
       
     </span>
   </a>
@@ -1072,49 +1174,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inspector-reference" class="md-nav__link">
+  <a href="#engine-preset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inspector reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inspector reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bobbing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bobbing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#camera" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Camera
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behaviour" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behaviour
+        Engine preset
       
     </span>
   </a>
@@ -1122,10 +1185,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relationship-to-partyvisuals-step-bob" class="md-nav__link">
+  <a href="#prefix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relationship to PartyVisuals step-bob
+        Prefix
       
     </span>
   </a>
@@ -1133,10 +1196,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#viewport-helpers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Viewport helpers
       
     </span>
   </a>
@@ -1160,93 +1223,95 @@
 
 
 
-<h1 id="party-bobbing">Party Bobbing<a class="headerlink" href="#party-bobbing" title="Permanent link">&para;</a></h1>
-<p><code>PartyBobbing</code> adds a <strong>continuous sinusoidal camera bob</strong> while the party is walking. Unlike the one-shot step-bob built into <code>PartyVisuals</code>, this effect runs every frame the party is animating — giving the camera a smooth, rhythmic up-and-down sway that sells the feeling of walking through a dungeon.</p>
-<p>When the party stops, the camera smoothly returns to its rest position.</p>
-<p>Requires <code>PartyVisuals</code> on the same GameObject.</p>
+<h1 id="output-engine">Output &amp; Engine<a class="headerlink" href="#output-engine" title="Permanent link">&para;</a></h1>
+<p>The <strong>Game Export Pipeline</strong> panel at the top of the GameExport tab is always visible. It controls the two settings that apply to every operation in the addon: where files land and which engine they target.</p>
 <hr />
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Select the <strong>party root</strong> (the GameObject with <code>PartyVisuals</code>).</li>
-<li><strong>Add Component → Party Bobbing.</strong></li>
-<li>Optionally drag your camera <code>Transform</code> into <strong>Camera</strong> — the component auto-detects it from children if left empty.</li>
-<li>Tune <strong>Bob Height</strong> and <strong>Steps Per Second</strong> to taste.</li>
-</ol>
-<hr />
-<h2 id="inspector-reference">Inspector reference<a class="headerlink" href="#inspector-reference" title="Permanent link">&para;</a></h2>
-<h3 id="bobbing">Bobbing<a class="headerlink" href="#bobbing" title="Permanent link">&para;</a></h3>
+<h2 id="output-folder">Output folder<a class="headerlink" href="#output-folder" title="Permanent link">&para;</a></h2>
+<p>The path field sets the root folder for all exported FBX files. Click the folder icon to browse, or type a path directly.</p>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Default</th>
-<th>Range</th>
-<th>What it does</th>
+<th>Path format</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Bob Height</strong></td>
-<td>0.05 m</td>
-<td>0.01 – 0.15</td>
-<td>Peak vertical offset in meters on each sine cycle. Higher = more dramatic bob.</td>
+<td><code>//GameAssets</code></td>
+<td>Relative to the current <code>.blend</code> file (recommended)</td>
 </tr>
 <tr>
-<td><strong>Steps Per Second</strong></td>
-<td>2</td>
-<td>1 – 4</td>
-<td>How many full up-down cycles happen per second. <code>2</code> gives a natural left-right-left gait; <code>1</code> is a slow lurch; <code>4</code> is a sprint.</td>
+<td><code>/Users/me/Assets</code></td>
+<td>Absolute path</td>
+</tr>
+<tr>
+<td><code>C:\Users\me\Assets</code></td>
+<td>Absolute path (Windows)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Relative paths travel with the project</p>
+<p>Using <code>//</code> keeps the export folder relative to the <code>.blend</code> file, so the path stays valid when the project is moved or shared. Absolute paths break when the folder structure changes.</p>
+</div>
+<p>If the export folder is not set (empty or <code>//</code>), the <strong>Export</strong> panel shows a warning and disables the export buttons until a path is entered.</p>
+<hr />
+<h2 id="engine-preset">Engine preset<a class="headerlink" href="#engine-preset" title="Permanent link">&para;</a></h2>
+<p>The <strong>Engine</strong> dropdown controls the axis orientation and scale factor used by the FBX exporter.</p>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>What it does</th>
+<th>Preset</th>
+<th>Forward</th>
+<th>Up</th>
+<th>Scale</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Camera</strong></td>
-<td>The <code>Transform</code> to apply the bob to. Auto-detected from children (<code>GetComponentInChildren&lt;Camera&gt;</code>) if left empty. If no camera is found, the component disables itself.</td>
+<td><strong>Unity</strong></td>
+<td>-Z</td>
+<td>Y</td>
+<td>1.0</td>
+<td>Unity standard</td>
+</tr>
+<tr>
+<td><strong>Unreal Engine</strong></td>
+<td>X</td>
+<td>Z</td>
+<td>1.0</td>
+<td>1 Blender metre = 100 cm in UE</td>
+</tr>
+<tr>
+<td><strong>Godot</strong></td>
+<td>-Z</td>
+<td>Y</td>
+<td>1.0</td>
+<td>glTF-friendly</td>
+</tr>
+<tr>
+<td><strong>Custom</strong></td>
+<td><em>(manual)</em></td>
+<td><em>(manual)</em></td>
+<td><em>(manual)</em></td>
+<td>Set axes and scale manually</td>
 </tr>
 </tbody>
 </table>
+<p>Selecting a preset also updates the <strong>Forward Axis gizmo</strong> in the viewport (if it is enabled) so you can see the exported forward direction while modelling.</p>
+<p>→ Full axis and scale table: <a href="../../reference/engine-presets/">Engine Presets</a></p>
 <hr />
-<h2 id="behaviour">Behaviour<a class="headerlink" href="#behaviour" title="Permanent link">&para;</a></h2>
-<p>Each <code>LateUpdate</code>:</p>
-<ul>
-<li>If <code>PartyVisuals.IsAnimating</code> is <code>true</code> — the bob phase advances and the camera is offset by <code>sin(phase) * bobHeight</code> on the Y axis.</li>
-<li>If the party is <strong>not</strong> animating — the phase resets to <code>0</code> and the camera lerps back to its rest position (<code>initialLocalOffset</code>) at 10× speed, so it snaps back quickly without a jarring cut.</li>
-</ul>
-<p>The component stores the camera's <code>localPosition</code> at <code>Awake</code> as the rest offset, so the bob is additive — it works regardless of where the camera sits relative to the party root.</p>
+<h2 id="prefix">Prefix<a class="headerlink" href="#prefix" title="Permanent link">&para;</a></h2>
+<p>The <strong>Prefix</strong> field is prepended to every exported filename. The default is <code>SM_</code> (Static Mesh), which is the convention used by both Unreal Engine and many Unity pipelines.</p>
+<p>For example, a mesh named <code>Rock_01</code> with prefix <code>SM_</code> exports as <code>SM_Rock_01.fbx</code>.</p>
+<p>Leave the field empty to export without a prefix. The <strong>Fix Naming / Add Prefix</strong> operator in the <a href="../fix/">Fix</a> panel renames objects in the scene to match the prefix you set here.</p>
 <hr />
-<h2 id="relationship-to-partyvisuals-step-bob">Relationship to PartyVisuals step-bob<a class="headerlink" href="#relationship-to-partyvisuals-step-bob" title="Permanent link">&para;</a></h2>
-<p><code>PartyVisuals</code> has its own <strong>Move Curve + Bob Height</strong> that fires once per step, integrated into the slide animation coroutine. That bob is keyed to the step timing and always plays exactly once per move.</p>
-<p><code>PartyBobbing</code> is a separate, continuous oscillation driven by <code>sin</code>. You can use:</p>
-<ul>
-<li><strong>Both</strong> — the <code>PartyVisuals</code> bob shapes the step, and <code>PartyBobbing</code> adds an overlaid sway.</li>
-<li><strong><code>PartyVisuals</code> only</strong> — set <code>PartyBobbing</code> disabled or remove it; you still get the per-step bob.</li>
-<li><strong><code>PartyBobbing</code> only</strong> — set <code>PartyVisuals.bobHeight</code> to <code>0</code>; the continuous sway replaces the step bob.</li>
-</ul>
-<hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<details class="failure">
-<summary>Component disables itself on play</summary>
-<p>No <code>Camera</code> component was found in the party root's children. Either assign the camera <code>Transform</code> manually in the <strong>Camera</strong> field, or make sure the Camera GameObject is a child of the party root.</p>
-</details>
-<details class="failure">
-<summary>Camera bobs but never returns to rest</summary>
-<p>The camera's <code>localPosition</code> is being overwritten by another component (e.g. <code>PartyLook</code> or <code>PartyFallAnimation</code>) every frame. <code>PartyBobbing</code> uses <code>LateUpdate</code> but so does <code>PartyLook</code>; execution order matters. Check <strong>Project Settings → Script Execution Order</strong> if the rest position drifts.</p>
-</details>
-<details class="failure">
-<summary>Bob is too strong / too weak</summary>
-<p><strong>Bob Height</strong> and <strong>Steps Per Second</strong> are both exposed in the Inspector and can be changed at runtime. Try lowering <code>bobHeight</code> to <code>0.02</code>–<code>0.03</code> for a subtle effect, or <code>0.08</code>–<code>0.12</code> for an exaggerated cinematic bob.</p>
-</details>
-<hr />
-<p><em>Dungeon Crawler Framework — Mantis3de</em></p>
+<h2 id="viewport-helpers">Viewport helpers<a class="headerlink" href="#viewport-helpers" title="Permanent link">&para;</a></h2>
+<p>Two toggles in the <strong>Viewport Helpers</strong> box control non-destructive overlays drawn in the 3D viewport.</p>
+<p><strong>Forward Axis</strong> draws an arrow showing the direction that will be "forward" in the target engine after export. It updates automatically when you change the engine preset. Use it to align your mesh correctly without guessing.</p>
+<p><strong>Scale Ref</strong> draws two reference boxes — a 1×1×1 metre cube and a 1.8 m tall human-height box — so you can check your asset's scale against real-world proportions at a glance.</p>
+<p>Both overlays are display-only and have no effect on the exported file.</p>
 
 
 
@@ -1277,6 +1342,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../getting-started/quick-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start (5 Minutes)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Quick Start (5 Minutes)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../quick-reset/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Reset">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Quick Reset
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

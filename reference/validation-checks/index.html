@@ -12,9 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/editors/dungeon-generator/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/reference/validation-checks/">
       
       
+        <link rel="prev" href="../../panels/export/">
+      
+      
+        <link rel="next" href="../collision-naming/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Dungeon Crawler Framework — Dungeon Generator - Game Export Pipeline Documentation</title>
+        <title>Validation Checks - Game Export Pipeline Documentation</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dungeon-crawler-framework-dungeon-generator" class="md-skip">
+        <a href="#validation-checks" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dungeon Crawler Framework — Dungeon Generator
+              Validation Checks
             
           </span>
         </div>
@@ -285,11 +289,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../reference/validation-checks/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -833,8 +839,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -848,19 +856,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -878,7 +889,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -893,10 +904,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../reference/validation-checks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation Checks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -912,6 +950,393 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unapplied-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unapplied scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unapplied-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unapplied rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negative-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negative scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-uniform-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-uniform scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parent-has-unapplied-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent has unapplied scale
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-uv-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No UV maps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uv-coords-outside-01-range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UV coords outside 0–1 range
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lightmap-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lightmap UV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lightmap UV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-lightmap-uv-2nd-uv-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing lightmap UV (2nd UV channel)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n-gons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N-gons
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-manifold-edges-holes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-manifold edges (holes)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-area-faces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero-area faces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loose-vertices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loose vertices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#high-poly-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High poly count
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-material-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No material slots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-material-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty material slots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Textures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Textures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-texture-file-on-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing texture file on disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-power-of-two-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-power-of-two texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oversized-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oversized texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Naming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-blender-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Blender name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-characters-in-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special characters in name
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-collision-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No collision mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -924,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/collision-naming/" class="md-nav__link">
+      <a href="../collision-naming/" class="md-nav__link">
         
   
   
@@ -952,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/engine-presets/" class="md-nav__link">
+      <a href="../engine-presets/" class="md-nav__link">
         
   
   
@@ -1061,145 +1486,369 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#scale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        Scale
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unapplied-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unapplied scale
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#preset" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#unapplied-rotation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset
+        Unapplied rotation
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#layout-snapshot" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#negative-scale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layout Snapshot
+        Negative scale
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#map" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#non-uniform-scale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Map
+        Non-uniform scale
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#seed" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#parent-has-unapplied-scale" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Seed
+        Parent has unapplied scale
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#prefabs" class="md-nav__link">
+  <a href="#uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prefabs
+        UV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-uv-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No UV maps
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-generate-flags" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#uv-coords-outside-01-range" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Generate Flags
+        UV coords outside 0–1 range
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#spawn-tools" class="md-nav__link">
+  <a href="#lightmap-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Spawn Tools
+        Lightmap UV
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lightmap UV">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-lightmap-uv-2nd-uv-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing lightmap UV (2nd UV channel)
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#step-2-build" class="md-nav__link">
+  <a href="#mesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Build
+        Mesh
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mesh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n-gons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N-gons
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#content-libraries-doors-traps-secret-walls-chests" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#non-manifold-edges-holes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Content Libraries — Doors, Traps, Secret Walls, Chests
+        Non-manifold edges (holes)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-export" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#zero-area-faces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Export
+        Zero-area faces
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#clear-dungeon" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#loose-vertices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clear Dungeon
+        Loose vertices
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#workflow-summary" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#high-poly-count" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow Summary
+        High poly count
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-material-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No material slots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty-material-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty material slots
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Textures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Textures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-texture-file-on-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing texture file on disk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-power-of-two-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-power-of-two texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oversized-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Oversized texture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Naming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-blender-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Blender name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-characters-in-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Special characters in name
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-collision-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No collision mesh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1220,94 +1869,109 @@
 
 
 
-<h1 id="dungeon-crawler-framework-dungeon-generator">Dungeon Crawler Framework — Dungeon Generator<a class="headerlink" href="#dungeon-crawler-framework-dungeon-generator" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Dungeon Generator is one of the core tools in Dungeon Crawler Framework. You open it from Unity's top menu under <strong>Window → CrawlerKit → Dungeon Generator</strong>. It runs entirely inside the editor and has zero impact on game performance — all it does is generate a scene and bake everything into a single JSON file, which the runtime loads when the level starts.</p>
-<p>In one sentence: it generates a dungeon procedurally, lets you edit it by hand, and then exports it to a JSON file your game uses at runtime.</p>
-<p>The window is built from stackable panels. Each panel header has two small arrows (▲ and ▼) that let you drag panels up and down into whatever order suits your workflow; the order is remembered between Unity sessions. The four content libraries (doors, traps, secret walls and chests) can each be collapsed when you are not using them.</p>
+<h1 id="validation-checks">Validation Checks<a class="headerlink" href="#validation-checks" title="Permanent link">&para;</a></h1>
+<p>This page describes every check the <strong>Validation</strong> panel runs, what it looks for, why it matters, and how to fix it.</p>
 <hr />
-<h2 id="preset">Preset<a class="headerlink" href="#preset" title="Permanent link">&para;</a></h2>
-<p>The first panel is <strong>Preset</strong> — a list of ready-made generator templates:</p>
-<ul>
-<li><strong>GrimrockCorridors</strong> — 30×30 map, small rooms, high BSP depth. Tight, twisting corridors in classic Legend of Grimrock style.</li>
-<li><strong>OpenRooms</strong> — 25×25 map, large open rooms, minimal splits. Throne rooms and grand crypts.</li>
-<li><strong>SmallMaze</strong> — 20×20 map in Maze mode. Pure labyrinthine corridors, no rooms.</li>
-<li><strong>TinyArena</strong> — 10×10 map, a single large room. Ideal for boss fights or arena encounters.</li>
-<li><strong>BigLabyrinth</strong> — 50×50 map in Maze mode. The largest possible labyrinth.</li>
-<li><strong>Custom</strong> — you set everything yourself.</li>
-</ul>
-<p>Selecting a preset updates the sliders below automatically. You can still tweak any slider afterwards — the generator switches itself to Custom so you always know when you have drifted from a template. You can also save a preset to a dedicated folder and load it back later.</p>
-<p>Two generation modes are available. <strong>BSP</strong> (Binary Space Partitioning) divides the space into sections, places rooms inside them and connects them with corridors, producing structured, navigable layouts that feel like a classic dungeon crawler. <strong>Maze</strong> mode produces a traditional labyrinth with a single path to any destination.</p>
-<p>Note that what you see at this stage is not yet a finished dungeon — it is a visualisation of "Flags", markers that will later be used to build walls, floors and everything else from your own prefabs.</p>
+<h2 id="scale">Scale<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h2>
+<h3 id="unapplied-scale">Unapplied scale<a class="headerlink" href="#unapplied-scale" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The object's scale is not <code>(1, 1, 1)</code>. Engines read scale values differently than Blender — an unapplied scale of <code>(2, 2, 2)</code> may import at the wrong size or break physics colliders.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Apply Scale / Rotation</strong>, or <code>Ctrl+A → Scale</code> in the viewport.</p>
+<h3 id="unapplied-rotation">Unapplied rotation<a class="headerlink" href="#unapplied-rotation" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The object's rotation is not <code>(0°, 0°, 0°)</code>. Similar to scale — some engines apply rotation on import, others do not.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Apply Scale / Rotation</strong>, or <code>Ctrl+A → Rotation</code> in the viewport.</p>
+<h3 id="negative-scale">Negative scale<a class="headerlink" href="#negative-scale" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Error</strong></p>
+<p>One or more scale axes are negative (common after mirroring with <code>Ctrl+M</code>). Negative scale flips normals, causing faces to appear inside-out in the engine.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Fix Negative Scale</strong>.</p>
+<h3 id="non-uniform-scale">Non-uniform scale<a class="headerlink" href="#non-uniform-scale" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The X, Y, and Z scale values are not equal. This can distort physics collision shapes and cause unexpected behaviour with normal maps.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Apply Scale / Rotation</strong>.</p>
+<h3 id="parent-has-unapplied-scale">Parent has unapplied scale<a class="headerlink" href="#parent-has-unapplied-scale" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The object's parent mesh has an unapplied scale. The child inherits the parent's transform, which compounds the issue.</p>
+<p><strong>Fix:</strong> Apply scale on the parent object first.</p>
 <hr />
-<h2 id="layout-snapshot">Layout Snapshot<a class="headerlink" href="#layout-snapshot" title="Permanent link">&para;</a></h2>
-<p>Just below the presets, the <strong>Layout Snapshot</strong> panel lets you save and restore a layout. When you have a layout you like, click <strong>Save</strong>: the generator asks for a filename and writes the full state of every grid flag to a JSON file in your project — positions, cell types, which walls are open or closed, stair directions, everything.</p>
-<p>To return to it, pick the snapshot from the dropdown and click <strong>Load</strong>. The generator clears the current flags and reconstructs the saved layout tile by tile. Crucially, it does not touch your prefabs — walls, floors, doors and chests stay exactly where they are. Snapshots operate only on grid logic, so you can keep several variants of the same level and switch between them instantly.</p>
+<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
+<h3 id="no-uv-maps">No UV maps<a class="headerlink" href="#no-uv-maps" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Error</strong></p>
+<p>The mesh has no UV channels at all. Textures cannot be mapped without at least one UV channel.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Add UV Map (Smart Project)</strong>, or unwrap manually in the UV Editor.</p>
+<h3 id="uv-coords-outside-01-range">UV coords outside 0–1 range<a class="headerlink" href="#uv-coords-outside-01-range" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>Some UV coordinates fall outside the standard 0–1 UV tile. This is normal for UDIM or tiling textures, but it can cause incorrect lightmap baking.</p>
+<p><strong>Fix:</strong> Re-unwrap the mesh so all UVs are within the 0–1 tile, or confirm that your engine and lightmap baker support UDIM.</p>
 <hr />
-<h2 id="map">Map<a class="headerlink" href="#map" title="Permanent link">&para;</a></h2>
-<p>The <strong>Map</strong> panel configures the dungeon size and algorithm.</p>
-<p><strong>Width</strong> and <strong>Height</strong> set the map dimensions in tiles (8 to 50). A 15×15 map is a solid starting point for a small level.</p>
-<p><strong>Generator Mode</strong> offers two options. In <strong>BSP</strong> mode three extra sliders appear: <strong>Min Room Size</strong>, <strong>Max Room Size</strong> and <strong>BSP Depth</strong> (how many times the map is divided — more splits means more, smaller rooms and longer corridors). In <strong>Maze</strong> mode a recursive backtracker produces 1-tile-wide corridors with no dead ends, and the BSP sliders disappear because they aren't needed.</p>
-<p>Settings are validated on the fly. If you enter a room size larger than the map you'll see a red error and the Generate button locks, so you can't generate something impossible.</p>
+<h2 id="lightmap-uv">Lightmap UV<a class="headerlink" href="#lightmap-uv" title="Permanent link">&para;</a></h2>
+<h3 id="missing-lightmap-uv-2nd-uv-channel">Missing lightmap UV (2nd UV channel)<a class="headerlink" href="#missing-lightmap-uv-2nd-uv-channel" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The mesh has only one UV channel. A second channel is required for baked lighting (Unity Lightmapper, Unreal Engine Lightmass / Lumen baking).</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Add Lightmap UV</strong> or <strong>Individual Steps → Add Lightmap UV</strong>.</p>
 <hr />
-<h2 id="seed">Seed<a class="headerlink" href="#seed" title="Permanent link">&para;</a></h2>
-<p>The <strong>Seed</strong> panel controls randomness. <strong>Random Seed</strong> is enabled by default — every Generate produces a different layout, and the seed used is logged to the console so you can note it down. Uncheck it to enter a <strong>Fixed Seed</strong>: a specific number that reproduces the exact same layout every time, useful for testing or recreating a particular map.</p>
+<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
+<h3 id="n-gons">N-gons<a class="headerlink" href="#n-gons" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The mesh contains faces with more than 4 vertices. N-gons tessellate unpredictably in different engines and can produce shading artefacts.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Triangulate N-gons</strong>.</p>
+<h3 id="non-manifold-edges-holes">Non-manifold edges (holes)<a class="headerlink" href="#non-manifold-edges-holes" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>One or more edges are shared by fewer or more than two faces — indicating open holes or internal geometry. This can cause issues with physics collision and rendering.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Fill Holes</strong>, or fix manually in Edit Mode with <code>Mesh → Clean Up → Fill Holes</code>.</p>
+<h3 id="zero-area-faces">Zero-area faces<a class="headerlink" href="#zero-area-faces" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>One or more faces have essentially zero area — degenerate triangles or quads that collapse to a line or point.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Remove Zero-Area Faces</strong>.</p>
+<h3 id="loose-vertices">Loose vertices<a class="headerlink" href="#loose-vertices" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>Vertices not connected to any edge. They contribute nothing to the mesh but increase vertex count and can confuse some engine importers.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Remove Loose Vertices</strong>, or <code>Mesh → Clean Up → Delete Loose</code> in Edit Mode.</p>
+<h3 id="high-poly-count">High poly count<a class="headerlink" href="#high-poly-count" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The face count exceeds the <strong>Max Polygons</strong> threshold. This is a warning, not an error — the FBX exports fine, but the asset may be too heavy for its intended use.</p>
+<p><strong>Fix:</strong> Decimate or retopologise the mesh, or raise the threshold if the count is intentional.</p>
 <hr />
-<h2 id="prefabs">Prefabs<a class="headerlink" href="#prefabs" title="Permanent link">&para;</a></h2>
-<p>The <strong>Prefabs</strong> panel is where you hook up your graphics. Four slots — <strong>Wall Prefab</strong>, <strong>Floor Prefab</strong>, <strong>Stairs Down Prefab</strong> and <strong>Stairs Up Prefab</strong> — accept prefabs dragged from the Project window. If you leave the Wall Prefab empty, Rebuild lays down floors but skips visual walls, which is handy when you just want to see the grid.</p>
-<p>Below the slots you'll see the <strong>Cell Size</strong> — the tile size in Unity units. This value is read automatically from the <strong>GridCoreBridge</strong> component in your scene, which is the only place it is set, to avoid conflicts. If GridCoreBridge isn't present the generator warns you with a yellow message.</p>
+<h2 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">&para;</a></h2>
+<h3 id="no-material-slots">No material slots<a class="headerlink" href="#no-material-slots" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The object has no material assigned. It will import as a grey default material in the engine.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Add Missing Material</strong>.</p>
+<h3 id="empty-material-slots">Empty material slots<a class="headerlink" href="#empty-material-slots" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>One or more slots exist but have no material assigned. Empty slots still produce draw calls in some engines.</p>
+<p><strong>Fix:</strong> Use <strong>Fix → Remove Empty Mat Slots</strong>.</p>
 <hr />
-<h2 id="step-1-generate-flags">Step 1 — Generate Flags<a class="headerlink" href="#step-1-generate-flags" title="Permanent link">&para;</a></h2>
-<p>The <strong>Step 1: Generate</strong> panel has a green <strong>Generate Flags</strong> button. Clicking it creates a tile grid in the scene almost instantly. It does not build walls or floors yet — it creates only flag objects (small GameObjects with a GridFlagExtended component) under <code>[Generated] DungeonRoot → Flags</code>.</p>
-<p>Each flag is one tile with a type (Floor, Stairs, Secret, TrapDoor) and four booleans — north, south, east, west — that mark whether each side is open (a passage) or closed (a wall). After generating you can select any flag in the scene and change its type or walls directly in the Inspector, giving you full control over every tile before anything is built.</p>
+<h2 id="textures">Textures<a class="headerlink" href="#textures" title="Permanent link">&para;</a></h2>
+<h3 id="missing-texture-file-on-disk">Missing texture file on disk<a class="headerlink" href="#missing-texture-file-on-disk" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Error</strong></p>
+<p>A texture node references an image file that does not exist at the stored path. The FBX will export but the texture will be missing in the engine.</p>
+<p><strong>Fix:</strong> Relink the texture in Blender's Image Editor (<code>Image → Replace</code>), or pack it into the <code>.blend</code> file.</p>
+<h3 id="non-power-of-two-texture">Non-power-of-two texture<a class="headerlink" href="#non-power-of-two-texture" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>A texture's width or height is not a power of two (e.g. 512, 1024, 2048, 4096). Non-power-of-two textures cannot be mipmapped correctly in most real-time engines and waste GPU memory.</p>
+<p><strong>Fix:</strong> Resize the texture to the nearest power of two in an image editor before re-importing it into Blender.</p>
+<h3 id="oversized-texture">Oversized texture<a class="headerlink" href="#oversized-texture" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>A texture exceeds the <strong>Max Tex Size</strong> threshold. Large textures increase streaming time and GPU memory usage.</p>
+<p><strong>Fix:</strong> Downscale the texture, or raise the threshold if the size is intentional.</p>
 <hr />
-<h2 id="spawn-tools">Spawn Tools<a class="headerlink" href="#spawn-tools" title="Permanent link">&para;</a></h2>
-<p>The <strong>Spawn Tools</strong> panel adds elements to the grid manually:</p>
-<ul>
-<li><strong>Floor Tile</strong> — a single floor tile, placed at the origin for you to move into position.</li>
-<li><strong>Stairs Up / Stairs Down</strong> — a stair tile with a StairsMarker component that remembers the direction. Rebuild places the correct stair prefab at the correct rotation, calculated automatically from the tile's open walls.</li>
-<li><strong>Party Spawn</strong> — the party's starting point, one per scene. If one already exists the generator selects it instead of creating a duplicate. The JSON export reads its position and facing so the party starts in the right place.</li>
-<li><strong>Secret Cell</strong> (purple button) — a tile of type Secret, shown with a purple gizmo. After export it becomes a regular Floor tile with <code>isSecret = true</code>: the party can walk onto it, but the map never reveals it until they step on it.</li>
-<li><strong>Trap Door</strong> (orange button) — a tile of type TrapDoor that exports to a Floor tile with <code>isTrapDoor = true</code>. It looks like normal floor but acts like a hole at runtime. For it to function you also need to place a TrapDoorTrap prefab on the same grid position — Spawn Tools won't do that automatically.</li>
-</ul>
+<h2 id="naming">Naming<a class="headerlink" href="#naming" title="Permanent link">&para;</a></h2>
+<h3 id="default-blender-name">Default Blender name<a class="headerlink" href="#default-blender-name" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The object uses a default Blender name (Cube, Sphere, Cylinder, Plane, etc.). These names carry no meaning in the engine asset browser and make it difficult to identify assets.</p>
+<p><strong>Fix:</strong> Rename the object, or use <strong>Fix → Fix Naming / Add Prefix</strong> to apply the configured prefix and rename automatically.</p>
+<h3 id="special-characters-in-name">Special characters in name<a class="headerlink" href="#special-characters-in-name" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The object name contains characters outside letters, digits, underscores, hyphens, dots, and spaces. Some engines and import pipelines reject or mangle names with special characters.</p>
+<p><strong>Fix:</strong> Rename the object to use only safe characters.</p>
 <hr />
-<h2 id="step-2-build">Step 2 — Build<a class="headerlink" href="#step-2-build" title="Permanent link">&para;</a></h2>
-<p>The <strong>Step 2: Build</strong> panel has two helper toggles and the main Rebuild button. <strong>Hide / Show Flags</strong> hides the flag GameObjects so you can see just the geometry, and <strong>Hide / Show Meshes</strong> disables MeshRenderers so you can see just the flags while laying things out.</p>
-<p><strong>Rebuild Dungeon</strong> (blue) is the actual build step. It reads every flag in the scene — both generated and manually added — and instantiates wall, floor and stair prefabs from them. Walls land exactly on the tile edge, rotated to face the correct direction. You can click Rebuild as many times as you like; each pass removes the old geometry and rebuilds from the current flags. Doors, traps and chests you placed by hand are not touched — only Walls, Floors and Stairs.</p>
-<hr />
-<h2 id="content-libraries-doors-traps-secret-walls-chests">Content Libraries — Doors, Traps, Secret Walls, Chests<a class="headerlink" href="#content-libraries-doors-traps-secret-walls-chests" title="Permanent link">&para;</a></h2>
-<p>Four panels manage your reusable content, all working the same way.</p>
-<p>The <strong>Doors &amp; Blockers</strong> panel uses a <strong>Door Library</strong> ScriptableObject. You create it via <code>Create → Dungeon Crawler Framework → Door Library</code> or the button in the panel. The library is a list of entries, each with a <strong>Name</strong> (for example "Iron Gate"), a <strong>Prefab</strong> and a <strong>Description</strong>. A green <strong>+ ADD to scene</strong> button next to each entry places the prefab under <code>[Generated] DungeonRoot → Doors</code>, where you move it into position beside a wall.</p>
-<p>The <strong>Trap Library</strong> panel works identically for traps, placing them under <code>[Generated] DungeonRoot → Traps</code>. Each trap needs a <strong>TrapMarker</strong> component for the JSON export to register it and pass it to the runtime trigger system.</p>
-<p>The <strong>Secret Wall Library</strong> panel manages secret walls, placed under <code>[Generated] DungeonRoot → SecretWalls</code>, and the <strong>Chest Library</strong> panel manages chests, placed under <code>[Generated] DungeonRoot → Chests</code>.</p>
-<hr />
-<h2 id="step-3-export">Step 3 — Export<a class="headerlink" href="#step-3-export" title="Permanent link">&para;</a></h2>
-<p>The <strong>Step 3: Export</strong> panel finalises the level. It offers three buttons that assign the unique identifiers the trigger system relies on:</p>
-<ul>
-<li><strong>Generate Unique IDs (all doors)</strong> — gives every door a unique <code>blockerId</code>, <code>targetId</code> and <code>sourceId</code>. Without these the trigger system can't tell which door matches which button or event. Always run this before exporting.</li>
-<li><strong>Generate Unique IDs (all traps)</strong> — assigns a unique <code>trapId</code> to each TrapMarker; projectile traps also receive a <code>targetId</code>.</li>
-<li><strong>Generate Unique IDs (all walls)</strong> — assigns <code>targetId</code> to WallCore components, needed when something in the game must interact with a specific wall.</li>
-</ul>
-<p>Finally, <strong>Build Grid (Export JSON)</strong> does the heavy lifting. It reads all grid flags (position, type, walls, stair direction, secret and trap-door flags), all doors and blockers with their IDs and orientations, all traps, the party spawn point with its facing, and any entities carrying GridEntityMarker components. From all of this it writes a single <strong>GridData_SceneName.json</strong> file into the <code>Resources</code> folder. The runtime loads this file via <code>Resources.Load</code> when the level starts — that single JSON file is the only connection between the editor and the game.</p>
-<hr />
-<h2 id="clear-dungeon">Clear Dungeon<a class="headerlink" href="#clear-dungeon" title="Permanent link">&para;</a></h2>
-<p>The <strong>Clear Dungeon</strong> panel (red button) removes everything the generator created — flags, walls, floors and stairs. Doors and other content you placed manually stay put, because the generator knows that was your work. After clearing the geometry it asks whether you also want to delete the JSON file for the scene; if you confirm, the runtime will no longer be able to load that level.</p>
-<hr />
-<h2 id="workflow-summary">Workflow Summary<a class="headerlink" href="#workflow-summary" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Pick a preset or configure the parameters manually.</li>
-<li>Click <strong>Generate Flags</strong> to create the grid.</li>
-<li>Edit flags in the Inspector or add new ones with <strong>Spawn Tools</strong>.</li>
-<li>Optionally save the layout with <strong>Layout Snapshot → Save</strong>.</li>
-<li>Click <strong>Rebuild Dungeon</strong> to build the 3D geometry.</li>
-<li>Place doors, traps, secret walls and chests from the libraries.</li>
-<li>Click <strong>Generate Unique IDs</strong> for doors, traps and walls.</li>
-<li>Click <strong>Build Grid (Export JSON)</strong> to write everything to the JSON file.</li>
-<li>The runtime loads that file and your dungeon comes to life in game.</li>
-</ol>
-<p>One tool takes you from an empty scene to a finished level, step by step, without writing a single line of code.</p>
-<hr />
-<p><em>Dungeon Crawler Framework — Mantis3de</em></p>
+<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
+<h3 id="no-collision-mesh">No collision mesh<a class="headerlink" href="#no-collision-mesh" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>No <code>UCX_&lt;name&gt;</code> or <code>UBX_&lt;name&gt;</code> object exists for this mesh, and no collision child with those prefixes was found. The mesh will import without physics collision unless the engine generates its own.</p>
+<p><strong>Fix:</strong> Use <strong>Collision Setup → UCX_ Hull</strong> or <strong>UBX_ Box</strong>, or use <strong>Fix → Add Missing Collision</strong>.</p>
+<p>→ <a href="../collision-naming/">Collision Naming</a></p>
 
 
 
@@ -1338,6 +2002,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../panels/export/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Export">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Export
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../collision-naming/" class="md-footer__link md-footer__link--next" aria-label="Next: Collision Naming">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Collision Naming
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

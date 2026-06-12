@@ -12,9 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/systems/party-bobbing/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/fix/">
       
       
+        <link rel="prev" href="../validation/">
+      
+      
+        <link rel="next" href="../export/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Party Bobbing - Game Export Pipeline Documentation</title>
+        <title>Fix - Game Export Pipeline Documentation</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#party-bobbing" class="md-skip">
+        <a href="#fix" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Party Bobbing
+              Fix
             
           </span>
         </div>
@@ -263,11 +267,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../panels/output/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../output/" class="md-tabs__link">
           
   
   
@@ -532,8 +538,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -557,19 +565,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -587,7 +598,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -605,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/output/" class="md-nav__link">
+      <a href="../output/" class="md-nav__link">
         
   
   
@@ -633,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
+      <a href="../quick-reset/" class="md-nav__link">
         
   
   
@@ -661,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/individual-steps/" class="md-nav__link">
+      <a href="../individual-steps/" class="md-nav__link">
         
   
   
@@ -689,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/collision-setup/" class="md-nav__link">
+      <a href="../collision-setup/" class="md-nav__link">
         
   
   
@@ -717,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/scene-organization/" class="md-nav__link">
+      <a href="../scene-organization/" class="md-nav__link">
         
   
   
@@ -745,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/validation/" class="md-nav__link">
+      <a href="../validation/" class="md-nav__link">
         
   
   
@@ -770,10 +781,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../panels/fix/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fix
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -789,6 +827,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scale-transforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale &amp; Transforms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-naming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials &amp; Naming
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-all-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix All Issues
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -801,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../panels/export/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         
   
   
@@ -1061,10 +1185,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#scale-transforms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        Scale &amp; Transforms
       
     </span>
   </a>
@@ -1072,49 +1196,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inspector-reference" class="md-nav__link">
+  <a href="#mesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inspector reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Inspector reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#bobbing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bobbing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#camera" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Camera
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behaviour" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behaviour
+        Mesh
       
     </span>
   </a>
@@ -1122,10 +1207,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relationship-to-partyvisuals-step-bob" class="md-nav__link">
+  <a href="#materials-naming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relationship to PartyVisuals step-bob
+        Materials &amp; Naming
       
     </span>
   </a>
@@ -1133,10 +1218,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        UV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-all-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix All Issues
       
     </span>
   </a>
@@ -1160,93 +1267,50 @@
 
 
 
-<h1 id="party-bobbing">Party Bobbing<a class="headerlink" href="#party-bobbing" title="Permanent link">&para;</a></h1>
-<p><code>PartyBobbing</code> adds a <strong>continuous sinusoidal camera bob</strong> while the party is walking. Unlike the one-shot step-bob built into <code>PartyVisuals</code>, this effect runs every frame the party is animating — giving the camera a smooth, rhythmic up-and-down sway that sells the feeling of walking through a dungeon.</p>
-<p>When the party stops, the camera smoothly returns to its rest position.</p>
-<p>Requires <code>PartyVisuals</code> on the same GameObject.</p>
+<h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
+<p>The <strong>Fix</strong> panel provides targeted operators for each validation category, plus a <strong>Fix All Issues</strong> button that runs every applicable fix in the correct order.</p>
 <hr />
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
+<p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
+<p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then recalculates normals.</p>
+<hr />
+<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
+<p><strong>Fill Holes</strong> — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.</p>
+<p><strong>Triangulate N-gons</strong> — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.</p>
+<p><strong>Remove Loose Vertices</strong> — deletes vertices that are not connected to any edge or face.</p>
+<p><strong>Remove Zero-Area Faces</strong> — deletes degenerate faces whose calculated area is essentially zero (below <code>1e-8</code> m²).</p>
+<hr />
+<h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
+<p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named <code>M_&lt;ObjectName&gt;</code>.</p>
+<p><strong>Remove Empty Mat Slots</strong> — removes material slots that have no material assigned. Empty slots cause extra draw calls in some engines.</p>
+<p><strong>Fix Naming / Add Prefix</strong> — renames the object and its mesh data to use the prefix set in the <a href="../output/">Output</a> panel. For example, with prefix <code>SM_</code>, an object named <code>Rock_01</code> becomes <code>SM_Rock_01</code>. Default Blender names (Cube, Sphere, etc.) are also replaced.</p>
+<hr />
+<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
+<p><strong>Add UV Map (Smart Project)</strong> — if the object has no UV maps, creates one using Blender's <strong>Smart UV Project</strong> algorithm. The result is a reasonable starting point but is not a substitute for a hand-unwrapped UV map for hero assets.</p>
+<p><strong>Add Lightmap UV</strong> — adds a second UV channel using <strong>Lightmap Pack</strong>. See <a href="../individual-steps/#add-lightmap-uv">Individual Steps → Add Lightmap UV</a> for details.</p>
+<hr />
+<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
+<p><strong>Add Missing Collision</strong> — if the object has no <code>UCX_</code> or <code>UBX_</code> collision mesh, generates a convex hull collision mesh using the same settings as <strong>UCX_ Hull</strong> in the <a href="../collision-setup/">Collision Setup</a> panel.</p>
+<hr />
+<h2 id="fix-all-issues">Fix All Issues<a class="headerlink" href="#fix-all-issues" title="Permanent link">&para;</a></h2>
+<p><strong>Fix All Issues</strong> runs every applicable fix in the correct order:</p>
 <ol>
-<li>Select the <strong>party root</strong> (the GameObject with <code>PartyVisuals</code>).</li>
-<li><strong>Add Component → Party Bobbing.</strong></li>
-<li>Optionally drag your camera <code>Transform</code> into <strong>Camera</strong> — the component auto-detects it from children if left empty.</li>
-<li>Tune <strong>Bob Height</strong> and <strong>Steps Per Second</strong> to taste.</li>
+<li>Apply scale and rotation</li>
+<li>Fix negative scale</li>
+<li>Fill holes</li>
+<li>Triangulate n-gons</li>
+<li>Remove loose vertices and zero-area faces</li>
+<li>Add missing material and remove empty slots</li>
+<li>Fix naming / add prefix</li>
+<li>Add UV map (if missing)</li>
+<li>Add lightmap UV (if missing)</li>
+<li>Add missing collision</li>
 </ol>
-<hr />
-<h2 id="inspector-reference">Inspector reference<a class="headerlink" href="#inspector-reference" title="Permanent link">&para;</a></h2>
-<h3 id="bobbing">Bobbing<a class="headerlink" href="#bobbing" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Default</th>
-<th>Range</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Bob Height</strong></td>
-<td>0.05 m</td>
-<td>0.01 – 0.15</td>
-<td>Peak vertical offset in meters on each sine cycle. Higher = more dramatic bob.</td>
-</tr>
-<tr>
-<td><strong>Steps Per Second</strong></td>
-<td>2</td>
-<td>1 – 4</td>
-<td>How many full up-down cycles happen per second. <code>2</code> gives a natural left-right-left gait; <code>1</code> is a slow lurch; <code>4</code> is a sprint.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="camera">Camera<a class="headerlink" href="#camera" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Camera</strong></td>
-<td>The <code>Transform</code> to apply the bob to. Auto-detected from children (<code>GetComponentInChildren&lt;Camera&gt;</code>) if left empty. If no camera is found, the component disables itself.</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="behaviour">Behaviour<a class="headerlink" href="#behaviour" title="Permanent link">&para;</a></h2>
-<p>Each <code>LateUpdate</code>:</p>
-<ul>
-<li>If <code>PartyVisuals.IsAnimating</code> is <code>true</code> — the bob phase advances and the camera is offset by <code>sin(phase) * bobHeight</code> on the Y axis.</li>
-<li>If the party is <strong>not</strong> animating — the phase resets to <code>0</code> and the camera lerps back to its rest position (<code>initialLocalOffset</code>) at 10× speed, so it snaps back quickly without a jarring cut.</li>
-</ul>
-<p>The component stores the camera's <code>localPosition</code> at <code>Awake</code> as the rest offset, so the bob is additive — it works regardless of where the camera sits relative to the party root.</p>
-<hr />
-<h2 id="relationship-to-partyvisuals-step-bob">Relationship to PartyVisuals step-bob<a class="headerlink" href="#relationship-to-partyvisuals-step-bob" title="Permanent link">&para;</a></h2>
-<p><code>PartyVisuals</code> has its own <strong>Move Curve + Bob Height</strong> that fires once per step, integrated into the slide animation coroutine. That bob is keyed to the step timing and always plays exactly once per move.</p>
-<p><code>PartyBobbing</code> is a separate, continuous oscillation driven by <code>sin</code>. You can use:</p>
-<ul>
-<li><strong>Both</strong> — the <code>PartyVisuals</code> bob shapes the step, and <code>PartyBobbing</code> adds an overlaid sway.</li>
-<li><strong><code>PartyVisuals</code> only</strong> — set <code>PartyBobbing</code> disabled or remove it; you still get the per-step bob.</li>
-<li><strong><code>PartyBobbing</code> only</strong> — set <code>PartyVisuals.bobHeight</code> to <code>0</code>; the continuous sway replaces the step bob.</li>
-</ul>
-<hr />
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<details class="failure">
-<summary>Component disables itself on play</summary>
-<p>No <code>Camera</code> component was found in the party root's children. Either assign the camera <code>Transform</code> manually in the <strong>Camera</strong> field, or make sure the Camera GameObject is a child of the party root.</p>
-</details>
-<details class="failure">
-<summary>Camera bobs but never returns to rest</summary>
-<p>The camera's <code>localPosition</code> is being overwritten by another component (e.g. <code>PartyLook</code> or <code>PartyFallAnimation</code>) every frame. <code>PartyBobbing</code> uses <code>LateUpdate</code> but so does <code>PartyLook</code>; execution order matters. Check <strong>Project Settings → Script Execution Order</strong> if the rest position drifts.</p>
-</details>
-<details class="failure">
-<summary>Bob is too strong / too weak</summary>
-<p><strong>Bob Height</strong> and <strong>Steps Per Second</strong> are both exposed in the Inspector and can be changed at runtime. Try lowering <code>bobHeight</code> to <code>0.02</code>–<code>0.03</code> for a subtle effect, or <code>0.08</code>–<code>0.12</code> for an exaggerated cinematic bob.</p>
-</details>
-<hr />
-<p><em>Dungeon Crawler Framework — Mantis3de</em></p>
+<p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
+<div class="admonition tip">
+<p class="admonition-title">Run validation after Fix All</p>
+<p>Fix All resolves the issues it can handle automatically. Some issues — like a texture that is genuinely missing from disk, or a poly count that exceeds the threshold — require manual attention. Re-run <strong>Validation</strong> after Fix All to see what remains.</p>
+</div>
 
 
 
@@ -1277,6 +1341,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../validation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Validation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Validation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../export/" class="md-footer__link md-footer__link--next" aria-label="Next: Export">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Export
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
