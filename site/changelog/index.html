@@ -557,8 +557,6 @@
       
         
       
-        
-      
     
     
     
@@ -703,34 +701,6 @@
     
   
     Collision Setup
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panels/scene-organization/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scene Organization
   
 
     
@@ -1116,6 +1086,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="[Unreleased]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1131,7 +1151,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added" class="md-nav__link">
+  <a href="#added_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -1189,6 +1209,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="[Unreleased]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Removed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1204,7 +1274,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#added" class="md-nav__link">
+  <a href="#added_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Added
@@ -1240,9 +1310,30 @@
 <p>All notable changes are documented here. The format follows <a href="https://keepachangelog.com/">Keep a Changelog</a>, versioning follows <a href="https://semver.org/">Semantic Versioning</a>.</p>
 <hr />
 <h2 id="unreleased">[Unreleased]<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Preview / Isolate</strong> — modal object browser in the Viewport Helpers box. Step through scene meshes with the mouse wheel or arrow keys and isolate each one as <strong>Mesh only</strong>, <strong>Mesh + Collider</strong>, or <strong>Collider only</strong> (press <code>M</code> to cycle). <code>Enter</code>/<code>LMB</code> keeps the current isolation, <code>Esc</code>/<code>RMB</code> restores everything. A <strong>Restore All</strong> button is provided alongside it.</li>
+<li><strong>Rename Textures</strong> toggle in the Export auto-cleanup box. When enabled (and Collect Textures is on), copied textures are renamed to the <code>AssetName_TextureType</code> convention (e.g. <code>Rock_01_BaseColor.png</code>), with the texture type detected from the material node graph.</li>
+</ul>
+<h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Quick Reset via Fix All mis-placed the first object.</strong> Fix All skipped any object whose origin was already near world zero, so a mesh modelled at the origin kept its centred pivot while the others were reset to bottom-centre. Fix All now resets every eligible object exactly like the standalone Quick Reset.</li>
+<li><strong>Export left duplicate objects in the scene.</strong> When an object had a collider, the export loop created a working copy that was never deleted — leaving extra render-mesh duplicates in the scene (3 assets appeared to "explode" into 6). The duplicate is now created only when needed and always cleaned up; the FBX output was always correct.</li>
+<li><strong>Apply Transforms could affect the wrong objects during export.</strong> <code>transform_apply</code> runs on all selected objects, so it could bake transforms into the user's original meshes. Transform application now isolates its selection to the temporary export copy only.</li>
+<li><strong>Objects with colliders skipped cleanup on export.</strong> Apply Transforms and Triangulate ran only on the no-collider export path; objects exported together with a collider now receive the same cleanup, keeping geometry consistent across all assets.</li>
+<li><strong>Import FBX… and Preview operators were never registered.</strong> Both are now wired into the addon's <code>register()</code> so their buttons work.</li>
+</ul>
+<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Unused settings that had no effect: <code>use_better_fbx</code> (Better FBX is auto-detected), <code>use_meshes_subfolder</code>, and <code>remove_empties</code>. Dead imports and a no-op transform call were also removed.</li>
+</ul>
+<h3 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All user-facing strings are now English (the Preview header and reports were partly Polish).</li>
+</ul>
 <hr />
 <h2 id="100-current">[1.0.0] — Current<a class="headerlink" href="#100-current" title="Permanent link">&para;</a></h2>
-<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h3>
+<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>N-Panel UI in the <strong>GameExport</strong> tab (<code>View3D &gt; Sidebar &gt; GameExport</code>).</li>
 <li>FBX export with engine presets for <strong>Unity</strong>, <strong>Unreal Engine</strong>, <strong>Godot</strong>, and <strong>Custom</strong> axes.</li>
@@ -1262,6 +1353,13 @@
 <li><strong>Better FBX import</strong> — Import FBX… button in the FBX Tools panel opens Better FBX's import dialog when the addon is installed.</li>
 <li><strong>Auto-validation after Fix</strong> — the Validation panel refreshes automatically after every individual fix operator and after Fix All Issues.</li>
 <li><strong>Relative path guard</strong> — exporting to a <code>//</code> path from an unsaved <code>.blend</code> file now reports a clear error instead of failing silently with a read-only path.</li>
+<li><strong>Batch export progress bar</strong> — Blender's header progress bar shows export progress during batch operations.</li>
+<li><strong>Export summary popup</strong> — after batch export a dialog shows total exported, warnings, and any failed assets by name.</li>
+<li><strong>GPL-3.0 license file</strong> included in the package.</li>
+<li><code>doc_url</code> and <code>tracker_url</code> set in <code>bl_info</code> — links appear directly in Blender's Addon Preferences.</li>
+<li><strong>Auto collision workflow</strong> — "Colliders as Children" toggle removed; behaviour is now automatic: Unity parents colliders to the render mesh, Unreal organises them into collections, other engines place them at scene root.</li>
+<li><strong>Scene Organization panel removed</strong> — Dissolve Collections moved to Collision Setup; Subfolders per Collection toggle moved to Export panel.</li>
+<li><strong>Dissolve Collections</strong> button in Collision Setup reverses collection grouping without deleting any objects.</li>
 </ul>
 
 

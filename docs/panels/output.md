@@ -57,3 +57,31 @@ Two toggles in the **Viewport Helpers** box control non-destructive overlays dra
 **Scale Ref** draws two reference boxes — a 1×1×1 metre cube and a 1.8 m tall human-height box — so you can check your asset's scale against real-world proportions at a glance.
 
 Both overlays are display-only and have no effect on the exported file.
+
+---
+
+## Preview / Isolate
+
+The **Preview / Isolate** button starts a modal browser that walks through the mesh objects in your scene one at a time, hiding everything else so you can inspect each asset in isolation — with or without its collision meshes. Collision objects (`UCX_`/`UBX_`) are never listed as their own entries; they are shown as part of the mesh they belong to.
+
+While the modal is running, the viewport header shows the current object, its index, and the controls:
+
+| Control | Action |
+|---|---|
+| Mouse wheel · `↑` / `↓` | Move to the previous / next mesh |
+| `M` | Cycle the isolation mode |
+| `Enter` · `LMB` | Keep the current isolation and exit |
+| `Esc` · `RMB` | Restore all objects and exit |
+
+The isolation mode cycles through three states, and your choice is remembered for the next session:
+
+| Mode | Shows |
+|---|---|
+| **Mesh only** | Just the render mesh |
+| **Mesh + Collider** | The render mesh and its `UCX_`/`UBX_` colliders |
+| **Collider only** | Just the colliders (useful for checking hull shape) |
+
+The **Restore All** button next to Preview un-hides every object in the scene. Use it if a preview session was interrupted and some objects are still hidden.
+
+!!! note "Preview only changes visibility"
+    Isolating objects toggles their viewport visibility — it never moves, deletes, or modifies geometry. Exiting with `Esc` (or pressing Restore All) returns the scene to a fully visible state.

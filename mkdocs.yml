@@ -106,7 +106,6 @@ nav:
       - Quick Reset: panels/quick-reset.md
       - Individual Steps: panels/individual-steps.md
       - Collision Setup: panels/collision-setup.md
-      - Scene Organization: panels/scene-organization.md
       - Validation: panels/validation.md
       - Fix: panels/fix.md
       - Export: panels/export.md

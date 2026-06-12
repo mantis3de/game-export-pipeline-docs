@@ -29,9 +29,11 @@ If the export folder is not set, the panel shows an alert box and an inline path
 
 If the [Better FBX Importer & Exporter](../panels/fbx-tools.md) addon is installed, this button opens Better FBX's full export dialog instead of exporting silently. All of Better FBX's settings — FBX version, axis preset, smoothing groups, tangents, and more — are available there.
 
-**Batch Export Selected** exports every selected mesh object as a separate FBX. Each object is exported individually with its associated collision meshes. If **Collection as Catalog** is enabled in [Scene Organization](scene-organization.md), each collection is exported into its own subfolder.
+**Batch Export Selected** exports every selected mesh object as a separate FBX. Each object is exported individually with its associated collision meshes. Enable **Subfolders per Collection** (the toggle below the button) to place each FBX inside a subfolder named after its collection — useful when assets are organised into collections in the Outliner.
 
 Batch export always runs silently. When Better FBX is installed it is used automatically with axis settings matched to the active engine preset.
+
+A **progress bar** appears in the Blender header while batch export is running. When all objects are processed, a **summary popup** appears showing how many assets were exported, any warnings, and a list of failed objects if applicable.
 
 !!! note "Collision meshes are included automatically"
     You do not need to select collision meshes separately. The exporter finds `UCX_<name>` and `UBX_<name>` objects and includes them in the same FBX as the render mesh.
@@ -43,7 +45,7 @@ Batch export always runs silently. When Better FBX is installed it is used autom
 
 ## Auto-cleanup on Export
 
-Four toggles control what happens to the mesh during export. These operate on a temporary copy — the original scene objects are not modified.
+These toggles control what happens to the mesh during export. They operate on a temporary copy — the original scene objects are not modified.
 
 | Toggle | Default | What it does |
 |---|---|---|
@@ -51,9 +53,13 @@ Four toggles control what happens to the mesh during export. These operate on a 
 | **Apply Modifiers** | On | Evaluates the modifier stack before export |
 | **Triangulate** | On | Converts quads and n-gons to triangles |
 | **Collect Textures** | On | Copies used textures to a `/Textures` subfolder next to the FBX |
+| **Rename Textures** | Off | Renames the copied textures to `AssetName_TextureType` (only available when Collect Textures is on) |
 
 !!! tip "Leave Apply Transforms on"
     Most engines expect transforms to be applied. Turning this off can cause assets to import at the wrong position, scale, or orientation.
 
 !!! info "Collect Textures copies, not moves"
     Original texture files in the `.blend` project are not touched. The copies in `/Textures` are what go to the engine.
+
+!!! info "Rename Textures uses the material node graph"
+    When enabled, each texture's type (BaseColor, Normal, Roughness, Metallic, and so on) is detected by following its connections in the material's shader nodes, falling back to filename keywords. A texture used by asset `Rock_01` becomes e.g. `Rock_01_Normal.png` in the `/Textures` folder.

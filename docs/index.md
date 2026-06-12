@@ -71,3 +71,9 @@ Game Export Pipeline lives in the **N-Panel → GameExport** tab. It replaces th
 ## New here?
 
 Start with [Installation](getting-started/installation.md), then follow the [5-minute Quick Start](getting-started/quick-start.md) to export your first asset. Have a question? Check the [FAQ](faq.md).
+
+---
+
+## License
+
+Game Export Pipeline is released under the **[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt)** — the same license as Blender itself. You are free to use, modify, and distribute it under the terms of the GPL.

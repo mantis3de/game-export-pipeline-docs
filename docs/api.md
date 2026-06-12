@@ -32,7 +32,8 @@ s.collect_textures = True
 | Property | Type | Default | Description |
 |---|---|---|---|
 | `export_path` | `str` | `"//GameAssets"` | Root folder for exported FBX files |
-| `use_meshes_subfolder` | `bool` | `True` | Place exports inside a `/Meshes` subfolder |
+| `prefix` | `str` | `"SM_"` | Prefix prepended to every exported filename |
+| `preview_mode` | `enum` | `'MESH'` | Preview / Isolate state: `'MESH'`, `'MESH_COL'`, `'COL'` |
 
 ### Engine
 
@@ -51,13 +52,16 @@ s.collect_textures = True
 | `apply_modifiers` | `bool` | `True` | Evaluate modifier stack before export |
 | `triangulate` | `bool` | `True` | Convert to tris before export |
 | `collect_textures` | `bool` | `True` | Copy textures to `/Textures` subfolder |
+| `rename_textures` | `bool` | `False` | Rename copied textures to `AssetName_TextureType` (requires `collect_textures`) |
 
 ### Collision
 
 | Property | Type | Default | Description |
 |---|---|---|---|
 | `collision_decimate` | `float` | `0.3` | Decimate ratio for generated collision (0 = off) |
-| `collision_as_children` | `bool` | `False` | Parent colliders to render mesh (Unity mode) |
+
+!!! note "Collider parenting is automatic"
+    There is no `collision_as_children` toggle. Parenting is decided by `engine_preset`: **Unity** parents colliders to the render mesh, **Unreal** organises them into collections, other engines place them at scene root.
 
 ### Validation thresholds
 
@@ -72,6 +76,7 @@ s.collect_textures = True
 |---|---|---|
 | `val_ran` | `bool` | `True` after the first validation run |
 | `val_scale_ok` | `bool` | Scale check passed |
+| `val_position_ok` | `bool` | Origin-at-world-zero check passed |
 | `val_uvs_ok` | `bool` | UV check passed |
 | `val_lightmap_ok` | `bool` | Lightmap UV check passed |
 | `val_mesh_ok` | `bool` | Mesh topology check passed |
@@ -94,11 +99,12 @@ bpy.ops.object.select_all(action='SELECT')
 # Validate selection
 bpy.ops.gep.validate_objects()
 
-# Export active object
+# Export selected mesh objects (one FBX each; single object opens the
+# Better FBX dialog when that addon is installed)
 bpy.ops.gep.export_fbx()
 
-# Batch export selected
-bpy.ops.gep.batch_export_fbx()
+# Import via Better FBX (only registered/usable when Better FBX is installed)
+bpy.ops.gep.import_betterfbx()
 
 # Collision
 bpy.ops.gep.gen_convex_hull()
@@ -133,6 +139,16 @@ bpy.ops.gep.fix_all()
 # Scene organization
 bpy.ops.gep.organize_collections()
 bpy.ops.gep.dissolve_collections()
+
+# Preview / Isolate (modal — run with INVOKE_DEFAULT)
+bpy.ops.gep.preview_modal('INVOKE_DEFAULT')
+bpy.ops.gep.preview_restore_all()
+
+# Viewport helpers
+bpy.ops.gep.show_forward_gizmo()
+bpy.ops.gep.hide_forward_gizmos()
+bpy.ops.gep.show_scale_ref()
+bpy.ops.gep.hide_scale_ref()
 ```
 
 ---
