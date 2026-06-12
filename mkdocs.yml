@@ -1,0 +1,119 @@
+site_name: Game Export Pipeline Documentation
+site_description: One-click FBX export for Blender 4.2+ — validation, collision generation, engine presets, and auto-fix tools for Unity, Unreal Engine, and Godot.
+site_author: Mantis3de
+site_url: https://mantis3de.github.io/game-export-pipeline/
+
+edit_uri: ""
+
+copyright: Copyright &copy; Mantis3de — Game Export Pipeline
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+    - content.tooltips
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Mantis3de
+      name: Mantis3de on GitHub
+    - icon: material/web
+      link: https://mantis3de.carrd.co
+      name: Mantis3de
+  generator: false
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quick Start (5 Minutes): getting-started/quick-start.md
+  - Panels:
+      - Output & Engine: panels/output.md
+      - Quick Reset: panels/quick-reset.md
+      - Individual Steps: panels/individual-steps.md
+      - Collision Setup: panels/collision-setup.md
+      - Scene Organization: panels/scene-organization.md
+      - Validation: panels/validation.md
+      - Fix: panels/fix.md
+      - Export: panels/export.md
+      - FBX Tools: panels/fbx-tools.md
+  - Reference:
+      - Validation Checks: reference/validation-checks.md
+      - Collision Naming: reference/collision-naming.md
+      - Engine Presets: reference/engine-presets.md
+  - FAQ: faq.md
+  - Changelog: changelog.md
