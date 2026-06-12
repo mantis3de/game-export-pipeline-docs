@@ -21,26 +21,6 @@
          <lastmod>2026-06-12</lastmod>
     </url>
     <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/editors/character-generator/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/editors/dungeon-generator/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/editors/enemy-spawner/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/editors/inventory-editor/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/editors/spell-editor/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/getting-started/installation/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
@@ -94,82 +74,6 @@
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/reference/validation-checks/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/door-types/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/dungeon-map/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/music/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/party-bobbing/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/party-fall-animation/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/party-input-handler/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/party-look/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/party-visuals/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/save-system/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-door-button/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-doors/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-illusory-wall/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-keyhole/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-pressure-plate/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-secret-wall/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/setup-trapdoor/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/trap-types/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/triggers/</loc>
-         <lastmod>2026-06-12</lastmod>
-    </url>
-    <url>
-         <loc>https://mantis3de.github.io/game-export-pipeline/systems/wall-types/</loc>
          <lastmod>2026-06-12</lastmod>
     </url>
 </urlset>
