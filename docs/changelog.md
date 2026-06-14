@@ -29,9 +29,20 @@ First public release.
 - Automatic collider workflow by engine: **Unity** parents colliders to the render mesh, **Unreal** organises them into collections, other engines place them at scene root.
 - **Dissolve Collections** reverses collection grouping without deleting any objects.
 
-### Validation & Fix
-- **Validation** — nine checks (scale, position, UVs, lightmap UV, mesh topology, materials, textures, naming, collision) with configurable poly-count and texture-size thresholds.
-- **Fix** — an individual fix operator for each validation category plus **Fix All Issues**; the Validation panel refreshes automatically after every fix.
+### Validation
+- Asset validation across transform, geometry, normals, UV (incl. **overlap** and **padding**),
+  materials, textures, naming and collision. Runs on the **evaluated** mesh when export applies modifiers.
+- Dual-metric scoring: pooled **export gate** (`EXPORT READY` / blocking) plus **scene quality**
+  (mean per-asset, for ranking / batch triage); per-category and per-asset scores.
+- Engine + **Marketplace** severity presets.
+- **Report UI**: collapsible per-category sections, impact explanations, fix-confidence
+  (Safe / Destructive / Manual), and **Select Problem** with shader-graph & UV-editor deep-link.
+- **Asset Report export** (JSON / CSV): versioned schema 1.0, deterministic content hash.
+- **Batch validation**: Selection / Collection / Scene.
+- Auto-fixes, including a non-destructive **Fix Safe Issues**.
+
+### Fix
+- An individual fix operator for each validation category plus **Fix All Issues**; the Validation panel refreshes automatically after every fix.
 
 ### Viewport helpers
 - **Forward Axis gizmo** — viewport arrow showing the export forward direction, updates with the engine preset.

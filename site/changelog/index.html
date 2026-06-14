@@ -1134,10 +1134,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#validation-fix" class="md-nav__link">
+  <a href="#validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation &amp; Fix
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
       
     </span>
   </a>
@@ -1262,10 +1273,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#validation-fix" class="md-nav__link">
+  <a href="#validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation &amp; Fix
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix
       
     </span>
   </a>
@@ -1346,10 +1368,22 @@
 <li>Automatic collider workflow by engine: <strong>Unity</strong> parents colliders to the render mesh, <strong>Unreal</strong> organises them into collections, other engines place them at scene root.</li>
 <li><strong>Dissolve Collections</strong> reverses collection grouping without deleting any objects.</li>
 </ul>
-<h3 id="validation-fix">Validation &amp; Fix<a class="headerlink" href="#validation-fix" title="Permanent link">&para;</a></h3>
+<h3 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Validation</strong> — nine checks (scale, position, UVs, lightmap UV, mesh topology, materials, textures, naming, collision) with configurable poly-count and texture-size thresholds.</li>
-<li><strong>Fix</strong> — an individual fix operator for each validation category plus <strong>Fix All Issues</strong>; the Validation panel refreshes automatically after every fix.</li>
+<li>Asset validation across transform, geometry, normals, UV (incl. <strong>overlap</strong> and <strong>padding</strong>),
+  materials, textures, naming and collision. Runs on the <strong>evaluated</strong> mesh when export applies modifiers.</li>
+<li>Dual-metric scoring: pooled <strong>export gate</strong> (<code>EXPORT READY</code> / blocking) plus <strong>scene quality</strong>
+  (mean per-asset, for ranking / batch triage); per-category and per-asset scores.</li>
+<li>Engine + <strong>Marketplace</strong> severity presets.</li>
+<li><strong>Report UI</strong>: collapsible per-category sections, impact explanations, fix-confidence
+  (Safe / Destructive / Manual), and <strong>Select Problem</strong> with shader-graph &amp; UV-editor deep-link.</li>
+<li><strong>Asset Report export</strong> (JSON / CSV): versioned schema 1.0, deterministic content hash.</li>
+<li><strong>Batch validation</strong>: Selection / Collection / Scene.</li>
+<li>Auto-fixes, including a non-destructive <strong>Fix Safe Issues</strong>.</li>
+</ul>
+<h3 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h3>
+<ul>
+<li>An individual fix operator for each validation category plus <strong>Fix All Issues</strong>; the Validation panel refreshes automatically after every fix.</li>
 </ul>
 <h3 id="viewport-helpers">Viewport helpers<a class="headerlink" href="#viewport-helpers" title="Permanent link">&para;</a></h3>
 <ul>
