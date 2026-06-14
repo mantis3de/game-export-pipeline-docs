@@ -1101,13 +1101,33 @@
 
 <h1 id="scene-organization">Scene Organization<a class="headerlink" href="#scene-organization" title="Permanent link">&para;</a></h1>
 <p>The <strong>Scene Organization</strong> panel groups render meshes and their collision objects into Blender collections, then lets the batch exporter use those collections as subfolders.</p>
-<div class="admonition note">
-<p class="admonition-title">Colliders as Children must be off</p>
-<p>Scene Organization is not available when <strong>Colliders as Children</strong> is enabled in the <a href="../collision-setup/">Collision Setup</a> panel. Disable it first — the panel will show a reminder if it is on.</p>
-</div>
+<p>The collision workflow adapts automatically to the active engine preset — no manual toggle needed:</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Collision behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unity</strong></td>
+<td>Collision meshes are parented as children of the render mesh</td>
+</tr>
+<tr>
+<td><strong>Unreal Engine</strong></td>
+<td>Render mesh and its collision objects are grouped into a named collection automatically on generate</td>
+</tr>
+<tr>
+<td><strong>Godot / Custom</strong></td>
+<td>Collision meshes are created at scene root alongside the render mesh</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Organize into Collections</strong> and <strong>Dissolve</strong> buttons are most useful for Unreal Engine workflows, or when you want explicit collection-based subfolder export regardless of engine.</p>
 <hr />
 <h2 id="collections">Collections<a class="headerlink" href="#collections" title="Permanent link">&para;</a></h2>
-<p><strong>Organize into Collections</strong> scans the scene and groups each render mesh together with its <code>UCX_</code> and <code>UBX_</code> collision objects into a collection named after the render mesh. Objects that already belong to a collection are skipped.</p>
+<p><strong>Organize into Collections</strong> scans the scene and groups each render mesh together with its <code>UCX_</code> and <code>UBX_</code> collision objects into a collection named after the render mesh. Objects that already belong to the correct collection are skipped.</p>
 <p>Before:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Scene Collection
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Rock_01
@@ -1127,7 +1147,7 @@
 <p><strong>Dissolve</strong> reverses the operation — it removes the collections and moves all objects back into the root scene collection. The objects themselves are not deleted.</p>
 <hr />
 <h2 id="batch-export-with-subfolders">Batch Export with subfolders<a class="headerlink" href="#batch-export-with-subfolders" title="Permanent link">&para;</a></h2>
-<p>When <strong>Collection as Catalog (subfolder)</strong> is enabled, the <strong>Batch Export Selected</strong> button in the <a href="../export/">Export</a> panel creates a subfolder for each collection and places the corresponding FBX inside it.</p>
+<p>When <strong>Collection as Catalog (subfolder)</strong> is enabled, the <strong>Export Selected</strong> button in the <a href="../export/">Export</a> panel creates a subfolder for each collection and places the corresponding FBX inside it.</p>
 <p>For example, with collections <code>Rock_01</code> and <code>Barrel_02</code> and an export path of <code>//GameAssets</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GameAssets/
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── Rock_01/

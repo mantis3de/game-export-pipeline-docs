@@ -788,6 +788,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#thresholds-and-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thresholds and options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#running-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -799,35 +810,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#thresholds" class="md-nav__link">
+  <a href="#validation-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Thresholds
+        Validation report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary header
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#result-indicators" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#category-sections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Result indicators
+        Category sections
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#issues-list" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#per-issue-controls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issues list
+        Per-issue controls
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1174,6 +1202,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#thresholds-and-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thresholds and options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#running-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1185,35 +1224,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#thresholds" class="md-nav__link">
+  <a href="#validation-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Thresholds
+        Validation report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary header
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#result-indicators" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#category-sections" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Result indicators
+        Category sections
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#issues-list" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#per-issue-controls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Issues list
+        Per-issue controls
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1246,53 +1302,143 @@
 
 
 <h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h1>
-<p>The <strong>Validation</strong> panel runs eight checks against every selected mesh object and reports the results as green (pass) or red (fail) indicators directly in the panel.</p>
+<p>The <strong>Validation</strong> panel scans mesh objects and produces a structured report with per-category scores, inline fix buttons, and an export-readiness gate.</p>
 <hr />
-<h2 id="running-validation">Running validation<a class="headerlink" href="#running-validation" title="Permanent link">&para;</a></h2>
-<p>Select one or more mesh objects, then click <strong>Run Validation</strong>. The scan is fast — it uses pure Python and bmesh with no operator calls. Results appear immediately below the button.</p>
-<div class="admonition tip">
-<p class="admonition-title">Run validation before every export</p>
-<p>It takes two seconds and catches the issues that cause broken imports. Make it part of your export habit.</p>
-</div>
-<hr />
-<h2 id="thresholds">Thresholds<a class="headerlink" href="#thresholds" title="Permanent link">&para;</a></h2>
-<p>Before running, you can adjust two thresholds that control when a warning is raised:</p>
-<p><strong>Max Polygons</strong> — objects with more faces than this value get flagged as high-poly. Default is <code>100,000</code>. Raise this for hero assets, lower it for background props.</p>
-<p><strong>Max Tex Size (px)</strong> — textures larger than this dimension (width or height) get flagged. Default is <code>4096</code>. Adjust based on your project's texture budget.</p>
-<hr />
-<h2 id="result-indicators">Result indicators<a class="headerlink" href="#result-indicators" title="Permanent link">&para;</a></h2>
-<p>After a run, eight indicators appear — one per check category. A green checkmark means no issues were found in that category. A red error icon means at least one issue was found.</p>
+<h2 id="thresholds-and-options">Thresholds and options<a class="headerlink" href="#thresholds-and-options" title="Permanent link">&para;</a></h2>
+<p>Before running, adjust the options in the <strong>Thresholds</strong> box to match your project's requirements:</p>
 <table>
 <thead>
 <tr>
-<th>Indicator</th>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Max Polygons</strong></td>
+<td>100,000</td>
+<td>Flag objects with more faces than this</td>
+</tr>
+<tr>
+<td><strong>Max Tex Size (px)</strong></td>
+<td>4096</td>
+<td>Flag textures larger than this dimension</td>
+</tr>
+<tr>
+<td><strong>Check UV Overlap</strong></td>
+<td>On</td>
+<td>Detect overlapping UV faces. UV0 overlap is a warning (often intentional tiling); UV1 lightmap overlap is an error (breaks baked lighting)</td>
+</tr>
+<tr>
+<td><strong>Check UV Padding</strong></td>
+<td>On</td>
+<td>Flag lightmap UV islands packed too close together (insufficient texel padding bleeds light at bake time)</td>
+</tr>
+<tr>
+<td><strong>Check Material Graph</strong></td>
+<td>On</td>
+<td>Validate material node graphs: surface shader connected, single Principled BSDF, standard PBR inputs present</td>
+</tr>
+<tr>
+<td><strong>Check Textures</strong></td>
+<td>On</td>
+<td>Validate texture color space, broken file references, and texel density relative to poly count</td>
+</tr>
+<tr>
+<td><strong>Show Explanations</strong></td>
+<td>On</td>
+<td>Show a greyed-out "Impact" and "Fix" hint under each issue explaining what happens in-engine if it is ignored</td>
+</tr>
+<tr>
+<td><strong>Marketplace Strict</strong></td>
+<td>Off</td>
+<td>Apply Fab / Unreal Marketplace submission rules — missing lightmap UV, non-power-of-two textures, missing collision, and default names become Errors instead of Warnings</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="running-validation">Running validation<a class="headerlink" href="#running-validation" title="Permanent link">&para;</a></h2>
+<p><strong>Run Validation</strong> scans all mesh objects in the scene. Three scope buttons next to it narrow the scan:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Run Validation</strong></td>
+<td>All mesh objects in the scene</td>
+</tr>
+<tr>
+<td><strong>Selection</strong></td>
+<td>Only the currently selected objects</td>
+</tr>
+<tr>
+<td><strong>Collection</strong></td>
+<td>Only objects in the active collection</td>
+</tr>
+<tr>
+<td><strong>Scene</strong></td>
+<td>Entire scene (same as Run Validation)</td>
+</tr>
+</tbody>
+</table>
+<p>The scan uses pure Python and bmesh — no operator calls. Results appear immediately.</p>
+<div class="admonition tip">
+<p class="admonition-title">Run validation before every export</p>
+<p>It takes a few seconds and catches the issues that cause broken imports. Make it part of your export habit.</p>
+</div>
+<p><strong>Export Report (JSON/CSV)</strong> saves the full issue list to disk in both formats — useful for integrating with pipeline tools or for bug reports.</p>
+<hr />
+<h2 id="validation-report">Validation report<a class="headerlink" href="#validation-report" title="Permanent link">&para;</a></h2>
+<p>After a run, the panel shows a summary header followed by eight collapsible category sections.</p>
+<h3 id="summary-header">Summary header<a class="headerlink" href="#summary-header" title="Permanent link">&para;</a></h3>
+<p>The header shows three things at a glance:</p>
+<ul>
+<li><strong>Scene Quality</strong> — a 0–100 score averaged across all assets and all categories. A fully clean scene scores 100.</li>
+<li><strong>Export Gate</strong> — the overall export readiness status and its composite score:</li>
+<li><code>EXPORT READY</code> — no errors</li>
+<li><code>READY WITH WARNINGS</code> — warnings only; export is allowed but issues are present</li>
+<li><code>NOT EXPORT READY</code> — at least one error; fix errors before exporting</li>
+<li><strong>Error / Warning / Info counts</strong> — total counts across all categories</li>
+<li><strong>Profile</strong> — the active engine preset and whether Marketplace Strict is on (e.g. <code>Unreal · Marketplace</code>)</li>
+</ul>
+<h3 id="category-sections">Category sections<a class="headerlink" href="#category-sections" title="Permanent link">&para;</a></h3>
+<p>Each of the eight categories collapses and expands independently:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
 <th>What is checked</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Scale</strong></td>
-<td>Unapplied scale or rotation, negative scale, non-uniform scale, inherited parent scale</td>
+<td><strong>Geometry</strong></td>
+<td>N-gons, non-manifold edges (holes), zero-area faces, loose vertices, poly count, tris ratio</td>
+</tr>
+<tr>
+<td><strong>Transform</strong></td>
+<td>Unapplied scale or rotation, negative scale, non-uniform scale, origin not at world zero, inherited parent scale</td>
+</tr>
+<tr>
+<td><strong>Normals</strong></td>
+<td>Inverted or inconsistent face normals</td>
 </tr>
 <tr>
 <td><strong>UV</strong></td>
-<td>Missing UV map, UV coords outside the 0–1 range</td>
-</tr>
-<tr>
-<td><strong>Lightmap UV</strong></td>
-<td>Presence of a second UV channel (required for baked lighting)</td>
-</tr>
-<tr>
-<td><strong>Mesh</strong></td>
-<td>N-gons, non-manifold edges (holes), zero-area faces, loose vertices, poly count</td>
+<td>Missing UV map, UV coords outside 0–1 range, UV overlap (UV0 warning, UV1 error), UV padding on lightmap channel, missing lightmap UV (second channel)</td>
 </tr>
 <tr>
 <td><strong>Materials</strong></td>
-<td>Missing material slots, empty material slots</td>
+<td>Missing or empty material slots, material node graph issues (disconnected shader, multiple Principled BSDF nodes, missing PBR inputs)</td>
 </tr>
 <tr>
 <td><strong>Textures</strong></td>
-<td>Missing texture files on disk, non-power-of-two texture sizes, oversized textures</td>
+<td>Missing texture files on disk, non-power-of-two sizes, oversized textures, incorrect color space (Base Color should be sRGB, Normal should be Non-Color), excessive texel density for poly count</td>
 </tr>
 <tr>
 <td><strong>Naming</strong></td>
@@ -1304,17 +1450,22 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="issues-list">Issues list<a class="headerlink" href="#issues-list" title="Permanent link">&para;</a></h2>
-<p>If any issues were found, a scrollable <strong>Issues</strong> section appears below the indicators with a plain-text description of each problem and the object it belongs to — for example:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Rock_01: Unapplied scale (1.500, 1.500, 1.500)
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Barrel_02: No UV maps — textures won&#39;t work in engine
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Barrel_02: Missing lightmap UV (2nd UV channel)
-</span></code></pre></div>
-<p>The list is capped at 25 lines in the panel. For long lists, use the <a href="../fix/">Fix</a> panel's <strong>Fix All</strong> button to resolve everything at once.</p>
+<p>The category header shows the category score (0–100), error count, and warning count. Sections with no issues show a green checkmark.</p>
+<h3 id="per-issue-controls">Per-issue controls<a class="headerlink" href="#per-issue-controls" title="Permanent link">&para;</a></h3>
+<p>Each issue in an expanded section has two inline buttons:</p>
+<ul>
+<li><strong>Select Problem</strong> (crosshair icon) — selects the affected object and, where possible, enters Edit Mode with the problematic vertices, edges, or faces highlighted.</li>
+<li><strong>Auto-fix</strong> (tool icon) — runs the fix operator for that specific issue. The button turns red when the fix is destructive (changes geometry). Hovering shows the operator name.</li>
+</ul>
+<p>When <strong>Show Explanations</strong> is on, a greyed-out block appears under each issue with:</p>
+<ul>
+<li><strong>Impact</strong> — what happens in-engine if the issue is left unfixed</li>
+<li><strong>Fix</strong> — what to do (manual or operator-based)</li>
+<li><strong>Auto-fix label</strong> — whether the one-click fix is safe or destructive</li>
+</ul>
 <hr />
 <h2 id="after-fixing">After fixing<a class="headerlink" href="#after-fixing" title="Permanent link">&para;</a></h2>
-<p>After running the Fix operators, click <strong>Run Validation</strong> again to confirm all indicators are green before exporting. Validation does not run automatically after a fix — you trigger it manually.</p>
+<p>The Fix operators (and Fix All) re-run validation automatically after completing. If you fix issues manually in Edit Mode, click <strong>Run Validation</strong> again to refresh the report.</p>
 <p>→ Full description of every check: <a href="../../reference/validation-checks/">Validation Checks</a></p>
 
 
