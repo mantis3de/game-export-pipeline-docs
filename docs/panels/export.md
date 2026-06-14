@@ -1,6 +1,6 @@
 # Export
 
-The **Export** panel is the final step. It shows a summary of the active engine preset and provides two export buttons — single object and batch.
+The **Export** panel is the final step. It shows a summary of the active engine preset and provides the **Export Selected** button.
 
 ---
 
@@ -19,21 +19,23 @@ This is a read-only reminder. To change it, go back to the [Output](output.md) p
 
 ## Export folder warning
 
-If the export folder is not set, the panel shows an alert box and an inline path field. Set the folder here or in the [Output](output.md) panel — the export buttons do not appear until a valid path is entered.
+If the export folder is not set, the panel shows an alert box and an inline path field. Set the folder here or in the [Output](output.md) panel — the export button does not appear until a valid path is entered.
 
 ---
 
-## Export buttons
+## Export Selected
 
-**Export Active Object** exports the active (last selected) mesh as a single FBX file. The filename is `<prefix><object name>.fbx`. Any `UCX_` and `UBX_` collision meshes with a matching name are included in the same FBX automatically.
+**Export Selected** adapts its behaviour to how many objects are selected and whether [Better FBX](fbx-tools.md) is installed:
 
-If the [Better FBX Importer & Exporter](../panels/fbx-tools.md) addon is installed, this button opens Better FBX's full export dialog instead of exporting silently. All of Better FBX's settings — FBX version, axis preset, smoothing groups, tangents, and more — are available there.
+| Situation | Behaviour |
+|---|---|
+| **One object selected + Better FBX installed** | Opens Better FBX's full export dialog. All Better FBX settings — FBX version, axis preset, smoothing groups, tangents, and more — are available there. |
+| **Multiple objects selected** | Silent batch export — one FBX per object, no dialog. |
+| **Better FBX not installed** | Silent export using Blender's built-in FBX exporter, regardless of how many objects are selected. |
 
-**Batch Export Selected** exports every selected mesh object as a separate FBX. Each object is exported individually with its associated collision meshes. Enable **Subfolders per Collection** (the toggle below the button) to place each FBX inside a subfolder named after its collection — useful when assets are organised into collections in the Outliner.
+In all cases, any `UCX_` and `UBX_` collision meshes with a matching name are included in the same FBX as their render mesh automatically — you do not need to select them.
 
-Batch export always runs silently. When Better FBX is installed it is used automatically with axis settings matched to the active engine preset.
-
-A **progress bar** appears in the Blender header while batch export is running. When all objects are processed, a **summary popup** appears showing how many assets were exported, any warnings, and a list of failed objects if applicable.
+When exporting multiple objects, a **progress bar** appears in the Blender header while export is running. When all objects are processed, a **summary popup** appears showing how many assets were exported, any warnings, and a list of failed objects if applicable.
 
 !!! note "Collision meshes are included automatically"
     You do not need to select collision meshes separately. The exporter finds `UCX_<name>` and `UBX_<name>` objects and includes them in the same FBX as the render mesh.

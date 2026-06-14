@@ -2,14 +2,21 @@
 
 The **Scene Organization** panel groups render meshes and their collision objects into Blender collections, then lets the batch exporter use those collections as subfolders.
 
-!!! note "Colliders as Children must be off"
-    Scene Organization is not available when **Colliders as Children** is enabled in the [Collision Setup](collision-setup.md) panel. Disable it first — the panel will show a reminder if it is on.
+The collision workflow adapts automatically to the active engine preset — no manual toggle needed:
+
+| Engine | Collision behaviour |
+|---|---|
+| **Unity** | Collision meshes are parented as children of the render mesh |
+| **Unreal Engine** | Render mesh and its collision objects are grouped into a named collection automatically on generate |
+| **Godot / Custom** | Collision meshes are created at scene root alongside the render mesh |
+
+The **Organize into Collections** and **Dissolve** buttons are most useful for Unreal Engine workflows, or when you want explicit collection-based subfolder export regardless of engine.
 
 ---
 
 ## Collections
 
-**Organize into Collections** scans the scene and groups each render mesh together with its `UCX_` and `UBX_` collision objects into a collection named after the render mesh. Objects that already belong to a collection are skipped.
+**Organize into Collections** scans the scene and groups each render mesh together with its `UCX_` and `UBX_` collision objects into a collection named after the render mesh. Objects that already belong to the correct collection are skipped.
 
 Before:
 ```
@@ -37,7 +44,7 @@ Scene Collection
 
 ## Batch Export with subfolders
 
-When **Collection as Catalog (subfolder)** is enabled, the **Batch Export Selected** button in the [Export](export.md) panel creates a subfolder for each collection and places the corresponding FBX inside it.
+When **Collection as Catalog (subfolder)** is enabled, the **Export Selected** button in the [Export](export.md) panel creates a subfolder for each collection and places the corresponding FBX inside it.
 
 For example, with collections `Rock_01` and `Barrel_02` and an export path of `//GameAssets`:
 
