@@ -675,6 +675,8 @@
       
         
       
+        
+      
     
     
     
@@ -847,6 +849,34 @@
     
   
     Batch Scan & HTML Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/release-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Gate & Regressions
   
 
     
@@ -1645,6 +1675,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#non-standard-surface-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-standard surface shader
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1711,6 +1752,17 @@
     <span class="md-ellipsis">
       
         Excessive texel density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mismatched-texture-resolutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mismatched texture resolutions
       
     </span>
   </a>
@@ -2647,6 +2699,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#non-standard-surface-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-standard surface shader
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2713,6 +2776,17 @@
     <span class="md-ellipsis">
       
         Excessive texel density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mismatched-texture-resolutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mismatched texture resolutions
       
     </span>
   </a>
@@ -3074,6 +3148,12 @@
 <p><strong>Severity: Info / Warning</strong></p>
 <p>Standard PBR texture inputs are absent from the Principled BSDF: Base Color and Roughness are flagged as warnings; Normal and Metallic are flagged as informational. Having these inputs unconnected is not always a problem, but it is unusual for a complete game-ready material.</p>
 <p>Disabled when <strong>Check Material Graph</strong> is off.</p>
+<h3 id="non-standard-surface-shader">Non-standard surface shader<a class="headerlink" href="#non-standard-surface-shader" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Info</strong></p>
+<p>The active Material Output is driven by a custom node group instead of a Principled BSDF. Game engines bake materials from the Principled BSDF, so a custom shader (a stylised/toon setup, a reusable node group, etc.) will not import as authored — it typically falls back to a flat colour or a missing/pink material.</p>
+<p>Informational only, so it never blocks export. On a Procedural/Shader asset type this is expected.</p>
+<p><strong>Fix:</strong> Drive the surface with a Principled BSDF, or bake your custom shader down to PBR textures before exporting.</p>
+<p>Disabled when <strong>Check Material Graph</strong> is off.</p>
 <hr />
 <h2 id="textures">Textures<a class="headerlink" href="#textures" title="Permanent link">&para;</a></h2>
 <h3 id="missing-texture-file-on-disk">Missing texture file on disk<a class="headerlink" href="#missing-texture-file-on-disk" title="Permanent link">&para;</a></h3>
@@ -3097,6 +3177,12 @@
 <h3 id="excessive-texel-density">Excessive texel density<a class="headerlink" href="#excessive-texel-density" title="Permanent link">&para;</a></h3>
 <p><strong>Severity: Info</strong></p>
 <p>The texture resolution is very high relative to the mesh's polygon count — the ratio of <code>(max texture dimension)² / triangle count</code> exceeds the <strong>Texels per Triangle Warn</strong> threshold. This usually means either the texture is oversized for the mesh detail, or the mesh is too low-poly to justify the texture budget.</p>
+<p>Disabled when <strong>Check Textures</strong> is off.</p>
+<h3 id="mismatched-texture-resolutions">Mismatched texture resolutions<a class="headerlink" href="#mismatched-texture-resolutions" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Info</strong></p>
+<p>The image maps used by a single material are at very different resolutions — the largest is at least 4× the smallest (for example a 4096px base colour paired with a 256px normal map). This usually signals an authoring slip: the small map looks blurry while the large one wastes memory.</p>
+<p>Informational only.</p>
+<p><strong>Fix:</strong> Author the maps of a material at a consistent resolution.</p>
 <p>Disabled when <strong>Check Textures</strong> is off.</p>
 <hr />
 <h2 id="naming">Naming<a class="headerlink" href="#naming" title="Permanent link">&para;</a></h2>

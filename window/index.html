@@ -788,6 +788,8 @@
       
         
       
+        
+      
     
     
     
@@ -960,6 +962,34 @@
     
   
     Batch Scan & HTML Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/release-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Gate & Regressions
   
 
     
@@ -1805,7 +1835,7 @@
 
 
 <h1 id="the-asset-preflight-window">The Asset Preflight Window<a class="headerlink" href="#the-asset-preflight-window" title="Permanent link">&para;</a></h1>
-<p>Everything to do with validation now lives in one place: a centered, tabbed window opened from the <strong>Open Asset Preflight</strong> button at the top of the <strong>GameExport</strong> sidebar.</p>
+<p>Everything to do with validation now lives in one place: a centered, tabbed window opened from the <strong>Open Asset Preflight</strong> button at the top of the <strong>GameExport</strong> sidebar, or from the always-visible <strong>Preflight</strong> button in the 3D viewport header (top bar). The header button stays put through any operation and turns <strong>red</strong> when the last scan found errors, so the gate status is visible from anywhere.</p>
 <p>It replaces the old scattered <em>Validation</em> and <em>Fix</em> panels. The interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel — see <a href="../panels/output/">Viewport Tools</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Docked or floating — your choice</p>
@@ -1906,6 +1936,7 @@
 <li><strong>Summary</strong> — export gate score + status, scene quality, error/warning/info counts, per-category scores.</li>
 <li><strong>Objects to fix</strong> — a checklist of validated objects (tick which to repair); <strong>All</strong> / <strong>Errors only</strong> quick-selects.</li>
 <li><strong>Fix Safe Issues</strong> — every <em>deterministic</em> fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally <strong>not</strong> auto-applied — guessing at topology can quietly make a mesh worse.</li>
+<li><strong>Backup before destructive fix</strong> — an optional toggle. When on, the destructive geometry repairs (triangulate, fill holes, remove loose verts / zero-area faces) first copy the affected meshes into a hidden <code>GEP_Backup_&lt;time&gt;</code> collection, so you can recover the original geometry. The collection is excluded from the view layer so it won't be selected or exported.</li>
 <li><strong>Issue list</strong> — grouped by object or category. Each issue has:<ul>
 <li><strong>Select &amp; Focus</strong> — selects the exact components, opens the right editor (UV / Shader / Material tab) and <strong>frames the viewport</strong> on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.</li>
 <li><strong>Fix This</strong> — that issue's safe fix (shown only for deterministic fixes).</li>
