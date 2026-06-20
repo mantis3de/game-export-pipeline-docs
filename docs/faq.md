@@ -36,6 +36,41 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
 
 ---
 
+## Asset Preflight window & profiles
+
+??? question "Where did the Validation and Fix panels go?"
+    They're now inside the **Asset Preflight** window — click **Open Asset Preflight** at the top of the GameExport tab. Validation lives in **Scan**, results and fixes in **Results**. The viewport tools (Collision, LOD, Quick Reset, Export, FBX) are still in the N-panel.
+
+??? question "The window closes when I click Apply Profile / Scan Folder / Fix."
+    That's a Blender limitation: operator buttons in a dialog popup close it after running. Tab switches and **Run Validation** keep it open (they act in place). Just reopen the window with one click — your results are still there.
+
+??? question "I changed a threshold but the report still shows the old result."
+    The report reflects the **last** validation run. Change settings, then click **Run Validation** again. Also check you edited the right field — e.g. *UV Padding (texels)* in the Rules tab, not *LOD Bounds Tolerance*.
+
+??? question "What's the difference between 'Rules file' and 'Export Report'?"
+    **Rules file** is an **input** — the path to a `profiles.json` with your team's rules. **Export Report** is an **output** — it saves the validation *results* to disk. Two different files, two directions. See [Validation Profiles](features/profiles.md).
+
+??? question "How do I make my whole team use the same rules?"
+    Commit a `profiles.json` to your project repo, point each artist's addon at it via **Presets → Rules file**, and use the same `--profiles` in CI. Everyone validates identically. See [Validation Profiles](features/profiles.md).
+
+??? question "Score is 29 but my assets look fine — why?"
+    There are two scores. **Export Gate** is pooled — one blocking error tanks it. **Scene Quality** is the mean per-asset and stays high if most assets are clean. A low gate + high quality means *one* thing is blocking, not that everything is bad. See [Core Concepts](getting-started/concepts.md).
+
+---
+
+## Batch & CI
+
+??? question "Does the batch scan mess with my open scene?"
+    No. Each file is imported into a throwaway scene, validated, and removed. Your open scene is untouched. See [Batch Scan](features/batch-scan.md).
+
+??? question "The batch found no files."
+    Only **FBX / glTF / GLB / OBJ** are scanned. Check the folder path and the **Subfolders** toggle in the Scope tab.
+
+??? question "How do I block bad assets in CI automatically?"
+    Run `preflight_cli.py` headless — it exits non-zero on failures, so the job fails. See [CI Gate](workflows/ci-gate.md).
+
+---
+
 ## Validation
 
 ??? question "Validation shows 'No collision mesh' for every object. Do I need collision on everything?"
@@ -61,7 +96,7 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
     For Unity, the collision mesh must be parented to the render mesh inside the FBX hierarchy. Enable **Colliders as Children** in the Collision Setup panel before generating collision, then re-export.
 
 ??? question "Can I have multiple convex hulls for one mesh?"
-    Yes. Create the extra hull meshes manually in Blender and name them `UCX_<name>_00`, `UCX_<name>_01`, etc. Unreal Engine merges them into a compound collision shape on import. See [Collision Naming](reference/collision-naming.md).
+    Yes. Create the extra hull meshes manually in Blender and name them `UCX_<name>_00`, `UCX_<name>_01`, etc. Unreal Engine merges them into a compound collision shape on import. The addon recognises a broad, configurable set of collider names — see [Collider Naming](reference/collider-naming.md).
 
 ---
 

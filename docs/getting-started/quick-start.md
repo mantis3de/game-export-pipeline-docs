@@ -1,106 +1,70 @@
-# Quick Start
+# Quick Start (5 Minutes)
 
-## Export Your First Asset in 5 Minutes
+From a raw mesh to an engine-ready, validated asset — using the **Asset Preflight** window.
 
-This guide takes you from a default Blender cube to a validated, engine-ready FBX — using only the **GameExport** panel. Each step is roughly a minute.
-
-!!! tip "Before you begin"
-    Make sure the **GameExport** tab is visible in the N-Panel. If it isn't, see [Installation](installation.md).
+!!! tip "Restart after installing"
+    Blender caches addon code. After installing or updating, **fully quit and reopen Blender** before testing.
 
 ---
 
-### Minute 1 — Set your target engine and export folder
+## 1. Open the window
 
-1. Press **N** in the 3D Viewport to open the N-Panel and click the **GameExport** tab.
-2. In the **Game Export Pipeline** panel at the top, click the folder icon next to the path field and choose where you want the FBX files to land (e.g. `//GameAssets`).
-3. Set **Engine** to your target: **Unity**, **Unreal Engine**, or **Godot**.
-4. Optionally set a **Prefix** (default `SM_`) — this is prepended to every exported filename.
+1. In the 3D Viewport, press **N** to open the sidebar and select the **GameExport** tab.
+2. Click the big **Open Asset Preflight** button at the top.
 
-!!! info "What the engine preset does"
-    Each preset applies the correct forward axis, up axis, and scale factor automatically. You never need to remember that Unreal wants `X` forward and `Z` up — just pick the engine. See [Engine Presets](../reference/engine-presets.md) for the full table.
+A centered window opens with five tabs: **Presets · Scope · Rules · Scan · Results**.
 
 ---
 
-### Minute 2 — Run validation
+## 2. Pick your engine (Presets tab)
 
-1. Open the **Validation** panel (click to expand it in the N-Panel).
-2. Select the object you want to export.
-3. Click **Run Validation**.
+1. Go to the **Presets** tab.
+2. Choose a **Profile** from the dropdown — e.g. `Unity — Desktop` or `Unreal — Desktop`.
+3. Click **Apply Profile**.
 
-The panel shows eight green or red indicators — Scale, UV, Lightmap UV, Mesh, Materials, Textures, Naming, and Collision. Any red indicator means there is at least one issue in that category. Issues are listed below the indicators.
-
-!!! tip "Nothing selected?"
-    Validation runs on the current selection. If nothing is selected, select your mesh first with **A** (select all) or click the object.
+The profile sets the engine axes/scale, poly and texture thresholds, naming policy, and which issues are errors vs warnings. See [Validation Profiles](../features/profiles.md).
 
 ---
 
-### Minute 3 — Fix issues
+## 3. Validate the scene (Scan tab)
 
-If validation found problems, open the **Fix** panel. You have two options:
+1. Select the mesh(es) you want to check (selecting nothing checks the whole scene).
+2. Go to the **Scan** tab and click **Run Validation**.
 
-- **Fix individual issues** — use the targeted buttons (e.g. **Apply Scale / Rotation**, **Add UV Map**, **Fix Naming / Add Prefix**) to fix one category at a time.
-- **Fix All Issues** — the large button at the bottom of the Fix panel applies every available fix in the correct order.
-
-After fixing, run **Run Validation** again to confirm all indicators are green.
-
-!!! note "Fix All is safe to run on clean assets"
-    Fix All skips operations that are not needed — it won't re-apply an already-applied scale, re-triangulate an already-triangulated mesh, or add a UV map if one already exists.
+The window stays open and the **Results** tab fills in.
 
 ---
 
-### Minute 4 — Generate collision (optional)
+## 4. Read and fix (Results tab)
 
-If your asset needs physics collision in the engine:
+The **Results** tab shows:
 
-1. Select the render mesh.
-2. Open the **Collision Setup** panel.
-3. Click **UCX_ Hull** for a convex hull (good for most props) or **UBX_ Box** for a tight bounding box (good for crates and architectural pieces).
+- a **0–100 score** and an export status: `EXPORT READY` / `READY WITH WARNINGS` / `NOT EXPORT READY`,
+- per-category scores (geometry, transform, UV, materials, …),
+- a grouped, expandable issue list.
 
-The collision mesh is created and named `UCX_YourObject` or `UBX_YourObject` automatically, which both Unity and Unreal Engine recognise on import.
+For any issue:
 
-→ Full details: [Collision Setup](../panels/collision-setup.md)
+- **Select & Focus** jumps to the exact faces/edges and **zooms the viewport** to them (flipped faces light up red).
+- **Fix This** runs that issue's repair; **Fix Safe Only** runs every non-destructive fix on the ticked objects.
 
----
+!!! warning "Re-validate after changes"
+    The report reflects the **last** run. After changing a threshold or fixing in Edit Mode, click **Run Validation** again.
 
-### Minute 5 — Export
-
-1. Open the **Export** panel.
-2. Confirm the engine label shown at the top of the panel matches your target.
-3. Click **Export Active Object** to export the selected mesh, or **Batch Export Selected** to export every selected object as a separate FBX.
-
-The FBX lands in the folder you set in Minute 1. Textures are copied to a `/Textures` subfolder if **Collect Textures** is on.
-
-!!! success "Done"
-    Your FBX is engine-ready — correct axes, applied transforms, triangulated, with collision and textures alongside it.
+Repeat until you reach **EXPORT READY**.
 
 ---
 
-## Where to go next
+## 5. Export
 
-<div class="grid cards" markdown>
+Use the **Export** viewport panel (or your own pipeline) to write the FBX with the correct axes and scale for the active engine. See [Export](../panels/export.md).
 
--   :material-check-circle: **Understand validation**
+---
 
-    ---
+## Next steps
 
-    See the full list of checks and what each one looks for in [Validation Checks](../reference/validation-checks.md).
-
--   :material-cube-outline: **Collision in depth**
-
-    ---
-
-    Learn the UCX/UBX naming convention and Unity vs Unreal differences in [Collision Naming](../reference/collision-naming.md).
-
--   :material-folder-multiple: **Batch export a whole scene**
-
-    ---
-
-    Organise objects into collections and export each one to its own subfolder in [Scene Organization](../panels/scene-organization.md).
-
--   :material-help-circle: **Got questions?**
-
-    ---
-
-    Browse the [FAQ](../faq.md).
-
-</div>
+- Scan a whole **folder** of exports into a shareable report → [Batch Scan & HTML Report](../features/batch-scan.md).
+- Generate and preview **LODs** → [LOD Tools](../features/lod.md).
+- Share one ruleset across the **team** → [Validation Profiles](../features/profiles.md).
+- Gate assets in **CI** → [Headless CLI](../features/cli.md).
+- Follow a full real-world run-through → [Workflows](../workflows/scene-asset.md).

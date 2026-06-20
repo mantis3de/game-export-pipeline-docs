@@ -31,7 +31,7 @@ The collision workflow adapts automatically to the active engine preset — no m
 
 Both buttons create a new mesh object named `UCX_<original name>` or `UBX_<original name>`. If a collision mesh with that name already exists it is replaced.
 
-→ How engines interpret these names: [Collision Naming](../reference/collision-naming.md)
+→ How engines interpret these names, and the full set of collider conventions the validator recognises (configurable): [Collider Naming](../reference/collider-naming.md)
 
 ---
 

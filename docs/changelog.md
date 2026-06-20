@@ -4,7 +4,55 @@ All notable changes are documented here. The format follows [Keep a Changelog](h
 
 ---
 
-## [1.0.0] — Current
+## [Unreleased] — Asset Preflight
+
+A major workflow update turning the panel sprawl into one tabbed window and adding
+team / pipeline tooling.
+
+### Budgets & dashboard (Budget Manager)
+- **Asset budgets** — per-asset triangle / material (draw-call) / texture-VRAM limits, a **Budget** category + score, and **computed optimization savings** ("downscale 2 textures → save ~48 MB").
+- **Project Health dashboard** — whole-scene totals vs project budget as used / limit / % bars + **Top expensive** assets, in the window and the HTML report.
+- **Executive Summary** hero + **thumbnails** in the HTML report.
+- **Project presets** — Mobile Low/High, PC Indie, VR.
+
+### More
+- **Naming templates** + one-click auto-rename (`SM_{Category}_{Name}_{NN}`).
+- **Per-object / whole-scene Ignore** (mark intentional → `(ignored)` info).
+- **Asset Type** layer (PBR / Lightmap / Procedural / Kitbash-Atlas).
+- **Safe-only fixes** — destructive geometry auto-repair removed in favour of Select & Focus.
+- **Persistent tabbed N-panel** (docked; buttons don't dismiss it) alongside the window.
+- **CI package** (`ci/` — GitHub Action + pre-commit) + shareable rule-packs.
+
+### Asset Preflight window
+- One centered, tabbed window — **Presets · Scope · Rules · Scan · Results** — opened from a single **Open Asset Preflight** button. Replaces the old *Validation* and *Fix* panels. Interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel.
+
+### Validation Profiles
+- Editable, shareable [`profiles.json`](features/profiles.md) — engine/studio rule bundles (thresholds, checks, naming, collider conventions, per-issue severity overrides). Built-ins: **Unity Mobile/Desktop, Unreal, Godot 4, Marketplace**.
+- Point at a **project** `profiles.json` so a whole team validates identically; **Apply** / **Reload** in the Presets tab.
+
+### LOD tools
+- **LOD generator** with per-level decimation keep-% and on-screen switch-%, written as a switching policy onto LOD0.
+- **Live preview** — drive the visible level from a distance slider or the real viewport camera.
+- **LOD validation** — reduction monotonicity, material / UV consistency, bounds deviation, naming/chain gaps, and switch-threshold order.
+
+### Batch scan & HTML report
+- Scan a **folder** of exported assets (FBX/glTF/GLB/OBJ) into a self-contained, shareable [HTML report](features/batch-scan.md): health scores, export-risk level, **duplicate-geometry** detection, and a quality trend. **Delta scan** skips unchanged files.
+
+### Headless CLI
+- [`preflight_cli.py`](features/cli.md) runs the same scan via `blender --background` and exits non-zero on failures — a drop-in **CI gate**.
+
+### Collider recognition
+- Broad, **configurable** [collider naming](reference/collider-naming.md) (Unreal `UCX_/UBX_/USP_/UCP_`, `*.collision`, `*_col`, Godot `-colonly`, …), matched to the render mesh — no more false errors on imported colliders.
+
+### Select & Focus
+- Now **frames the 3D viewport** on the selected problem and enables the face-orientation overlay for flipped faces.
+
+### Report schema
+- Scene report bumped to **1.1** (additive: `scores.lod`, profile/collider config keys); batch report `batch-1.0`. See [Report Schema](reference/report-schema.md).
+
+---
+
+## [1.0.0]
 
 First public release.
 

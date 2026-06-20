@@ -5,9 +5,9 @@ hide:
 
 # Game Export Pipeline
 
-**A Blender addon that takes your mesh from scene to engine-ready FBX in one click — with built-in validation, auto-fix, collision generation, and presets for Unity, Unreal Engine, and Godot.**
+**Keep every asset inside your production budget — for Blender teams.** Validate, budget, LOD, batch-scan and export your meshes engine-ready for Unity and Unreal Engine (and Godot), from one tabbed window.
 
-Game Export Pipeline lives in the **N-Panel → GameExport** tab. It replaces the tedious pre-export checklist — scale applied? UVs unwrapped? Collision mesh named correctly? Textures power-of-two? — with a single validation run and an optional one-button fix, then exports with the correct axes and scale for your target engine.
+Game Export Pipeline turns the tedious pre-export checklist — scale applied? UVs unwrapped? lightmap UV present? *within the triangle / draw-call / texture-memory budget?* — into a single **Asset Preflight** window with per-asset and project **budgets**, profiles, safe one-click fixes, and a shareable batch report with a producer dashboard. It scales from a solo artist checking one mesh to a 10-person team gating every asset in CI.
 
 [Get started in 5 minutes :material-rocket-launch:](getting-started/quick-start.md){ .md-button .md-button--primary }
 [Installation :material-download:](getting-started/installation.md){ .md-button }
@@ -18,62 +18,77 @@ Game Export Pipeline lives in the **N-Panel → GameExport** tab. It replaces th
 
 <div class="grid cards" markdown>
 
--   :material-export: **[Export](panels/export.md)**
+-   :material-view-dashboard: **[Asset Preflight Window](window.md)**
 
     ---
 
-    Export the active object or batch-export a selection with engine-correct axes and scale. Auto-applies transforms, modifiers, and triangulation on the fly.
+    One centered, tabbed window — **Presets · Scope · Rules · Scan · Results** — replaces the old panel sprawl. Validate, pick objects, fix, and read the report in one place.
 
--   :material-check-circle: **[Validation](panels/validation.md)**
-
-    ---
-
-    Run eight checks in one click — scale, UVs, lightmap UV, mesh topology, materials, textures, naming, and collision. Results appear as green/red indicators directly in the panel.
-
--   :material-auto-fix: **[Fix](panels/fix.md)**
+-   :material-chart-box: **[Budgets & Dashboard](features/budgets.md)**
 
     ---
 
-    Fix individual issues or hit **Fix All** to apply scale, repair mesh topology, fill missing UVs, add materials, rename objects, and add collision in a single pass.
+    Per-asset and whole-project budgets for triangles, draw calls and texture memory, with a **Project Health** dashboard and used/limit/% bars. Over-budget findings come with computed savings.
 
--   :material-cube-outline: **[Collision Setup](panels/collision-setup.md)**
-
-    ---
-
-    Generate `UCX_` convex hull or `UBX_` box collision meshes in one click. Supports both Unreal (separate objects) and Unity (child objects) naming conventions.
-
--   :material-folder-multiple: **[Scene Organization](panels/scene-organization.md)**
+-   :material-tune-variant: **[Validation Profiles](features/profiles.md)**
 
     ---
 
-    Group render meshes and their colliders into named collections, then batch-export each collection into its own subfolder.
+    Engine-aware rule bundles (Unity Mobile/Desktop, Unreal, Godot, Marketplace, Mobile Low/High, PC Indie, VR) in an editable `profiles.json`. Commit one file to your repo and the whole team validates identically.
 
--   :material-reload: **[Quick Reset](panels/quick-reset.md)**
+-   :material-decagram: **[LOD Tools](features/lod.md)**
 
     ---
 
-    Pivot to bottom, origin to world zero, apply rotation and scale — the three steps you run before every export, done in one button.
+    Generate LOD chains with per-level decimation and on-screen switch %, preview them live in the viewport, and validate reduction, materials, UVs and switch thresholds.
+
+-   :material-folder-search: **[Batch Scan & HTML Report](features/batch-scan.md)**
+
+    ---
+
+    Point at a folder of exported assets, get a self-contained, shareable HTML report — health scores, risk level, duplicate-geometry detection, and a quality trend. No internet, no dependencies.
+
+-   :material-console: **[Headless CLI (CI Gate)](features/cli.md)**
+
+    ---
+
+    `blender --background --python preflight_cli.py` runs the same scan in CI and exits non-zero on failures, so bad assets never reach `main`.
+
+-   :material-cube-outline: **[Collision & Export](panels/collision-setup.md)**
+
+    ---
+
+    Generate `UCX_`/`UBX_` colliders, recognise a broad set of collider naming conventions, and export with engine-correct axes and scale.
 
 </div>
 
 ---
 
+## Two ways to validate
+
+- **In the scene (live).** Select meshes, open **Asset Preflight → Scan → Run Validation**, fix in **Results**. This is the artist's everyday loop.
+- **A folder (batch).** Point **Batch Scan** at exported files; each is imported into a throwaway scene, validated, and rolled up into a shareable HTML report. This is the lead's / CI's view.
+
+→ See [Core Concepts](getting-started/concepts.md) for how the two scores (export gate vs scene quality) and profiles fit together.
+
+---
+
 ## Why Game Export Pipeline
 
-- **Engine presets baked in.** Unity, Unreal Engine, and Godot each need different axis orientations and scale factors. Select your engine and forget about it.
-- **Validation before export.** Eight checks catch the issues that cause broken imports — missing UVs, unapplied scale, non-power-of-two textures, missing collision — before the FBX leaves Blender.
-- **Fix without leaving the panel.** Every validation issue has a corresponding Fix operator. Run individual fixes or hit **Fix All** to resolve everything in one shot.
-- **Collision that engines understand.** Generates `UCX_` and `UBX_` meshes using the Unreal/Unity naming convention so collision imports automatically alongside the render mesh.
-- **Viewport helpers.** A live forward-axis arrow and a 1m scale reference box keep you oriented without leaving Blender.
+- **Engine presets baked in.** Unity, Unreal and Godot need different axes and scale. Pick a profile and forget about it.
+- **Validation before export.** Geometry, transform, normals, UV, materials, textures, naming, collision and LOD checks catch broken imports before the FBX leaves Blender.
+- **Fix without leaving the window.** Every issue has a Select & Focus (jumps to and frames the problem) and a Safe / Destructive fix.
+- **Team-ready.** Shared `profiles.json`, shareable HTML reports, and a headless CI gate — built for small studios, not just solo artists.
+- **Deterministic & offline.** Reports are content-hashed and reproducible; nothing phones home.
 
 ---
 
 ## New here?
 
-Start with [Installation](getting-started/installation.md), then follow the [5-minute Quick Start](getting-started/quick-start.md) to export your first asset. Have a question? Check the [FAQ](faq.md).
+Start with [Installation](getting-started/installation.md), then the [5-minute Quick Start](getting-started/quick-start.md). Curious how it all fits together? Read [Core Concepts](getting-started/concepts.md). Got a question? Check the [FAQ](faq.md).
 
 ---
 
 ## License
 
-Game Export Pipeline is released under the **[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt)** — the same license as Blender itself. You are free to use, modify, and distribute it under the terms of the GPL.
+Game Export Pipeline is released under the **[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt)** — the same license as Blender itself.

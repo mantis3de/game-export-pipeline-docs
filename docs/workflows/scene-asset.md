@@ -1,0 +1,47 @@
+# Workflow — Validate a Scene Asset
+
+The everyday loop: a model is in your scene, make it engine-ready.
+
+> **▶ do · ✓ expect · ⚠ gotcha**
+
+1. **▶ Pick the engine.** Asset Preflight → **Presets** → choose `Unity — Desktop` / `Unreal — Desktop` (or Mobile) → **Apply Profile**.
+2. **▶ Select** the mesh(es). Nothing selected = whole scene.
+3. **▶ Validate.** **Scan** tab → **Run Validation**. ✓ The **Results** tab fills with a score and grouped issues.
+4. **▶ Jump to a problem.** Results → expand an issue → **Select & Focus**. ✓ The exact faces/edges are selected and the **viewport zooms to them** (flipped faces turn red).
+5. **▶ Fix.** **Fix Safe Only** (non-destructive) on ticked objects, or per-issue **Fix This**. ⚠ **Fix Everything** also runs destructive fixes (re-topo, deletions).
+6. **▶ Re-validate** after any change — the report is from the last run. Repeat until **EXPORT READY**.
+7. **▶ Export** via the Export panel / your pipeline.
+
+---
+
+## What to check per engine
+
+=== "Unity"
+
+    - Scale applied, 1 unit = 1 m, Y-up.
+    - Poly budget: Mobile ≤ 20k, Desktop ≤ 80k.
+    - Textures power-of-two, ≤ 2048 (mobile) / 4096 (desktop).
+    - Lightmap UV (UV2) **if** you bake lighting (Unity can also auto-generate — kept as info).
+    - Materials assigned, no empty slots; clean names.
+
+=== "Unreal"
+
+    - Z-up, X-forward; remember 1 m → 100 cm on import (engine preset handles axes).
+    - **Lightmap UV required** for static meshes with baked GI (profile makes it an error).
+    - `UCX_`/`UBX_` colliders recognised; collision present.
+    - `SM_` prefix on static meshes (auto-set).
+    - No non-manifold / degenerate geometry (breaks lightmap bake & collision).
+
+---
+
+## Prove it catches problems (negative tests)
+
+Make a dirty copy and confirm each is flagged:
+
+- Leave scale at 0.01 / 100 → Unapplied Scale.
+- Mirror an object → Negative Scale (**error**).
+- Delete a face / rip an edge → Non-manifold (**error**).
+- Remove the UV map → Missing UV (**error**; Missing Lightmap on Unreal).
+- Relink a texture to a missing path → Missing Texture File (**error**).
+- 4K texture on a tiny prop → oversized / texel-per-tri warning.
+- Name something `Cube` or `Wall 01` (space) → Default Name / Invalid Chars.

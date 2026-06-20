@@ -2,78 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/api/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/architecture/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/changelog/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/faq/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/window/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/features/batch-scan/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/features/budgets/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/features/cli/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/features/lod/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/features/naming/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/features/profiles/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/getting-started/concepts/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/getting-started/installation/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/getting-started/quick-start/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/collision-setup/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/export/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/fbx-tools/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/fix/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/individual-steps/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/output/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/quick-reset/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/scene-organization/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/panels/validation/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/reference/collider-naming/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/reference/collision-naming/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/reference/engine-presets/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/reference/profiles-reference/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/reference/report-schema/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://mantis3de.github.io/game-export-pipeline/reference/validation-checks/</loc>
-         <lastmod>2026-06-14</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/workflows/batch-team/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/workflows/ci-gate/</loc>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://mantis3de.github.io/game-export-pipeline/workflows/scene-asset/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
 </urlset>

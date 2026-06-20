@@ -101,18 +101,32 @@ nav:
   - Getting Started:
       - Installation: getting-started/installation.md
       - Quick Start (5 Minutes): getting-started/quick-start.md
-  - Panels:
+      - Core Concepts: getting-started/concepts.md
+  - The Asset Preflight Window: window.md
+  - Features:
+      - Budgets & Dashboard: features/budgets.md
+      - Validation Profiles: features/profiles.md
+      - Naming Templates: features/naming.md
+      - LOD Tools: features/lod.md
+      - Batch Scan & HTML Report: features/batch-scan.md
+      - Headless CLI (CI Gate): features/cli.md
+  - Viewport Tools:
       - Output & Engine: panels/output.md
       - Quick Reset: panels/quick-reset.md
       - Individual Steps: panels/individual-steps.md
       - Collision Setup: panels/collision-setup.md
-      - Validation: panels/validation.md
-      - Fix: panels/fix.md
+      - Scene Organization: panels/scene-organization.md
       - Export: panels/export.md
       - FBX Tools: panels/fbx-tools.md
   - Reference:
       - Validation Checks: reference/validation-checks.md
-      - Collision Naming: reference/collision-naming.md
+      - Collider Naming: reference/collider-naming.md
+      - Profiles Reference: reference/profiles-reference.md
       - Engine Presets: reference/engine-presets.md
+      - Report Schema: reference/report-schema.md
+  - Workflows:
+      - Validate a Scene Asset: workflows/scene-asset.md
+      - Batch + Team Report: workflows/batch-team.md
+      - CI Gate: workflows/ci-gate.md
   - FAQ: faq.md
   - Changelog: changelog.md

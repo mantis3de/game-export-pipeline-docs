@@ -261,6 +261,34 @@ When **Strict Naming (ASCII)** is enabled, non-ASCII characters (ą, é, ś, etc
 
 **Fix:** Rename the object to use only safe characters, or use **Fix → Fix Naming / Add Prefix** to strip problematic characters automatically.
 
+### Off naming convention
+**Severity: Warning**
+
+A naming template is set (e.g. `SM_{Category}_{Name}_{NN}`) and the object's name doesn't match it. Only runs when a template is configured.
+
+**Fix:** Use **Presets → Apply Naming Template** to rename to the convention. See [Naming Templates](../features/naming.md).
+
+---
+
+## Budget
+
+These checks run when **Check Budgets** is on and compare each asset to the per-asset budget for the target. See [Budgets & Dashboard](../features/budgets.md).
+
+### Over triangle budget
+**Severity: Warning** *(Error on tight profiles)*
+
+The asset's triangle count exceeds the budget. The message includes a "decimate or build LODs" hint.
+
+### Over material budget
+**Severity: Warning**
+
+The asset has more materials than the budget (≈ draw calls). The message suggests how many to merge.
+
+### Over texture memory budget
+**Severity: Warning**
+
+The asset's estimated texture memory (uncompressed upper bound) exceeds the budget. The message includes a **computed** saving, e.g. *"downscale 2 texture(s) to 2048px → save ~48 MB"*.
+
 ---
 
 ## Collision
@@ -268,10 +296,55 @@ When **Strict Naming (ASCII)** is enabled, non-ASCII characters (ą, é, ś, etc
 ### No collision mesh
 **Severity: Warning / Error**
 
-No `UCX_<name>` or `UBX_<name>` object exists for this mesh, and no collision child with those prefixes was found. The mesh will import without physics collision unless the engine generates its own.
+No collider was found for this render mesh under any recognised naming convention — `UCX_`/`UBX_`/`USP_`/`UCP_`, `*_collision`, `*.collision`, `*_col`, Godot `-colonly`, and others. The mesh will import without physics collision unless the engine generates its own.
 
-Becomes an Error when Marketplace Strict is on.
+Recognition is configurable (Presets → *Collider names*, or per profile), and colliders are matched to their render mesh automatically — so `Barrel_01.collision` pairs with `Barrel_01` even without the Unreal `UCX_` convention. Becomes an Error when Marketplace Strict is on.
 
 **Fix:** Use **Collision Setup → UCX_ Hull** or **UBX_ Box**, or use **Fix → Add Missing Collision**.
 
-→ [Collision Naming](collision-naming.md)
+→ [Collider Naming](collider-naming.md)
+
+---
+
+## LOD
+
+These checks run when the scene contains a LOD chain (`<Base>_LOD1`, `_LOD2`, …). See [LOD Tools](../features/lod.md).
+
+### LOD not reduced
+**Severity: Error**
+
+A LOD level has as many (or more) triangles than the previous level — usually a duplicated mesh that was never decimated, giving no runtime saving.
+
+**Fix:** Re-generate the LOD or lower its decimate ratio so each level has fewer triangles than the one above it.
+
+### LOD lost UV channel
+**Severity: Error**
+
+A LOD has fewer UV channels than LOD0 — it lost a lightmap or detail UV, so textures / baked lighting break on that level.
+
+### LOD material mismatch
+**Severity: Warning**
+
+A LOD uses different material slots than LOD0, so materials visibly swap when the level changes in-engine.
+
+### LOD bounds deviation
+**Severity: Warning**
+
+A LOD's bounding box differs from the base by more than the **Bounds Tolerance** — the silhouette pops in size when the level swaps (usually over-decimation).
+
+### LOD naming / chain gap
+**Severity: Warning**
+
+The `_LODn` numbering is broken — a missing base mesh, or a gap (e.g. LOD1 then LOD3).
+
+### LOD threshold order / cull
+**Severity: Error / Warning**
+
+The on-screen switch percentages are not strictly descending or out of range (error), or the cull fraction sits above the last switch point (warning).
+
+### LOD detail / switch mismatch
+**Severity: Warning**
+
+A heavily decimated level is set to activate while the object is still large on screen — its low-poly silhouette would pop in too close.
+
+→ Issue IDs used here (`LOD_NOT_REDUCED`, `LOD_THRESHOLD_ORDER`, …) can be remapped per profile in [`profiles.json`](profiles-reference.md).
