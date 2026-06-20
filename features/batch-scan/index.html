@@ -12,9 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/fix/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/batch-scan/">
       
       
+        <link rel="prev" href="../lod/">
+      
+      
+        <link rel="next" href="../cli/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Fix - Game Export Pipeline Documentation</title>
+        <title>Batch Scan & HTML Report - Game Export Pipeline Documentation</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fix" class="md-skip">
+        <a href="#batch-scan-html-report" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fix
+              Batch Scan & HTML Report
             
           </span>
         </div>
@@ -282,11 +286,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../features/budgets/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../budgets/" class="md-tabs__link">
           
   
   
@@ -308,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../output/" class="md-tabs__link">
+        <a href="../../panels/output/" class="md-tabs__link">
           
   
   
@@ -652,8 +658,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -673,19 +681,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -703,7 +714,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -721,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/budgets/" class="md-nav__link">
+      <a href="../budgets/" class="md-nav__link">
         
   
   
@@ -749,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/profiles/" class="md-nav__link">
+      <a href="../profiles/" class="md-nav__link">
         
   
   
@@ -777,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/naming/" class="md-nav__link">
+      <a href="../naming/" class="md-nav__link">
         
   
   
@@ -805,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/lod/" class="md-nav__link">
+      <a href="../lod/" class="md-nav__link">
         
   
   
@@ -830,10 +841,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../features/batch-scan/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Scan & HTML Report
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -849,6 +887,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-batch-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running a batch scan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-html-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The HTML report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delta-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delta scan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-teams-use-it-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What teams use it for
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -861,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cli/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   
@@ -964,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../output/" class="md-nav__link">
+      <a href="../../panels/output/" class="md-nav__link">
         
   
   
@@ -992,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick-reset/" class="md-nav__link">
+      <a href="../../panels/quick-reset/" class="md-nav__link">
         
   
   
@@ -1020,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../individual-steps/" class="md-nav__link">
+      <a href="../../panels/individual-steps/" class="md-nav__link">
         
   
   
@@ -1048,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collision-setup/" class="md-nav__link">
+      <a href="../../panels/collision-setup/" class="md-nav__link">
         
   
   
@@ -1076,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
+      <a href="../../panels/scene-organization/" class="md-nav__link">
         
   
   
@@ -1104,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../export/" class="md-nav__link">
+      <a href="../../panels/export/" class="md-nav__link">
         
   
   
@@ -1132,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fbx-tools/" class="md-nav__link">
+      <a href="../../panels/fbx-tools/" class="md-nav__link">
         
   
   
@@ -1603,10 +1705,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scale-transforms" class="md-nav__link">
+  <a href="#running-a-batch-scan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scale &amp; Transforms
+        Running a batch scan
       
     </span>
   </a>
@@ -1614,10 +1716,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh" class="md-nav__link">
+  <a href="#the-html-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mesh
+        The HTML report
       
     </span>
   </a>
@@ -1625,10 +1727,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#materials-naming" class="md-nav__link">
+  <a href="#delta-scan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Materials &amp; Naming
+        Delta scan
       
     </span>
   </a>
@@ -1636,43 +1738,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
+  <a href="#what-teams-use-it-for" class="md-nav__link">
     <span class="md-ellipsis">
       
-        UV
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collision" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Collision
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-safe-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix Safe Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-all-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix All Issues
+        What teams use it for
       
     </span>
   </a>
@@ -1696,68 +1765,46 @@
 
 
 
-<h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
-<p>The <strong>Fix</strong> panel provides targeted operators for each validation category, plus <strong>Fix Safe Issues</strong> and <strong>Fix All Issues</strong> buttons that run multiple fixes at once.</p>
+<h1 id="batch-scan-html-report">Batch Scan &amp; HTML Report<a class="headerlink" href="#batch-scan-html-report" title="Permanent link">&para;</a></h1>
+<p>Point the addon at a <strong>folder of exported assets</strong> and get a single, shareable HTML report — health scores, an export-risk level, duplicate-geometry detection, and a quality trend across runs. This is the lead's view and the "send it to the team" deliverable.</p>
 <hr />
-<h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
-<p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
-<p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then flips faces to restore correct normals when an odd number of axes are negative.</p>
-<hr />
-<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
-<p><strong>Fill Holes</strong> — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.</p>
-<p><strong>Triangulate N-gons</strong> — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.</p>
-<p><strong>Remove Loose Vertices</strong> — deletes vertices that are not connected to any edge or face.</p>
-<p><strong>Remove Zero-Area Faces</strong> — deletes degenerate faces whose calculated area is essentially zero (below <code>1e-8</code> m²).</p>
-<p><strong>Recalculate Normals</strong> — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.</p>
-<hr />
-<h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named after the object.</p>
-<p><strong>Remove Empty Mat Slots</strong> — removes material slots that have no material assigned. Empty slots cause extra draw calls in some engines.</p>
-<p><strong>Fix Naming / Add Prefix</strong> — renames the object and its mesh data to use the prefix set in the <a href="../output/">Output</a> panel. For example, with prefix <code>SM_</code>, an object named <code>Rock_01</code> becomes <code>SM_Rock_01</code>. Default Blender names (Cube, Sphere, etc.) are also replaced. When <strong>Strict Naming (ASCII)</strong> is enabled in settings, non-ASCII characters are stripped from the name.</p>
-<hr />
-<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
-<p><strong>Add UV Map (Smart Project)</strong> — if the object has no UV maps, creates one using Blender's <strong>Smart UV Project</strong> algorithm. The result is a reasonable starting point but is not a substitute for a hand-unwrapped UV map for hero assets.</p>
-<p><strong>Add Lightmap UV</strong> — adds a second UV channel using <strong>Lightmap Pack</strong>. See <a href="../individual-steps/#add-lightmap-uv">Individual Steps → Add Lightmap UV</a> for details.</p>
-<hr />
-<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Collision</strong> — if the object has no <code>UCX_</code> or <code>UBX_</code> collision mesh, generates a convex hull or box collision mesh. A small dialog lets you choose between UCX (convex hull, best for organic shapes) and UBX (box, best for simple props) before generating.</p>
-<hr />
-<h2 id="fix-safe-issues">Fix Safe Issues<a class="headerlink" href="#fix-safe-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix Safe Issues</strong> runs only the non-destructive fixes — the ones that cannot corrupt geometry:</p>
-<ul>
-<li>Fix negative (mirrored) scale</li>
-<li>Apply scale and rotation</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Recalculate normals</li>
-</ul>
-<p>Destructive operations (fill holes, triangulate n-gons, remove loose verts/zero-area faces, UV generation, collision, lightmap) are intentionally excluded. Use this when you want a quick cleanup without risking mesh changes.</p>
-<p>After the fixes complete, <strong>Validation runs automatically</strong>.</p>
-<hr />
-<h2 id="fix-all-issues">Fix All Issues<a class="headerlink" href="#fix-all-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix All Issues</strong> runs every applicable fix in the correct order:</p>
+<h2 id="running-a-batch-scan">Running a batch scan<a class="headerlink" href="#running-a-batch-scan" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Asset Preflight</strong> window:</p>
 <ol>
-<li><strong>Position fix</strong> — pivot to bottom-centre, move origin to world <code>(0, 0, 0)</code>, apply rotation and scale. Skipped for objects that are parented to another object.</li>
-<li>Fix negative scale</li>
-<li>Apply scale and rotation</li>
-<li>Fill holes</li>
-<li>Remove loose vertices</li>
-<li>Remove zero-area faces</li>
-<li>Triangulate n-gons</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Add UV map (if missing)</li>
-<li>Add missing collision (if missing — asks for UCX or UBX type first)</li>
-<li>Add lightmap UV (if missing — opens Lightmap Pack dialog)</li>
+<li><strong>Scope</strong> tab → set <strong>Batch folder</strong> (the exports) and <strong>Output</strong> (where the report goes — empty = the batch folder). Toggle <strong>Subfolders</strong> and <strong>Delta</strong> as needed.</li>
+<li><strong>Scan</strong> tab → <strong>Scan Folder</strong>.</li>
+<li><strong>Open HTML Report</strong>.</li>
 </ol>
-<p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
-<p>After all steps complete, <strong>Validation runs automatically</strong> so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.</p>
-<div class="admonition warning">
-<p class="admonition-title">Fix All moves objects to world origin</p>
-<p>Step 1 translates every non-parented object so its pivot lands at <code>(0, 0, 0)</code>. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.</p>
-</div>
+<p>Supported formats: <strong>FBX · glTF · GLB · OBJ</strong>.</p>
+<p>Each file is imported into a <strong>throwaway scene</strong>, validated with the active <strong>profile</strong>, then removed — your open scene is never touched. <strong>Import failures never stop the batch</strong>; the file is flagged and the scan continues.</p>
+<hr />
+<h2 id="the-html-report">The HTML report<a class="headerlink" href="#the-html-report" title="Permanent link">&para;</a></h2>
+<p>A single self-contained <code>.html</code> file — <strong>no internet, no dependencies, no telemetry</strong>. Open it in any browser, drop it in Slack / Drive / email.</p>
+<p>It contains:</p>
+<ul>
+<li><strong>Executive Summary</strong> hero (top) — a big <strong>Project Health</strong> score, <strong>Export Risk Level</strong>, asset counts, and <strong>budget % bars</strong> (triangles / VRAM / materials). The screen a lead forwards on Slack / Jira. See <a href="../budgets/">Budgets &amp; Dashboard</a>.</li>
+<li><strong>Thumbnails</strong> — a rendered preview of each asset (toggle in Scope, or <code>--no-thumbnails</code> in the CLI). Embedded as base64, so the report stays self-contained.</li>
+<li><strong>Summary cards</strong> — total scanned, passed / warnings / failed / import-failed, and <strong>average health</strong>.</li>
+<li><strong>Export Risk Level</strong> — <em>Safe to Export</em> / <em>Export with Known Issues</em> / <em>Export Not Recommended</em>.</li>
+<li><strong>Health trend</strong> — an inline sparkline of average health across previous runs.</li>
+<li><strong>Duplicate-geometry banner</strong> — flags files sharing a mesh signature (catches accidental re-exports before publishing).</li>
+<li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, and an expandable issue list.</li>
+<li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed; sort by health, name, errors or tris.</li>
+</ul>
+<p>Alongside the HTML, a <code>.json</code> with the same data is written — for tooling, diffing, and the CLI.</p>
+<hr />
+<h2 id="delta-scan">Delta scan<a class="headerlink" href="#delta-scan" title="Permanent link">&para;</a></h2>
+<p>With <strong>Delta</strong> on, files unchanged since the last scan (by modification time + size) are skipped and their previous results reused — repeat scans of a large library are near-instant. Edit one file, re-scan, and only that file is re-validated.</p>
+<hr />
+<h2 id="what-teams-use-it-for">What teams use it for<a class="headerlink" href="#what-teams-use-it-for" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Triage</strong> — sort by health, fix the worst offenders first.</li>
+<li><strong>Catch re-exports</strong> — the duplicate banner spots two files that are really the same mesh.</li>
+<li><strong>Sign-off</strong> — a pre-publish / pre-merge snapshot of project health.</li>
+<li><strong>Trend</strong> — watch average health climb run over run.</li>
+</ul>
+<p>→ For an automated gate, run the same scan headless in CI: <a href="../cli/">Headless CLI</a>.
+→ Full field-by-field structure: <a href="../../reference/report-schema/">Report Schema</a>.</p>
 
 
 
@@ -1788,6 +1835,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lod/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LOD Tools">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                LOD Tools
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Headless CLI (CI Gate)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Headless CLI (CI Gate)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

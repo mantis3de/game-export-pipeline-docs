@@ -12,27 +12,31 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/fix/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/window/">
       
       
+        <link rel="prev" href="../getting-started/concepts/">
+      
+      
+        <link rel="next" href="../features/budgets/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Fix - Game Export Pipeline Documentation</title>
+        <title>The Asset Preflight Window - Game Export Pipeline Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fix" class="md-skip">
+        <a href="#the-asset-preflight-window" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +98,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Game Export Pipeline Documentation" class="md-header__button md-logo" aria-label="Game Export Pipeline Documentation" data-md-component="logo">
+    <a href=".." title="Game Export Pipeline Documentation" class="md-header__button md-logo" aria-label="Game Export Pipeline Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fix
+              The Asset Preflight Window
             
           </span>
         </div>
@@ -224,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -245,7 +249,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started/installation/" class="md-tabs__link">
+        <a href="../getting-started/installation/" class="md-tabs__link">
           
   
   
@@ -263,9 +267,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../../window/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -286,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../features/budgets/" class="md-tabs__link">
+        <a href="../features/budgets/" class="md-tabs__link">
           
   
   
@@ -308,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../output/" class="md-tabs__link">
+        <a href="../panels/output/" class="md-tabs__link">
           
   
   
@@ -330,7 +336,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/validation-checks/" class="md-tabs__link">
+        <a href="../reference/validation-checks/" class="md-tabs__link">
           
   
   
@@ -352,7 +358,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../workflows/scene-asset/" class="md-tabs__link">
+        <a href="../workflows/scene-asset/" class="md-tabs__link">
           
   
   
@@ -372,7 +378,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../faq/" class="md-tabs__link">
+      <a href="../faq/" class="md-tabs__link">
         
   
   
@@ -391,7 +397,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../changelog/" class="md-tabs__link">
+      <a href="../changelog/" class="md-tabs__link">
         
   
   
@@ -432,7 +438,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Game Export Pipeline Documentation" class="md-nav__button md-logo" aria-label="Game Export Pipeline Documentation" data-md-component="logo">
+    <a href=".." title="Game Export Pipeline Documentation" class="md-nav__button md-logo" aria-label="Game Export Pipeline Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -450,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -537,7 +543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/installation/" class="md-nav__link">
+      <a href="../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -565,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/quick-start/" class="md-nav__link">
+      <a href="../getting-started/quick-start/" class="md-nav__link">
         
   
   
@@ -593,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
+      <a href="../getting-started/concepts/" class="md-nav__link">
         
   
   
@@ -625,10 +631,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../window/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Asset Preflight Window
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -644,6 +677,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-window-behaves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the window behaves
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presets-tab-what-ruleset-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Presets tab — what ruleset to use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-tab-what-to-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope tab — what to validate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rules-tab-thresholds-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules tab — thresholds &amp; checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scan-tab-run-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan tab — run it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scan-results-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan &amp; Results tab
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -721,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/budgets/" class="md-nav__link">
+      <a href="../features/budgets/" class="md-nav__link">
         
   
   
@@ -749,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/profiles/" class="md-nav__link">
+      <a href="../features/profiles/" class="md-nav__link">
         
   
   
@@ -777,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/naming/" class="md-nav__link">
+      <a href="../features/naming/" class="md-nav__link">
         
   
   
@@ -805,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/lod/" class="md-nav__link">
+      <a href="../features/lod/" class="md-nav__link">
         
   
   
@@ -833,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/batch-scan/" class="md-nav__link">
+      <a href="../features/batch-scan/" class="md-nav__link">
         
   
   
@@ -861,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cli/" class="md-nav__link">
+      <a href="../features/cli/" class="md-nav__link">
         
   
   
@@ -964,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../output/" class="md-nav__link">
+      <a href="../panels/output/" class="md-nav__link">
         
   
   
@@ -992,7 +1111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick-reset/" class="md-nav__link">
+      <a href="../panels/quick-reset/" class="md-nav__link">
         
   
   
@@ -1020,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../individual-steps/" class="md-nav__link">
+      <a href="../panels/individual-steps/" class="md-nav__link">
         
   
   
@@ -1048,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collision-setup/" class="md-nav__link">
+      <a href="../panels/collision-setup/" class="md-nav__link">
         
   
   
@@ -1076,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
+      <a href="../panels/scene-organization/" class="md-nav__link">
         
   
   
@@ -1104,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../export/" class="md-nav__link">
+      <a href="../panels/export/" class="md-nav__link">
         
   
   
@@ -1132,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fbx-tools/" class="md-nav__link">
+      <a href="../panels/fbx-tools/" class="md-nav__link">
         
   
   
@@ -1231,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/validation-checks/" class="md-nav__link">
+      <a href="../reference/validation-checks/" class="md-nav__link">
         
   
   
@@ -1259,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/collider-naming/" class="md-nav__link">
+      <a href="../reference/collider-naming/" class="md-nav__link">
         
   
   
@@ -1287,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/profiles-reference/" class="md-nav__link">
+      <a href="../reference/profiles-reference/" class="md-nav__link">
         
   
   
@@ -1315,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/engine-presets/" class="md-nav__link">
+      <a href="../reference/engine-presets/" class="md-nav__link">
         
   
   
@@ -1343,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/report-schema/" class="md-nav__link">
+      <a href="../reference/report-schema/" class="md-nav__link">
         
   
   
@@ -1438,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/scene-asset/" class="md-nav__link">
+      <a href="../workflows/scene-asset/" class="md-nav__link">
         
   
   
@@ -1466,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/batch-team/" class="md-nav__link">
+      <a href="../workflows/batch-team/" class="md-nav__link">
         
   
   
@@ -1494,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/ci-gate/" class="md-nav__link">
+      <a href="../workflows/ci-gate/" class="md-nav__link">
         
   
   
@@ -1529,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   
@@ -1556,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
+      <a href="../changelog/" class="md-nav__link">
         
   
   
@@ -1603,10 +1722,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scale-transforms" class="md-nav__link">
+  <a href="#how-the-window-behaves" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scale &amp; Transforms
+        How the window behaves
       
     </span>
   </a>
@@ -1614,10 +1733,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh" class="md-nav__link">
+  <a href="#presets-tab-what-ruleset-to-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mesh
+        Presets tab — what ruleset to use
       
     </span>
   </a>
@@ -1625,10 +1744,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#materials-naming" class="md-nav__link">
+  <a href="#scope-tab-what-to-validate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Materials &amp; Naming
+        Scope tab — what to validate
       
     </span>
   </a>
@@ -1636,10 +1755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
+  <a href="#rules-tab-thresholds-checks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        UV
+        Rules tab — thresholds &amp; checks
       
     </span>
   </a>
@@ -1647,10 +1766,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#collision" class="md-nav__link">
+  <a href="#scan-tab-run-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Collision
+        Scan tab — run it
       
     </span>
   </a>
@@ -1658,21 +1777,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-safe-issues" class="md-nav__link">
+  <a href="#scan-results-tab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fix Safe Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-all-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix All Issues
+        Scan &amp; Results tab
       
     </span>
   </a>
@@ -1696,68 +1804,117 @@
 
 
 
-<h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
-<p>The <strong>Fix</strong> panel provides targeted operators for each validation category, plus <strong>Fix Safe Issues</strong> and <strong>Fix All Issues</strong> buttons that run multiple fixes at once.</p>
-<hr />
-<h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
-<p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
-<p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then flips faces to restore correct normals when an odd number of axes are negative.</p>
-<hr />
-<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
-<p><strong>Fill Holes</strong> — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.</p>
-<p><strong>Triangulate N-gons</strong> — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.</p>
-<p><strong>Remove Loose Vertices</strong> — deletes vertices that are not connected to any edge or face.</p>
-<p><strong>Remove Zero-Area Faces</strong> — deletes degenerate faces whose calculated area is essentially zero (below <code>1e-8</code> m²).</p>
-<p><strong>Recalculate Normals</strong> — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.</p>
-<hr />
-<h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named after the object.</p>
-<p><strong>Remove Empty Mat Slots</strong> — removes material slots that have no material assigned. Empty slots cause extra draw calls in some engines.</p>
-<p><strong>Fix Naming / Add Prefix</strong> — renames the object and its mesh data to use the prefix set in the <a href="../output/">Output</a> panel. For example, with prefix <code>SM_</code>, an object named <code>Rock_01</code> becomes <code>SM_Rock_01</code>. Default Blender names (Cube, Sphere, etc.) are also replaced. When <strong>Strict Naming (ASCII)</strong> is enabled in settings, non-ASCII characters are stripped from the name.</p>
-<hr />
-<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
-<p><strong>Add UV Map (Smart Project)</strong> — if the object has no UV maps, creates one using Blender's <strong>Smart UV Project</strong> algorithm. The result is a reasonable starting point but is not a substitute for a hand-unwrapped UV map for hero assets.</p>
-<p><strong>Add Lightmap UV</strong> — adds a second UV channel using <strong>Lightmap Pack</strong>. See <a href="../individual-steps/#add-lightmap-uv">Individual Steps → Add Lightmap UV</a> for details.</p>
-<hr />
-<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Collision</strong> — if the object has no <code>UCX_</code> or <code>UBX_</code> collision mesh, generates a convex hull or box collision mesh. A small dialog lets you choose between UCX (convex hull, best for organic shapes) and UBX (box, best for simple props) before generating.</p>
-<hr />
-<h2 id="fix-safe-issues">Fix Safe Issues<a class="headerlink" href="#fix-safe-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix Safe Issues</strong> runs only the non-destructive fixes — the ones that cannot corrupt geometry:</p>
-<ul>
-<li>Fix negative (mirrored) scale</li>
-<li>Apply scale and rotation</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Recalculate normals</li>
-</ul>
-<p>Destructive operations (fill holes, triangulate n-gons, remove loose verts/zero-area faces, UV generation, collision, lightmap) are intentionally excluded. Use this when you want a quick cleanup without risking mesh changes.</p>
-<p>After the fixes complete, <strong>Validation runs automatically</strong>.</p>
-<hr />
-<h2 id="fix-all-issues">Fix All Issues<a class="headerlink" href="#fix-all-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix All Issues</strong> runs every applicable fix in the correct order:</p>
-<ol>
-<li><strong>Position fix</strong> — pivot to bottom-centre, move origin to world <code>(0, 0, 0)</code>, apply rotation and scale. Skipped for objects that are parented to another object.</li>
-<li>Fix negative scale</li>
-<li>Apply scale and rotation</li>
-<li>Fill holes</li>
-<li>Remove loose vertices</li>
-<li>Remove zero-area faces</li>
-<li>Triangulate n-gons</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Add UV map (if missing)</li>
-<li>Add missing collision (if missing — asks for UCX or UBX type first)</li>
-<li>Add lightmap UV (if missing — opens Lightmap Pack dialog)</li>
-</ol>
-<p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
-<p>After all steps complete, <strong>Validation runs automatically</strong> so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.</p>
-<div class="admonition warning">
-<p class="admonition-title">Fix All moves objects to world origin</p>
-<p>Step 1 translates every non-parented object so its pivot lands at <code>(0, 0, 0)</code>. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.</p>
+<h1 id="the-asset-preflight-window">The Asset Preflight Window<a class="headerlink" href="#the-asset-preflight-window" title="Permanent link">&para;</a></h1>
+<p>Everything to do with validation now lives in one place: a centered, tabbed window opened from the <strong>Open Asset Preflight</strong> button at the top of the <strong>GameExport</strong> sidebar.</p>
+<p>It replaces the old scattered <em>Validation</em> and <em>Fix</em> panels. The interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel — see <a href="../panels/output/">Viewport Tools</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Docked or floating — your choice</p>
+<p>The same tabbed UI is <strong>docked in the N-panel</strong> (persistent — it never closes, and its buttons don't dismiss anything) and also opens as a <strong>centred window</strong> via <em>Open as window</em>. Use the panel for continuous work; pop the window when you want more room.</p>
 </div>
+<hr />
+<h2 id="how-the-window-behaves">How the window behaves<a class="headerlink" href="#how-the-window-behaves" title="Permanent link">&para;</a></h2>
+<p>The window is a wide centered dialog with a tab bar across the top:</p>
+<p><strong>Presets · Scope · Rules · Scan · Results</strong></p>
+<ul>
+<li><strong>Switching tabs</strong> and <strong>Run Validation</strong> act <em>in place</em> — the window stays open.</li>
+<li><strong>Operator buttons</strong> (Apply Profile, Scan Folder, Export Report, Fix) run their action and then <strong>close the window</strong> — reopen it with one click. This is a Blender limitation for dialog popups, not a bug.</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Why a popup and not a dockable editor?</p>
+<p>Blender's Python API can't create a free-floating, dockable application window. A centered dialog with a tab bar is the closest equivalent, and it's the same proven mechanism the addon already used for the validation window.</p>
+</div>
+<hr />
+<h2 id="presets-tab-what-ruleset-to-use">Presets tab — what ruleset to use<a class="headerlink" href="#presets-tab-what-ruleset-to-use" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Profile</strong> dropdown + <strong>Apply Profile</strong> — load an engine/studio ruleset (thresholds, checks, severities, naming, colliders). <strong>Reload</strong> re-reads <code>profiles.json</code> after you edit it.</li>
+<li><strong>Rules file</strong> — point at a project <code>profiles.json</code> to share rules across the team. <em>(This is the rules </em><em>input</em><em>, not the report output.)</em></li>
+<li><strong>Asset Type</strong> — <em>PBR / Lightmap / Procedural / Kitbash-Atlas</em> — relaxes the findings that are normal for that kind of asset (e.g. Kitbash treats UV overlap &amp; near-zero UV area as info).</li>
+<li><strong>Engine</strong> / <strong>Strict Naming</strong> / <strong>Marketplace Strict</strong> — quick policy toggles.</li>
+<li><strong>Naming Template</strong> — studio convention (<code>SM_{Category}_{Name}_{NN}</code>) + one-click rename.</li>
+<li><strong>Collider names</strong> — the prefixes/suffixes treated as collision meshes. Add your studio's convention here.</li>
+</ul>
+<p>→ <a href="../features/profiles/">Validation Profiles</a> · <a href="../features/naming/">Naming Templates</a> · <a href="../reference/collider-naming/">Collider Naming</a></p>
+<hr />
+<h2 id="scope-tab-what-to-validate">Scope tab — what to validate<a class="headerlink" href="#scope-tab-what-to-validate" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>In-scene scope</strong> — validation runs on <strong>selected</strong> meshes, or the <strong>whole scene</strong> if nothing is selected. The object list previews what will be checked.</li>
+<li><strong>Batch folder</strong> — set a folder of exported files plus the report output path, and the <strong>Subfolders</strong> / <strong>Delta</strong> toggles. (Run it from the Scan tab.)</li>
+</ul>
+<p>→ <a href="../features/batch-scan/">Batch Scan &amp; HTML Report</a></p>
+<hr />
+<h2 id="rules-tab-thresholds-checks">Rules tab — thresholds &amp; checks<a class="headerlink" href="#rules-tab-thresholds-checks" title="Permanent link">&para;</a></h2>
+<p>Expand <strong>Settings</strong> to tune the ruleset:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Max Polygons</strong></td>
+<td>Triangle budget before HIGH_POLY fires</td>
+</tr>
+<tr>
+<td><strong>Max Tex Size (px)</strong></td>
+<td>Oversized-texture threshold</td>
+</tr>
+<tr>
+<td><strong>Check UV Overlap / Padding / Materials / Textures</strong></td>
+<td>Toggle whole check groups</td>
+</tr>
+<tr>
+<td><strong>UV Padding (texels) / Lightmap Res (px)</strong></td>
+<td>The exact padding rule (shown when UV Padding is on) — these are the <code>4px @ 1024px</code> in the warning</td>
+</tr>
+<tr>
+<td><strong>Flag Default Names / Marketplace Strict</strong></td>
+<td>Naming policy</td>
+</tr>
+<tr>
+<td><strong>Show Explanations / Frame View on Focus / Auto-open</strong></td>
+<td>Report UX</td>
+</tr>
+<tr>
+<td><strong>Asset Budgets</strong></td>
+<td>Per-asset + whole-scene triangle / material / VRAM budgets (the dashboard)</td>
+</tr>
+<tr>
+<td><strong>LOD checks / Bounds Tolerance</strong></td>
+<td>LOD validation toggles</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Changes apply on the <strong>next Run Validation</strong> — they don't retro-update the current report.</p>
+</div>
+<p>→ <a href="../reference/validation-checks/">Validation Checks</a></p>
+<hr />
+<h2 id="scan-tab-run-it">Scan tab — run it<a class="headerlink" href="#scan-tab-run-it" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Run Validation</strong> — validate the scene (in place; window stays open). Shows the active profile.</li>
+<li><strong>Scan Folder</strong> / <strong>Open HTML Report</strong> — batch-scan the folder set in Scope and open the shareable report.</li>
+<li><strong>Export Report (.json / .csv)</strong> — save the current scene results to disk. <em>(This is the results </em><em>output</em><em>, not the rules.)</em></li>
+</ul>
+<hr />
+<h2 id="scan-results-tab">Scan &amp; Results tab<a class="headerlink" href="#scan-results-tab" title="Permanent link">&para;</a></h2>
+<p>Run validation and read the results in one place (no tab-hopping). Shown after a run:</p>
+<ul>
+<li><strong>Project Health dashboard</strong> — the level's totals vs the project budget as used / limit / % bars, plus <strong>Top by triangles</strong>. See <a href="../features/budgets/">Budgets &amp; Dashboard</a>.</li>
+<li><strong>Summary</strong> — export gate score + status, scene quality, error/warning/info counts, per-category scores.</li>
+<li><strong>Objects to fix</strong> — a checklist of validated objects (tick which to repair); <strong>All</strong> / <strong>Errors only</strong> quick-selects.</li>
+<li><strong>Fix Safe Issues</strong> — every <em>deterministic</em> fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally <strong>not</strong> auto-applied — guessing at topology can quietly make a mesh worse.</li>
+<li><strong>Issue list</strong> — grouped by object or category. Each issue has:<ul>
+<li><strong>Select &amp; Focus</strong> — selects the exact components, opens the right editor (UV / Shader / Material tab) and <strong>frames the viewport</strong> on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.</li>
+<li><strong>Fix This</strong> — that issue's safe fix (shown only for deterministic fixes).</li>
+<li><strong>Ignore</strong> — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an <code>(ignored)</code> info note; <strong>Un-ignore</strong> restores it.</li>
+<li><strong>Impact / Fix</strong> hints (when <em>Show Explanations</em> is on).</li>
+</ul>
+</li>
+</ul>
+<p>→ <a href="../workflows/scene-asset/">Validate a Scene Asset</a> for the full loop.</p>
 
 
 
@@ -1788,6 +1945,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../getting-started/concepts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Core Concepts">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Core Concepts
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../features/budgets/" class="md-footer__link md-footer__link--next" aria-label="Next: Budgets &amp; Dashboard">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Budgets & Dashboard
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1835,10 +2030,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.action.edit", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

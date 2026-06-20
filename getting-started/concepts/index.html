@@ -12,9 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/fix/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/getting-started/concepts/">
       
       
+        <link rel="prev" href="../quick-start/">
+      
+      
+        <link rel="next" href="../../window/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Fix - Game Export Pipeline Documentation</title>
+        <title>Core Concepts - Game Export Pipeline Documentation</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fix" class="md-skip">
+        <a href="#core-concepts" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fix
+              Core Concepts
             
           </span>
         </div>
@@ -241,11 +245,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../getting-started/installation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
           
   
   
@@ -308,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../output/" class="md-tabs__link">
+        <a href="../../panels/output/" class="md-tabs__link">
           
   
   
@@ -474,8 +480,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -489,19 +497,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -519,7 +530,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -537,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -565,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/quick-start/" class="md-nav__link">
+      <a href="../quick-start/" class="md-nav__link">
         
   
   
@@ -590,10 +601,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../getting-started/concepts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -609,6 +647,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-validation-is-a-ruleset-not-a-verdict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Validation is a ruleset, not a verdict
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-two-scores-deliberately-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Two scores, deliberately different
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-profiles-carry-the-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Profiles carry the rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-in-scene-vs-batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. In-scene vs batch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-determinism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Determinism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-things-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where things live
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -964,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../output/" class="md-nav__link">
+      <a href="../../panels/output/" class="md-nav__link">
         
   
   
@@ -992,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick-reset/" class="md-nav__link">
+      <a href="../../panels/quick-reset/" class="md-nav__link">
         
   
   
@@ -1020,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../individual-steps/" class="md-nav__link">
+      <a href="../../panels/individual-steps/" class="md-nav__link">
         
   
   
@@ -1048,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collision-setup/" class="md-nav__link">
+      <a href="../../panels/collision-setup/" class="md-nav__link">
         
   
   
@@ -1076,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
+      <a href="../../panels/scene-organization/" class="md-nav__link">
         
   
   
@@ -1104,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../export/" class="md-nav__link">
+      <a href="../../panels/export/" class="md-nav__link">
         
   
   
@@ -1132,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fbx-tools/" class="md-nav__link">
+      <a href="../../panels/fbx-tools/" class="md-nav__link">
         
   
   
@@ -1603,10 +1727,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scale-transforms" class="md-nav__link">
+  <a href="#1-validation-is-a-ruleset-not-a-verdict" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scale &amp; Transforms
+        1. Validation is a ruleset, not a verdict
       
     </span>
   </a>
@@ -1614,10 +1738,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh" class="md-nav__link">
+  <a href="#2-two-scores-deliberately-different" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mesh
+        2. Two scores, deliberately different
       
     </span>
   </a>
@@ -1625,10 +1749,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#materials-naming" class="md-nav__link">
+  <a href="#3-profiles-carry-the-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Materials &amp; Naming
+        3. Profiles carry the rules
       
     </span>
   </a>
@@ -1636,10 +1760,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
+  <a href="#4-in-scene-vs-batch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        UV
+        4. In-scene vs batch
       
     </span>
   </a>
@@ -1647,10 +1771,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#collision" class="md-nav__link">
+  <a href="#5-determinism" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Collision
+        5. Determinism
       
     </span>
   </a>
@@ -1658,21 +1782,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-safe-issues" class="md-nav__link">
+  <a href="#where-things-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fix Safe Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-all-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix All Issues
+        Where things live
       
     </span>
   </a>
@@ -1696,68 +1809,74 @@
 
 
 
-<h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
-<p>The <strong>Fix</strong> panel provides targeted operators for each validation category, plus <strong>Fix Safe Issues</strong> and <strong>Fix All Issues</strong> buttons that run multiple fixes at once.</p>
+<h1 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h1>
+<p>A short mental model of how Game Export Pipeline thinks. Five ideas explain almost everything else.</p>
 <hr />
-<h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
-<p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
-<p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then flips faces to restore correct normals when an odd number of axes are negative.</p>
-<hr />
-<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
-<p><strong>Fill Holes</strong> — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.</p>
-<p><strong>Triangulate N-gons</strong> — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.</p>
-<p><strong>Remove Loose Vertices</strong> — deletes vertices that are not connected to any edge or face.</p>
-<p><strong>Remove Zero-Area Faces</strong> — deletes degenerate faces whose calculated area is essentially zero (below <code>1e-8</code> m²).</p>
-<p><strong>Recalculate Normals</strong> — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.</p>
-<hr />
-<h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named after the object.</p>
-<p><strong>Remove Empty Mat Slots</strong> — removes material slots that have no material assigned. Empty slots cause extra draw calls in some engines.</p>
-<p><strong>Fix Naming / Add Prefix</strong> — renames the object and its mesh data to use the prefix set in the <a href="../output/">Output</a> panel. For example, with prefix <code>SM_</code>, an object named <code>Rock_01</code> becomes <code>SM_Rock_01</code>. Default Blender names (Cube, Sphere, etc.) are also replaced. When <strong>Strict Naming (ASCII)</strong> is enabled in settings, non-ASCII characters are stripped from the name.</p>
-<hr />
-<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
-<p><strong>Add UV Map (Smart Project)</strong> — if the object has no UV maps, creates one using Blender's <strong>Smart UV Project</strong> algorithm. The result is a reasonable starting point but is not a substitute for a hand-unwrapped UV map for hero assets.</p>
-<p><strong>Add Lightmap UV</strong> — adds a second UV channel using <strong>Lightmap Pack</strong>. See <a href="../individual-steps/#add-lightmap-uv">Individual Steps → Add Lightmap UV</a> for details.</p>
-<hr />
-<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Collision</strong> — if the object has no <code>UCX_</code> or <code>UBX_</code> collision mesh, generates a convex hull or box collision mesh. A small dialog lets you choose between UCX (convex hull, best for organic shapes) and UBX (box, best for simple props) before generating.</p>
-<hr />
-<h2 id="fix-safe-issues">Fix Safe Issues<a class="headerlink" href="#fix-safe-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix Safe Issues</strong> runs only the non-destructive fixes — the ones that cannot corrupt geometry:</p>
+<h2 id="1-validation-is-a-ruleset-not-a-verdict">1. Validation is a ruleset, not a verdict<a class="headerlink" href="#1-validation-is-a-ruleset-not-a-verdict" title="Permanent link">&para;</a></h2>
+<p>The addon never <em>blocks</em> you. It runs a set of checks and reports findings at three severities:</p>
 <ul>
-<li>Fix negative (mirrored) scale</li>
-<li>Apply scale and rotation</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Recalculate normals</li>
+<li><strong>Error</strong> — will break or badly degrade the asset in-engine (missing UV, non-manifold, missing texture).</li>
+<li><strong>Warning</strong> — worth attention, often situational (UV overlap, missing lightmap on a non-baked asset).</li>
+<li><strong>Info</strong> — neutral facts (face breakdown, custom normals present).</li>
 </ul>
-<p>Destructive operations (fill holes, triangulate n-gons, remove loose verts/zero-area faces, UV generation, collision, lightmap) are intentionally excluded. Use this when you want a quick cleanup without risking mesh changes.</p>
-<p>After the fixes complete, <strong>Validation runs automatically</strong>.</p>
+<p>Which check is an error vs a warning depends on the active <strong>profile</strong> (see below). You can always export; the report just tells you the risk.</p>
 <hr />
-<h2 id="fix-all-issues">Fix All Issues<a class="headerlink" href="#fix-all-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix All Issues</strong> runs every applicable fix in the correct order:</p>
-<ol>
-<li><strong>Position fix</strong> — pivot to bottom-centre, move origin to world <code>(0, 0, 0)</code>, apply rotation and scale. Skipped for objects that are parented to another object.</li>
-<li>Fix negative scale</li>
-<li>Apply scale and rotation</li>
-<li>Fill holes</li>
-<li>Remove loose vertices</li>
-<li>Remove zero-area faces</li>
-<li>Triangulate n-gons</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Add UV map (if missing)</li>
-<li>Add missing collision (if missing — asks for UCX or UBX type first)</li>
-<li>Add lightmap UV (if missing — opens Lightmap Pack dialog)</li>
-</ol>
-<p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
-<p>After all steps complete, <strong>Validation runs automatically</strong> so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.</p>
-<div class="admonition warning">
-<p class="admonition-title">Fix All moves objects to world origin</p>
-<p>Step 1 translates every non-parented object so its pivot lands at <code>(0, 0, 0)</code>. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.</p>
-</div>
+<h2 id="2-two-scores-deliberately-different">2. Two scores, deliberately different<a class="headerlink" href="#2-two-scores-deliberately-different" title="Permanent link">&para;</a></h2>
+<p>After a run you see two numbers — they answer different questions:</p>
+<ul>
+<li><strong>Export Gate (<code>score_overall</code>)</strong> — a single <em>pooled</em> score over all issues. One blocking error anywhere drives the relevant category toward zero. This is the "is anything blocking?" gate that drives <code>EXPORT READY</code> / <code>NOT EXPORT READY</code>.</li>
+<li><strong>Scene Quality</strong> — the <em>mean per-asset</em> score. Clean assets count as 100, so this reflects average asset health.</li>
+</ul>
+<p>A scene with one badly broken mesh and nine perfect ones has a <strong>low gate</strong> (something's blocking) but a <strong>high scene quality</strong> (most assets are fine). Both are correct; they measure different things.</p>
+<hr />
+<h2 id="3-profiles-carry-the-rules">3. Profiles carry the rules<a class="headerlink" href="#3-profiles-carry-the-rules" title="Permanent link">&para;</a></h2>
+<p>A <strong>profile</strong> is a named bundle of thresholds, check toggles, naming policy, collider conventions and per-issue severity overrides — stored in an editable <code>profiles.json</code>. Pick a profile and <strong>Apply</strong> it to load all of that at once.</p>
+<p>The big win for teams: commit one <code>profiles.json</code> to your repo and everyone — and CI — validates identically. See <a href="../../features/profiles/">Validation Profiles</a>.</p>
+<hr />
+<h2 id="4-in-scene-vs-batch">4. In-scene vs batch<a class="headerlink" href="#4-in-scene-vs-batch" title="Permanent link">&para;</a></h2>
+<p>The same validator runs in two modes:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>In-scene</th>
+<th>Batch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What</strong></td>
+<td>Meshes in your open scene</td>
+<td>A folder of exported files</td>
+</tr>
+<tr>
+<td><strong>Where</strong></td>
+<td>Asset Preflight → Scan → Run Validation</td>
+<td>Asset Preflight → Scan → Scan Folder, or the CLI</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>The Results tab + optional JSON/CSV</td>
+<td>A shareable HTML report + JSON</td>
+</tr>
+<tr>
+<td><strong>Who</strong></td>
+<td>The artist, while working</td>
+<td>The lead / CI, before publish</td>
+</tr>
+</tbody>
+</table>
+<p>Batch imports each file into a throwaway scene, validates it in isolation, then removes it — your open scene is never touched.</p>
+<hr />
+<h2 id="5-determinism">5. Determinism<a class="headerlink" href="#5-determinism" title="Permanent link">&para;</a></h2>
+<p>The exported report is <strong>content-hashed</strong> and reproducible: the same meshes + the same ruleset always produce the same report (only the timestamp varies). That makes reports diffable across runs and trustworthy in CI. See <a href="../../reference/report-schema/">Report Schema</a>.</p>
+<hr />
+<h2 id="where-things-live">Where things live<a class="headerlink" href="#where-things-live" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Asset Preflight window</strong> — validate, scan, fix, read the report (the daily driver). → <a href="../../window/">The Asset Preflight Window</a></li>
+<li><strong>Viewport tools</strong> (N-panel) — things that must touch the viewport live: Collision, LOD generation/preview, Quick Reset, Export, FBX tools.</li>
+<li><strong><code>profiles.json</code></strong> — the rules (input). <strong>Export Report / HTML</strong> — the results (output). Two different files, two directions.</li>
+</ul>
 
 
 
@@ -1788,6 +1907,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../quick-start/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Start (5 Minutes)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Quick Start (5 Minutes)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../window/" class="md-footer__link md-footer__link--next" aria-label="Next: The Asset Preflight Window">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                The Asset Preflight Window
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

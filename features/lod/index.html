@@ -12,9 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/fix/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/lod/">
       
       
+        <link rel="prev" href="../naming/">
+      
+      
+        <link rel="next" href="../batch-scan/">
       
       
         
@@ -25,7 +29,7 @@
     
     
       
-        <title>Fix - Game Export Pipeline Documentation</title>
+        <title>LOD Tools - Game Export Pipeline Documentation</title>
       
     
     
@@ -78,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fix" class="md-skip">
+        <a href="#lod-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fix
+              LOD Tools
             
           </span>
         </div>
@@ -282,11 +286,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../features/budgets/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../budgets/" class="md-tabs__link">
           
   
   
@@ -308,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../output/" class="md-tabs__link">
+        <a href="../../panels/output/" class="md-tabs__link">
           
   
   
@@ -652,8 +658,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -673,19 +681,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -703,7 +714,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -721,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/budgets/" class="md-nav__link">
+      <a href="../budgets/" class="md-nav__link">
         
   
   
@@ -749,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/profiles/" class="md-nav__link">
+      <a href="../profiles/" class="md-nav__link">
         
   
   
@@ -777,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/naming/" class="md-nav__link">
+      <a href="../naming/" class="md-nav__link">
         
   
   
@@ -802,10 +813,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../features/lod/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LOD Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -821,6 +859,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#two-independent-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two independent settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-lods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating LODs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preview-runtime-emulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preview (runtime emulator)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lod-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOD validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -833,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/batch-scan/" class="md-nav__link">
+      <a href="../batch-scan/" class="md-nav__link">
         
   
   
@@ -861,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cli/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   
@@ -964,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../output/" class="md-nav__link">
+      <a href="../../panels/output/" class="md-nav__link">
         
   
   
@@ -992,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quick-reset/" class="md-nav__link">
+      <a href="../../panels/quick-reset/" class="md-nav__link">
         
   
   
@@ -1020,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../individual-steps/" class="md-nav__link">
+      <a href="../../panels/individual-steps/" class="md-nav__link">
         
   
   
@@ -1048,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collision-setup/" class="md-nav__link">
+      <a href="../../panels/collision-setup/" class="md-nav__link">
         
   
   
@@ -1076,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scene-organization/" class="md-nav__link">
+      <a href="../../panels/scene-organization/" class="md-nav__link">
         
   
   
@@ -1104,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../export/" class="md-nav__link">
+      <a href="../../panels/export/" class="md-nav__link">
         
   
   
@@ -1132,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fbx-tools/" class="md-nav__link">
+      <a href="../../panels/fbx-tools/" class="md-nav__link">
         
   
   
@@ -1603,10 +1705,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scale-transforms" class="md-nav__link">
+  <a href="#two-independent-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scale &amp; Transforms
+        Two independent settings
       
     </span>
   </a>
@@ -1614,10 +1716,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh" class="md-nav__link">
+  <a href="#generating-lods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mesh
+        Generating LODs
       
     </span>
   </a>
@@ -1625,10 +1727,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#materials-naming" class="md-nav__link">
+  <a href="#preview-runtime-emulator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Materials &amp; Naming
+        Preview (runtime emulator)
       
     </span>
   </a>
@@ -1636,43 +1738,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
+  <a href="#lod-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        UV
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collision" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Collision
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-safe-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix Safe Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-all-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix All Issues
+        LOD validation
       
     </span>
   </a>
@@ -1696,67 +1765,91 @@
 
 
 
-<h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
-<p>The <strong>Fix</strong> panel provides targeted operators for each validation category, plus <strong>Fix Safe Issues</strong> and <strong>Fix All Issues</strong> buttons that run multiple fixes at once.</p>
+<h1 id="lod-tools">LOD Tools<a class="headerlink" href="#lod-tools" title="Permanent link">&para;</a></h1>
+<p>Generate Level-of-Detail chains, set when each level appears on screen, preview the switching live in the viewport, and validate the result — all from the <strong>LOD Tools</strong> panel in the GameExport sidebar.</p>
 <hr />
-<h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
-<p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
-<p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then flips faces to restore correct normals when an odd number of axes are negative.</p>
-<hr />
-<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
-<p><strong>Fill Holes</strong> — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.</p>
-<p><strong>Triangulate N-gons</strong> — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.</p>
-<p><strong>Remove Loose Vertices</strong> — deletes vertices that are not connected to any edge or face.</p>
-<p><strong>Remove Zero-Area Faces</strong> — deletes degenerate faces whose calculated area is essentially zero (below <code>1e-8</code> m²).</p>
-<p><strong>Recalculate Normals</strong> — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.</p>
-<hr />
-<h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named after the object.</p>
-<p><strong>Remove Empty Mat Slots</strong> — removes material slots that have no material assigned. Empty slots cause extra draw calls in some engines.</p>
-<p><strong>Fix Naming / Add Prefix</strong> — renames the object and its mesh data to use the prefix set in the <a href="../output/">Output</a> panel. For example, with prefix <code>SM_</code>, an object named <code>Rock_01</code> becomes <code>SM_Rock_01</code>. Default Blender names (Cube, Sphere, etc.) are also replaced. When <strong>Strict Naming (ASCII)</strong> is enabled in settings, non-ASCII characters are stripped from the name.</p>
-<hr />
-<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
-<p><strong>Add UV Map (Smart Project)</strong> — if the object has no UV maps, creates one using Blender's <strong>Smart UV Project</strong> algorithm. The result is a reasonable starting point but is not a substitute for a hand-unwrapped UV map for hero assets.</p>
-<p><strong>Add Lightmap UV</strong> — adds a second UV channel using <strong>Lightmap Pack</strong>. See <a href="../individual-steps/#add-lightmap-uv">Individual Steps → Add Lightmap UV</a> for details.</p>
-<hr />
-<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Collision</strong> — if the object has no <code>UCX_</code> or <code>UBX_</code> collision mesh, generates a convex hull or box collision mesh. A small dialog lets you choose between UCX (convex hull, best for organic shapes) and UBX (box, best for simple props) before generating.</p>
-<hr />
-<h2 id="fix-safe-issues">Fix Safe Issues<a class="headerlink" href="#fix-safe-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix Safe Issues</strong> runs only the non-destructive fixes — the ones that cannot corrupt geometry:</p>
+<h2 id="two-independent-settings">Two independent settings<a class="headerlink" href="#two-independent-settings" title="Permanent link">&para;</a></h2>
+<p>LOD has two knobs that are easy to confuse — they're different things:</p>
 <ul>
-<li>Fix negative (mirrored) scale</li>
-<li>Apply scale and rotation</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Recalculate normals</li>
+<li><strong>Decimation — keep %</strong> — how many triangles each LOD keeps (LOD1 50 % / LOD2 25 % / LOD3 10 %). This is the geometry reduction.</li>
+<li><strong>Switch @ screen %</strong> — at what on-screen size each level takes over (LOD1 50 % / LOD2 25 % / LOD3 10 %). This is the switching policy. <strong>Values must descend</strong> (the object gets smaller on screen as it recedes).</li>
 </ul>
-<p>Destructive operations (fill holes, triangulate n-gons, remove loose verts/zero-area faces, UV generation, collision, lightmap) are intentionally excluded. Use this when you want a quick cleanup without risking mesh changes.</p>
-<p>After the fixes complete, <strong>Validation runs automatically</strong>.</p>
+<p>There are no presets — you set both directly, defaulting to 50 / 25 / 10. The <strong>Reference FOV</strong> is the vertical field of view the switch percentages are authored against.</p>
 <hr />
-<h2 id="fix-all-issues">Fix All Issues<a class="headerlink" href="#fix-all-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix All Issues</strong> runs every applicable fix in the correct order:</p>
+<h2 id="generating-lods">Generating LODs<a class="headerlink" href="#generating-lods" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Position fix</strong> — pivot to bottom-centre, move origin to world <code>(0, 0, 0)</code>, apply rotation and scale. Skipped for objects that are parented to another object.</li>
-<li>Fix negative scale</li>
-<li>Apply scale and rotation</li>
-<li>Fill holes</li>
-<li>Remove loose vertices</li>
-<li>Remove zero-area faces</li>
-<li>Triangulate n-gons</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Add UV map (if missing)</li>
-<li>Add missing collision (if missing — asks for UCX or UBX type first)</li>
-<li>Add lightmap UV (if missing — opens Lightmap Pack dialog)</li>
+<li>Select a <strong>clean</strong> base mesh (LOD0).</li>
+<li>Set the keep % and switch % and the <strong>Levels</strong> count (1–3).</li>
+<li>Click <strong>Generate LODs</strong>.</li>
 </ol>
-<p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
-<p>After all steps complete, <strong>Validation runs automatically</strong> so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.</p>
+<p>This creates <code>Name_LOD1</code>, <code>Name_LOD2</code>, … beside the base and writes a <strong>switching policy</strong> onto LOD0 (visible in the <em>APPLIED on '…'</em> line). Re-running tops up the chain rather than clobbering it.</p>
 <div class="admonition warning">
-<p class="admonition-title">Fix All moves objects to world origin</p>
-<p>Step 1 translates every non-parented object so its pivot lands at <code>(0, 0, 0)</code>. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.</p>
+<p class="admonition-title">Fix the base first</p>
+<p>A base mesh with <strong>errors</strong> won't generate LODs — decimating a broken mesh just copies the defect into every level. Fix LOD0, or untick <strong>Validate Base First</strong> to force.</p>
+</div>
+<p><strong>Apply / Refresh Policy</strong> re-writes the policy onto selected chains <em>without</em> regenerating geometry — use it after changing the % or FOV.</p>
+<hr />
+<h2 id="preview-runtime-emulator">Preview (runtime emulator)<a class="headerlink" href="#preview-runtime-emulator" title="Permanent link">&para;</a></h2>
+<p>The preview shows exactly which level the engine would display at a given camera distance, using the same screen-size math the policy stores.</p>
+<ol>
+<li>Turn on <strong>Preview LODs</strong>.</li>
+<li>Drag <strong>Distance (m)</strong> — or click <strong>Live (from viewport)</strong> and orbit / zoom. The Live button is blue while running.</li>
+<li>The readout shows e.g. <code>Chair: LOD2 @ 27 m / 14 % screen</code>.</li>
+</ol>
+<p>While <strong>Preview</strong> is on, editing the switch % updates the view <strong>live</strong> — no need to click Apply. Turning preview off restores the original visibility of every level.</p>
+<p>→ The full screen-size model is documented in <code>LOD_SPEC.md</code> in the addon.</p>
+<hr />
+<h2 id="lod-validation">LOD validation<a class="headerlink" href="#lod-validation" title="Permanent link">&para;</a></h2>
+<p>When a chain exists, <strong>Run Validation</strong> adds an <strong>LOD</strong> category:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Severity</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LOD Not Reduced</strong></td>
+<td>error</td>
+<td>a level has ≥ as many tris as the previous one (a duplicate that was never decimated)</td>
+</tr>
+<tr>
+<td><strong>LOD Lost UV Channel</strong></td>
+<td>error</td>
+<td>a level dropped a UV layer present on LOD0</td>
+</tr>
+<tr>
+<td><strong>LOD Material Mismatch</strong></td>
+<td>warning</td>
+<td>a level uses different material slots than LOD0 (materials pop on swap)</td>
+</tr>
+<tr>
+<td><strong>LOD Bounds Deviation</strong></td>
+<td>warning</td>
+<td>a level's bounding box differs too much from the base (silhouette popping)</td>
+</tr>
+<tr>
+<td><strong>LOD Naming / Chain Gap</strong></td>
+<td>warning</td>
+<td>broken <code>_LODn</code> numbering</td>
+</tr>
+<tr>
+<td><strong>LOD Threshold Order / Cull</strong></td>
+<td>error / warning</td>
+<td>switch % not strictly descending, or cull above the last switch</td>
+</tr>
+<tr>
+<td><strong>LOD Detail / Switch Mismatch</strong></td>
+<td>warning</td>
+<td>an aggressively decimated level activates while the object is still large on screen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Nanite users</p>
+<p>UE5 Nanite often makes manual LODs unnecessary. If you don't use LODs, simply don't generate them — the LOD category stays at 100.</p>
 </div>
 
 
@@ -1788,6 +1881,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../naming/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Naming Templates">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Naming Templates
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../batch-scan/" class="md-footer__link md-footer__link--next" aria-label="Next: Batch Scan &amp; HTML Report">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Batch Scan & HTML Report
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
