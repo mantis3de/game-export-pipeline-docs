@@ -46,6 +46,7 @@ Profiles are resolved in order: the addon's built-in `profiles.json` first, then
 | `budget.scene_max_tris` | int | 2000000 | whole-scene triangle budget (dashboard) |
 | `budget.scene_max_materials` | int | 150 | whole-scene material budget |
 | `budget.scene_max_vram_mb` | int | 4096 | whole-scene texture-memory budget (MB) |
+| `release.min_health` | int | 85 | minimum average health to pass the [release gate](../features/release-gate.md) |
 | `severity` | object | `{}` | per-issue overrides: `{ ISSUE_ID: "ERROR"\|"WARNING"\|"INFO" }` |
 
 Any omitted field falls back to its default, so a minimal profile is just `id`, `name`, and the few values you care about.

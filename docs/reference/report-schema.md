@@ -34,11 +34,14 @@ Top-level keys: `content_hash`, `schema_version`, `scope`, `config`, `summary`, 
 
 Written by **Scan Folder** and the CLI, as `asset_preflight_report.json` (+ `.html`). Schema `batch-1.0`.
 
-Top-level keys: `schema`, `generated_at`, `profile`, `summary`, `duplicates`, `files`, `history`.
+Top-level keys: `schema`, `generated_at`, `profile`, `summary`, `project`, `release`, `regressions`, `duplicates`, `files`, `history`.
 
 - **`summary`** — `total`, `passed`, `warnings`, `failed`, `import_failed`, `avg_health`, `risk`.
+- **`project`** — `totals` (summed `meshes`/`tris`/`materials`/`vram_mb`) and the `budget` it is measured against (the project limits).
+- **`release`** — the release-gate verdict: `status` (`READY`/`BLOCKED`), `reasons[]` (why it's blocked), and `min_health` (the threshold used).
+- **`regressions`** — comparison to the previous report (omitted/empty when there is none): `health` (`prev`/`now`/`delta`), `totals` (per metric `prev`/`now`/`pct`), and `worst[]` (assets with the biggest score drops). See [Release Gate & Regressions](../features/release-gate.md).
 - **`duplicates`** — groups of files sharing a mesh signature (accidental re-exports).
-- **`files[]`** — per file: `file`, `path`, `import_ok`, `status` (`PASS`/`WARNING`/`FAIL`/`IMPORT_FAILED`), `score`, `errors`/`warnings`/`infos`, `meshes`, `tris`, `signature`, `fingerprint` (mtime+size for delta), `cached`, and a trimmed `issues[]`.
+- **`files[]`** — per file: `file`, `path`, `import_ok`, `status` (`PASS`/`WARNING`/`FAIL`/`IMPORT_FAILED`), `score`, `errors`/`warnings`/`infos`, `meshes`, `tris`, `materials`, `vram_mb`, `signature`, `fingerprint` (mtime+size for delta), `cached`, `thumb` (base64 PNG when thumbnails are on), and a trimmed `issues[]`.
 - **`history`** — recent runs' `avg_health` for the trend sparkline.
 
 ```jsonc

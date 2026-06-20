@@ -39,6 +39,8 @@ It writes the same **HTML + JSON** report as the GUI batch scan, prints a one-li
 - **1** — at least one `FAIL` or import failure — *blocked*. With `--fail-on warning`, warnings also block.
 - **2** — usage / runtime error (bad folder, no files).
 
+The run also prints a **release verdict** line, e.g. `[preflight] release: BLOCKED — 1 failing asset(s); health 84 < 85`, summarising the [release gate](release-gate.md). The same verdict and the regression comparison are written into the JSON / HTML report.
+
 ---
 
 ## CI example (GitHub Actions)

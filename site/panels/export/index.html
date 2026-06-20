@@ -1216,6 +1216,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format-fbx-or-gltfglb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format — FBX or glTF/GLB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#export-folder-warning" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1746,6 +1757,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#format-fbx-or-gltfglb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format — FBX or glTF/GLB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#export-folder-warning" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1807,6 +1829,23 @@
 <li><strong>Custom axes</strong> (when Custom preset is selected)</li>
 </ul>
 <p>This is a read-only reminder. To change it, go back to the <a href="../output/">Output</a> panel at the top of the GameExport tab.</p>
+<hr />
+<h2 id="format-fbx-or-gltfglb">Format — FBX or glTF/GLB<a class="headerlink" href="#format-fbx-or-gltfglb" title="Permanent link">&para;</a></h2>
+<p>A <strong>Format</strong> switch selects the output:</p>
+<ul>
+<li><strong>FBX</strong> (default) — Autodesk FBX, the engine-agnostic choice for Unity, Unreal, and general pipelines. Uses the engine preset's axis settings and, when installed, <a href="../fbx-tools/">Better FBX</a>.</li>
+<li><strong>glTF/GLB</strong> — the open glTF 2.0 standard, preferred by Godot and web. glTF is a standardized Y-up format, so it imports with consistent orientation everywhere; the only choice is the <strong>container</strong>:<ul>
+<li><strong>GLB (single file)</strong> — mesh + textures packed into one self-contained <code>.glb</code> (recommended).</li>
+<li><strong>Separate (.gltf)</strong> — a <code>.gltf</code> + <code>.bin</code> + loose texture files.</li>
+</ul>
+</li>
+<li><strong>Export Custom Properties</strong> (glTF only) — include object custom properties as glTF <code>extras</code> (engine-specific).</li>
+</ul>
+<p>Both formats honour the same engine preset, the same auto-cleanup toggles, and the same budget / release gate. Tangents follow the engine convention automatically — baked for Unity/Unreal, computed on import for Godot.</p>
+<div class="admonition note">
+<p class="admonition-title">glTF exports the render mesh</p>
+<p>Collision conventions differ per engine in glTF (Godot, for example, uses name suffixes like <code>-col</code>), so the FBX <code>UCX_</code>/<code>UBX_</code> auto-include does not apply to glTF yet — glTF exports the render mesh. FBX collision auto-inclusion is unchanged.</p>
+</div>
 <hr />
 <h2 id="export-folder-warning">Export folder warning<a class="headerlink" href="#export-folder-warning" title="Permanent link">&para;</a></h2>
 <p>If the export folder is not set, the panel shows an alert box and an inline path field. Set the folder here or in the <a href="../output/">Output</a> panel — the export button does not appear until a valid path is entered.</p>

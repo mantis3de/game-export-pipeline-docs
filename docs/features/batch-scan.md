@@ -25,7 +25,7 @@ A single self-contained `.html` file — **no internet, no dependencies, no tele
 It contains:
 
 - **Executive Summary** hero (top) — a big **Project Health** score, **Export Risk Level**, asset counts, and **budget % bars** (triangles / VRAM / materials). The screen a lead forwards on Slack / Jira. See [Budgets & Dashboard](budgets.md).
-- **Thumbnails** — a rendered preview of each asset (toggle in Scope, or `--no-thumbnails` in the CLI). Embedded as base64, so the report stays self-contained.
+- **Thumbnails** — a rendered preview of each asset (toggle in Scope, or `--no-thumbnails` in the CLI). Embedded as base64, so the report stays self-contained. Collision meshes are excluded from the render so a collider hull can't obscure the asset (a collider-only file still gets a preview).
 - **Summary cards** — total scanned, passed / warnings / failed / import-failed, and **average health**.
 - **Export Risk Level** — *Safe to Export* / *Export with Known Issues* / *Export Not Recommended*.
 - **Health trend** — an inline sparkline of average health across previous runs.

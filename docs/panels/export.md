@@ -17,6 +17,23 @@ This is a read-only reminder. To change it, go back to the [Output](output.md) p
 
 ---
 
+## Format — FBX or glTF/GLB
+
+A **Format** switch selects the output:
+
+- **FBX** (default) — Autodesk FBX, the engine-agnostic choice for Unity, Unreal, and general pipelines. Uses the engine preset's axis settings and, when installed, [Better FBX](fbx-tools.md).
+- **glTF/GLB** — the open glTF 2.0 standard, preferred by Godot and web. glTF is a standardized Y-up format, so it imports with consistent orientation everywhere; the only choice is the **container**:
+    - **GLB (single file)** — mesh + textures packed into one self-contained `.glb` (recommended).
+    - **Separate (.gltf)** — a `.gltf` + `.bin` + loose texture files.
+- **Export Custom Properties** (glTF only) — include object custom properties as glTF `extras` (engine-specific).
+
+Both formats honour the same engine preset, the same auto-cleanup toggles, and the same budget / release gate. Tangents follow the engine convention automatically — baked for Unity/Unreal, computed on import for Godot.
+
+!!! note "glTF exports the render mesh"
+    Collision conventions differ per engine in glTF (Godot, for example, uses name suffixes like `-col`), so the FBX `UCX_`/`UBX_` auto-include does not apply to glTF yet — glTF exports the render mesh. FBX collision auto-inclusion is unchanged.
+
+---
+
 ## Export folder warning
 
 If the export folder is not set, the panel shows an alert box and an inline path field. Set the folder here or in the [Output](output.md) panel — the export button does not appear until a valid path is entered.

@@ -20,6 +20,7 @@ team / pipeline tooling.
 - **Regression tracking** — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.
 
 ### More
+- **glTF / GLB export** — Export Selected now offers **FBX or glTF 2.0** (GLB single-file or separate `.gltf`), for Godot and web pipelines. Same engine preset, cleanup, and budget gate; tangents per engine convention.
 - **Material / Texture checks+** — flags a **non-standard surface shader** (custom node group that won't bake to PBR) and **mismatched texture resolutions** within one material (both informational).
 - **Backup before destructive fix** — optional snapshot of affected meshes into a hidden `GEP_Backup` collection before triangulate / fill-holes / loose-vert / zero-area repairs.
 - **Viewport header button** — an always-visible **Preflight** button in the 3D viewport header that opens the window (turns red when the last scan found errors).

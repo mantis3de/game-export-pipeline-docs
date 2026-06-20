@@ -1865,6 +1865,7 @@
 <li><strong>1</strong> — at least one <code>FAIL</code> or import failure — <em>blocked</em>. With <code>--fail-on warning</code>, warnings also block.</li>
 <li><strong>2</strong> — usage / runtime error (bad folder, no files).</li>
 </ul>
+<p>The run also prints a <strong>release verdict</strong> line, e.g. <code>[preflight] release: BLOCKED — 1 failing asset(s); health 84 &lt; 85</code>, summarising the <a href="../release-gate/">release gate</a>. The same verdict and the regression comparison are written into the JSON / HTML report.</p>
 <hr />
 <h2 id="ci-example-github-actions">CI example (GitHub Actions)<a class="headerlink" href="#ci-example-github-actions" title="Permanent link">&para;</a></h2>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Asset preflight</span>
