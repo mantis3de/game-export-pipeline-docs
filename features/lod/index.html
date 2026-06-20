@@ -1813,6 +1813,11 @@
 <li>Click <strong>Generate LODs</strong>.</li>
 </ol>
 <p>This creates <code>Name_LOD1</code>, <code>Name_LOD2</code>, … beside the base and writes a <strong>switching policy</strong> onto LOD0 (visible in the <em>APPLIED on '…'</em> line). Re-running tops up the chain rather than clobbering it.</p>
+<p>Two decimation options refine the Collapse reduction:</p>
+<ul>
+<li><strong>Preserve Symmetry</strong> (with an X/Y/Z axis) keeps a symmetric asset symmetric through the reduction — leave off for asymmetric meshes.</li>
+<li><strong>Triangulate LODs</strong> emits clean triangles instead of n-gons, matching what engines triangulate to anyway.</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Fix the base first</p>
 <p>A base mesh with <strong>errors</strong> won't generate LODs — decimating a broken mesh just copies the defect into every level. Fix LOD0, or untick <strong>Validate Base First</strong> to force.</p>
