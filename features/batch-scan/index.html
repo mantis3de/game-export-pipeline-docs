@@ -1813,7 +1813,7 @@
 <p>It contains:</p>
 <ul>
 <li><strong>Executive Summary</strong> hero (top) — a big <strong>Project Health</strong> score, <strong>Export Risk Level</strong>, asset counts, and <strong>budget % bars</strong> (triangles / VRAM / materials). The screen a lead forwards on Slack / Jira. See <a href="../budgets/">Budgets &amp; Dashboard</a>.</li>
-<li><strong>Thumbnails</strong> — a rendered preview of each asset (toggle in Scope, or <code>--no-thumbnails</code> in the CLI). Embedded as base64, so the report stays self-contained.</li>
+<li><strong>Thumbnails</strong> — a rendered preview of each asset (toggle in Scope, or <code>--no-thumbnails</code> in the CLI). Embedded as base64, so the report stays self-contained. Collision meshes are excluded from the render so a collider hull can't obscure the asset (a collider-only file still gets a preview).</li>
 <li><strong>Summary cards</strong> — total scanned, passed / warnings / failed / import-failed, and <strong>average health</strong>.</li>
 <li><strong>Export Risk Level</strong> — <em>Safe to Export</em> / <em>Export with Known Issues</em> / <em>Export Not Recommended</em>.</li>
 <li><strong>Health trend</strong> — an inline sparkline of average health across previous runs.</li>
