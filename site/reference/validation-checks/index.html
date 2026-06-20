@@ -1603,6 +1603,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lightmap-uv-outside-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lightmap UV outside 0–1
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1752,6 +1763,17 @@
     <span class="md-ellipsis">
       
         Excessive texel density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texel-density-off-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texel density off target
       
     </span>
   </a>
@@ -2627,6 +2649,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#lightmap-uv-outside-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lightmap UV outside 0–1
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2776,6 +2809,17 @@
     <span class="md-ellipsis">
       
         Excessive texel density
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texel-density-off-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Texel density off target
       
     </span>
   </a>
@@ -3125,6 +3169,10 @@
 <p>Lightmap UV islands are packed closer together than the configured minimum texel padding. At the target lightmap resolution, insufficient margin causes light to bleed between islands during baking.</p>
 <p>Adjust the padding requirements in the Validation thresholds (<strong>Lightmap Resolution</strong> and <strong>UV Padding (texels)</strong>). Disabled when <strong>Check UV Padding</strong> is off.</p>
 <p><strong>Fix:</strong> Re-pack the lightmap UV with a larger margin, or increase the lightmap resolution.</p>
+<h3 id="lightmap-uv-outside-01">Lightmap UV outside 0–1<a class="headerlink" href="#lightmap-uv-outside-01" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Error</strong></p>
+<p>The lightmap UV (channel 2) has coordinates outside the 0–1 square. Unlike the base UV — where tiling/UDIM outside 0–1 is legitimate — a lightmap must pack entirely inside 0–1. Anything outside is wasted atlas space and bakes incorrectly or not at all.</p>
+<p><strong>Fix:</strong> Re-pack the lightmap UV so every island fits inside 0–1, or use <strong>Fix → Add Lightmap UV</strong> to regenerate the channel.</p>
 <hr />
 <h2 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">&para;</a></h2>
 <h3 id="no-material-slots">No material slots<a class="headerlink" href="#no-material-slots" title="Permanent link">&para;</a></h3>
@@ -3178,6 +3226,10 @@
 <p><strong>Severity: Info</strong></p>
 <p>The texture resolution is very high relative to the mesh's polygon count — the ratio of <code>(max texture dimension)² / triangle count</code> exceeds the <strong>Texels per Triangle Warn</strong> threshold. This usually means either the texture is oversized for the mesh detail, or the mesh is too low-poly to justify the texture budget.</p>
 <p>Disabled when <strong>Check Textures</strong> is off.</p>
+<h3 id="texel-density-off-target">Texel density off target<a class="headerlink" href="#texel-density-off-target" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong> · <em>opt-in</em></p>
+<p>The asset's <strong>texel density</strong> — texture pixels per metre of surface — is outside the target band. Inconsistent density across a scene makes some surfaces look crisp and others blurry. Density is computed from the asset's UV area, its world-space surface area, and the largest texture it uses, then compared to <strong>Target Texel Density</strong> within a multiplicative <strong>Tolerance</strong> (e.g. 2.0 passes anything between half and double the target).</p>
+<p>Off by default — enable <strong>Check Texel Density</strong> (Rules tab) when you want consistent density across a set of assets. Typical targets: 512 px/m mobile, 1024 px/m PC, 2048 px/m hero assets.</p>
 <h3 id="mismatched-texture-resolutions">Mismatched texture resolutions<a class="headerlink" href="#mismatched-texture-resolutions" title="Permanent link">&para;</a></h3>
 <p><strong>Severity: Info</strong></p>
 <p>The image maps used by a single material are at very different resolutions — the largest is at least 4× the smallest (for example a 4096px base colour paired with a 256px normal map). This usually signals an authoring slip: the small map looks blurry while the large one wastes memory.</p>

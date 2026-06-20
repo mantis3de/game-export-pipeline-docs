@@ -23,6 +23,11 @@ There are no presets — you set both directly, defaulting to 50 / 25 / 10. The 
 
 This creates `Name_LOD1`, `Name_LOD2`, … beside the base and writes a **switching policy** onto LOD0 (visible in the *APPLIED on '…'* line). Re-running tops up the chain rather than clobbering it.
 
+Two decimation options refine the Collapse reduction:
+
+- **Preserve Symmetry** (with an X/Y/Z axis) keeps a symmetric asset symmetric through the reduction — leave off for asymmetric meshes.
+- **Triangulate LODs** emits clean triangles instead of n-gons, matching what engines triangulate to anyway.
+
 !!! warning "Fix the base first"
     A base mesh with **errors** won't generate LODs — decimating a broken mesh just copies the defect into every level. Fix LOD0, or untick **Validate Base First** to force.
 

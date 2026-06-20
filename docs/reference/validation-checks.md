@@ -155,6 +155,13 @@ Adjust the padding requirements in the Validation thresholds (**Lightmap Resolut
 
 **Fix:** Re-pack the lightmap UV with a larger margin, or increase the lightmap resolution.
 
+### Lightmap UV outside 0–1
+**Severity: Error**
+
+The lightmap UV (channel 2) has coordinates outside the 0–1 square. Unlike the base UV — where tiling/UDIM outside 0–1 is legitimate — a lightmap must pack entirely inside 0–1. Anything outside is wasted atlas space and bakes incorrectly or not at all.
+
+**Fix:** Re-pack the lightmap UV so every island fits inside 0–1, or use **Fix → Add Lightmap UV** to regenerate the channel.
+
 ---
 
 ## Materials
@@ -249,6 +256,13 @@ Disabled when **Check Textures** is off.
 The texture resolution is very high relative to the mesh's polygon count — the ratio of `(max texture dimension)² / triangle count` exceeds the **Texels per Triangle Warn** threshold. This usually means either the texture is oversized for the mesh detail, or the mesh is too low-poly to justify the texture budget.
 
 Disabled when **Check Textures** is off.
+
+### Texel density off target
+**Severity: Warning** · *opt-in*
+
+The asset's **texel density** — texture pixels per metre of surface — is outside the target band. Inconsistent density across a scene makes some surfaces look crisp and others blurry. Density is computed from the asset's UV area, its world-space surface area, and the largest texture it uses, then compared to **Target Texel Density** within a multiplicative **Tolerance** (e.g. 2.0 passes anything between half and double the target).
+
+Off by default — enable **Check Texel Density** (Rules tab) when you want consistent density across a set of assets. Typical targets: 512 px/m mobile, 1024 px/m PC, 2048 px/m hero assets.
 
 ### Mismatched texture resolutions
 **Severity: Info**

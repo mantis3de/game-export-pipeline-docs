@@ -1684,6 +1684,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#authoring-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoring &amp; validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#more" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1961,6 +1972,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#authoring-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoring &amp; validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#more" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2203,6 +2225,13 @@ team / pipeline tooling.</p>
 <ul>
 <li><strong>Release Gate</strong> — a one-glance <strong>RELEASE READY / BLOCKED</strong> verdict (in the dashboard, HTML report, and CLI), blocked by failing assets, import failures, project-budget overruns, or average health below the <strong>Release Health Threshold</strong> (default 85, set per profile).</li>
 <li><strong>Regression tracking</strong> — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.</li>
+</ul>
+<h3 id="authoring-validation">Authoring &amp; validation<a class="headerlink" href="#authoring-validation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Texel density check</strong> (opt-in) — flags assets whose texture pixels-per-metre fall outside a target band, for consistent density across a set.</li>
+<li><strong>Lightmap UV outside 0–1</strong> — errors when the lightmap channel packs outside the 0–1 square (breaks baking).</li>
+<li><strong>Set Game Pivot</strong> — one-click origin presets per asset type (Prop / Architecture / Foliage → bottom-center; Weapon / Vehicle → bounds-center).</li>
+<li><strong>LOD decimate options</strong> — preserve symmetry (with axis) and triangulate LODs in the generator.</li>
 </ul>
 <h3 id="more">More<a class="headerlink" href="#more" title="Permanent link">&para;</a></h3>
 <ul>

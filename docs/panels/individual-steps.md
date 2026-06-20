@@ -10,6 +10,7 @@ The **Individual Steps** panel exposes each preparation operation separately, fo
 |---|---|
 | **Pivot Bottom** | Moves the origin to the bottom-centre of the bounding box. Use for props, furniture, architecture — anything that sits on a surface. |
 | **Pivot Center** | Moves the origin to the geometric centre of the bounding box. Use for objects that rotate around their centre (wheels, doors, weapons). |
+| **Set Game Pivot** | Applies the right convention for the chosen **asset type** in one click — Prop / Architecture / Foliage get a bottom-centre origin; Weapon / Vehicle get a bounds-centre origin. Handy when you don't have a tech artist enforcing pivot rules. |
 
 ---
 

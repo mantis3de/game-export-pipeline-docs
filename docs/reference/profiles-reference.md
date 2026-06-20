@@ -35,6 +35,9 @@ Profiles are resolved in order: the addon's built-in `profiles.json` first, then
 | `checks.uv_overlap_check` | bool | true | run UV-overlap check |
 | `checks.uv_padding_check` | bool | true | run lightmap-padding check |
 | `checks.naming_default_check` | bool | true | flag default Blender names |
+| `checks.texel_density_check` | bool | false | flag assets outside the texel-density band (opt-in) |
+| `thresholds.texel_density_target` | int | 1024 | target texel density (px/m) |
+| `thresholds.texel_density_tolerance` | float | 2.0 | multiplicative pass band around the target |
 | `naming.strict` | bool | false | ASCII-only names |
 | `naming.template` | string | "" | studio naming template, e.g. `SM_{Category}_{Name}_{NN}` |
 | `naming.collider_prefixes` | string[] | *(built-in)* | override collider prefixes |

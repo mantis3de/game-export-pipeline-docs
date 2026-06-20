@@ -19,6 +19,12 @@ team / pipeline tooling.
 - **Release Gate** — a one-glance **RELEASE READY / BLOCKED** verdict (in the dashboard, HTML report, and CLI), blocked by failing assets, import failures, project-budget overruns, or average health below the **Release Health Threshold** (default 85, set per profile).
 - **Regression tracking** — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.
 
+### Authoring & validation
+- **Texel density check** (opt-in) — flags assets whose texture pixels-per-metre fall outside a target band, for consistent density across a set.
+- **Lightmap UV outside 0–1** — errors when the lightmap channel packs outside the 0–1 square (breaks baking).
+- **Set Game Pivot** — one-click origin presets per asset type (Prop / Architecture / Foliage → bottom-center; Weapon / Vehicle → bounds-center).
+- **LOD decimate options** — preserve symmetry (with axis) and triangulate LODs in the generator.
+
 ### More
 - **glTF / GLB export** — Export Selected now offers **FBX or glTF 2.0** (GLB single-file or separate `.gltf`), for Godot and web pipelines. Same engine preset, cleanup, and budget gate; tangents per engine convention.
 - **Material / Texture checks+** — flags a **non-standard surface shader** (custom node group that won't bake to PBR) and **mismatched texture resolutions** within one material (both informational).
