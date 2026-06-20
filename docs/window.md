@@ -1,6 +1,6 @@
 # The Asset Preflight Window
 
-Everything to do with validation now lives in one place: a centered, tabbed window opened from the **Open Asset Preflight** button at the top of the **GameExport** sidebar.
+Everything to do with validation now lives in one place: a centered, tabbed window opened from the **Open Asset Preflight** button at the top of the **GameExport** sidebar, or from the always-visible **Preflight** button in the 3D viewport header (top bar). The header button stays put through any operation and turns **red** when the last scan found errors, so the gate status is visible from anywhere.
 
 It replaces the old scattered *Validation* and *Fix* panels. The interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel — see [Viewport Tools](panels/output.md).
 
@@ -83,6 +83,7 @@ Run validation and read the results in one place (no tab-hopping). Shown after a
 - **Summary** — export gate score + status, scene quality, error/warning/info counts, per-category scores.
 - **Objects to fix** — a checklist of validated objects (tick which to repair); **All** / **Errors only** quick-selects.
 - **Fix Safe Issues** — every *deterministic* fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally **not** auto-applied — guessing at topology can quietly make a mesh worse.
+- **Backup before destructive fix** — an optional toggle. When on, the destructive geometry repairs (triangulate, fill holes, remove loose verts / zero-area faces) first copy the affected meshes into a hidden `GEP_Backup_<time>` collection, so you can recover the original geometry. The collection is excluded from the view layer so it won't be selected or exported.
 - **Issue list** — grouped by object or category. Each issue has:
     - **Select & Focus** — selects the exact components, opens the right editor (UV / Shader / Material tab) and **frames the viewport** on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.
     - **Fix This** — that issue's safe fix (shown only for deterministic fixes).

@@ -109,6 +109,7 @@ nav:
       - Naming Templates: features/naming.md
       - LOD Tools: features/lod.md
       - Batch Scan & HTML Report: features/batch-scan.md
+      - Release Gate & Regressions: features/release-gate.md
       - Headless CLI (CI Gate): features/cli.md
   - Viewport Tools:
       - Output & Engine: panels/output.md

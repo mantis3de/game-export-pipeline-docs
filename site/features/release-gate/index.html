@@ -12,13 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/batch-scan/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/release-gate/">
       
       
-        <link rel="prev" href="../lod/">
+        <link rel="prev" href="../batch-scan/">
       
       
-        <link rel="next" href="../release-gate/">
+        <link rel="next" href="../cli/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Batch Scan & HTML Report - Game Export Pipeline Documentation</title>
+        <title>Release Gate & Regressions - Game Export Pipeline Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#batch-scan-html-report" class="md-skip">
+        <a href="#release-gate-regression-tracking" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Batch Scan & HTML Report
+              Release Gate & Regressions
             
           </span>
         </div>
@@ -843,6 +843,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../batch-scan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Batch Scan & HTML Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -862,7 +890,7 @@
   <span class="md-ellipsis">
     
   
-    Batch Scan & HTML Report
+    Release Gate & Regressions
   
 
     
@@ -880,7 +908,7 @@
   <span class="md-ellipsis">
     
   
-    Batch Scan & HTML Report
+    Release Gate & Regressions
   
 
     
@@ -906,10 +934,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-a-batch-scan" class="md-nav__link">
+  <a href="#release-gate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running a batch scan
+        Release Gate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release Gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-health-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Health Threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression Tracking
       
     </span>
   </a>
@@ -917,32 +973,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-html-report" class="md-nav__link">
+  <a href="#cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The HTML report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delta-scan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Delta scan
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-teams-use-it-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What teams use it for
+        CLI
       
     </span>
   </a>
@@ -953,34 +987,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../release-gate/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Release Gate & Regressions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1735,10 +1741,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#running-a-batch-scan" class="md-nav__link">
+  <a href="#release-gate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Running a batch scan
+        Release Gate
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Release Gate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#release-health-threshold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release Health Threshold
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regression-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regression Tracking
       
     </span>
   </a>
@@ -1746,32 +1780,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-html-report" class="md-nav__link">
+  <a href="#cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The HTML report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#delta-scan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Delta scan
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-teams-use-it-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What teams use it for
+        CLI
       
     </span>
   </a>
@@ -1795,46 +1807,53 @@
 
 
 
-<h1 id="batch-scan-html-report">Batch Scan &amp; HTML Report<a class="headerlink" href="#batch-scan-html-report" title="Permanent link">&para;</a></h1>
-<p>Point the addon at a <strong>folder of exported assets</strong> and get a single, shareable HTML report — health scores, an export-risk level, duplicate-geometry detection, and a quality trend across runs. This is the lead's view and the "send it to the team" deliverable.</p>
-<hr />
-<h2 id="running-a-batch-scan">Running a batch scan<a class="headerlink" href="#running-a-batch-scan" title="Permanent link">&para;</a></h2>
-<p>In the <strong>Asset Preflight</strong> window:</p>
-<ol>
-<li><strong>Scope</strong> tab → set <strong>Batch folder</strong> (the exports) and <strong>Output</strong> (where the report goes — empty = the batch folder). Toggle <strong>Subfolders</strong> and <strong>Delta</strong> as needed.</li>
-<li><strong>Scan</strong> tab → <strong>Scan Folder</strong>.</li>
-<li><strong>Open HTML Report</strong>.</li>
-</ol>
-<p>Supported formats: <strong>FBX · glTF · GLB · OBJ</strong>.</p>
-<p>Each file is imported into a <strong>throwaway scene</strong>, validated with the active <strong>profile</strong>, then removed — your open scene is never touched. <strong>Import failures never stop the batch</strong>; the file is flagged and the scan continues.</p>
-<hr />
-<h2 id="the-html-report">The HTML report<a class="headerlink" href="#the-html-report" title="Permanent link">&para;</a></h2>
-<p>A single self-contained <code>.html</code> file — <strong>no internet, no dependencies, no telemetry</strong>. Open it in any browser, drop it in Slack / Drive / email.</p>
-<p>It contains:</p>
+<h1 id="release-gate-regression-tracking">Release Gate &amp; Regression Tracking<a class="headerlink" href="#release-gate-regression-tracking" title="Permanent link">&para;</a></h1>
+<p>The Release Gate turns a folder scan into a single ship / don't-ship verdict, and
+regression tracking shows what got worse since the previous scan. Together they
+let a producer or solo dev answer "is this build safe to hand to the engine?"
+without reading every asset card.</p>
+<h2 id="release-gate">Release Gate<a class="headerlink" href="#release-gate" title="Permanent link">&para;</a></h2>
+<p>After a batch scan the report carries a <strong>RELEASE READY</strong> or <strong>BLOCKED</strong> verdict.
+It appears in three places:</p>
 <ul>
-<li><strong>Executive Summary</strong> hero (top) — a big <strong>Project Health</strong> score, <strong>Export Risk Level</strong>, asset counts, and <strong>budget % bars</strong> (triangles / VRAM / materials). The screen a lead forwards on Slack / Jira. See <a href="../budgets/">Budgets &amp; Dashboard</a>.</li>
-<li><strong>Thumbnails</strong> — a rendered preview of each asset (toggle in Scope, or <code>--no-thumbnails</code> in the CLI). Embedded as base64, so the report stays self-contained.</li>
-<li><strong>Summary cards</strong> — total scanned, passed / warnings / failed / import-failed, and <strong>average health</strong>.</li>
-<li><strong>Export Risk Level</strong> — <em>Safe to Export</em> / <em>Export with Known Issues</em> / <em>Export Not Recommended</em>.</li>
-<li><strong>Health trend</strong> — an inline sparkline of average health across previous runs.</li>
-<li><strong>Duplicate-geometry banner</strong> — flags files sharing a mesh signature (catches accidental re-exports before publishing).</li>
-<li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, and an expandable issue list.</li>
-<li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed; sort by health, name, errors or tris.</li>
+<li>the <strong>Project Health</strong> line at the top of the Asset Preflight dashboard,</li>
+<li>a coloured badge above the Executive Summary in the <strong>HTML report</strong>,</li>
+<li>a <code>release:</code> line in the <strong>headless CLI</strong> output.</li>
 </ul>
-<p>Alongside the HTML, a <code>.json</code> with the same data is written — for tooling, diffing, and the CLI.</p>
-<hr />
-<h2 id="delta-scan">Delta scan<a class="headerlink" href="#delta-scan" title="Permanent link">&para;</a></h2>
-<p>With <strong>Delta</strong> on, files unchanged since the last scan (by modification time + size) are skipped and their previous results reused — repeat scans of a large library are near-instant. Edit one file, re-scan, and only that file is re-validated.</p>
-<hr />
-<h2 id="what-teams-use-it-for">What teams use it for<a class="headerlink" href="#what-teams-use-it-for" title="Permanent link">&para;</a></h2>
+<p>A build is <strong>BLOCKED</strong> when any of these is true:</p>
 <ul>
-<li><strong>Triage</strong> — sort by health, fix the worst offenders first.</li>
-<li><strong>Catch re-exports</strong> — the duplicate banner spots two files that are really the same mesh.</li>
-<li><strong>Sign-off</strong> — a pre-publish / pre-merge snapshot of project health.</li>
-<li><strong>Trend</strong> — watch average health climb run over run.</li>
+<li>one or more assets <strong>fail</strong> (contain an error),</li>
+<li>one or more files <strong>failed to import</strong>,</li>
+<li>a <strong>project budget</strong> is exceeded (total triangles, texture VRAM, or materials
+  over the project limit),</li>
+<li>average <strong>project health</strong> is below the <strong>Release Health Threshold</strong>.</li>
 </ul>
-<p>→ For an automated gate, run the same scan headless in CI: <a href="../cli/">Headless CLI</a>.
-→ Full field-by-field structure: <a href="../../reference/report-schema/">Report Schema</a>.</p>
+<p>When blocked, the verdict lists the concrete reasons (e.g. <code>1 failing asset(s)</code>,
+<code>health 77 &lt; 85</code>, <code>triangle budget exceeded</code>) so you know exactly what to fix.</p>
+<h3 id="release-health-threshold">Release Health Threshold<a class="headerlink" href="#release-health-threshold" title="Permanent link">&para;</a></h3>
+<p>The threshold is the minimum acceptable average health (0–100, default <strong>85</strong>).
+Set it per profile under <code>release.min_health</code> in
+<a href="../profiles/"><code>profiles.json</code></a>, or adjust it for the current scene in the window.
+A stricter team raises it; a prototype can lower it.</p>
+<h2 id="regression-tracking">Regression Tracking<a class="headerlink" href="#regression-tracking" title="Permanent link">&para;</a></h2>
+<p>When a previous report exists in the output folder, the new report adds a
+<strong>Since last scan</strong> block comparing this scan to the last one:</p>
+<ul>
+<li><strong>Project Health</strong> delta (green when it improved, red when it dropped),</li>
+<li><strong>Triangles</strong>, <strong>Texture VRAM</strong>, and <strong>Materials</strong> totals as a percentage
+  change — an increase is shown red (it costs budget), a decrease green,</li>
+<li><strong>Worst regressions</strong> — the assets whose score dropped the most, with their
+  previous and current score.</li>
+</ul>
+<p>This makes creeping budget growth and quietly degrading assets visible across
+iterations, instead of only seeing a single snapshot.</p>
+<h2 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h2>
+<p>The headless gate prints the verdict and exits non-zero when blocked, so a build
+server or pre-publish hook can stop a bad build:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[preflight] 12 files — 10 pass / 1 warn / 1 fail · avg health 84 · Export Not Recommended
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[preflight] release: BLOCKED — 1 failing asset(s); health 84 &lt; 85
+</span></code></pre></div>
+<p>See <a href="../cli/">Headless CLI</a> for the full command and exit codes.</p>
 
 
 
@@ -1870,7 +1889,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lod/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LOD Tools">
+          <a href="../batch-scan/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Batch Scan &amp; HTML Report">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1880,20 +1899,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                LOD Tools
+                Batch Scan & HTML Report
               </div>
             </div>
           </a>
         
         
           
-          <a href="../release-gate/" class="md-footer__link md-footer__link--next" aria-label="Next: Release Gate &amp; Regressions">
+          <a href="../cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Headless CLI (CI Gate)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Release Gate & Regressions
+                Headless CLI (CI Gate)
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -196,6 +196,17 @@ Standard PBR texture inputs are absent from the Principled BSDF: Base Color and 
 
 Disabled when **Check Material Graph** is off.
 
+### Non-standard surface shader
+**Severity: Info**
+
+The active Material Output is driven by a custom node group instead of a Principled BSDF. Game engines bake materials from the Principled BSDF, so a custom shader (a stylised/toon setup, a reusable node group, etc.) will not import as authored — it typically falls back to a flat colour or a missing/pink material.
+
+Informational only, so it never blocks export. On a Procedural/Shader asset type this is expected.
+
+**Fix:** Drive the surface with a Principled BSDF, or bake your custom shader down to PBR textures before exporting.
+
+Disabled when **Check Material Graph** is off.
+
 ---
 
 ## Textures
@@ -236,6 +247,17 @@ Disabled when **Check Textures** is off.
 **Severity: Info**
 
 The texture resolution is very high relative to the mesh's polygon count — the ratio of `(max texture dimension)² / triangle count` exceeds the **Texels per Triangle Warn** threshold. This usually means either the texture is oversized for the mesh detail, or the mesh is too low-poly to justify the texture budget.
+
+Disabled when **Check Textures** is off.
+
+### Mismatched texture resolutions
+**Severity: Info**
+
+The image maps used by a single material are at very different resolutions — the largest is at least 4× the smallest (for example a 4096px base colour paired with a 256px normal map). This usually signals an authoring slip: the small map looks blurry while the large one wastes memory.
+
+Informational only.
+
+**Fix:** Author the maps of a material at a consistent resolution.
 
 Disabled when **Check Textures** is off.
 

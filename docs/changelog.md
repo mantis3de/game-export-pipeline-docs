@@ -15,7 +15,14 @@ team / pipeline tooling.
 - **Executive Summary** hero + **thumbnails** in the HTML report.
 - **Project presets** — Mobile Low/High, PC Indie, VR.
 
+### Release gate & regressions
+- **Release Gate** — a one-glance **RELEASE READY / BLOCKED** verdict (in the dashboard, HTML report, and CLI), blocked by failing assets, import failures, project-budget overruns, or average health below the **Release Health Threshold** (default 85, set per profile).
+- **Regression tracking** — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.
+
 ### More
+- **Material / Texture checks+** — flags a **non-standard surface shader** (custom node group that won't bake to PBR) and **mismatched texture resolutions** within one material (both informational).
+- **Backup before destructive fix** — optional snapshot of affected meshes into a hidden `GEP_Backup` collection before triangulate / fill-holes / loose-vert / zero-area repairs.
+- **Viewport header button** — an always-visible **Preflight** button in the 3D viewport header that opens the window (turns red when the last scan found errors).
 - **Naming templates** + one-click auto-rename (`SM_{Category}_{Name}_{NN}`).
 - **Per-object / whole-scene Ignore** (mark intentional → `(ignored)` info).
 - **Asset Type** layer (PBR / Lightmap / Procedural / Kitbash-Atlas).

@@ -673,6 +673,8 @@
       
         
       
+        
+      
     
     
     
@@ -845,6 +847,34 @@
     
   
     Batch Scan & HTML Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/release-gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Gate & Regressions
   
 
     
@@ -1643,6 +1673,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#release-gate-regressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release gate &amp; regressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#more" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1909,6 +1950,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#release-gate-regressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release gate &amp; regressions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#more" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2147,8 +2199,16 @@ team / pipeline tooling.</p>
 <li><strong>Executive Summary</strong> hero + <strong>thumbnails</strong> in the HTML report.</li>
 <li><strong>Project presets</strong> — Mobile Low/High, PC Indie, VR.</li>
 </ul>
+<h3 id="release-gate-regressions">Release gate &amp; regressions<a class="headerlink" href="#release-gate-regressions" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Release Gate</strong> — a one-glance <strong>RELEASE READY / BLOCKED</strong> verdict (in the dashboard, HTML report, and CLI), blocked by failing assets, import failures, project-budget overruns, or average health below the <strong>Release Health Threshold</strong> (default 85, set per profile).</li>
+<li><strong>Regression tracking</strong> — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.</li>
+</ul>
 <h3 id="more">More<a class="headerlink" href="#more" title="Permanent link">&para;</a></h3>
 <ul>
+<li><strong>Material / Texture checks+</strong> — flags a <strong>non-standard surface shader</strong> (custom node group that won't bake to PBR) and <strong>mismatched texture resolutions</strong> within one material (both informational).</li>
+<li><strong>Backup before destructive fix</strong> — optional snapshot of affected meshes into a hidden <code>GEP_Backup</code> collection before triangulate / fill-holes / loose-vert / zero-area repairs.</li>
+<li><strong>Viewport header button</strong> — an always-visible <strong>Preflight</strong> button in the 3D viewport header that opens the window (turns red when the last scan found errors).</li>
 <li><strong>Naming templates</strong> + one-click auto-rename (<code>SM_{Category}_{Name}_{NN}</code>).</li>
 <li><strong>Per-object / whole-scene Ignore</strong> (mark intentional → <code>(ignored)</code> info).</li>
 <li><strong>Asset Type</strong> layer (PBR / Lightmap / Procedural / Kitbash-Atlas).</li>
