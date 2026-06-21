@@ -1867,11 +1867,11 @@
 <p>→ How engines interpret these names, and the full set of collider conventions the validator recognises (configurable): <a href="../../reference/collider-naming/">Collider Naming</a></p>
 <hr />
 <h2 id="remove-all-collision-dissolve-collections">Remove All Collision / Dissolve Collections<a class="headerlink" href="#remove-all-collision-dissolve-collections" title="Permanent link">&para;</a></h2>
-<p><strong>Remove All Collision</strong> deletes every <code>UCX_</code> and <code>UBX_</code> object in the scene.</p>
+<p><strong>Remove All Collision</strong> deletes every collision mesh in the scene, recognised under <strong>any</strong> configured collider naming convention — <code>UCX_</code> / <code>UBX_</code>, <code>*.collision</code>, <code>*_col</code>, and anything you added under <strong>Presets → Collider names</strong> — not just <code>UCX_</code>/<code>UBX_</code>.</p>
 <p><strong>Dissolve Collections</strong> removes the auto-generated collections created for Unreal and moves all objects back to the scene root. The objects themselves are not deleted.</p>
 <div class="admonition warning">
 <p class="admonition-title">Remove All Collision affects the entire scene</p>
-<p>It is not limited to the current selection — it finds and deletes every object whose name starts with <code>UCX_</code> or <code>UBX_</code>.</p>
+<p>It is not limited to the current selection — it finds and deletes every mesh whose name matches a collider convention.</p>
 </div>
 
 

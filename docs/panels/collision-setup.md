@@ -37,9 +37,9 @@ Both buttons create a new mesh object named `UCX_<original name>` or `UBX_<origi
 
 ## Remove All Collision / Dissolve Collections
 
-**Remove All Collision** deletes every `UCX_` and `UBX_` object in the scene.
+**Remove All Collision** deletes every collision mesh in the scene, recognised under **any** configured collider naming convention — `UCX_` / `UBX_`, `*.collision`, `*_col`, and anything you added under **Presets → Collider names** — not just `UCX_`/`UBX_`.
 
 **Dissolve Collections** removes the auto-generated collections created for Unreal and moves all objects back to the scene root. The objects themselves are not deleted.
 
 !!! warning "Remove All Collision affects the entire scene"
-    It is not limited to the current selection — it finds and deletes every object whose name starts with `UCX_` or `UBX_`.
+    It is not limited to the current selection — it finds and deletes every mesh whose name matches a collider convention.

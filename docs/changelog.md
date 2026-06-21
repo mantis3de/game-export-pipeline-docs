@@ -19,16 +19,30 @@ team / pipeline tooling.
 - **Release Gate** — a one-glance **RELEASE READY / BLOCKED** verdict (in the dashboard, HTML report, and CLI), blocked by failing assets, import failures, project-budget overruns, or average health below the **Release Health Threshold** (default 85, set per profile).
 - **Regression tracking** — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.
 
+### Report & in-scene UX
+- **HTML report from the scene** — generate the same rich HTML report from an in-scene validation (one card per object), not just from a folder scan. The window has **HTML Scene** + **HTML Folder** buttons.
+- **By rule** view in the HTML — actionable findings grouped by rule with counts (*Missing Texture File — 6 assets*), collapsible.
+- **Ignored** in the report — an Ignored count (cards + summary), a muted `ignored` tag on muted findings, and an **Ignored** filter that shows only the muted ones.
+- **Thumbnail size** — Small / Medium / Large; each asset is isolated during render so the preview shows only that asset.
+- **Expand all / Collapse all** + a ▸ chevron so cards clearly read as expandable.
+- **Re-check** — re-validate in place (per issue and next to Fix Safe), so you don't scroll back to Run Validation after a manual fix.
+- **Show / Hide ignored** in-scene — preview exactly what's muted (scoped to the ticked objects) with a per-finding **✕** un-ignore.
+- **Remove All Collision** now respects every configured collider naming convention (`.collision`, `_col`, custom…), not just `UCX_`/`UBX_`.
+- **Save Current as Profile…** captures your settings (incl. Asset Type) into the project `profiles.json`; selecting a profile now **applies immediately**.
+- **Scene Unit Scale ≠ 1.0** check — flags the hidden footgun behind wrong import sizes.
+
 ### Authoring & validation
+- **Export LOD Chains (FBX)** — exports a base mesh + its LODs as one grouped FBX renamed `Base_LOD0…_LODn`, so **Unity auto-creates a LOD Group** on import. (Unreal needs a manual *Import Mesh LOD* per level; Godot auto-generates LODs and doesn't need manual chains — the panel shows the right hint per engine.) Works on temp copies; the scene is untouched.
 - **Texel density check** (opt-in) — flags assets whose texture pixels-per-metre fall outside a target band, for consistent density across a set.
 - **Lightmap UV outside 0–1** — errors when the lightmap channel packs outside the 0–1 square (breaks baking).
 - **Set Game Pivot** — one-click origin presets per asset type (Prop / Architecture / Foliage → bottom-center; Weapon / Vehicle → bounds-center).
 - **LOD decimate options** — preserve symmetry (with axis) and triangulate LODs in the generator.
 
 ### More
+- **Save Current as Profile…** — capture the current thresholds, checks, naming, budgets and release settings into your project `profiles.json` as a named profile, straight from the UI (no JSON editing); commit it and the team gets it.
 - **glTF / GLB export** — Export Selected now offers **FBX or glTF 2.0** (GLB single-file or separate `.gltf`), for Godot and web pipelines. Same engine preset, cleanup, and budget gate; tangents per engine convention.
 - **Material / Texture checks+** — flags a **non-standard surface shader** (custom node group that won't bake to PBR) and **mismatched texture resolutions** within one material (both informational).
-- **Backup before destructive fix** — optional snapshot of affected meshes into a hidden `GEP_Backup` collection before triangulate / fill-holes / loose-vert / zero-area repairs.
+- **Safe-only repairs** — the destructive geometry auto-fixes (fill holes, triangulate n-gons, remove loose / zero-area) were removed entirely. Geometry problems are now manual: **Select & Focus** takes you to the exact components and you fix them with Blender's own (undoable) tools.
 - **Viewport header button** — an always-visible **Preflight** button in the 3D viewport header that opens the window (turns red when the last scan found errors).
 - **Naming templates** + one-click auto-rename (`SM_{Category}_{Name}_{NN}`).
 - **Per-object / whole-scene Ignore** (mark intentional → `(ignored)` info).

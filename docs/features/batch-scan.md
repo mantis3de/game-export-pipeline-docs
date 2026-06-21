@@ -25,13 +25,14 @@ A single self-contained `.html` file — **no internet, no dependencies, no tele
 It contains:
 
 - **Executive Summary** hero (top) — a big **Project Health** score, **Export Risk Level**, asset counts, and **budget % bars** (triangles / VRAM / materials). The screen a lead forwards on Slack / Jira. See [Budgets & Dashboard](budgets.md).
-- **Thumbnails** — a rendered preview of each asset (toggle in Scope, or `--no-thumbnails` in the CLI). Embedded as base64, so the report stays self-contained. Collision meshes are excluded from the render so a collider hull can't obscure the asset (a collider-only file still gets a preview).
-- **Summary cards** — total scanned, passed / warnings / failed / import-failed, and **average health**.
+- **Thumbnails** — a rendered preview of each asset (toggle in Scope, or `--no-thumbnails` in the CLI). Each asset is **isolated** during render (other objects hidden) so the preview shows only that asset, and collision meshes are excluded so a collider hull can't obscure it. Pick **Small / Medium / Large** (Thumbnail Size in Scope) — it changes both render resolution and display size. Embedded as base64, so the report stays self-contained.
+- **Summary cards** — total scanned, passed / warnings / failed / import-failed, **ignored**, and **average health**.
+- **By rule** — every actionable finding grouped by rule with a count (*Missing Texture File — 6 assets ▸*), collapsible, sorted worst-first. The fastest way to see which rule trips most often. Purely informational findings (INFO) are excluded so it stays a list of real problems.
 - **Export Risk Level** — *Safe to Export* / *Export with Known Issues* / *Export Not Recommended*.
 - **Health trend** — an inline sparkline of average health across previous runs.
 - **Duplicate-geometry banner** — flags files sharing a mesh signature (catches accidental re-exports before publishing).
-- **Per-file cards** — health badge, mesh/tri counts, error/warning counts, and an expandable issue list.
-- **Filter / sort / search** — All / Fail / Warning / Pass / Import-failed; sort by health, name, errors or tris.
+- **Per-file cards** — health badge, mesh/tri counts, error/warning counts, a ▸ chevron (click the card to expand), and the issue list. Findings you marked intentional show a muted **ignored** tag.
+- **Filter / sort / search** — All / Fail / Warning / Pass / Import-failed / **Ignored** (shows only the muted findings); sort by health, name, errors or tris; **Expand all / Collapse all**.
 
 Alongside the HTML, a `.json` with the same data is written — for tooling, diffing, and the CLI.
 

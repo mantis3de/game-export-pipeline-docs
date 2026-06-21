@@ -1934,16 +1934,18 @@
 <ul>
 <li><strong>Project Health dashboard</strong> — the level's totals vs the project budget as used / limit / % bars, plus <strong>Top by triangles</strong>. See <a href="../features/budgets/">Budgets &amp; Dashboard</a>.</li>
 <li><strong>Summary</strong> — export gate score + status, scene quality, error/warning/info counts, per-category scores.</li>
+<li><strong>Reports</strong> — <strong>Scan Folder</strong> / <strong>Export JSON/CSV</strong>, plus two HTML buttons: <strong>HTML Scene</strong> (builds the same rich report from the current in-scene validation — one card per object) and <strong>HTML Folder</strong> (opens the last folder-scan report). See <a href="../features/batch-scan/">Batch Scan &amp; HTML Report</a>.</li>
 <li><strong>Objects to fix</strong> — a checklist of validated objects (tick which to repair); <strong>All</strong> / <strong>Errors only</strong> quick-selects.</li>
-<li><strong>Fix Safe Issues</strong> — every <em>deterministic</em> fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally <strong>not</strong> auto-applied — guessing at topology can quietly make a mesh worse.</li>
-<li><strong>Backup before destructive fix</strong> — an optional toggle. When on, the destructive geometry repairs (triangulate, fill holes, remove loose verts / zero-area faces) first copy the affected meshes into a hidden <code>GEP_Backup_&lt;time&gt;</code> collection, so you can recover the original geometry. The collection is excluded from the view layer so it won't be selected or exported.</li>
+<li><strong>Fix Safe Issues</strong> + <strong>Re-check</strong> — Fix Safe runs every <em>deterministic</em> fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally <strong>not</strong> auto-applied. <strong>Re-check</strong> re-runs validation in place — use it after fixing something by hand (from Select &amp; Focus) instead of scrolling back up.</li>
 <li><strong>Issue list</strong> — grouped by object or category. Each issue has:<ul>
 <li><strong>Select &amp; Focus</strong> — selects the exact components, opens the right editor (UV / Shader / Material tab) and <strong>frames the viewport</strong> on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.</li>
+<li><strong>↻ Re-check</strong> — re-validate in place, right where you fixed it.</li>
 <li><strong>Fix This</strong> — that issue's safe fix (shown only for deterministic fixes).</li>
-<li><strong>Ignore</strong> — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an <code>(ignored)</code> info note; <strong>Un-ignore</strong> restores it.</li>
+<li><strong>Ignore</strong> — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an <code>(ignored)</code> info note (it stops counting against the score) but stays visible as an audit trail.</li>
 <li><strong>Impact / Fix</strong> hints (when <em>Show Explanations</em> is on).</li>
 </ul>
 </li>
+<li><strong>Ignored</strong> — a <strong>Show / Hide</strong> toggle previews exactly what's muted (scoped to the ticked objects); each row has a <strong>✕</strong> to un-ignore that single finding, plus <strong>Un-ignore All</strong>.</li>
 </ul>
 <p>→ <a href="../workflows/scene-asset/">Validate a Scene Asset</a> for the full loop.</p>
 

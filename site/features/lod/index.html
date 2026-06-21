@@ -900,6 +900,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#export-lod-chains-unity-auto-lod-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export LOD chains (Unity auto-LOD Group)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#preview-runtime-emulator" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1757,6 +1768,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#export-lod-chains-unity-auto-lod-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export LOD chains (Unity auto-LOD Group)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#preview-runtime-emulator" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1823,6 +1845,16 @@
 <p>A base mesh with <strong>errors</strong> won't generate LODs — decimating a broken mesh just copies the defect into every level. Fix LOD0, or untick <strong>Validate Base First</strong> to force.</p>
 </div>
 <p><strong>Apply / Refresh Policy</strong> re-writes the policy onto selected chains <em>without</em> regenerating geometry — use it after changing the % or FOV.</p>
+<hr />
+<h2 id="export-lod-chains-unity-auto-lod-group">Export LOD chains (Unity auto-LOD Group)<a class="headerlink" href="#export-lod-chains-unity-auto-lod-group" title="Permanent link">&para;</a></h2>
+<p><strong>Export LOD Chains (FBX)</strong> writes each base mesh <strong>and its LODs as one grouped FBX</strong>, with the meshes renamed to <code>Base_LOD0</code>, <code>Base_LOD1</code>, <code>Base_LOD2</code>… The export works on temporary duplicates — your scene meshes keep their working names (<code>Base</code>, <code>Base_LOD1</code>…) and are never modified. Select the base (or any of its LODs) and export, or run it on the whole scene. Set the <strong>Export Folder</strong> in the Output panel first.</p>
+<p>How each engine treats the result differs — the panel shows the right hint for your active engine:</p>
+<ul>
+<li><strong>Unity</strong> — recognises the <code>_LOD0/_LOD1/…</code> naming and <strong>automatically creates a LOD Group</strong> component on import. No manual setup. This is the happy path.</li>
+<li><strong>Unreal</strong> — <strong>auto-generates</strong> LODs itself (Static Mesh → <em>Number of LODs</em> + reduction), and does <strong>not</strong> auto-group from <code>_LOD</code> names (that needs an FBX <em>LODGroup</em> node, which Blender's exporter can't write). So you normally let Unreal build LODs. Use this export only when you want your <strong>own authored</strong> LODs: import the base, then in the <strong>Static Mesh Editor</strong> use <strong>Import Mesh LOD</strong> per level.</li>
+<li><strong>Godot 4</strong> — <strong>auto-generates</strong> LODs on import via meshoptimizer, so you normally <strong>don't</strong> ship manual LOD meshes. Exporting <code>_LODn</code> chains for Godot would import them as separate meshes; let Godot handle LODs instead.</li>
+</ul>
+<p>So this feature is primarily for <strong>Unity</strong> (the only one of the three that does <strong>not</strong> auto-generate LODs). For Unreal/Godot it's optional — only when you want hand-made LODs instead of the engine's. Sources: <a href="https://docs.unity3d.com/6000.1/Documentation/Manual/importing-lod-meshes.html">Unity LOD import</a>, <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/importing-static-mesh-lods-using-fbx-in-unreal-engine">Unreal static-mesh LODs</a>, <a href="https://docs.godotengine.org/en/stable/tutorials/3d/mesh_lod.html">Godot mesh LOD</a>.</p>
 <hr />
 <h2 id="preview-runtime-emulator">Preview (runtime emulator)<a class="headerlink" href="#preview-runtime-emulator" title="Permanent link">&para;</a></h2>
 <p>The preview shows exactly which level the engine would display at a given camera distance, using the same screen-size math the policy stores.</p>

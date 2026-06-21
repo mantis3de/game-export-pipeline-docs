@@ -35,6 +35,20 @@ Two decimation options refine the Collapse reduction:
 
 ---
 
+## Export LOD chains (Unity auto-LOD Group)
+
+**Export LOD Chains (FBX)** writes each base mesh **and its LODs as one grouped FBX**, with the meshes renamed to `Base_LOD0`, `Base_LOD1`, `Base_LOD2`… The export works on temporary duplicates — your scene meshes keep their working names (`Base`, `Base_LOD1`…) and are never modified. Select the base (or any of its LODs) and export, or run it on the whole scene. Set the **Export Folder** in the Output panel first.
+
+How each engine treats the result differs — the panel shows the right hint for your active engine:
+
+- **Unity** — recognises the `_LOD0/_LOD1/…` naming and **automatically creates a LOD Group** component on import. No manual setup. This is the happy path.
+- **Unreal** — **auto-generates** LODs itself (Static Mesh → *Number of LODs* + reduction), and does **not** auto-group from `_LOD` names (that needs an FBX *LODGroup* node, which Blender's exporter can't write). So you normally let Unreal build LODs. Use this export only when you want your **own authored** LODs: import the base, then in the **Static Mesh Editor** use **Import Mesh LOD** per level.
+- **Godot 4** — **auto-generates** LODs on import via meshoptimizer, so you normally **don't** ship manual LOD meshes. Exporting `_LODn` chains for Godot would import them as separate meshes; let Godot handle LODs instead.
+
+So this feature is primarily for **Unity** (the only one of the three that does **not** auto-generate LODs). For Unreal/Godot it's optional — only when you want hand-made LODs instead of the engine's. Sources: [Unity LOD import](https://docs.unity3d.com/6000.1/Documentation/Manual/importing-lod-meshes.html), [Unreal static-mesh LODs](https://dev.epicgames.com/documentation/en-us/unreal-engine/importing-static-mesh-lods-using-fbx-in-unreal-engine), [Godot mesh LOD](https://docs.godotengine.org/en/stable/tutorials/3d/mesh_lod.html).
+
+---
+
 ## Preview (runtime emulator)
 
 The preview shows exactly which level the engine would display at a given camera distance, using the same screen-size math the policy stores.

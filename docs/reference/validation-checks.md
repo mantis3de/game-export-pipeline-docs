@@ -48,6 +48,13 @@ The object's parent mesh has an unapplied scale. The child inherits the parent's
 
 **Fix:** Apply scale on the parent object first.
 
+### Scene Unit Scale ≠ 1.0
+**Severity: Warning**
+
+The scene's **Unit Scale** (Scene Properties → Units) is not 1.0, so "1 unit" is no longer 1 metre. The entire convention the addon assumes — **1 Blender unit = 1 m in Unity = 100 units in Unreal**, and the Scale Reference, budgets, and texel density — is built on a 1.0 unit scale. Even with object scale applied, a non-1.0 scene unit scale can import assets at the wrong real-world size.
+
+**Fix:** Scene Properties → Units → set **Unit Scale** to 1.0 (and a metric Length unit), then re-verify sizes against the **Scale Reference**.
+
 ---
 
 ## Geometry
@@ -57,14 +64,14 @@ The object's parent mesh has an unapplied scale. The child inherits the parent's
 
 The mesh contains faces with more than 4 vertices. N-gons tessellate unpredictably in different engines and can produce shading artefacts.
 
-**Fix:** Use **Fix → Triangulate N-gons**.
+**Fix:** **Select & Focus**, then triangulate in Edit Mode (`Face → Triangulate Faces`, or add a Triangulate modifier). Undoable.
 
 ### Non-manifold edges (holes)
 **Severity: Warning**
 
 One or more edges are shared by fewer or more than two faces — indicating open holes or internal geometry. This can cause issues with physics collision and rendering.
 
-**Fix:** Use **Fix → Fill Holes**, or fix manually in Edit Mode with `Mesh → Clean Up → Fill Holes`.
+**Fix:** **Select & Focus**, then fill genuine holes (`Mesh → Clean Up → Fill Holes`) or delete / weld stray geometry by hand. Undoable.
 
 ### Zero-area faces
 **Severity: Warning**

@@ -1,6 +1,6 @@
 # Fix
 
-The **Fix** panel provides targeted operators for each validation category, plus **Fix Safe Issues** and **Fix All Issues** buttons that run multiple fixes at once.
+The **Fix** panel provides targeted, **non-destructive** operators for each validation category, plus a **Fix Safe Issues** button that runs the safe fixes at once. Destructive geometry repairs were removed by design — geometry problems are fixed manually via **Select & Focus** and Blender's own (undoable) tools.
 
 ---
 
@@ -14,15 +14,10 @@ The **Fix** panel provides targeted operators for each validation category, plus
 
 ## Mesh
 
-**Fill Holes** — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.
-
-**Triangulate N-gons** — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.
-
-**Remove Loose Vertices** — deletes vertices that are not connected to any edge or face.
-
-**Remove Zero-Area Faces** — deletes degenerate faces whose calculated area is essentially zero (below `1e-8` m²).
-
 **Recalculate Normals** — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.
+
+!!! note "Geometry repairs are manual"
+    Filling holes, triangulating n-gons, and removing loose / zero-area geometry are **not** auto-applied — guessing at topology can quietly make a mesh worse. For those issues use **Select & Focus** in the report to jump to the exact components, then fix them with Blender's own tools (`Mesh → Clean Up`, etc.), which are fully undoable.
 
 ---
 
@@ -61,33 +56,9 @@ The **Fix** panel provides targeted operators for each validation category, plus
 - Fix naming / add prefix
 - Recalculate normals
 
-Destructive operations (fill holes, triangulate n-gons, remove loose verts/zero-area faces, UV generation, collision, lightmap) are intentionally excluded. Use this when you want a quick cleanup without risking mesh changes.
+Geometry-changing operations (fill holes, triangulate n-gons, remove loose verts / zero-area faces) are intentionally **not** part of the addon — they're done manually with Blender's own tools after **Select & Focus**. Use Fix Safe when you want a quick cleanup without risking any mesh change.
 
-After the fixes complete, **Validation runs automatically**.
-
----
-
-## Fix All Issues
-
-**Fix All Issues** runs every applicable fix in the correct order:
-
-1. **Position fix** — pivot to bottom-centre, move origin to world `(0, 0, 0)`, apply rotation and scale. Skipped for objects that are parented to another object.
-2. Fix negative scale
-3. Apply scale and rotation
-4. Fill holes
-5. Remove loose vertices
-6. Remove zero-area faces
-7. Triangulate n-gons
-8. Remove empty material slots
-9. Add missing material
-10. Fix naming / add prefix
-11. Add UV map (if missing)
-12. Add missing collision (if missing — asks for UCX or UBX type first)
-13. Add lightmap UV (if missing — opens Lightmap Pack dialog)
-
-Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.
-
-After all steps complete, **Validation runs automatically** so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.
+After the fixes complete, **Validation runs automatically**. Issues that can't be fixed safely — a texture genuinely missing from disk, a poly count above the threshold, geometry topology — remain for manual attention.
 
 !!! warning "Fix All moves objects to world origin"
     Step 1 translates every non-parented object so its pivot lands at `(0, 0, 0)`. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.

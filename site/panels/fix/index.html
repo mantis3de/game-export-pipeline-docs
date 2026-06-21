@@ -1698,17 +1698,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#fix-all-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix All Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1727,18 +1716,18 @@
 
 
 <h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
-<p>The <strong>Fix</strong> panel provides targeted operators for each validation category, plus <strong>Fix Safe Issues</strong> and <strong>Fix All Issues</strong> buttons that run multiple fixes at once.</p>
+<p>The <strong>Fix</strong> panel provides targeted, <strong>non-destructive</strong> operators for each validation category, plus a <strong>Fix Safe Issues</strong> button that runs the safe fixes at once. Destructive geometry repairs were removed by design — geometry problems are fixed manually via <strong>Select &amp; Focus</strong> and Blender's own (undoable) tools.</p>
 <hr />
 <h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
 <p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
 <p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then flips faces to restore correct normals when an odd number of axes are negative.</p>
 <hr />
 <h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
-<p><strong>Fill Holes</strong> — closes non-manifold edges by filling open boundary loops with new faces. Use this to fix the "non-manifold edge(s)" validation issue.</p>
-<p><strong>Triangulate N-gons</strong> — converts faces with more than 4 vertices (n-gons) to triangles. Quads are left as quads; only n-gons are triangulated.</p>
-<p><strong>Remove Loose Vertices</strong> — deletes vertices that are not connected to any edge or face.</p>
-<p><strong>Remove Zero-Area Faces</strong> — deletes degenerate faces whose calculated area is essentially zero (below <code>1e-8</code> m²).</p>
 <p><strong>Recalculate Normals</strong> — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.</p>
+<div class="admonition note">
+<p class="admonition-title">Geometry repairs are manual</p>
+<p>Filling holes, triangulating n-gons, and removing loose / zero-area geometry are <strong>not</strong> auto-applied — guessing at topology can quietly make a mesh worse. For those issues use <strong>Select &amp; Focus</strong> in the report to jump to the exact components, then fix them with Blender's own tools (<code>Mesh → Clean Up</code>, etc.), which are fully undoable.</p>
+</div>
 <hr />
 <h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
 <p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named after the object.</p>
@@ -1762,28 +1751,8 @@
 <li>Fix naming / add prefix</li>
 <li>Recalculate normals</li>
 </ul>
-<p>Destructive operations (fill holes, triangulate n-gons, remove loose verts/zero-area faces, UV generation, collision, lightmap) are intentionally excluded. Use this when you want a quick cleanup without risking mesh changes.</p>
-<p>After the fixes complete, <strong>Validation runs automatically</strong>.</p>
-<hr />
-<h2 id="fix-all-issues">Fix All Issues<a class="headerlink" href="#fix-all-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix All Issues</strong> runs every applicable fix in the correct order:</p>
-<ol>
-<li><strong>Position fix</strong> — pivot to bottom-centre, move origin to world <code>(0, 0, 0)</code>, apply rotation and scale. Skipped for objects that are parented to another object.</li>
-<li>Fix negative scale</li>
-<li>Apply scale and rotation</li>
-<li>Fill holes</li>
-<li>Remove loose vertices</li>
-<li>Remove zero-area faces</li>
-<li>Triangulate n-gons</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Add UV map (if missing)</li>
-<li>Add missing collision (if missing — asks for UCX or UBX type first)</li>
-<li>Add lightmap UV (if missing — opens Lightmap Pack dialog)</li>
-</ol>
-<p>Each step is skipped if the mesh already passes that check, so Fix All is safe to run on assets that are partially or fully clean.</p>
-<p>After all steps complete, <strong>Validation runs automatically</strong> so the panel immediately reflects what remains. Issues that cannot be fixed automatically — a texture genuinely missing from disk, a poly count above the threshold — will still appear there for manual attention.</p>
+<p>Geometry-changing operations (fill holes, triangulate n-gons, remove loose verts / zero-area faces) are intentionally <strong>not</strong> part of the addon — they're done manually with Blender's own tools after <strong>Select &amp; Focus</strong>. Use Fix Safe when you want a quick cleanup without risking any mesh change.</p>
+<p>After the fixes complete, <strong>Validation runs automatically</strong>. Issues that can't be fixed safely — a texture genuinely missing from disk, a poly count above the threshold, geometry topology — remain for manual attention.</p>
 <div class="admonition warning">
 <p class="admonition-title">Fix All moves objects to world origin</p>
 <p>Step 1 translates every non-parented object so its pivot lands at <code>(0, 0, 0)</code>. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.</p>

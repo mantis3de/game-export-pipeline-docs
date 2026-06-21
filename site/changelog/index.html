@@ -1684,6 +1684,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#report-in-scene-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report &amp; in-scene UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#authoring-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1972,6 +1983,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#report-in-scene-ux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report &amp; in-scene UX
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#authoring-validation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2226,8 +2248,22 @@ team / pipeline tooling.</p>
 <li><strong>Release Gate</strong> — a one-glance <strong>RELEASE READY / BLOCKED</strong> verdict (in the dashboard, HTML report, and CLI), blocked by failing assets, import failures, project-budget overruns, or average health below the <strong>Release Health Threshold</strong> (default 85, set per profile).</li>
 <li><strong>Regression tracking</strong> — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.</li>
 </ul>
+<h3 id="report-in-scene-ux">Report &amp; in-scene UX<a class="headerlink" href="#report-in-scene-ux" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>HTML report from the scene</strong> — generate the same rich HTML report from an in-scene validation (one card per object), not just from a folder scan. The window has <strong>HTML Scene</strong> + <strong>HTML Folder</strong> buttons.</li>
+<li><strong>By rule</strong> view in the HTML — actionable findings grouped by rule with counts (<em>Missing Texture File — 6 assets</em>), collapsible.</li>
+<li><strong>Ignored</strong> in the report — an Ignored count (cards + summary), a muted <code>ignored</code> tag on muted findings, and an <strong>Ignored</strong> filter that shows only the muted ones.</li>
+<li><strong>Thumbnail size</strong> — Small / Medium / Large; each asset is isolated during render so the preview shows only that asset.</li>
+<li><strong>Expand all / Collapse all</strong> + a ▸ chevron so cards clearly read as expandable.</li>
+<li><strong>Re-check</strong> — re-validate in place (per issue and next to Fix Safe), so you don't scroll back to Run Validation after a manual fix.</li>
+<li><strong>Show / Hide ignored</strong> in-scene — preview exactly what's muted (scoped to the ticked objects) with a per-finding <strong>✕</strong> un-ignore.</li>
+<li><strong>Remove All Collision</strong> now respects every configured collider naming convention (<code>.collision</code>, <code>_col</code>, custom…), not just <code>UCX_</code>/<code>UBX_</code>.</li>
+<li><strong>Save Current as Profile…</strong> captures your settings (incl. Asset Type) into the project <code>profiles.json</code>; selecting a profile now <strong>applies immediately</strong>.</li>
+<li><strong>Scene Unit Scale ≠ 1.0</strong> check — flags the hidden footgun behind wrong import sizes.</li>
+</ul>
 <h3 id="authoring-validation">Authoring &amp; validation<a class="headerlink" href="#authoring-validation" title="Permanent link">&para;</a></h3>
 <ul>
+<li><strong>Export LOD Chains (FBX)</strong> — exports a base mesh + its LODs as one grouped FBX renamed <code>Base_LOD0…_LODn</code>, so <strong>Unity auto-creates a LOD Group</strong> on import. (Unreal needs a manual <em>Import Mesh LOD</em> per level; Godot auto-generates LODs and doesn't need manual chains — the panel shows the right hint per engine.) Works on temp copies; the scene is untouched.</li>
 <li><strong>Texel density check</strong> (opt-in) — flags assets whose texture pixels-per-metre fall outside a target band, for consistent density across a set.</li>
 <li><strong>Lightmap UV outside 0–1</strong> — errors when the lightmap channel packs outside the 0–1 square (breaks baking).</li>
 <li><strong>Set Game Pivot</strong> — one-click origin presets per asset type (Prop / Architecture / Foliage → bottom-center; Weapon / Vehicle → bounds-center).</li>
@@ -2235,9 +2271,10 @@ team / pipeline tooling.</p>
 </ul>
 <h3 id="more">More<a class="headerlink" href="#more" title="Permanent link">&para;</a></h3>
 <ul>
+<li><strong>Save Current as Profile…</strong> — capture the current thresholds, checks, naming, budgets and release settings into your project <code>profiles.json</code> as a named profile, straight from the UI (no JSON editing); commit it and the team gets it.</li>
 <li><strong>glTF / GLB export</strong> — Export Selected now offers <strong>FBX or glTF 2.0</strong> (GLB single-file or separate <code>.gltf</code>), for Godot and web pipelines. Same engine preset, cleanup, and budget gate; tangents per engine convention.</li>
 <li><strong>Material / Texture checks+</strong> — flags a <strong>non-standard surface shader</strong> (custom node group that won't bake to PBR) and <strong>mismatched texture resolutions</strong> within one material (both informational).</li>
-<li><strong>Backup before destructive fix</strong> — optional snapshot of affected meshes into a hidden <code>GEP_Backup</code> collection before triangulate / fill-holes / loose-vert / zero-area repairs.</li>
+<li><strong>Safe-only repairs</strong> — the destructive geometry auto-fixes (fill holes, triangulate n-gons, remove loose / zero-area) were removed entirely. Geometry problems are now manual: <strong>Select &amp; Focus</strong> takes you to the exact components and you fix them with Blender's own (undoable) tools.</li>
 <li><strong>Viewport header button</strong> — an always-visible <strong>Preflight</strong> button in the 3D viewport header that opens the window (turns red when the last scan found errors).</li>
 <li><strong>Naming templates</strong> + one-click auto-rename (<code>SM_{Category}_{Name}_{NN}</code>).</li>
 <li><strong>Per-object / whole-scene Ignore</strong> (mark intentional → <code>(ignored)</code> info).</li>

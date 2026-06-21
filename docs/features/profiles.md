@@ -1,6 +1,6 @@
 # Validation Profiles
 
-A **profile** is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, and per-issue severity overrides — stored in an editable `profiles.json`. Pick one, click **Apply**, and the whole ruleset loads at once.
+A **profile** is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, and per-issue severity overrides — stored in an editable `profiles.json`. Pick one and the whole ruleset (including engine and naming prefix) loads at once.
 
 The point: commit one `profiles.json` to your project repo and **everyone — and CI — validates identically**.
 
@@ -10,14 +10,24 @@ The point: commit one `profiles.json` to your project repo and **everyone — an
 
 In the **Asset Preflight → Presets** tab:
 
-1. Pick a profile from the **Profile** dropdown.
-2. Click **Apply Profile** — its thresholds, checks, severities, engine and naming policy are written into the current settings.
+1. Pick a profile from the **Profile** dropdown — it **applies immediately**: thresholds, checks, severities, **engine** and **naming** (e.g. Unreal sets the `SM_` prefix) are written into the current settings in one step.
+2. **Apply Profile** re-applies the selected profile — useful after editing `profiles.json`.
 3. **Run Validation** to use them.
 
 Click **Reload** after editing `profiles.json` on disk, so the new values appear.
 
-!!! note "Apply is explicit"
-    Selecting a profile in the dropdown doesn't change anything until you click **Apply** — so a profile never silently overwrites manual tweaks.
+!!! note "Selecting applies"
+    Choosing a profile in the dropdown applies it at once (engine + prefix + thresholds follow). Any manual tweak you make afterwards stays until you pick a profile again.
+
+## Save your own profile (no JSON editing)
+
+Tweaked the thresholds, checks, naming and budgets to suit your project? Save them as a named profile straight from the UI:
+
+1. Set the **Rules file** path to your project's `profiles.json` (it's created if it doesn't exist).
+2. Click **Save Current as Profile…**, type a name (e.g. *Studio — Unity*), confirm.
+3. The current engine, thresholds, checks, naming policy, collider conventions, budgets, release threshold and active severity overrides are written into that `profiles.json` as a new profile (re-using a name updates it). It's selected immediately.
+
+Commit the file to your repo and the whole team gets the profile — no one touches JSON by hand. The **Asset Type** is captured too, so loading the profile restores it (built-in profiles leave your Asset Type alone). Machine-specific things like export paths are deliberately **not** captured, so the profile stays a portable ruleset.
 
 ---
 

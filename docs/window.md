@@ -81,13 +81,15 @@ Run validation and read the results in one place (no tab-hopping). Shown after a
 
 - **Project Health dashboard** — the level's totals vs the project budget as used / limit / % bars, plus **Top by triangles**. See [Budgets & Dashboard](features/budgets.md).
 - **Summary** — export gate score + status, scene quality, error/warning/info counts, per-category scores.
+- **Reports** — **Scan Folder** / **Export JSON/CSV**, plus two HTML buttons: **HTML Scene** (builds the same rich report from the current in-scene validation — one card per object) and **HTML Folder** (opens the last folder-scan report). See [Batch Scan & HTML Report](features/batch-scan.md).
 - **Objects to fix** — a checklist of validated objects (tick which to repair); **All** / **Errors only** quick-selects.
-- **Fix Safe Issues** — every *deterministic* fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally **not** auto-applied — guessing at topology can quietly make a mesh worse.
-- **Backup before destructive fix** — an optional toggle. When on, the destructive geometry repairs (triangulate, fill holes, remove loose verts / zero-area faces) first copy the affected meshes into a hidden `GEP_Backup_<time>` collection, so you can recover the original geometry. The collection is excluded from the view layer so it won't be selected or exported.
+- **Fix Safe Issues** + **Re-check** — Fix Safe runs every *deterministic* fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally **not** auto-applied. **Re-check** re-runs validation in place — use it after fixing something by hand (from Select & Focus) instead of scrolling back up.
 - **Issue list** — grouped by object or category. Each issue has:
     - **Select & Focus** — selects the exact components, opens the right editor (UV / Shader / Material tab) and **frames the viewport** on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.
+    - **↻ Re-check** — re-validate in place, right where you fixed it.
     - **Fix This** — that issue's safe fix (shown only for deterministic fixes).
-    - **Ignore** — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an `(ignored)` info note; **Un-ignore** restores it.
+    - **Ignore** — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an `(ignored)` info note (it stops counting against the score) but stays visible as an audit trail.
     - **Impact / Fix** hints (when *Show Explanations* is on).
+- **Ignored** — a **Show / Hide** toggle previews exactly what's muted (scoped to the ticked objects); each row has a **✕** to un-ignore that single finding, plus **Un-ignore All**.
 
 → [Validate a Scene Asset](workflows/scene-asset.md) for the full loop.

@@ -833,6 +833,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#save-your-own-profile-no-json-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save your own profile (no JSON editing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1757,6 +1768,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#save-your-own-profile-no-json-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Save your own profile (no JSON editing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#built-in-profiles" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1818,21 +1840,29 @@
 
 
 <h1 id="validation-profiles">Validation Profiles<a class="headerlink" href="#validation-profiles" title="Permanent link">&para;</a></h1>
-<p>A <strong>profile</strong> is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, and per-issue severity overrides — stored in an editable <code>profiles.json</code>. Pick one, click <strong>Apply</strong>, and the whole ruleset loads at once.</p>
+<p>A <strong>profile</strong> is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, and per-issue severity overrides — stored in an editable <code>profiles.json</code>. Pick one and the whole ruleset (including engine and naming prefix) loads at once.</p>
 <p>The point: commit one <code>profiles.json</code> to your project repo and <strong>everyone — and CI — validates identically</strong>.</p>
 <hr />
 <h2 id="using-a-profile">Using a profile<a class="headerlink" href="#using-a-profile" title="Permanent link">&para;</a></h2>
 <p>In the <strong>Asset Preflight → Presets</strong> tab:</p>
 <ol>
-<li>Pick a profile from the <strong>Profile</strong> dropdown.</li>
-<li>Click <strong>Apply Profile</strong> — its thresholds, checks, severities, engine and naming policy are written into the current settings.</li>
+<li>Pick a profile from the <strong>Profile</strong> dropdown — it <strong>applies immediately</strong>: thresholds, checks, severities, <strong>engine</strong> and <strong>naming</strong> (e.g. Unreal sets the <code>SM_</code> prefix) are written into the current settings in one step.</li>
+<li><strong>Apply Profile</strong> re-applies the selected profile — useful after editing <code>profiles.json</code>.</li>
 <li><strong>Run Validation</strong> to use them.</li>
 </ol>
 <p>Click <strong>Reload</strong> after editing <code>profiles.json</code> on disk, so the new values appear.</p>
 <div class="admonition note">
-<p class="admonition-title">Apply is explicit</p>
-<p>Selecting a profile in the dropdown doesn't change anything until you click <strong>Apply</strong> — so a profile never silently overwrites manual tweaks.</p>
+<p class="admonition-title">Selecting applies</p>
+<p>Choosing a profile in the dropdown applies it at once (engine + prefix + thresholds follow). Any manual tweak you make afterwards stays until you pick a profile again.</p>
 </div>
+<h2 id="save-your-own-profile-no-json-editing">Save your own profile (no JSON editing)<a class="headerlink" href="#save-your-own-profile-no-json-editing" title="Permanent link">&para;</a></h2>
+<p>Tweaked the thresholds, checks, naming and budgets to suit your project? Save them as a named profile straight from the UI:</p>
+<ol>
+<li>Set the <strong>Rules file</strong> path to your project's <code>profiles.json</code> (it's created if it doesn't exist).</li>
+<li>Click <strong>Save Current as Profile…</strong>, type a name (e.g. <em>Studio — Unity</em>), confirm.</li>
+<li>The current engine, thresholds, checks, naming policy, collider conventions, budgets, release threshold and active severity overrides are written into that <code>profiles.json</code> as a new profile (re-using a name updates it). It's selected immediately.</li>
+</ol>
+<p>Commit the file to your repo and the whole team gets the profile — no one touches JSON by hand. The <strong>Asset Type</strong> is captured too, so loading the profile restores it (built-in profiles leave your Asset Type alone). Machine-specific things like export paths are deliberately <strong>not</strong> captured, so the profile stays a portable ruleset.</p>
 <hr />
 <h2 id="built-in-profiles">Built-in profiles<a class="headerlink" href="#built-in-profiles" title="Permanent link">&para;</a></h2>
 <table>
