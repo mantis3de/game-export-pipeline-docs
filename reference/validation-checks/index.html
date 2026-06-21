@@ -1409,6 +1409,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scene-unit-scale-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scene Unit Scale ≠ 1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2455,6 +2466,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#scene-unit-scale-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scene Unit Scale ≠ 1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3109,16 +3131,20 @@
 <p><strong>Severity: Warning</strong></p>
 <p>The object's parent mesh has an unapplied scale. The child inherits the parent's transform, which compounds the issue.</p>
 <p><strong>Fix:</strong> Apply scale on the parent object first.</p>
+<h3 id="scene-unit-scale-10">Scene Unit Scale ≠ 1.0<a class="headerlink" href="#scene-unit-scale-10" title="Permanent link">&para;</a></h3>
+<p><strong>Severity: Warning</strong></p>
+<p>The scene's <strong>Unit Scale</strong> (Scene Properties → Units) is not 1.0, so "1 unit" is no longer 1 metre. The entire convention the addon assumes — <strong>1 Blender unit = 1 m in Unity = 100 units in Unreal</strong>, and the Scale Reference, budgets, and texel density — is built on a 1.0 unit scale. Even with object scale applied, a non-1.0 scene unit scale can import assets at the wrong real-world size.</p>
+<p><strong>Fix:</strong> Scene Properties → Units → set <strong>Unit Scale</strong> to 1.0 (and a metric Length unit), then re-verify sizes against the <strong>Scale Reference</strong>.</p>
 <hr />
 <h2 id="geometry">Geometry<a class="headerlink" href="#geometry" title="Permanent link">&para;</a></h2>
 <h3 id="n-gons">N-gons<a class="headerlink" href="#n-gons" title="Permanent link">&para;</a></h3>
 <p><strong>Severity: Warning</strong></p>
 <p>The mesh contains faces with more than 4 vertices. N-gons tessellate unpredictably in different engines and can produce shading artefacts.</p>
-<p><strong>Fix:</strong> Use <strong>Fix → Triangulate N-gons</strong>.</p>
+<p><strong>Fix:</strong> <strong>Select &amp; Focus</strong>, then triangulate in Edit Mode (<code>Face → Triangulate Faces</code>, or add a Triangulate modifier). Undoable.</p>
 <h3 id="non-manifold-edges-holes">Non-manifold edges (holes)<a class="headerlink" href="#non-manifold-edges-holes" title="Permanent link">&para;</a></h3>
 <p><strong>Severity: Warning</strong></p>
 <p>One or more edges are shared by fewer or more than two faces — indicating open holes or internal geometry. This can cause issues with physics collision and rendering.</p>
-<p><strong>Fix:</strong> Use <strong>Fix → Fill Holes</strong>, or fix manually in Edit Mode with <code>Mesh → Clean Up → Fill Holes</code>.</p>
+<p><strong>Fix:</strong> <strong>Select &amp; Focus</strong>, then fill genuine holes (<code>Mesh → Clean Up → Fill Holes</code>) or delete / weld stray geometry by hand. Undoable.</p>
 <h3 id="zero-area-faces">Zero-area faces<a class="headerlink" href="#zero-area-faces" title="Permanent link">&para;</a></h3>
 <p><strong>Severity: Warning</strong></p>
 <p>One or more faces have essentially zero area — degenerate triangles or quads that collapse to a line or point.</p>

@@ -1813,13 +1813,14 @@
 <p>It contains:</p>
 <ul>
 <li><strong>Executive Summary</strong> hero (top) — a big <strong>Project Health</strong> score, <strong>Export Risk Level</strong>, asset counts, and <strong>budget % bars</strong> (triangles / VRAM / materials). The screen a lead forwards on Slack / Jira. See <a href="../budgets/">Budgets &amp; Dashboard</a>.</li>
-<li><strong>Thumbnails</strong> — a rendered preview of each asset (toggle in Scope, or <code>--no-thumbnails</code> in the CLI). Embedded as base64, so the report stays self-contained. Collision meshes are excluded from the render so a collider hull can't obscure the asset (a collider-only file still gets a preview).</li>
-<li><strong>Summary cards</strong> — total scanned, passed / warnings / failed / import-failed, and <strong>average health</strong>.</li>
+<li><strong>Thumbnails</strong> — a rendered preview of each asset (toggle in Scope, or <code>--no-thumbnails</code> in the CLI). Each asset is <strong>isolated</strong> during render (other objects hidden) so the preview shows only that asset, and collision meshes are excluded so a collider hull can't obscure it. Pick <strong>Small / Medium / Large</strong> (Thumbnail Size in Scope) — it changes both render resolution and display size. Embedded as base64, so the report stays self-contained.</li>
+<li><strong>Summary cards</strong> — total scanned, passed / warnings / failed / import-failed, <strong>ignored</strong>, and <strong>average health</strong>.</li>
+<li><strong>By rule</strong> — every actionable finding grouped by rule with a count (<em>Missing Texture File — 6 assets ▸</em>), collapsible, sorted worst-first. The fastest way to see which rule trips most often. Purely informational findings (INFO) are excluded so it stays a list of real problems.</li>
 <li><strong>Export Risk Level</strong> — <em>Safe to Export</em> / <em>Export with Known Issues</em> / <em>Export Not Recommended</em>.</li>
 <li><strong>Health trend</strong> — an inline sparkline of average health across previous runs.</li>
 <li><strong>Duplicate-geometry banner</strong> — flags files sharing a mesh signature (catches accidental re-exports before publishing).</li>
-<li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, and an expandable issue list.</li>
-<li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed; sort by health, name, errors or tris.</li>
+<li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, a ▸ chevron (click the card to expand), and the issue list. Findings you marked intentional show a muted <strong>ignored</strong> tag.</li>
+<li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed / <strong>Ignored</strong> (shows only the muted findings); sort by health, name, errors or tris; <strong>Expand all / Collapse all</strong>.</li>
 </ul>
 <p>Alongside the HTML, a <code>.json</code> with the same data is written — for tooling, diffing, and the CLI.</p>
 <hr />
