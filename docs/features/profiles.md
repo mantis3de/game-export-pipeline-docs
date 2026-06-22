@@ -10,14 +10,13 @@ The point: commit one `profiles.json` to your project repo and **everyone — an
 
 In the **Asset Preflight → Presets** tab:
 
-1. Pick a profile from the **Profile** dropdown — it **applies immediately**: thresholds, checks, severities, **engine** and **naming** (e.g. Unreal sets the `SM_` prefix) are written into the current settings in one step.
-2. **Apply Profile** re-applies the selected profile — useful after editing `profiles.json`.
-3. **Run Validation** to use them.
+1. Pick a profile from the **Profile** dropdown — it **applies immediately**: thresholds, checks, severities, **engine** and **naming** (e.g. Unreal sets the `SM_` prefix) are written into the current settings in one step. *(There's no separate **Apply** button — selecting is applying.)*
+2. **Run Validation** to use them.
 
-Click **Reload** after editing `profiles.json` on disk, so the new values appear.
+Click **Reload** (↻) after editing `profiles.json` on disk, so the new values appear.
 
-!!! note "Selecting applies"
-    Choosing a profile in the dropdown applies it at once (engine + prefix + thresholds follow). Any manual tweak you make afterwards stays until you pick a profile again.
+!!! note "Profiles drive the check toggles too"
+    Selecting a profile sets the **check toggles** in Rules — both the category masters and the 56 granular per-finding toggles. So built-in profiles differ in *what they check*, not just thresholds: e.g. **Mobile — Low-End** unticks the Normal / Metallic map checks (low-end mobile doesn't rely on them), while **Marketplace** keeps everything strict. Any manual tweak you make afterwards stays until you pick a profile again.
 
 ## Save your own profile (no JSON editing)
 

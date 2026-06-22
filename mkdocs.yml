@@ -112,12 +112,11 @@ nav:
       - Release Gate & Regressions: features/release-gate.md
       - Headless CLI (CI Gate): features/cli.md
   - Viewport Tools:
-      - Output & Engine: panels/output.md
+      - Export (Output & Engine): panels/output.md
       - Quick Reset: panels/quick-reset.md
       - Individual Steps: panels/individual-steps.md
       - Collision Setup: panels/collision-setup.md
       - Scene Organization: panels/scene-organization.md
-      - Export: panels/export.md
   - Reference:
       - Validation Checks: reference/validation-checks.md
       - Collider Naming: reference/collider-naming.md

@@ -1,6 +1,6 @@
-# Output & Engine
+# Export (Output & Engine)
 
-The **Game Export Pipeline** panel at the top of the GameExport tab is always visible. It controls the two settings that apply to every operation in the addon: where files land and which engine they target.
+The **Export** box at the top of the GameExport tab is always visible and is now the single place for everything export-related: the output **Folder**, the **Engine** preset, the filename **Prefix**, the **FBX / glTF** target, the **Export Selected** button, and the **Auto-cleanup on Export** toggles. *(The old separate "Export" panel was merged in here — there's no longer a duplicate folder field lower down.)*
 
 ---
 

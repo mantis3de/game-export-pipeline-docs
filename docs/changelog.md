@@ -9,6 +9,19 @@ All notable changes are documented here. The format follows [Keep a Changelog](h
 A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.
 
+### Granular checks & UX (1.2.x – 1.3.x)
+- **56 per-finding toggles** — every category (Geometry, Normals, Transforms, UV, Materials, Textures, Naming, Collision, LOD, Budgets) breaks into individual findings via a **▸ arrow** next to its master toggle, so you can build a very precise ruleset. A single central filter drives them; defaults are all-on.
+- **Profiles carry the checks** — selecting a profile sets the category masters *and* the granular toggles. Built-in presets now differ in *what they check* (e.g. **Mobile — Low-End** unticks Normal/Metallic map checks; **Marketplace** stays strict). **Save Current as Profile…** round-trips the whole set.
+- **No Apply button** — picking a profile applies it immediately (engine, naming, checks, thresholds).
+- **Progress bars for big scenes** — above ~200 objects, Run Validation, Fix Safe and Export run in batches with a **viewport-header progress bar** (`Validating 120/400 — Esc to cancel`); the UI no longer freezes.
+- **Export reuses the last result** — Export HTML/JSON renders the report from the last Run/Scan instead of re-validating; on big scenes it only renders thumbnails.
+- **List ↔ viewport sync** — clicking a list row selects the object in the scene, and selecting an object in the viewport / Outliner highlights its row. The Scope list gained an **All** tick-all toggle.
+- **"No <map> texture connected"** moved from the Materials category to **Textures** (it's about missing maps), gated by Check Textures.
+- **One Export box** — folder, engine, prefix, FBX/glTF, the Export button and auto-cleanup are all in the single **Export** section at the top; the separate Export panel and the FBX Tools tab were removed.
+- **Floating-window niceties** — By-Category view has **Expand / Collapse all**; each section header has a **▲ back-to-top** (popups can't scroll); long issue lists are capped in the popup with a pointer to the docked sidebar.
+- **Textured thumbnails** — report previews now render with Workbench *Texture* shading.
+- **Report folder required** — Scene reports are written only to the folder you set (no temp fallback).
+
 ### Report workflow overhaul (1.1.x)
 - **Scan / Report split** — the window tabs are now **Presets · Scope · Rules · Scan · Report**. **Run Validation only validates** (and shows results on screen); saving and exporting moved to the **Report** tab.
 - **Export = save** — **Export JSON** writes a dated `history/` snapshot (JSON only) and adds it to the history list; **Export HTML** builds/opens the shareable report and does *not* add a history entry.
@@ -18,6 +31,9 @@ team / pipeline tooling.
 - **History row preview** — each snapshot row has a 🔗 icon that renders its HTML on demand and opens it.
 - **Thumbnails** — rendered **only for the HTML export** (never on Run), now using Workbench **Texture** shading so previews match the viewport.
 - **Cleanup** — the **FBX Tools** tab (and its Import button) was removed (use Blender's native Import); the Better-FBX status moved into the Export panel. **Engine** is set in one place (top of the main panel), no longer duplicated in Presets.
+- **List → viewport selection** — clicking a row in the object list (the highlight, not the tick) selects that object in the scene and makes it active, so the viewport follows the list.
+- **No per-issue fixer** — the per-finding *Fix This* button (and its operator) was removed; all safe repairs run from the single **Fix Safe Issues** button.
+- **Mesh Data = Object Name** — a new **Individual Steps** button renames each mesh data-block to match its object (`Barrel_01` → mesh `Barrel_01`); shared meshes are skipped.
 
 ### Budgets & dashboard (Budget Manager)
 - **Asset budgets** — per-asset triangle / material (draw-call) / texture-VRAM limits, a **Budget** category + score, and **computed optimization savings** ("downscale 2 textures → save ~48 MB").

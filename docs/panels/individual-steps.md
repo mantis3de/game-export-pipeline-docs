@@ -34,6 +34,17 @@ This is the same operation as adding a **Triangulate** modifier and applying it.
 
 ---
 
+## Mesh Data = Object Name
+
+**Mesh Data = Object Name** renames each mesh data-block to match its object's name — object `Barrel_01` gets a mesh data-block named `Barrel_01`. This keeps the Outliner tidy and avoids the mismatched `Cube.001` / `Barrel_01` pairs that some engines and pipeline scripts trip over.
+
+Acts on the **selection**, or the **whole scene** if nothing is selected.
+
+!!! note "Shared meshes are skipped"
+    A mesh data-block used by several objects (linked duplicates) is left untouched — renaming it to match one object would be ambiguous. The status line reports how many were renamed and how many shared meshes were skipped.
+
+---
+
 ## Add Lightmap UV
 
 **Add Lightmap UV** creates a second UV channel (`UVMap.001` by default) using Blender's **Lightmap Pack** algorithm. The second channel is required by real-time GI and baked lighting in both Unity and Unreal Engine.

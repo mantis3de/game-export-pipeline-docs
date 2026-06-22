@@ -1,6 +1,7 @@
 # Export
 
-The **Export** panel is the final step. It shows a summary of the active engine preset and provides the **Export Selected** button.
+!!! note "Merged into the top box"
+    The standalone **Export** panel was removed. Everything below — the **FBX / glTF** target, the **Export Selected** button and the **Auto-cleanup** toggles — now lives in the single **[Export](output.md)** box at the top of the GameExport tab, next to the folder, engine and prefix. The behaviour is unchanged; it's just in one place now.
 
 ---
 

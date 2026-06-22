@@ -20,7 +20,7 @@ A centered window opens with five tabs: **Presets · Scope · Rules · Scan · R
 
 1. Go to the **Presets** tab.
 2. Choose a **Profile** from the dropdown — e.g. `Unity — Desktop` or `Unreal — Desktop`.
-3. Click **Apply Profile**.
+3. That's it — picking the profile **applies it** (no Apply button).
 
 The profile sets the engine axes/scale, poly and texture thresholds, naming policy, and which issues are errors vs warnings. See [Validation Profiles](../features/profiles.md).
 
@@ -46,7 +46,7 @@ After **Run Validation**, the **Scan** tab shows the results in place:
 For any issue:
 
 - **Select & Focus** jumps to the exact faces/edges and **zooms the viewport** to them (flipped faces light up red).
-- **Fix This** runs that issue's repair; **Fix Safe Only** runs every non-destructive fix on the ticked objects.
+- **Fix Safe Issues** runs every non-destructive repair on the ticked objects (there's no per-issue fixer; destructive geometry repairs are done by hand from Select & Focus).
 
 !!! warning "Re-validate after changes"
     The report reflects the **last** run. After changing a threshold or fixing in Edit Mode, click **Run Validation** again.

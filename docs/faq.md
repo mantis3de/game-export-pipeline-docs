@@ -41,8 +41,8 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
 ??? question "Where did the Validation and Fix panels go?"
     They're now inside the **Asset Preflight** window — click **Open Asset Preflight** at the top of the GameExport tab. Validation lives in **Scan**, results and fixes in **Results**. The viewport tools (Collision, LOD, Quick Reset, Export, FBX) are still in the N-panel.
 
-??? question "The window closes when I click Apply Profile / Scan Folder / Fix."
-    That's a Blender limitation: operator buttons in a dialog popup close it after running. Tab switches and **Run Validation** keep it open (they act in place). Just reopen the window with one click — your results are still there.
+??? question "The window closes when I click Scan Folder / Export / Fix."
+    That's a Blender limitation: operator buttons in a dialog popup close it after running. Tab switches, picking a profile and **Run Validation** keep it open (they act in place). Just reopen the window with one click — your results are still there. For long issue lists, work in the **docked GameExport sidebar** instead — it has a real scrollbar.
 
 ??? question "I changed a threshold but the report still shows the old result."
     The report reflects the **last** validation run. Change settings, then click **Run Validation** again. Also check you edited the right field — e.g. *UV Padding (texels)* in the Rules tab, not *LOD Bounds Tolerance*.
