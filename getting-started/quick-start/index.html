@@ -1062,8 +1062,6 @@
       
         
       
-        
-      
     
     
     
@@ -1123,7 +1121,7 @@
   <span class="md-ellipsis">
     
   
-    Output & Engine
+    Export (Output & Engine)
   
 
     
@@ -1236,34 +1234,6 @@
     
   
     Scene Organization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Export
   
 
     
@@ -1827,7 +1797,7 @@
 <ol>
 <li>Go to the <strong>Presets</strong> tab.</li>
 <li>Choose a <strong>Profile</strong> from the dropdown — e.g. <code>Unity — Desktop</code> or <code>Unreal — Desktop</code>.</li>
-<li>Click <strong>Apply Profile</strong>.</li>
+<li>That's it — picking the profile <strong>applies it</strong> (no Apply button).</li>
 </ol>
 <p>The profile sets the engine axes/scale, poly and texture thresholds, naming policy, and which issues are errors vs warnings. See <a href="../../features/profiles/">Validation Profiles</a>.</p>
 <hr />
@@ -1848,7 +1818,7 @@
 <p>For any issue:</p>
 <ul>
 <li><strong>Select &amp; Focus</strong> jumps to the exact faces/edges and <strong>zooms the viewport</strong> to them (flipped faces light up red).</li>
-<li><strong>Fix This</strong> runs that issue's repair; <strong>Fix Safe Only</strong> runs every non-destructive fix on the ticked objects.</li>
+<li><strong>Fix Safe Issues</strong> runs every non-destructive repair on the ticked objects (there's no per-issue fixer; destructive geometry repairs are done by hand from Select &amp; Focus).</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Re-validate after changes</p>

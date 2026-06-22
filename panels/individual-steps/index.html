@@ -946,8 +946,6 @@
       
         
       
-        
-      
     
     
     
@@ -1010,7 +1008,7 @@
   <span class="md-ellipsis">
     
   
-    Output & Engine
+    Export (Output & Engine)
   
 
     
@@ -1152,6 +1150,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mesh-data-object-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh Data = Object Name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-lightmap-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1214,34 +1223,6 @@
     
   
     Scene Organization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Export
   
 
     
@@ -1738,6 +1719,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mesh-data-object-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mesh Data = Object Name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-lightmap-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1819,6 +1811,14 @@
 <h2 id="triangulate">Triangulate<a class="headerlink" href="#triangulate" title="Permanent link">&para;</a></h2>
 <p><strong>Triangulate</strong> converts all n-gons and quads to triangles using Blender's standard triangulation algorithm. Game engines triangulate meshes at import anyway — doing it explicitly in Blender gives you control over the result and avoids engine-specific triangulation artefacts on curved surfaces.</p>
 <p>This is the same operation as adding a <strong>Triangulate</strong> modifier and applying it.</p>
+<hr />
+<h2 id="mesh-data-object-name">Mesh Data = Object Name<a class="headerlink" href="#mesh-data-object-name" title="Permanent link">&para;</a></h2>
+<p><strong>Mesh Data = Object Name</strong> renames each mesh data-block to match its object's name — object <code>Barrel_01</code> gets a mesh data-block named <code>Barrel_01</code>. This keeps the Outliner tidy and avoids the mismatched <code>Cube.001</code> / <code>Barrel_01</code> pairs that some engines and pipeline scripts trip over.</p>
+<p>Acts on the <strong>selection</strong>, or the <strong>whole scene</strong> if nothing is selected.</p>
+<div class="admonition note">
+<p class="admonition-title">Shared meshes are skipped</p>
+<p>A mesh data-block used by several objects (linked duplicates) is left untouched — renaming it to match one object would be ambiguous. The status line reports how many were renamed and how many shared meshes were skipped.</p>
+</div>
 <hr />
 <h2 id="add-lightmap-uv">Add Lightmap UV<a class="headerlink" href="#add-lightmap-uv" title="Permanent link">&para;</a></h2>
 <p><strong>Add Lightmap UV</strong> creates a second UV channel (<code>UVMap.001</code> by default) using Blender's <strong>Lightmap Pack</strong> algorithm. The second channel is required by real-time GI and baked lighting in both Unity and Unreal Engine.</p>

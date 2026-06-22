@@ -942,8 +942,6 @@
       
         
       
-        
-      
     
     
     
@@ -1003,7 +1001,7 @@
   <span class="md-ellipsis">
     
   
-    Output & Engine
+    Export (Output & Engine)
   
 
     
@@ -1116,34 +1114,6 @@
     
   
     Scene Organization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panels/export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Export
   
 
     
@@ -1632,6 +1602,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#granular-checks-ux-12x-13x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Granular checks &amp; UX (1.2.x – 1.3.x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#report-workflow-overhaul-11x" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1942,6 +1923,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#granular-checks-ux-12x-13x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Granular checks &amp; UX (1.2.x – 1.3.x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#report-workflow-overhaul-11x" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2228,6 +2220,20 @@
 <h2 id="unreleased-asset-preflight">[Unreleased] — Asset Preflight<a class="headerlink" href="#unreleased-asset-preflight" title="Permanent link">&para;</a></h2>
 <p>A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.</p>
+<h3 id="granular-checks-ux-12x-13x">Granular checks &amp; UX (1.2.x – 1.3.x)<a class="headerlink" href="#granular-checks-ux-12x-13x" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>56 per-finding toggles</strong> — every category (Geometry, Normals, Transforms, UV, Materials, Textures, Naming, Collision, LOD, Budgets) breaks into individual findings via a <strong>▸ arrow</strong> next to its master toggle, so you can build a very precise ruleset. A single central filter drives them; defaults are all-on.</li>
+<li><strong>Profiles carry the checks</strong> — selecting a profile sets the category masters <em>and</em> the granular toggles. Built-in presets now differ in <em>what they check</em> (e.g. <strong>Mobile — Low-End</strong> unticks Normal/Metallic map checks; <strong>Marketplace</strong> stays strict). <strong>Save Current as Profile…</strong> round-trips the whole set.</li>
+<li><strong>No Apply button</strong> — picking a profile applies it immediately (engine, naming, checks, thresholds).</li>
+<li><strong>Progress bars for big scenes</strong> — above ~200 objects, Run Validation, Fix Safe and Export run in batches with a <strong>viewport-header progress bar</strong> (<code>Validating 120/400 — Esc to cancel</code>); the UI no longer freezes.</li>
+<li><strong>Export reuses the last result</strong> — Export HTML/JSON renders the report from the last Run/Scan instead of re-validating; on big scenes it only renders thumbnails.</li>
+<li><strong>List ↔ viewport sync</strong> — clicking a list row selects the object in the scene, and selecting an object in the viewport / Outliner highlights its row. The Scope list gained an <strong>All</strong> tick-all toggle.</li>
+<li><strong>"No <map> texture connected"</strong> moved from the Materials category to <strong>Textures</strong> (it's about missing maps), gated by Check Textures.</li>
+<li><strong>One Export box</strong> — folder, engine, prefix, FBX/glTF, the Export button and auto-cleanup are all in the single <strong>Export</strong> section at the top; the separate Export panel and the FBX Tools tab were removed.</li>
+<li><strong>Floating-window niceties</strong> — By-Category view has <strong>Expand / Collapse all</strong>; each section header has a <strong>▲ back-to-top</strong> (popups can't scroll); long issue lists are capped in the popup with a pointer to the docked sidebar.</li>
+<li><strong>Textured thumbnails</strong> — report previews now render with Workbench <em>Texture</em> shading.</li>
+<li><strong>Report folder required</strong> — Scene reports are written only to the folder you set (no temp fallback).</li>
+</ul>
 <h3 id="report-workflow-overhaul-11x">Report workflow overhaul (1.1.x)<a class="headerlink" href="#report-workflow-overhaul-11x" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Scan / Report split</strong> — the window tabs are now <strong>Presets · Scope · Rules · Scan · Report</strong>. <strong>Run Validation only validates</strong> (and shows results on screen); saving and exporting moved to the <strong>Report</strong> tab.</li>
@@ -2238,6 +2244,9 @@ team / pipeline tooling.</p>
 <li><strong>History row preview</strong> — each snapshot row has a 🔗 icon that renders its HTML on demand and opens it.</li>
 <li><strong>Thumbnails</strong> — rendered <strong>only for the HTML export</strong> (never on Run), now using Workbench <strong>Texture</strong> shading so previews match the viewport.</li>
 <li><strong>Cleanup</strong> — the <strong>FBX Tools</strong> tab (and its Import button) was removed (use Blender's native Import); the Better-FBX status moved into the Export panel. <strong>Engine</strong> is set in one place (top of the main panel), no longer duplicated in Presets.</li>
+<li><strong>List → viewport selection</strong> — clicking a row in the object list (the highlight, not the tick) selects that object in the scene and makes it active, so the viewport follows the list.</li>
+<li><strong>No per-issue fixer</strong> — the per-finding <em>Fix This</em> button (and its operator) was removed; all safe repairs run from the single <strong>Fix Safe Issues</strong> button.</li>
+<li><strong>Mesh Data = Object Name</strong> — a new <strong>Individual Steps</strong> button renames each mesh data-block to match its object (<code>Barrel_01</code> → mesh <code>Barrel_01</code>); shared meshes are skipped.</li>
 </ul>
 <h3 id="budgets-dashboard-budget-manager">Budgets &amp; dashboard (Budget Manager)<a class="headerlink" href="#budgets-dashboard-budget-manager" title="Permanent link">&para;</a></h3>
 <ul>

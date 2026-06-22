@@ -1057,8 +1057,6 @@
       
         
       
-        
-      
     
     
     
@@ -1118,7 +1116,7 @@
   <span class="md-ellipsis">
     
   
-    Output & Engine
+    Export (Output & Engine)
   
 
     
@@ -1231,34 +1229,6 @@
     
   
     Scene Organization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panels/export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Export
   
 
     
@@ -1817,7 +1787,7 @@
 <p><strong>Presets · Scope · Rules · Scan · Report</strong></p>
 <ul>
 <li><strong>Switching tabs</strong> and <strong>Run Validation</strong> (scene mode) act <em>in place</em> — the window stays open.</li>
-<li><strong>Operator buttons</strong> (Apply Profile, Scan Folder, Export JSON/HTML, Fix) run their action and then <strong>close the window</strong> — reopen it with one click. This is a Blender limitation for dialog popups, not a bug.</li>
+<li><strong>Operator buttons</strong> (Scan Folder, Export JSON/HTML, Fix) run their action and then <strong>close the window</strong> — reopen it with one click. This is a Blender limitation for dialog popups, not a bug. <em>(Picking a profile is not an operator, so it applies without closing the window.)</em></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Why a popup and not a dockable editor?</p>
@@ -1826,7 +1796,7 @@
 <hr />
 <h2 id="presets-tab-what-ruleset-to-use">Presets tab — what ruleset to use<a class="headerlink" href="#presets-tab-what-ruleset-to-use" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Profile</strong> dropdown + <strong>Apply Profile</strong> — load an engine/studio ruleset (thresholds, checks, severities, naming, colliders). <strong>Reload</strong> re-reads <code>profiles.json</code> after you edit it.</li>
+<li><strong>Profile</strong> dropdown — <strong>picking a profile applies it immediately</strong> (engine/studio ruleset: thresholds, checks, severities, naming, colliders). No Apply button. <strong>Reload</strong> (↻) re-reads <code>profiles.json</code> after you edit it.</li>
 <li><strong>Rules file</strong> — point at a project <code>profiles.json</code> to share rules across the team. <em>(This is the rules </em><em>input</em><em>, not the report output.)</em></li>
 <li><strong>Asset Type</strong> — <em>PBR / Lightmap / Procedural / Kitbash-Atlas</em> — relaxes the findings that are normal for that kind of asset (e.g. Kitbash treats UV overlap &amp; near-zero UV area as info).</li>
 <li><strong>Strict Naming</strong> / <strong>Marketplace Strict</strong> — quick policy toggles. <em>(The </em><em>Engine</em><em> preset is set once at the top of the main GameExport panel — next to Export Path and Prefix — not here.)</em></li>
@@ -1837,13 +1807,14 @@
 <hr />
 <h2 id="scope-tab-what-to-validate">Scope tab — what to validate<a class="headerlink" href="#scope-tab-what-to-validate" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>In-scene scope</strong> — validation runs on <strong>selected</strong> meshes, or the <strong>whole scene</strong> if nothing is selected. The object list previews what will be checked.</li>
+<li><strong>In-scene scope</strong> — validation runs on <strong>selected</strong> meshes, or the <strong>whole scene</strong> if nothing is selected. The object list previews what will be checked, with an <strong>All</strong> toggle to tick / untick everything and a <em>Ticked: X/Y</em> count.</li>
+<li><strong>List ↔ viewport sync</strong> — clicking a row (the highlight, not the tick) selects that object in the viewport and makes it active; selecting an object in the viewport / Outliner highlights its row. It works both ways.</li>
 <li><strong>Batch folder</strong> — set a folder of exported files plus the <strong>Subfolders</strong> / <strong>Delta</strong> toggles in the Scan tab. <em>(The report destination is set in the </em><em>Report</em><em> tab.)</em></li>
 </ul>
 <p>→ <a href="../features/batch-scan/">Batch Scan &amp; HTML Report</a></p>
 <hr />
 <h2 id="rules-tab-thresholds-checks">Rules tab — thresholds &amp; checks<a class="headerlink" href="#rules-tab-thresholds-checks" title="Permanent link">&para;</a></h2>
-<p>Expand <strong>Settings</strong> to tune the ruleset:</p>
+<p>Tune the ruleset here. The checks are organised as <strong>category masters</strong> with <strong>per-finding sub-toggles</strong>:</p>
 <table>
 <thead>
 <tr>
@@ -1853,20 +1824,20 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Max Polygons</strong></td>
-<td>Triangle budget before HIGH_POLY fires</td>
+<td><strong>Max Polygons / Max Tex Size (px)</strong></td>
+<td>HIGH_POLY and oversized-texture thresholds</td>
 </tr>
 <tr>
-<td><strong>Max Tex Size (px)</strong></td>
-<td>Oversized-texture threshold</td>
+<td><strong>Category masters</strong></td>
+<td>One toggle per category — <strong>Geometry, Normals/Orientation, Transforms, Collision, Naming, UV, UV Overlap, UV Padding, Materials, Textures, Texel Density</strong>. Untick a master to skip that whole category (and save time).</td>
 </tr>
 <tr>
-<td><strong>Check UV Overlap / Padding / Materials / Textures</strong></td>
-<td>Toggle whole check groups</td>
+<td><strong>▸ per-category arrow</strong></td>
+<td>Each master has a <strong>▸ arrow</strong> — click it to break the category into its <strong>individual findings</strong> and turn any single one off (e.g. under Geometry: N-gons, Non-manifold edges, Non-manifold verts, Zero-area faces, Loose verts/edges, Zero-length edges, Duplicate verts, Internal faces, Face breakdown, High poly). 56 granular toggles in total.</td>
 </tr>
 <tr>
 <td><strong>UV Padding (texels) / Lightmap Res (px)</strong></td>
-<td>The exact padding rule (shown when UV Padding is on) — these are the <code>4px @ 1024px</code> in the warning</td>
+<td>The exact padding rule (shown when UV Padding is on) — the <code>4px @ 1024px</code> in the warning</td>
 </tr>
 <tr>
 <td><strong>Flag Default Names / Marketplace Strict</strong></td>
@@ -1878,14 +1849,22 @@
 </tr>
 <tr>
 <td><strong>Asset Budgets</strong></td>
-<td>Per-asset + whole-scene triangle / material / VRAM budgets (the dashboard)</td>
+<td>Per-asset + whole-scene triangle / material / VRAM budgets (the dashboard) — also a master with per-finding toggles</td>
 </tr>
 <tr>
 <td><strong>LOD checks / Bounds Tolerance</strong></td>
-<td>LOD validation toggles</td>
+<td>LOD validation (master + per-finding toggles)</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition tip">
+<p class="admonition-title">Granular = precise profiles</p>
+<p>Every finding can be turned off individually, so you can build a very precise ruleset and <strong>Save Current as Profile…</strong> — the whole set (masters + the 56 sub-toggles) is written into the profile JSON and restored when you apply it. See <a href="../features/profiles/">Validation Profiles</a>.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Asset Type vs checks</p>
+<p>A <strong>check toggle</strong> decides whether a finding RUNS. The <strong>Asset Type</strong> (Presets tab) only re-rates the <em>severity</em> of findings that are normal for that asset kind (e.g. Kitbash → UV overlap becomes INFO). They're independent.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Changes apply on the <strong>next Run Validation</strong> — they don't retro-update the current report.</p>
@@ -1896,22 +1875,25 @@
 <p>The Scan tab is the <strong>action + on-screen results</strong> (no tab-hopping). A <strong>Scene / Folder</strong> toggle at the top picks what you validate.</p>
 <ul>
 <li><strong>Run Validation</strong> — <strong>scene mode</strong> validates in place (the window stays open) and shows the results below; <strong>folder mode</strong> scans the folder set in Scope and writes its report. <em>Run Validation only validates — it does not save a report. Saving/exporting is the </em><em>Report</em><em> tab's job.</em></li>
+<li><strong>Big scenes show progress</strong> — above ~200 objects, Run Validation (and Fix Safe / Export) run in batches with a <strong>progress bar in the viewport header</strong> (<code>Validating 120/400 (30%) — Esc to cancel</code>) so Blender stays responsive instead of freezing. Press <strong>Esc</strong> to cancel.</li>
 <li>After a scene run you get:<ul>
 <li><strong>Project Health dashboard</strong> — the level's totals vs the project budget as used / limit / % bars, plus <strong>Top by triangles</strong>. See <a href="../features/budgets/">Budgets &amp; Dashboard</a>.</li>
 <li><strong>Summary</strong> — export gate score + status, scene quality, error/warning/info counts, per-category scores.</li>
-<li><strong>Objects to fix</strong> — a checklist of validated objects (tick which to repair); <strong>All</strong> / <strong>Errors only</strong> quick-selects.</li>
+<li><strong>Objects to fix</strong> — a checklist of validated objects (tick which to repair); <strong>All</strong> / <strong>Errors only</strong> quick-selects. <strong>Clicking a row</strong> (the blue highlight, not the tick) also <strong>selects that object in the viewport</strong> and makes it active.</li>
 </ul>
 </li>
 <li><strong>Fix Safe Issues</strong> + <strong>Re-check</strong> — Fix Safe runs every <em>deterministic</em> fix on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry "repairs" are intentionally <strong>not</strong> auto-applied. <strong>Re-check</strong> re-runs validation in place — use it after fixing something by hand (from Select &amp; Focus) instead of scrolling back up.</li>
-<li><strong>Issue list</strong> — grouped by object or category. Each issue has:<ul>
+<li>
+<p><strong>Issue list</strong> — <strong>By Object</strong> or <strong>By Category</strong> (a toggle at the top). In By-Category there's an <strong>Expand all / Collapse all</strong> switch, and in the floating window each section header has a <strong>▲</strong> that jumps back to the top (a popup can't scroll, so it reopens fresh at the top). Each issue has:</p>
+<ul>
 <li><strong>Select &amp; Focus</strong> — selects the exact components, opens the right editor (UV / Shader / Material tab) and <strong>frames the viewport</strong> on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.</li>
 <li><strong>↻ Re-check</strong> — re-validate in place, right where you fixed it.</li>
-<li><strong>Fix This</strong> — that issue's safe fix (shown only for deterministic fixes).</li>
 <li><strong>Ignore</strong> — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an <code>(ignored)</code> info note (it stops affecting the asset score) but stays visible as an audit trail. <em>Ignored findings still count as </em><em>present</em><em> in Compare — muting never reads as a fix.</em></li>
-<li><strong>Impact / Fix</strong> hints (when <em>Show Explanations</em> is on).</li>
 </ul>
+<p>There is <strong>no per-issue fixer</strong> — every safe repair runs from the single <strong>Fix Safe Issues</strong> button. (Each row still shows whether its fix is <em>safe</em> or <em>destructive</em> as a hint.)
+- <strong>Impact / Fix</strong> hints (when <em>Show Explanations</em> is on).
+- <strong>Ignored</strong> — a <strong>Show / Hide</strong> toggle previews exactly what's muted (scoped to the ticked objects); each row has a <strong>✕</strong> to un-ignore that single finding, plus <strong>Un-ignore All</strong>.</p>
 </li>
-<li><strong>Ignored</strong> — a <strong>Show / Hide</strong> toggle previews exactly what's muted (scoped to the ticked objects); each row has a <strong>✕</strong> to un-ignore that single finding, plus <strong>Un-ignore All</strong>.</li>
 </ul>
 <p>→ <a href="../workflows/scene-asset/">Validate a Scene Asset</a> for the full loop.</p>
 <hr />

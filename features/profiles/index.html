@@ -1062,8 +1062,6 @@
       
         
       
-        
-      
     
     
     
@@ -1123,7 +1121,7 @@
   <span class="md-ellipsis">
     
   
-    Output & Engine
+    Export (Output & Engine)
   
 
     
@@ -1236,34 +1234,6 @@
     
   
     Scene Organization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Export
   
 
     
@@ -1816,14 +1786,13 @@
 <h2 id="using-a-profile">Using a profile<a class="headerlink" href="#using-a-profile" title="Permanent link">&para;</a></h2>
 <p>In the <strong>Asset Preflight → Presets</strong> tab:</p>
 <ol>
-<li>Pick a profile from the <strong>Profile</strong> dropdown — it <strong>applies immediately</strong>: thresholds, checks, severities, <strong>engine</strong> and <strong>naming</strong> (e.g. Unreal sets the <code>SM_</code> prefix) are written into the current settings in one step.</li>
-<li><strong>Apply Profile</strong> re-applies the selected profile — useful after editing <code>profiles.json</code>.</li>
+<li>Pick a profile from the <strong>Profile</strong> dropdown — it <strong>applies immediately</strong>: thresholds, checks, severities, <strong>engine</strong> and <strong>naming</strong> (e.g. Unreal sets the <code>SM_</code> prefix) are written into the current settings in one step. <em>(There's no separate </em><em>Apply</em><em> button — selecting is applying.)</em></li>
 <li><strong>Run Validation</strong> to use them.</li>
 </ol>
-<p>Click <strong>Reload</strong> after editing <code>profiles.json</code> on disk, so the new values appear.</p>
+<p>Click <strong>Reload</strong> (↻) after editing <code>profiles.json</code> on disk, so the new values appear.</p>
 <div class="admonition note">
-<p class="admonition-title">Selecting applies</p>
-<p>Choosing a profile in the dropdown applies it at once (engine + prefix + thresholds follow). Any manual tweak you make afterwards stays until you pick a profile again.</p>
+<p class="admonition-title">Profiles drive the check toggles too</p>
+<p>Selecting a profile sets the <strong>check toggles</strong> in Rules — both the category masters and the 56 granular per-finding toggles. So built-in profiles differ in <em>what they check</em>, not just thresholds: e.g. <strong>Mobile — Low-End</strong> unticks the Normal / Metallic map checks (low-end mobile doesn't rely on them), while <strong>Marketplace</strong> keeps everything strict. Any manual tweak you make afterwards stays until you pick a profile again.</p>
 </div>
 <h2 id="save-your-own-profile-no-json-editing">Save your own profile (no JSON editing)<a class="headerlink" href="#save-your-own-profile-no-json-editing" title="Permanent link">&para;</a></h2>
 <p>Tweaked the thresholds, checks, naming and budgets to suit your project? Save them as a named profile straight from the UI:</p>
