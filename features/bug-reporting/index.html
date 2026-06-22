@@ -12,13 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/reference/engine-presets/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/bug-reporting/">
       
       
-        <link rel="prev" href="../profiles-reference/">
+        <link rel="prev" href="../cli/">
       
       
-        <link rel="next" href="../report-schema/">
+        <link rel="next" href="../../panels/output/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Engine Presets - Game Export Pipeline Documentation</title>
+        <title>Bug Reporting & Diagnostics - Game Export Pipeline Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#engine-presets" class="md-skip">
+        <a href="#bug-reporting-diagnostics" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Engine Presets
+              Bug Reporting & Diagnostics
             
           </span>
         </div>
@@ -286,11 +286,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../features/budgets/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../budgets/" class="md-tabs__link">
           
   
   
@@ -330,13 +332,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../validation-checks/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../reference/validation-checks/" class="md-tabs__link">
           
   
   
@@ -680,8 +680,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -705,19 +707,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -735,7 +740,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -753,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/budgets/" class="md-nav__link">
+      <a href="../budgets/" class="md-nav__link">
         
   
   
@@ -781,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/profiles/" class="md-nav__link">
+      <a href="../profiles/" class="md-nav__link">
         
   
   
@@ -809,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/naming/" class="md-nav__link">
+      <a href="../naming/" class="md-nav__link">
         
   
   
@@ -837,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/lod/" class="md-nav__link">
+      <a href="../lod/" class="md-nav__link">
         
   
   
@@ -865,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/batch-scan/" class="md-nav__link">
+      <a href="../batch-scan/" class="md-nav__link">
         
   
   
@@ -893,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/release-gate/" class="md-nav__link">
+      <a href="../release-gate/" class="md-nav__link">
         
   
   
@@ -921,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../features/cli/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   
@@ -946,10 +951,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../features/bug-reporting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reporting & Diagnostics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -965,6 +997,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sending-a-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sending a report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hard-crashes-segfaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard crashes (segfaults)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-maintainers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For maintainers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1192,10 +1288,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1213,22 +1307,19 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1246,7 +1337,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1264,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation-checks/" class="md-nav__link">
+      <a href="../../reference/validation-checks/" class="md-nav__link">
         
   
   
@@ -1292,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collider-naming/" class="md-nav__link">
+      <a href="../../reference/collider-naming/" class="md-nav__link">
         
   
   
@@ -1320,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../profiles-reference/" class="md-nav__link">
+      <a href="../../reference/profiles-reference/" class="md-nav__link">
         
   
   
@@ -1345,37 +1436,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Engine Presets
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../reference/engine-presets/" class="md-nav__link">
         
   
   
@@ -1391,70 +1455,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-axes-and-scale-matter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why axes and scale matter
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#preset-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Preset values
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#custom-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom preset
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#forward-axis-gizmo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Forward Axis gizmo
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1467,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../report-schema/" class="md-nav__link">
+      <a href="../../reference/report-schema/" class="md-nav__link">
         
   
   
@@ -1848,10 +1848,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-axes-and-scale-matter" class="md-nav__link">
+  <a href="#what-it-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why axes and scale matter
+        What it does
       
     </span>
   </a>
@@ -1859,10 +1859,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#preset-values" class="md-nav__link">
+  <a href="#sending-a-report" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset values
+        Sending a report
       
     </span>
   </a>
@@ -1870,10 +1870,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-preset" class="md-nav__link">
+  <a href="#hard-crashes-segfaults" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom preset
+        Hard crashes (segfaults)
       
     </span>
   </a>
@@ -1881,10 +1881,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#forward-axis-gizmo" class="md-nav__link">
+  <a href="#for-maintainers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Forward Axis gizmo
+        For maintainers
       
     </span>
   </a>
@@ -1908,77 +1908,57 @@
 
 
 
-<h1 id="engine-presets">Engine Presets<a class="headerlink" href="#engine-presets" title="Permanent link">&para;</a></h1>
-<p>The <strong>Engine</strong> dropdown in the <a href="../../panels/output/">Output</a> panel configures the axis orientation and scale factor that Game Export Pipeline applies when exporting FBX files. This page explains what each preset does and why the values differ between engines.</p>
+<h1 id="bug-reporting-diagnostics">Bug Reporting &amp; Diagnostics<a class="headerlink" href="#bug-reporting-diagnostics" title="Permanent link">&para;</a></h1>
+<p>Game Export Pipeline has a built-in, <strong>user-initiated</strong> bug reporter. It's <strong>offline and has no telemetry</strong> — nothing is sent automatically. When something goes wrong, the add-on captures a diagnostic report that you review and send yourself.</p>
+<p>Find it at the bottom of the main <strong>GameExport</strong> panel, under <strong>Report a problem</strong>.</p>
 <hr />
-<h2 id="why-axes-and-scale-matter">Why axes and scale matter<a class="headerlink" href="#why-axes-and-scale-matter" title="Permanent link">&para;</a></h2>
-<p>Blender uses a right-handed coordinate system with <strong>Z as up</strong> and <strong>-Y as forward</strong> by default. The three major game engines each use a different convention:</p>
+<h2 id="what-it-does">What it does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Unity</strong> uses Y-up, with -Z as forward (left-handed).</li>
-<li><strong>Unreal Engine</strong> uses Z-up, with X as forward (left-handed).</li>
-<li><strong>Godot</strong> uses Y-up, with -Z as forward (right-handed), mirroring the glTF standard.</li>
+<li><strong>Catches add-on errors</strong> instead of crashing Blender. If an operation (Export, Scan Folder, Fix Safe, Validation, FBX export, …) hits a Python error, it's captured: the panel shows <strong>"An error was captured"</strong>, the operation reports a clear message, and the traceback + context are written to a local log (<code>gep_error_log.txt</code> in your temp folder, size-capped).</li>
+<li><strong>Builds a diagnostic report</strong> with: add-on &amp; Blender versions, OS, Python, the active profile, scene stats (object / mesh counts — <strong>no file names</strong>), and the traceback. <strong>Local paths are scrubbed</strong> (your home folder becomes <code>~</code>, <code>/Users/&lt;name&gt;</code> / <code>/home/&lt;name&gt;</code> / <code>C:\Users\&lt;name&gt;</code> become <code>&lt;user&gt;</code>).</li>
 </ul>
-<p>If you export an FBX without correcting for these differences, your asset will import rotated 90° or facing the wrong direction. The preset handles this correction invisibly.</p>
 <hr />
-<h2 id="preset-values">Preset values<a class="headerlink" href="#preset-values" title="Permanent link">&para;</a></h2>
+<h2 id="sending-a-report">Sending a report<a class="headerlink" href="#sending-a-report" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Preset</th>
-<th>Forward axis</th>
-<th>Up axis</th>
-<th>Scale</th>
-<th>Notes</th>
+<th>Button</th>
+<th>What it does</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Unity</strong></td>
-<td>-Z</td>
-<td>Y</td>
-<td>1.0</td>
-<td>Matches Unity's default FBX import settings</td>
+<td><strong>GitHub Issue</strong></td>
+<td>Copies the report to your clipboard and opens a pre-filled new issue on the project's GitHub tracker — paste the report into the body and submit.</td>
 </tr>
 <tr>
-<td><strong>Unreal Engine</strong></td>
-<td>X</td>
-<td>Z</td>
-<td>1.0</td>
-<td>1 Blender metre = 100 Unreal cm</td>
+<td><strong>Copy</strong></td>
+<td>Copies the report to the clipboard so you can paste it anywhere (issue, email, Discord).</td>
 </tr>
 <tr>
-<td><strong>Godot</strong></td>
-<td>-Z</td>
-<td>Y</td>
-<td>1.0</td>
-<td>Compatible with Godot's glTF importer</td>
+<td><strong>Save .txt</strong></td>
+<td>Writes the report as a <code>.txt</code> file (in your Report folder, or temp) and opens it.</td>
 </tr>
 <tr>
-<td><strong>Custom</strong></td>
-<td><em>(user-defined)</em></td>
-<td><em>(user-defined)</em></td>
-<td><em>(user-defined)</em></td>
-<td>Full manual control</td>
+<td><strong>Email</strong></td>
+<td>Copies the report and opens a pre-addressed email — paste it into the body and send.</td>
+</tr>
+<tr>
+<td><strong>Crash Log</strong></td>
+<td>Opens Blender's own <code>*.crash.txt</code> (see below).</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Unreal scale</p>
-<p>Unreal Engine works in centimetres. 1 metre in Blender equals 100 centimetres in Unreal, so a 1 m cube in Blender arrives as a 100 cm (1 m) cube in Unreal — no scaling correction is needed. The scale value is <code>1.0</code> because Blender's FBX exporter already handles the metre/centimetre conversion internally when the axes are set correctly.</p>
+<div class="admonition info">
+<p class="admonition-title">You're always in control</p>
+<p>The report is copied / shown <strong>before</strong> you send it. Nothing leaves your machine on its own — no analytics, no background uploads.</p>
 </div>
 <hr />
-<h2 id="custom-preset">Custom preset<a class="headerlink" href="#custom-preset" title="Permanent link">&para;</a></h2>
-<p>When <strong>Custom</strong> is selected, three extra fields appear in the <strong>Engine Scale</strong> panel:</p>
-<ul>
-<li><strong>Forward</strong> — the Blender axis that maps to the engine's forward direction.</li>
-<li><strong>Up</strong> — the Blender axis that maps to the engine's up direction.</li>
-<li><strong>Scale</strong> — a multiplier applied to all geometry on export.</li>
-</ul>
-<p>Available axis values: <code>X</code>, <code>-X</code>, <code>Y</code>, <code>-Y</code>, <code>Z</code>, <code>-Z</code>.</p>
-<p>Use the Custom preset for engines not covered by the three presets (e.g. CryEngine, O3DE, custom in-house engines), or when a project has non-standard import settings.</p>
+<h2 id="hard-crashes-segfaults">Hard crashes (segfaults)<a class="headerlink" href="#hard-crashes-segfaults" title="Permanent link">&para;</a></h2>
+<p>If <strong>Blender itself</strong> crashes (a hard segfault, not a Python error), the add-on can't catch it — Python is already gone. In that case the only artefact is <strong>Blender's own crash log</strong>, a <code>*.crash.txt</code> in your temp folder. The <strong>Crash Log</strong> button opens the most recent one so you can attach it to your report.</p>
 <hr />
-<h2 id="forward-axis-gizmo">Forward Axis gizmo<a class="headerlink" href="#forward-axis-gizmo" title="Permanent link">&para;</a></h2>
-<p>When <strong>Viewport Helpers → Forward Axis</strong> is enabled, an arrow is drawn in the 3D viewport showing the direction that will be "forward" after export. It updates automatically when the engine preset changes, so you can check your mesh orientation without exporting a test FBX.</p>
+<h2 id="for-maintainers">For maintainers<a class="headerlink" href="#for-maintainers" title="Permanent link">&para;</a></h2>
+<p>The GitHub issue target is the <code>ISSUES_URL</code> constant in <code>operators/diagnostics.py</code>. Point it at whichever repo hosts your issue tracker, make sure <strong>Issues</strong> are enabled on that repo, and (optionally) keep a <code>bug</code> label so the pre-fill can apply it.</p>
 
 
 
@@ -2014,7 +1994,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../profiles-reference/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Profiles Reference">
+          <a href="../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Headless CLI (CI Gate)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2024,20 +2004,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Profiles Reference
+                Headless CLI (CI Gate)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../report-schema/" class="md-footer__link md-footer__link--next" aria-label="Next: Report Schema">
+          <a href="../../panels/output/" class="md-footer__link md-footer__link--next" aria-label="Next: Export (Output &amp; Engine)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Report Schema
+                Export (Output & Engine)
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -371,6 +371,28 @@
   
   
   
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
     <li class="md-tabs__item">
       <a href="../../faq/" class="md-tabs__link">
         
@@ -671,6 +693,8 @@
       
         
       
+        
+      
     
     
     
@@ -899,6 +923,34 @@
     
   
     Headless CLI (CI Gate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/bug-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reporting & Diagnostics
   
 
     
@@ -1498,6 +1550,127 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         
@@ -1566,92 +1739,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#unreal-engine-naming-convention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Unreal Engine naming convention
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Unreal Engine naming convention">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup-in-unreal-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup in Unreal Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unity-naming-convention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Unity naming convention
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Unity naming convention">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup-in-unity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup in Unity
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-collision-hulls-unreal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple collision hulls (Unreal)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1668,106 +1755,10 @@
 
 
 <h1 id="collision-naming">Collision Naming<a class="headerlink" href="#collision-naming" title="Permanent link">&para;</a></h1>
-<p>Both Unreal Engine and Unity recognise collision meshes automatically when they follow a specific naming convention. Game Export Pipeline generates meshes with the correct names so no manual setup is needed in the engine.</p>
-<hr />
-<h2 id="unreal-engine-naming-convention">Unreal Engine naming convention<a class="headerlink" href="#unreal-engine-naming-convention" title="Permanent link">&para;</a></h2>
-<p>Unreal Engine looks for collision meshes in the same FBX that match one of these patterns:</p>
-<table>
-<thead>
-<tr>
-<th>Prefix</th>
-<th>Shape</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>UCX_</code></td>
-<td>Convex hull</td>
-<td><code>UCX_Rock_01</code></td>
-</tr>
-<tr>
-<td><code>UBX_</code></td>
-<td>Aligned bounding box</td>
-<td><code>UBX_Crate_01</code></td>
-</tr>
-<tr>
-<td><code>USP_</code></td>
-<td>Sphere</td>
-<td><code>USP_Ball_01</code> <em>(not generated by this addon)</em></td>
-</tr>
-<tr>
-<td><code>UCX_&lt;name&gt;_##</code></td>
-<td>Multiple convex hulls</td>
-<td><code>UCX_Rock_01_00</code>, <code>UCX_Rock_01_01</code></td>
-</tr>
-</tbody>
-</table>
-<p>The suffix must match the render mesh name exactly (case-sensitive). For example, a render mesh named <code>Rock_01</code> needs a collision mesh named <code>UCX_Rock_01</code> — not <code>UCX_rock_01</code> or <code>UCX_SM_Rock_01</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Prefix and render mesh name must match</p>
-<p>If the render mesh name includes your export prefix (e.g. <code>SM_Rock_01</code>), the collision mesh must be named <code>UCX_SM_Rock_01</code>. The easiest approach is to run <strong>Fix Naming / Add Prefix</strong> before generating collision, so both names include the prefix.</p>
+<div class="admonition note">
+<p class="admonition-title">Moved</p>
+<p>This page was merged into <strong><a href="../collider-naming/">Collider Naming</a></strong> — see there for the full UCX_/UBX_/USP_ conventions and how the add-on recognises collider meshes.</p>
 </div>
-<h3 id="setup-in-unreal-engine">Setup in Unreal Engine<a class="headerlink" href="#setup-in-unreal-engine" title="Permanent link">&para;</a></h3>
-<p>When you import the FBX:</p>
-<ol>
-<li>In the <strong>FBX Import Options</strong> dialog, make sure <strong>Import Mesh</strong> is on.</li>
-<li>Unreal detects the <code>UCX_</code>/<code>UBX_</code> meshes automatically and converts them to collision shapes — no extra steps needed.</li>
-<li>The collision mesh does not appear as a separate asset in the Content Browser.</li>
-</ol>
-<hr />
-<h2 id="unity-naming-convention">Unity naming convention<a class="headerlink" href="#unity-naming-convention" title="Permanent link">&para;</a></h2>
-<p>Unity also supports the <code>UCX_</code> prefix but requires the collision mesh to be <strong>parented to the render mesh</strong> inside the FBX hierarchy, not a sibling.</p>
-<p>Enable <strong>Colliders as Children</strong> in <a href="../../panels/collision-setup/">Collision Setup</a> before generating collision for a Unity workflow. This parents the <code>UCX_</code> or <code>UBX_</code> mesh to the render mesh in Blender, so the hierarchy is correct in the exported FBX.</p>
-<h3 id="setup-in-unity">Setup in Unity<a class="headerlink" href="#setup-in-unity" title="Permanent link">&para;</a></h3>
-<p>When you import the FBX:</p>
-<ol>
-<li>Select the FBX in the <strong>Project</strong> window and open the <strong>Import Settings → Model</strong> tab.</li>
-<li>Under <strong>Generate Colliders</strong>, Unity detects and uses the <code>UCX_</code>/<code>UBX_</code> child meshes automatically.</li>
-<li>The child collision meshes are invisible in the scene but appear in the hierarchy inspector.</li>
-</ol>
-<hr />
-<h2 id="multiple-collision-hulls-unreal">Multiple collision hulls (Unreal)<a class="headerlink" href="#multiple-collision-hulls-unreal" title="Permanent link">&para;</a></h2>
-<p>For complex shapes that cannot be covered by a single convex hull, Unreal supports multiple hulls per mesh. Name them with a two-digit suffix:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Rock_01            ← render mesh
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>UCX_Rock_01_00     ← first hull
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>UCX_Rock_01_01     ← second hull
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>UCX_Rock_01_02     ← third hull
-</span></code></pre></div>
-<p>Game Export Pipeline does not generate multi-hull collision automatically — create the hull meshes manually and rename them to this pattern before exporting.</p>
-<hr />
-<h2 id="quick-reference">Quick reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Blender setup</th>
-<th>Engine</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Single convex prop</td>
-<td><code>UCX_&lt;name&gt;</code> as sibling</td>
-<td>Unreal</td>
-</tr>
-<tr>
-<td>Box-shaped prop</td>
-<td><code>UBX_&lt;name&gt;</code> as sibling</td>
-<td>Unreal</td>
-</tr>
-<tr>
-<td>Unity prop</td>
-<td><code>UCX_&lt;name&gt;</code> parented as child</td>
-<td>Unity</td>
-</tr>
-<tr>
-<td>Complex multi-hull</td>
-<td><code>UCX_&lt;name&gt;_00</code>, <code>_01</code>, … as siblings</td>
-<td>Unreal</td>
-</tr>
-</tbody>
-</table>
 
 
 

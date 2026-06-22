@@ -371,6 +371,28 @@
   
   
   
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
     <li class="md-tabs__item">
       <a href="../../faq/" class="md-tabs__link">
         
@@ -671,6 +693,8 @@
       
         
       
+        
+      
     
     
     
@@ -899,6 +923,34 @@
     
   
     Headless CLI (CI Gate)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/bug-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bug Reporting & Diagnostics
   
 
     
@@ -1498,6 +1550,127 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../faq/" class="md-nav__link">
         
@@ -1566,80 +1739,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scale-transforms" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scale &amp; Transforms
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mesh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mesh
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#materials-naming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Materials &amp; Naming
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        UV
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#collision" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Collision
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-safe-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix Safe Issues
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1656,46 +1755,9 @@
 
 
 <h1 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h1>
-<p>The <strong>Fix</strong> panel provides targeted, <strong>non-destructive</strong> operators for each validation category, plus a <strong>Fix Safe Issues</strong> button that runs the safe fixes at once. Destructive geometry repairs were removed by design — geometry problems are fixed manually via <strong>Select &amp; Focus</strong> and Blender's own (undoable) tools.</p>
-<hr />
-<h2 id="scale-transforms">Scale &amp; Transforms<a class="headerlink" href="#scale-transforms" title="Permanent link">&para;</a></h2>
-<p><strong>Apply Scale / Rotation</strong> — bakes the current scale and rotation into the mesh data and resets both to identity values. Equivalent to <code>Ctrl+A → All Transforms</code> in Blender's 3D Viewport.</p>
-<p><strong>Fix Negative Scale</strong> — detects and corrects negative scale values (caused by mirroring with <code>Ctrl+M</code> without applying). Negative scale flips normals inside the engine. This operator applies the scale and then flips faces to restore correct normals when an odd number of axes are negative.</p>
-<hr />
-<h2 id="mesh">Mesh<a class="headerlink" href="#mesh" title="Permanent link">&para;</a></h2>
-<p><strong>Recalculate Normals</strong> — recalculates all face normals to point outward, making them consistent. Does not change any geometry — only normal orientation is affected. Clears most "suspicious normals" validation warnings.</p>
 <div class="admonition note">
-<p class="admonition-title">Geometry repairs are manual</p>
-<p>Filling holes, triangulating n-gons, and removing loose / zero-area geometry are <strong>not</strong> auto-applied — guessing at topology can quietly make a mesh worse. For those issues use <strong>Select &amp; Focus</strong> in the report to jump to the exact components, then fix them with Blender's own tools (<code>Mesh → Clean Up</code>, etc.), which are fully undoable.</p>
-</div>
-<hr />
-<h2 id="materials-naming">Materials &amp; Naming<a class="headerlink" href="#materials-naming" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Material</strong> — if the object has no material slots, creates and assigns a default material named after the object.</p>
-<p><strong>Remove Empty Mat Slots</strong> — removes material slots that have no material assigned. Empty slots cause extra draw calls in some engines.</p>
-<p><strong>Fix Naming / Add Prefix</strong> — renames the object and its mesh data to use the prefix set in the <a href="../output/">Output</a> panel. For example, with prefix <code>SM_</code>, an object named <code>Rock_01</code> becomes <code>SM_Rock_01</code>. Default Blender names (Cube, Sphere, etc.) are also replaced. When <strong>Strict Naming (ASCII)</strong> is enabled in settings, non-ASCII characters are stripped from the name.</p>
-<hr />
-<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
-<p><strong>Add UV Map (Smart Project)</strong> — if the object has no UV maps, creates one using Blender's <strong>Smart UV Project</strong> algorithm. The result is a reasonable starting point but is not a substitute for a hand-unwrapped UV map for hero assets.</p>
-<p><strong>Add Lightmap UV</strong> — adds a second UV channel using <strong>Lightmap Pack</strong>. See <a href="../individual-steps/#add-lightmap-uv">Individual Steps → Add Lightmap UV</a> for details.</p>
-<hr />
-<h2 id="collision">Collision<a class="headerlink" href="#collision" title="Permanent link">&para;</a></h2>
-<p><strong>Add Missing Collision</strong> — if the object has no <code>UCX_</code> or <code>UBX_</code> collision mesh, generates a convex hull or box collision mesh. A small dialog lets you choose between UCX (convex hull, best for organic shapes) and UBX (box, best for simple props) before generating.</p>
-<hr />
-<h2 id="fix-safe-issues">Fix Safe Issues<a class="headerlink" href="#fix-safe-issues" title="Permanent link">&para;</a></h2>
-<p><strong>Fix Safe Issues</strong> runs only the non-destructive fixes — the ones that cannot corrupt geometry:</p>
-<ul>
-<li>Fix negative (mirrored) scale</li>
-<li>Apply scale and rotation</li>
-<li>Remove empty material slots</li>
-<li>Add missing material</li>
-<li>Fix naming / add prefix</li>
-<li>Recalculate normals</li>
-</ul>
-<p>Geometry-changing operations (fill holes, triangulate n-gons, remove loose verts / zero-area faces) are intentionally <strong>not</strong> part of the addon — they're done manually with Blender's own tools after <strong>Select &amp; Focus</strong>. Use Fix Safe when you want a quick cleanup without risking any mesh change.</p>
-<p>After the fixes complete, <strong>Validation runs automatically</strong>. Issues that can't be fixed safely — a texture genuinely missing from disk, a poly count above the threshold, geometry topology — remain for manual attention.</p>
-<div class="admonition warning">
-<p class="admonition-title">Fix All moves objects to world origin</p>
-<p>Step 1 translates every non-parented object so its pivot lands at <code>(0, 0, 0)</code>. If your meshes are part of a layout, run Fix All on a dedicated export copy rather than on the original scene.</p>
+<p class="admonition-title">Moved</p>
+<p>The separate <strong>Fix</strong> panel was folded into the <strong>Asset Preflight</strong> window. Repairs now run from the single <strong>Fix Safe Issues</strong> button next to the results; destructive geometry repairs are done by hand via <strong>Select &amp; Focus</strong>. See <strong><a href="../../window/">The Asset Preflight Window</a></strong>.</p>
 </div>
 
 
