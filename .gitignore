@@ -1,0 +1,9 @@
+# MkDocs build output — published separately via `mkdocs gh-deploy` to gh-pages.
+site/
+
+# OS / editor junk
+.DS_Store
+**/.DS_Store
+*.swp
+__pycache__/
+.venv/

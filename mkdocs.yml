@@ -111,6 +111,7 @@ nav:
       - Batch Scan & HTML Report: features/batch-scan.md
       - Release Gate & Regressions: features/release-gate.md
       - Headless CLI (CI Gate): features/cli.md
+      - Bug Reporting & Diagnostics: features/bug-reporting.md
   - Viewport Tools:
       - Export (Output & Engine): panels/output.md
       - Quick Reset: panels/quick-reset.md
@@ -127,5 +128,17 @@ nav:
       - Validate a Scene Asset: workflows/scene-asset.md
       - Batch + Team Report: workflows/batch-team.md
       - CI Gate: workflows/ci-gate.md
+  - Developers:
+      - Architecture: architecture.md
+      - Python API: api.md
   - FAQ: faq.md
   - Changelog: changelog.md
+
+# Redirect stubs for old/merged pages — kept so existing links/URLs still work,
+# but intentionally left out of the navigation.
+not_in_nav: |
+  /panels/validation.md
+  /panels/fix.md
+  /panels/export.md
+  /panels/fbx-tools.md
+  /reference/collision-naming.md

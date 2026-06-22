@@ -57,7 +57,7 @@ Repeat until you reach **EXPORT READY**.
 
 ## 5. Export
 
-Use the **Export** viewport panel (or your own pipeline) to write the FBX with the correct axes and scale for the active engine. See [Export](../panels/export.md).
+Use the **Export** box at the top of the GameExport panel (or your own pipeline) to write the FBX with the correct axes and scale for the active engine. See [Export](../panels/output.md).
 
 ---
 

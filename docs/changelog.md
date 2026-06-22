@@ -9,6 +9,10 @@ All notable changes are documented here. The format follows [Keep a Changelog](h
 A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.
 
+### Bug reporting & release polish (1.4.x – 1.5.x)
+- **Built-in bug reporter** — add-on errors are captured (traceback + scrubbed context) instead of crashing Blender, and surfaced under **Report a problem** in the main panel. Send via **GitHub Issue** (pre-filled), **Copy**, **Save .txt** or **Email**; a **Crash Log** button opens Blender's own `*.crash.txt` for hard crashes. **Offline, user-initiated, no telemetry** — local paths are scrubbed. See [Bug Reporting & Diagnostics](features/bug-reporting.md).
+- **Pre-release cleanup** — removed the dead Import module and excluded dev files (tests, CI, internal specs) from the released add-on; manifest is store-ready (GPL-3.0, permissions, Blender 4.2+).
+
 ### Granular checks & UX (1.2.x – 1.3.x)
 - **56 per-finding toggles** — every category (Geometry, Normals, Transforms, UV, Materials, Textures, Naming, Collision, LOD, Budgets) breaks into individual findings via a **▸ arrow** next to its master toggle, so you can build a very precise ruleset. A single central filter drives them; defaults are all-on.
 - **Profiles carry the checks** — selecting a profile sets the category masters *and* the granular toggles. Built-in presets now differ in *what they check* (e.g. **Mobile — Low-End** unticks Normal/Metallic map checks; **Marketplace** stays strict). **Save Current as Profile…** round-trips the whole set.
@@ -121,7 +125,7 @@ First public release.
 - Header progress bar during batch export and a summary popup showing exported, warnings, and any failed assets.
 
 ### Better FBX integration
-- Auto-detects [Better FBX Importer & Exporter](panels/fbx-tools.md) at runtime — no manual toggle. When installed, a single-object export opens its full dialog and batch export uses it silently with engine-matched axis presets.
+- Auto-detects [Better FBX Importer & Exporter](panels/output.md) at runtime — no manual toggle. When installed, a single-object export opens its full dialog and batch export uses it silently with engine-matched axis presets.
 - **Import FBX…** button opens Better FBX's import dialog when the addon is installed.
 
 ### Geometry prep
