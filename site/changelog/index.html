@@ -944,8 +944,6 @@
       
         
       
-        
-      
     
     
     
@@ -1146,34 +1144,6 @@
     
   
     Export
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panels/fbx-tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FBX Tools
   
 
     
@@ -1662,6 +1632,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#report-workflow-overhaul-11x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report workflow overhaul (1.1.x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#budgets-dashboard-budget-manager" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1961,6 +1942,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#report-workflow-overhaul-11x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Report workflow overhaul (1.1.x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#budgets-dashboard-budget-manager" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2236,6 +2228,17 @@
 <h2 id="unreleased-asset-preflight">[Unreleased] — Asset Preflight<a class="headerlink" href="#unreleased-asset-preflight" title="Permanent link">&para;</a></h2>
 <p>A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.</p>
+<h3 id="report-workflow-overhaul-11x">Report workflow overhaul (1.1.x)<a class="headerlink" href="#report-workflow-overhaul-11x" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Scan / Report split</strong> — the window tabs are now <strong>Presets · Scope · Rules · Scan · Report</strong>. <strong>Run Validation only validates</strong> (and shows results on screen); saving and exporting moved to the <strong>Report</strong> tab.</li>
+<li><strong>Export = save</strong> — <strong>Export JSON</strong> writes a dated <code>history/</code> snapshot (JSON only) and adds it to the history list; <strong>Export HTML</strong> builds/opens the shareable report and does <em>not</em> add a history entry.</li>
+<li><strong>Report folder required</strong> — Scene reports are written <strong>only</strong> to the Report folder you set (no temp / next-to-blend fallback); a red warning and a blocked export appear until one is set. <strong>Open Report Folder</strong> reveals it.</li>
+<li><strong>Compare Selected</strong> — tick <strong>2+</strong> snapshots → one <strong>Quality Diff</strong> (oldest vs newest) with a <code>%</code> improvement, and separate <strong>Fixed / New / Ignored</strong> lists. The line-chart "trend" view was dropped in favour of this single layout.</li>
+<li><strong>Ignored ≠ fixed</strong> — ignored findings now count as <strong>present</strong> in open-issue totals and comparisons, so muting an issue can never read as a fix. The Diff shows an <strong>Ignored (muted)</strong> category, flagging items muted this period.</li>
+<li><strong>History row preview</strong> — each snapshot row has a 🔗 icon that renders its HTML on demand and opens it.</li>
+<li><strong>Thumbnails</strong> — rendered <strong>only for the HTML export</strong> (never on Run), now using Workbench <strong>Texture</strong> shading so previews match the viewport.</li>
+<li><strong>Cleanup</strong> — the <strong>FBX Tools</strong> tab (and its Import button) was removed (use Blender's native Import); the Better-FBX status moved into the Export panel. <strong>Engine</strong> is set in one place (top of the main panel), no longer duplicated in Presets.</li>
+</ul>
 <h3 id="budgets-dashboard-budget-manager">Budgets &amp; dashboard (Budget Manager)<a class="headerlink" href="#budgets-dashboard-budget-manager" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Asset budgets</strong> — per-asset triangle / material (draw-call) / texture-VRAM limits, a <strong>Budget</strong> category + score, and <strong>computed optimization savings</strong> ("downscale 2 textures → save ~48 MB").</li>
@@ -2250,6 +2253,9 @@ team / pipeline tooling.</p>
 </ul>
 <h3 id="report-in-scene-ux">Report &amp; in-scene UX<a class="headerlink" href="#report-in-scene-ux" title="Permanent link">&para;</a></h3>
 <ul>
+<li><strong>Report history</strong> — every folder scan keeps a dated copy in a <code>history/</code> subfolder (Archive toggle), so the folder is a source of truth for trends and comparisons.</li>
+<li><strong>Compare Reports</strong> — diff any saved report (a history snapshot or a pinned baseline) against the current one: Fixed / New, per-asset score deltas, Most Improved / Worst Regressions — as a self-contained diff page.</li>
+<li><strong>New vs Fixed</strong> — the report lists which findings were <strong>fixed</strong> and which are <strong>new</strong> since the previous scan (per asset + rule), so teams track progress on what changed instead of re-reading the backlog.</li>
 <li><strong>HTML report from the scene</strong> — generate the same rich HTML report from an in-scene validation (one card per object), not just from a folder scan. The window has <strong>HTML Scene</strong> + <strong>HTML Folder</strong> buttons.</li>
 <li><strong>By rule</strong> view in the HTML — actionable findings grouped by rule with counts (<em>Missing Texture File — 6 assets</em>), collapsible.</li>
 <li><strong>Ignored</strong> in the report — an Ignored count (cards + summary), a muted <code>ignored</code> tag on muted findings, and an <strong>Ignored</strong> filter that shows only the muted ones.</li>

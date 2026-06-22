@@ -26,7 +26,7 @@ Edit the limits in **Asset Preflight → Rules → Asset Budgets**, or per profi
 
 ## Project Health dashboard
 
-After a scan, the **Scan & Results** tab shows **Project Health** — the level's
+After a run, the **Scan** tab shows **Project Health** — the level's
 totals against the project budget, as used / limit / % bars:
 
 ```

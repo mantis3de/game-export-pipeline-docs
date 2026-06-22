@@ -118,7 +118,6 @@ nav:
       - Collision Setup: panels/collision-setup.md
       - Scene Organization: panels/scene-organization.md
       - Export: panels/export.md
-      - FBX Tools: panels/fbx-tools.md
   - Reference:
       - Validation Checks: reference/validation-checks.md
       - Collider Naming: reference/collider-naming.md

@@ -46,6 +46,14 @@ When a previous report exists in the output folder, the new report adds a
 This makes creeping budget growth and quietly degrading assets visible across
 iterations, instead of only seeing a single snapshot.
 
+### New vs Fixed
+
+Below the totals, a **New vs Fixed** breakdown lists the actionable findings
+(ERROR / WARNING) that changed since the previous scan — **FIXED** (resolved) and
+**NEW** (appeared), each as `asset — rule`, with a `X fixed · Y new` header. So a
+team can focus on what changed this iteration instead of re-reading the whole
+backlog. Compared as `(asset, rule)` pairs against the previous report.
+
 ## CLI
 
 The headless gate prints the verdict and exits non-zero when blocked, so a build

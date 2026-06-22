@@ -38,6 +38,20 @@ Alongside the HTML, a `.json` with the same data is written — for tooling, dif
 
 ---
 
+## History & Compare
+
+Every folder scan (and every **Export JSON** from a scene) drops a **timestamped** copy into a `history/` subfolder of the report destination (`2026-06-21_22-58-32_…_report.json`), one per run — nothing is overwritten. The history list in the **Report** tab loads them automatically; each row's 🔗 icon renders that snapshot's HTML on demand.
+
+Tick **2 or more** snapshots and press **Compare Selected** for a self-contained **Quality Diff** (oldest vs newest):
+
+- a one-number **`%` improvement** + headline cards — avg health `base → target`, open issues `base → target`, **Fixed**, **New**, **Ignored (muted)**, assets improved / regressed,
+- **Most improved** and **Worst regressions** assets (with score deltas),
+- the **Fixed**, **New**, and **Ignored** finding lists (asset — rule).
+
+**Fixed** means an actionable finding resolved entirely; **Ignored** means muted-but-still-present (muting never counts as a fix). Comparison runs on the deterministic JSON, not the HTML.
+
+---
+
 ## Delta scan
 
 With **Delta** on, files unchanged since the last scan (by modification time + size) are skipped and their previous results reused — repeat scans of a large library are near-instant. Edit one file, re-scan, and only that file is re-validated.

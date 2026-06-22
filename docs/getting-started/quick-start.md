@@ -35,9 +35,9 @@ The window stays open and the **Results** tab fills in.
 
 ---
 
-## 4. Read and fix (Results tab)
+## 4. Read and fix (Scan tab)
 
-The **Results** tab shows:
+After **Run Validation**, the **Scan** tab shows the results in place:
 
 - a **0–100 score** and an export status: `EXPORT READY` / `READY WITH WARNINGS` / `NOT EXPORT READY`,
 - per-category scores (geometry, transform, UV, materials, …),

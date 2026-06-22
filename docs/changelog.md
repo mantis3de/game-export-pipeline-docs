@@ -9,6 +9,16 @@ All notable changes are documented here. The format follows [Keep a Changelog](h
 A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.
 
+### Report workflow overhaul (1.1.x)
+- **Scan / Report split** — the window tabs are now **Presets · Scope · Rules · Scan · Report**. **Run Validation only validates** (and shows results on screen); saving and exporting moved to the **Report** tab.
+- **Export = save** — **Export JSON** writes a dated `history/` snapshot (JSON only) and adds it to the history list; **Export HTML** builds/opens the shareable report and does *not* add a history entry.
+- **Report folder required** — Scene reports are written **only** to the Report folder you set (no temp / next-to-blend fallback); a red warning and a blocked export appear until one is set. **Open Report Folder** reveals it.
+- **Compare Selected** — tick **2+** snapshots → one **Quality Diff** (oldest vs newest) with a `%` improvement, and separate **Fixed / New / Ignored** lists. The line-chart "trend" view was dropped in favour of this single layout.
+- **Ignored ≠ fixed** — ignored findings now count as **present** in open-issue totals and comparisons, so muting an issue can never read as a fix. The Diff shows an **Ignored (muted)** category, flagging items muted this period.
+- **History row preview** — each snapshot row has a 🔗 icon that renders its HTML on demand and opens it.
+- **Thumbnails** — rendered **only for the HTML export** (never on Run), now using Workbench **Texture** shading so previews match the viewport.
+- **Cleanup** — the **FBX Tools** tab (and its Import button) was removed (use Blender's native Import); the Better-FBX status moved into the Export panel. **Engine** is set in one place (top of the main panel), no longer duplicated in Presets.
+
 ### Budgets & dashboard (Budget Manager)
 - **Asset budgets** — per-asset triangle / material (draw-call) / texture-VRAM limits, a **Budget** category + score, and **computed optimization savings** ("downscale 2 textures → save ~48 MB").
 - **Project Health dashboard** — whole-scene totals vs project budget as used / limit / % bars + **Top expensive** assets, in the window and the HTML report.
@@ -20,6 +30,9 @@ team / pipeline tooling.
 - **Regression tracking** — a "Since last scan" block comparing project health and triangle / VRAM / material totals against the previous report, plus the assets whose score dropped the most.
 
 ### Report & in-scene UX
+- **Report history** — every folder scan keeps a dated copy in a `history/` subfolder (Archive toggle), so the folder is a source of truth for trends and comparisons.
+- **Compare Reports** — diff any saved report (a history snapshot or a pinned baseline) against the current one: Fixed / New, per-asset score deltas, Most Improved / Worst Regressions — as a self-contained diff page.
+- **New vs Fixed** — the report lists which findings were **fixed** and which are **new** since the previous scan (per asset + rule), so teams track progress on what changed instead of re-reading the backlog.
 - **HTML report from the scene** — generate the same rich HTML report from an in-scene validation (one card per object), not just from a folder scan. The window has **HTML Scene** + **HTML Folder** buttons.
 - **By rule** view in the HTML — actionable findings grouped by rule with counts (*Missing Texture File — 6 assets*), collapsible.
 - **Ignored** in the report — an Ignored count (cards + summary), a muted `ignored` tag on muted findings, and an **Ignored** filter that shows only the muted ones.

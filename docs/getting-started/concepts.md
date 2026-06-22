@@ -43,7 +43,7 @@ The same validator runs in two modes:
 |---|---|---|
 | **What** | Meshes in your open scene | A folder of exported files |
 | **Where** | Asset Preflight → Scan → Run Validation | Asset Preflight → Scan → Scan Folder, or the CLI |
-| **Output** | The Results tab + optional JSON/CSV | A shareable HTML report + JSON |
+| **Output** | On-screen results in the Scan tab + Report tab Export (JSON/HTML) | A shareable HTML report + JSON |
 | **Who** | The artist, while working | The lead / CI, before publish |
 
 Batch imports each file into a throwaway scene, validates it in isolation, then removes it — your open scene is never touched.
