@@ -946,8 +946,6 @@
       
         
       
-        
-      
     
     
     
@@ -1148,34 +1146,6 @@
     
   
     Export
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/fbx-tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FBX Tools
   
 
     
@@ -1800,12 +1770,13 @@
 <hr />
 <h2 id="batch-report-folder-scan">Batch report (folder scan)<a class="headerlink" href="#batch-report-folder-scan" title="Permanent link">&para;</a></h2>
 <p>Written by <strong>Scan Folder</strong> and the CLI, as <code>asset_preflight_report.json</code> (+ <code>.html</code>). Schema <code>batch-1.0</code>.</p>
-<p>Top-level keys: <code>schema</code>, <code>generated_at</code>, <code>profile</code>, <code>summary</code>, <code>project</code>, <code>release</code>, <code>regressions</code>, <code>rules</code>, <code>duplicates</code>, <code>files</code>, <code>history</code>.</p>
+<p>Top-level keys: <code>schema</code>, <code>generated_at</code>, <code>profile</code>, <code>summary</code>, <code>project</code>, <code>release</code>, <code>regressions</code>, <code>changes</code>, <code>rules</code>, <code>duplicates</code>, <code>files</code>, <code>history</code>.</p>
 <ul>
 <li><strong><code>summary</code></strong> — <code>total</code>, <code>passed</code>, <code>warnings</code>, <code>failed</code>, <code>import_failed</code>, <code>ignored</code>, <code>avg_health</code>, <code>risk</code>.</li>
 <li><strong><code>project</code></strong> — <code>totals</code> (summed <code>meshes</code>/<code>tris</code>/<code>materials</code>/<code>vram_mb</code>) and the <code>budget</code> it is measured against (the project limits).</li>
 <li><strong><code>release</code></strong> — the release-gate verdict: <code>status</code> (<code>READY</code>/<code>BLOCKED</code>), <code>reasons[]</code> (why it's blocked), and <code>min_health</code> (the threshold used).</li>
 <li><strong><code>regressions</code></strong> — comparison to the previous report (omitted/empty when there is none): <code>health</code> (<code>prev</code>/<code>now</code>/<code>delta</code>), <code>totals</code> (per metric <code>prev</code>/<code>now</code>/<code>pct</code>), and <code>worst[]</code> (assets with the biggest score drops). See <a href="../../features/release-gate/">Release Gate &amp; Regressions</a>.</li>
+<li><strong><code>changes</code></strong> — New vs Fixed since the previous report: <code>new[]</code> and <code>fixed[]</code> (each <code>{file, id}</code>) plus <code>new_count</code> / <code>fixed_count</code>. Actionable findings only (ERROR/WARNING).</li>
 <li><strong><code>rules[]</code></strong> — actionable findings grouped by rule for the <strong>By rule</strong> view: <code>id</code>, <code>severity</code>, <code>count</code>, <code>assets[]</code>. INFO findings are excluded.</li>
 <li><strong><code>duplicates</code></strong> — groups of files sharing a mesh signature (accidental re-exports).</li>
 <li><strong><code>files[]</code></strong> — per file: <code>file</code>, <code>path</code>, <code>import_ok</code>, <code>status</code> (<code>PASS</code>/<code>WARNING</code>/<code>FAIL</code>/<code>IMPORT_FAILED</code>), <code>score</code>, <code>errors</code>/<code>warnings</code>/<code>infos</code>, <code>ignored</code>, <code>meshes</code>, <code>tris</code>, <code>materials</code>, <code>vram_mb</code>, <code>signature</code>, <code>fingerprint</code> (mtime+size for delta), <code>cached</code>, <code>thumb</code> (base64 PNG when thumbnails are on), and a trimmed <code>issues[]</code>.</li>

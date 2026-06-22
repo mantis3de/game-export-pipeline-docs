@@ -928,6 +928,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#history-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History &amp; Compare
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#delta-scan" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1029,8 +1040,6 @@
   
     
     
-      
-        
       
         
       
@@ -1244,34 +1253,6 @@
     
   
     Export
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/fbx-tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FBX Tools
   
 
     
@@ -1757,6 +1738,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#history-compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        History &amp; Compare
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#delta-scan" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1823,6 +1815,16 @@
 <li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed / <strong>Ignored</strong> (shows only the muted findings); sort by health, name, errors or tris; <strong>Expand all / Collapse all</strong>.</li>
 </ul>
 <p>Alongside the HTML, a <code>.json</code> with the same data is written — for tooling, diffing, and the CLI.</p>
+<hr />
+<h2 id="history-compare">History &amp; Compare<a class="headerlink" href="#history-compare" title="Permanent link">&para;</a></h2>
+<p>Every folder scan (and every <strong>Export JSON</strong> from a scene) drops a <strong>timestamped</strong> copy into a <code>history/</code> subfolder of the report destination (<code>2026-06-21_22-58-32_…_report.json</code>), one per run — nothing is overwritten. The history list in the <strong>Report</strong> tab loads them automatically; each row's 🔗 icon renders that snapshot's HTML on demand.</p>
+<p>Tick <strong>2 or more</strong> snapshots and press <strong>Compare Selected</strong> for a self-contained <strong>Quality Diff</strong> (oldest vs newest):</p>
+<ul>
+<li>a one-number <strong><code>%</code> improvement</strong> + headline cards — avg health <code>base → target</code>, open issues <code>base → target</code>, <strong>Fixed</strong>, <strong>New</strong>, <strong>Ignored (muted)</strong>, assets improved / regressed,</li>
+<li><strong>Most improved</strong> and <strong>Worst regressions</strong> assets (with score deltas),</li>
+<li>the <strong>Fixed</strong>, <strong>New</strong>, and <strong>Ignored</strong> finding lists (asset — rule).</li>
+</ul>
+<p><strong>Fixed</strong> means an actionable finding resolved entirely; <strong>Ignored</strong> means muted-but-still-present (muting never counts as a fix). Comparison runs on the deterministic JSON, not the HTML.</p>
 <hr />
 <h2 id="delta-scan">Delta scan<a class="headerlink" href="#delta-scan" title="Permanent link">&para;</a></h2>
 <p>With <strong>Delta</strong> on, files unchanged since the last scan (by modification time + size) are skipped and their previous results reused — repeat scans of a large library are near-instant. Edit one file, re-scan, and only that file is re-validated.</p>

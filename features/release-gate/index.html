@@ -970,6 +970,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Regression Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-vs-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New vs Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1035,8 +1052,6 @@
   
     
     
-      
-        
       
         
       
@@ -1250,34 +1265,6 @@
     
   
     Export
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/fbx-tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    FBX Tools
   
 
     
@@ -1777,6 +1764,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Regression Tracking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-vs-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New vs Fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1847,6 +1851,12 @@ A stricter team raises it; a prototype can lower it.</p>
 </ul>
 <p>This makes creeping budget growth and quietly degrading assets visible across
 iterations, instead of only seeing a single snapshot.</p>
+<h3 id="new-vs-fixed">New vs Fixed<a class="headerlink" href="#new-vs-fixed" title="Permanent link">&para;</a></h3>
+<p>Below the totals, a <strong>New vs Fixed</strong> breakdown lists the actionable findings
+(ERROR / WARNING) that changed since the previous scan — <strong>FIXED</strong> (resolved) and
+<strong>NEW</strong> (appeared), each as <code>asset — rule</code>, with a <code>X fixed · Y new</code> header. So a
+team can focus on what changed this iteration instead of re-reading the whole
+backlog. Compared as <code>(asset, rule)</code> pairs against the previous report.</p>
 <h2 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">&para;</a></h2>
 <p>The headless gate prints the verdict and exits non-zero when blocked, so a build
 server or pre-publish hook can stop a bad build:</p>
