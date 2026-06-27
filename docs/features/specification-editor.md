@@ -33,6 +33,10 @@ Each exported file is stamped with `generator` and `version` so you can always t
 
 ---
 
+## Editing an existing spec
+
+The editor is two-way: click **Import Preset** to load an existing `.profiles.json` and the whole form fills in (engine, limits, naming, checks, severities). Change what you need and **Export Preset** again. This makes specs reusable living documents — a lead keeps a base spec, imports it per project, tweaks a few values, and re-exports, instead of re-filling the form each time. It also lets anyone open a received `.json` in a readable form to review it.
+
 ## Why HTML and not a server
 
 A single local HTML file:

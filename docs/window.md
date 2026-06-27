@@ -39,8 +39,9 @@ There are **no built-in presets** — you import one or build your own in Rules.
 
 ## Scope tab — what to validate
 
-- **In-scene scope** — validation runs on **selected** meshes, or the **whole scene** if nothing is selected. The object list previews what will be checked, with an **All** toggle to tick / untick everything and a *Ticked: X/Y* count.
+- **In-scene scope** — validation runs on **selected** meshes, or the **whole scene** if nothing is selected. The object list previews what will be checked, with an **All** toggle to tick / untick everything and a *Ticked: X/Y* count. The Scope list is a **selection list only** — it shows object names without error/warning counts (those live in the Scan results).
 - **List ↔ viewport sync** — clicking a row (the highlight, not the tick) selects that object in the viewport and makes it active; selecting an object in the viewport / Outliner highlights its row. It works both ways.
+- **Isolate mode (opt-in)** — click **Isolate Selected** to enter Isolate mode: now clicking a row shows **only** that object in the viewport *and* scopes the report to it. **Exit Isolate (show all)** leaves the mode. Outside Isolate, clicking rows only selects — the report keeps showing the whole scene, so **By Category** browsing stays usable. Your manual visibility is snapshotted on enter and restored exactly on exit (objects you had hidden stay hidden).
 - **Batch folder** — set a folder of exported files plus the **Subfolders** / **Delta** toggles in the Scan tab. *(The report destination is set in the **Report** tab.)*
 
 → [Batch Scan & HTML Report](features/batch-scan.md)
@@ -80,6 +81,7 @@ Tune the whole ruleset here — this is where the freelancer dials everything in
 
 The Scan tab is the **action + on-screen results** (no tab-hopping). A **Scene / Folder** toggle at the top picks what you validate.
 
+- **Prepare (Scene Cleanup)** — an optional one-click tidy of imported assets *before* validation. **Scene Cleanup** renames objects to the engine convention (`SM_` / `_LOD#` / `UCX_`/`UBX_`), normalises messy LOD names, groups each asset into its own collection, and **un-parents colliders** from their mesh (studio rule: colliders are siblings — parenting happens only at export; world transform is preserved). It recognises objects **by name only** (a wide set of collider suffixes — `_col`, `_collision`, `_ucx`, `_phys`, `_hitbox`, …) and leaves anything unclear untouched, reporting it. It's **non-destructive / undoable**. Tick **Run automatically before Validation** to run it on every scan (off by default).
 - **Run Validation** — **scene mode** validates in place (the window stays open) and shows the results below; **folder mode** scans the folder set in Scope and writes its report. *Run Validation only validates — it does not save a report. Saving/exporting is the **Report** tab's job.*
 - **Big scenes show progress** — above ~200 objects, Run Validation (and Export) run in batches with a **progress bar in the viewport header** (`Validating 120/400 (30%) — Esc to cancel`) so Blender stays responsive instead of freezing. Press **Esc** to cancel.
 - After a scene run you get:
@@ -87,10 +89,10 @@ The Scan tab is the **action + on-screen results** (no tab-hopping). A **Scene /
     - **Summary** — export gate score + status, scene quality, error/warning/info counts, per-category scores.
     - **Objects to fix** — a checklist of validated objects (tick which to repair); **All** / **Errors only** quick-selects. **Clicking a row** (the blue highlight, not the tick) also **selects that object in the viewport** and makes it active.
 - **Re-check** — re-runs validation in place; use it after fixing something by hand instead of scrolling back up. There is **no bulk auto-fix** — repairs are manual, in the [Individual Steps](panels/individual-steps.md) panel (Safe Repairs, Fix Names, transforms…). Geometry problems are fixed from **Select & Focus**.
-- **Issue list** — **By Object** or **By Category** (a toggle at the top). In By-Category there's an **Expand all / Collapse all** switch, and in the floating window each section header has a **▲** that jumps back to the top (a popup can't scroll, so it reopens fresh at the top). Each issue has:
+- **Issue list** — **By Object** or **By Category** (a toggle at the top). Findings that don't belong to one object (e.g. duplicate materials, whole-scene budgets) appear under a **Scene-wide** group and are always shown, even in Isolate mode. In By-Category there's an **Expand all / Collapse all** switch, and in the floating window each section header has a **▲** that jumps back to the top (a popup can't scroll, so it reopens fresh at the top). Each issue has:
     - **Select & Focus** — selects the exact components, opens the right editor (UV / Shader / Material tab) and **frames the viewport** on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.
     - **↻ Re-check** — re-validate in place, right where you fixed it.
-    - **Ignore** — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an `(ignored)` info note (it stops affecting the asset score) but stays visible as an audit trail. *Ignored findings still count as **present** in Compare — muting never reads as a fix.*
+    - **Ignore** — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an `(ignored)` info note (it stops affecting the asset score) but stays visible as an audit trail. Scene-wide findings (no single object) are muted at the scene level by either icon. *Ignored findings still count as **present** in Compare — muting never reads as a fix.*
 
     - **Impact / Fix** hints (when *Show Explanations* is on).
 - **Ignored** — a **Show / Hide** toggle previews exactly what's muted (scoped to the ticked objects); each row has a **✕** to un-ignore that single finding, plus **Un-ignore All**.

@@ -4,6 +4,38 @@ All notable changes are documented here. The format follows [Keep a Changelog](h
 
 ---
 
+## [1.8.x] — Isolate, LOD browsing & data-safety hardening
+
+Workflow polish around validation browsing and LOD review, plus a release audit
+that hardened the preview/isolate features against data loss.
+
+### Validation list & Isolate
+- **Explicit Isolate mode.** Clicking a row in the Scope/Scan list selects and highlights the object but no longer hides the rest by default. Press **Isolate Selected** to enter Isolate mode — then clicking rows shows only that object *and* scopes the report to it; **Exit Isolate (show all)** leaves the mode. This keeps **By Category** browsing usable (the report shows every object outside Isolate).
+- **Isolate restores your visibility exactly.** Entering Isolate snapshots each object's visibility and exiting restores it 1:1 — objects you had hidden stay hidden (no more "show everything" on exit).
+- **Scope list shows no error counts.** The Scope picker is a selection list only; error/warning counts live in the Scan results list where they belong.
+- **Scene-wide findings are always shown and ignorable.** Findings with no single object (e.g. duplicate materials) appear under a **Scene-wide** group and can be muted with the ghost/globe icons (stored per scene).
+- **Natural object order.** The object list sorts like the outliner (`Brazier_01, _02, … _10`) and keeps your highlighted row after a fix instead of jumping.
+
+### LOD tools
+- **Detail slider.** One master **Detail** control above keep % makes every LOD denser as you slide it up (0 % = use keep %, 100 % = barely decimated). Detail affects geometry only — never the switch %.
+- **Generate regenerates.** Pressing **Generate LODs** again rebuilds exactly the configured number of levels instead of stacking new ones (no more LOD4…LOD9).
+- **LOD browser list.** A new **Objects with LODs** list in the Preview box drives everything: click a row to isolate and preview that chain (chain-aware — all levels stay eligible, distance picks which shows). The standalone *Preview LODs* toggle was replaced by this list plus **Exit Preview**. Colliders are always hidden during preview.
+- **Tri counts in preview.** The preview readout shows the live triangle count of the visible LOD (both the distance slider and Live).
+- **Preview never mutates data.** Previewing computes switch %/cull/FOV in memory; it no longer writes the stored policy. Persisting a policy stays with **Apply / Refresh Policy**.
+
+### Scene Cleanup, materials, reports
+- **Collider un-parenting.** Scene Cleanup now detaches colliders from their mesh parent (studio rule: colliders are siblings; parenting happens only at export), recognising a wide set of suffixes (`_col`, `_collision`, `_ucx`, `_phys`, `_hitbox`, …) and keeping world transform.
+- **Unique Material Names on by default.** Duplicate import materials (`Material.001`, `.002`…) are flagged out of the box; the Select & Focus arrow opens the material editor on one of the duplicates so you decide what to keep.
+- **Per-object LOD breakdown in the HTML report.** Each object card lists its LOD chain with triangle counts, computed from the real scene meshes (works for hand-made LODs too).
+
+### Panels & fixes
+- **Viewport Helpers** is now its own panel at the top of the GameExport tab (Forward Axis + Scale Ref); the helper objects are non-selectable so Pivot/Origin can't move them.
+- **Pivot + Origin + Apply Scale** keeps your original selection after running.
+- **Missing-texture check** resolves paths like Blender (`filepath_from_user`) and respects packed / in-memory images, so a relinked texture stops being flagged.
+- Edit-Mode crash guards on all UV checks; lightmap-padding distance measured on real UV geometry (no false positives).
+
+---
+
 ## [Unreleased] — Asset Preflight
 
 A major workflow update turning the panel sprawl into one tabbed window and adding

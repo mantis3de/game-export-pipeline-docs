@@ -419,6 +419,6 @@ A mesh object is hidden in the viewport — easy to export by accident or forget
 A texture is packed into the `.blend`, so it won't ship as an external file. Unpack images (File → External Data → Unpack) to a textures folder.
 
 ### Duplicate material name
-**Severity: Warning** · *(Unique Material Names)*
+**Severity: Warning** · *(Unique Material Names — **on by default**)*
 
-Two materials share a base name (`Metal` and `Metal.001`) — they import as separate slots and break material consistency. Rename or merge the duplicates.
+Two or more materials share a base name (`Metal`, `Metal.001`, `Metal.002`…) — Blender's import duplicates that break material consistency across slots. This is a **scene-wide** finding (no single object), so it appears under the **Scene-wide** group in the report. Its **Select & Focus** arrow opens the material editor on one of the duplicates so you can pick which to keep and reassign the rest by hand; the add-on never merges materials for you.

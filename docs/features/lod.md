@@ -11,6 +11,10 @@ You set **only** the decimation — how many triangles each LOD keeps (LOD1 50 %
 !!! tip "Manual switch %"
     Need precise control over the switching distances? Tick **Set manually (advanced)** under *Switch @ screen %* to edit LOD1/2/3 @ and Cull by hand. Otherwise the auto value is shown read-only (*Auto from keep %: 50 % / 25 % / 12 %*).
 
+### Detail slider
+
+Above the keep % is a single **Detail** slider — a master control over how much geometry every level keeps. At **0 %** the levels use the keep % as set; sliding **up** blends each level toward 100 % (barely decimated), and at **100 %** the LODs are almost identical to the base. Use it when low LODs look too crushed — raise Detail and regenerate. Detail affects **geometry density only**; it never changes the switch %.
+
 ---
 
 ## Generating LODs
@@ -19,7 +23,7 @@ You set **only** the decimation — how many triangles each LOD keeps (LOD1 50 %
 2. Set the keep % and the **Levels** count (1–3).
 3. Click **Generate LODs**.
 
-This creates `Name_LOD1`, `Name_LOD2`, … beside the base and writes a **switching policy** onto LOD0. Re-running tops up the chain rather than clobbering it. LODs are **always triangulated** (engines triangulate anyway).
+This creates `Name_LOD1`, `Name_LOD2`, … beside the base and writes a **switching policy** onto LOD0. Re-running **regenerates** the chain — it removes the existing LODs for the selected bases first, so you always get exactly the configured number of levels (no stacking up to LOD4, LOD5, …). LODs are **always triangulated** (engines triangulate anyway).
 
 The base is **always validated first** — a base mesh with errors won't generate LODs, since decimating a broken mesh just copies the defect into every level. Fix LOD0, then generate.
 
@@ -42,13 +46,18 @@ Background: Unity is the only one of the three that does **not** auto-generate L
 
 ## Preview (runtime emulator)
 
-The preview shows exactly which level the engine would display at a given camera distance, using the same screen-size math the policy stores.
+The preview shows exactly which level the engine would display at a given camera distance, using the same screen-size math the policy stores. It's driven by a list — no separate on/off toggle.
 
-1. Turn on **Preview LODs**.
-2. Drag **Distance (m)** — or click **Live (from viewport)** and orbit / zoom. The Live button is blue while running.
-3. The readout shows e.g. `Chair: LOD2 @ 27 m / 14 % screen`.
+1. In the **Preview** box, click **↻** to fill the **Objects with LODs** list (every base that has LODs, with its level count).
+2. **Click a row** — that chain is isolated and preview starts automatically. Clicking another row switches to it. *Isolate the chain* (on by default) hides everything else; colliders are always hidden during preview.
+3. Drag **Distance (m)** — or click **Live (from viewport)** and orbit / zoom. The Live button is blue while running.
+4. The readout shows the visible level **with its triangle count**, e.g. `Chair: LOD2 · 1,230 tris @ 27 m / 14 % screen`.
+5. Click **Exit Preview (show all)** to end the preview and restore the full scene.
 
-While **Preview** is on, editing the switch % updates the view **live** — no need to click Apply. Turning preview off restores the original visibility of every level.
+While previewing, editing the switch % updates the view **live**. The preview matches the panel values but **does not write** them to the object — it computes the switching in memory. To persist a policy, use **Apply / Refresh Policy**.
+
+!!! note "Preview is non-destructive"
+    Previewing never changes your data: the visibility it toggles is restored on exit (and recovered automatically after *Reload Scripts*, disabling the add-on, or re-opening a file saved mid-preview), and the stored LOD policy is left untouched.
 
 → The full screen-size model is documented in `LOD_SPEC.md` in the addon.
 

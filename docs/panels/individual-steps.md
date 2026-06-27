@@ -12,6 +12,8 @@ The **Individual Steps** panel is the single place for manual, one-by-one prepar
 2. **Origin to world zero** — moves the object so its origin sits at `(0, 0, 0)`; geometry moves with it (no visual change).
 3. **Apply rotation + scale** — bakes them so `rotation = 0°`, `scale = 1`.
 
+It runs per object (each gets its own correct pivot) and **restores your original selection** when done — you keep everything you had selected, not just the last object.
+
 !!! warning "This moves objects in the scene"
     Step 2 translates the object to world zero. Run it on a copy or a dedicated export collection, not on a laid-out scene.
 

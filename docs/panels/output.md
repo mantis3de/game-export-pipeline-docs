@@ -49,32 +49,20 @@ Choose **FBX** or **glTF/GLB**. **Auto-cleanup on Export** applies, on temporary
 
 ---
 
-## Viewport helpers
+## Viewport Helpers (separate panel)
 
-The **Viewport Helpers** box draws non-destructive overlays:
+**Viewport Helpers** is its **own panel at the top** of the GameExport tab (above Asset Validator) — not part of the Export box. It draws non-destructive references:
 
 - **Forward Axis: Unity / Unreal** — two buttons; each draws an arrow for that engine's forward direction (Unity −Y, Unreal +X). A ✕ hides it. The choice is explicit per engine, independent of the export Engine setting.
 - **Scale Ref: Show** — a 1 m cube + a 1.8 m human-height box to check proportions (identical for Unity and Unreal). A ✕ hides it.
 
-Both are display-only and never touch the exported file.
+The helper objects are **non-selectable**, so Pivot/Origin and other selection-based tools can't move them, and they're excluded from validation. Both are display-only and never touch the exported file.
 
 ---
 
-## Preview / Isolate
+## Isolating objects
 
-The **Preview / Isolate** button walks through the scene's mesh objects one at a time, hiding everything else. Colliders (`UCX_`/`UBX_`) are shown as part of the mesh they belong to, never as their own entries.
+There is no separate modal browser. Isolation now lives where you need it:
 
-| Control | Action |
-|---|---|
-| Mouse wheel · `↑` / `↓` | Previous / next mesh |
-| `M` | Cycle isolation mode |
-| `Enter` · `LMB` | Keep isolation and exit |
-| `Esc` · `RMB` | Restore all and exit |
-
-| Mode | Shows |
-|---|---|
-| **Mesh only** | Just the render mesh |
-| **Mesh + Collider** | The mesh and its colliders |
-| **Collider only** | Just the colliders (check hull shape) |
-
-**Restore All** un-hides every object. Preview only toggles visibility — it never moves, deletes, or modifies geometry.
+- **Validation** — in the Scope/Scan object list, **Isolate Selected** shows only the highlighted object and scopes the report to it; **Exit Isolate** restores your exact prior visibility. See [The Asset Preflight Window](../window.md).
+- **LOD review** — the **Objects with LODs** list in *LOD Tools → Preview* isolates and previews a chain per row (colliders hidden), with **Exit Preview**. See [LOD Tools](../features/lod.md).
