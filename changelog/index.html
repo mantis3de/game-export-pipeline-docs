@@ -273,7 +273,7 @@
   
     
   
-  The Asset Preflight Window
+  The Asset Validator Window
 
       </a>
     </li>
@@ -661,7 +661,7 @@
   <span class="md-ellipsis">
     
   
-    The Asset Preflight Window
+    The Asset Validator Window
   
 
     
@@ -1824,15 +1824,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unreleased-asset-preflight" class="md-nav__link">
+  <a href="#unreleased-asset-validator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        [Unreleased] — Asset Preflight
+        [Unreleased] — Asset Validator
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="[Unreleased] — Asset Preflight">
+    <nav class="md-nav" aria-label="[Unreleased] — Asset Validator">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1935,10 +1935,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#asset-preflight-window" class="md-nav__link">
+  <a href="#asset-validator-window" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Asset Preflight window
+        Asset Validator window
       
     </span>
   </a>
@@ -2228,15 +2228,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unreleased-asset-preflight" class="md-nav__link">
+  <a href="#unreleased-asset-validator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        [Unreleased] — Asset Preflight
+        [Unreleased] — Asset Validator
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="[Unreleased] — Asset Preflight">
+    <nav class="md-nav" aria-label="[Unreleased] — Asset Validator">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2339,10 +2339,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#asset-preflight-window" class="md-nav__link">
+  <a href="#asset-validator-window" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Asset Preflight window
+        Asset Validator window
       
     </span>
   </a>
@@ -2589,7 +2589,7 @@ that hardened the preview/isolate features against data loss.</p>
 <li>Edit-Mode crash guards on all UV checks; lightmap-padding distance measured on real UV geometry (no false positives).</li>
 </ul>
 <hr />
-<h2 id="unreleased-asset-preflight">[Unreleased] — Asset Preflight<a class="headerlink" href="#unreleased-asset-preflight" title="Permanent link">&para;</a></h2>
+<h2 id="unreleased-asset-validator">[Unreleased] — Asset Validator<a class="headerlink" href="#unreleased-asset-validator" title="Permanent link">&para;</a></h2>
 <p>A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.</p>
 <h3 id="spec-driven-rules-engine-as-export-panel-cleanup">Spec-driven rules, engine-as-export, panel cleanup<a class="headerlink" href="#spec-driven-rules-engine-as-export-panel-cleanup" title="Permanent link">&para;</a></h3>
@@ -2682,7 +2682,7 @@ team / pipeline tooling.</p>
 <li><strong>glTF / GLB export</strong> — Export Selected now offers <strong>FBX or glTF 2.0</strong> (GLB single-file or separate <code>.gltf</code>), for Godot and web pipelines. Same engine preset, cleanup, and budget gate; tangents per engine convention.</li>
 <li><strong>Material / Texture checks+</strong> — flags a <strong>non-standard surface shader</strong> (custom node group that won't bake to PBR) and <strong>mismatched texture resolutions</strong> within one material (both informational).</li>
 <li><strong>Safe-only repairs</strong> — the destructive geometry auto-fixes (fill holes, triangulate n-gons, remove loose / zero-area) were removed entirely. Geometry problems are now manual: <strong>Select &amp; Focus</strong> takes you to the exact components and you fix them with Blender's own (undoable) tools.</li>
-<li><strong>Viewport header button</strong> — an always-visible <strong>Preflight</strong> button in the 3D viewport header that opens the window (turns red when the last scan found errors).</li>
+<li><strong>Viewport header button</strong> — an always-visible <strong>Validator</strong> button in the 3D viewport header that opens the window (turns red when the last scan found errors).</li>
 <li><strong>Naming templates</strong> + one-click auto-rename (<code>SM_{Category}_{Name}_{NN}</code>).</li>
 <li><strong>Per-object / whole-scene Ignore</strong> (mark intentional → <code>(ignored)</code> info).</li>
 <li><strong>Asset Type</strong> layer (PBR / Lightmap / Procedural / Kitbash-Atlas).</li>
@@ -2690,9 +2690,9 @@ team / pipeline tooling.</p>
 <li><strong>Persistent tabbed N-panel</strong> (docked; buttons don't dismiss it) alongside the window.</li>
 <li><strong>CI package</strong> (<code>ci/</code> — GitHub Action + pre-commit) + shareable rule-packs.</li>
 </ul>
-<h3 id="asset-preflight-window">Asset Preflight window<a class="headerlink" href="#asset-preflight-window" title="Permanent link">&para;</a></h3>
+<h3 id="asset-validator-window">Asset Validator window<a class="headerlink" href="#asset-validator-window" title="Permanent link">&para;</a></h3>
 <ul>
-<li>One centered, tabbed window — <strong>Presets · Scope · Rules · Scan · Results</strong> — opened from a single <strong>Open Asset Preflight</strong> button. Replaces the old <em>Validation</em> and <em>Fix</em> panels. Interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel.</li>
+<li>One centered, tabbed window — <strong>Presets · Scope · Rules · Scan · Results</strong> — opened from a single <strong>Open Asset Validator</strong> button. Replaces the old <em>Validation</em> and <em>Fix</em> panels. Interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel.</li>
 </ul>
 <h3 id="validation-profiles">Validation Profiles<a class="headerlink" href="#validation-profiles" title="Permanent link">&para;</a></h3>
 <ul>
