@@ -8,7 +8,7 @@ and feed to pipeline tooling.
 
 ## The template
 
-Set it in **Asset Preflight → Presets → Naming Template**, e.g.:
+Set it in **Asset Validator → Presets → Naming Template**, e.g.:
 
 ```
 SM_{Category}_{Name}_{NN}

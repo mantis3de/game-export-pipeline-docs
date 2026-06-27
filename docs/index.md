@@ -7,7 +7,7 @@ hide:
 
 **Keep every asset inside your production budget — for Blender teams.** Validate, budget, LOD, batch-scan and export your meshes engine-ready for Unity and Unreal Engine (and Godot), from one tabbed window.
 
-Game Export Pipeline turns the tedious pre-export checklist — scale applied? UVs unwrapped? lightmap UV present? *within the triangle / draw-call / texture-memory budget?* — into a single **Asset Preflight** window with per-asset and project **budgets**, profiles, safe one-click fixes, and a shareable batch report with a producer dashboard. It scales from a solo artist checking one mesh to a 10-person team gating every asset in CI.
+Game Export Pipeline turns the tedious pre-export checklist — scale applied? UVs unwrapped? lightmap UV present? *within the triangle / draw-call / texture-memory budget?* — into a single **Asset Validator** window with per-asset and project **budgets**, profiles, safe one-click fixes, and a shareable batch report with a producer dashboard. It scales from a solo artist checking one mesh to a 10-person team gating every asset in CI.
 
 [Get started in 5 minutes :material-rocket-launch:](getting-started/quick-start.md){ .md-button .md-button--primary }
 [Installation :material-download:](getting-started/installation.md){ .md-button }
@@ -18,7 +18,7 @@ Game Export Pipeline turns the tedious pre-export checklist — scale applied? U
 
 <div class="grid cards" markdown>
 
--   :material-view-dashboard: **[Asset Preflight Window](window.md)**
+-   :material-view-dashboard: **[Asset Validator Window](window.md)**
 
     ---
 
@@ -66,7 +66,7 @@ Game Export Pipeline turns the tedious pre-export checklist — scale applied? U
 
 ## Two ways to validate
 
-- **In the scene (live).** Select meshes, open **Asset Preflight → Scan → Run Validation**, fix in **Results**. This is the artist's everyday loop.
+- **In the scene (live).** Select meshes, open **Asset Validator → Scan → Run Validation**, fix in **Results**. This is the artist's everyday loop.
 - **A folder (batch).** Point **Batch Scan** at exported files; each is imported into a throwaway scene, validated, and rolled up into a shareable HTML report. This is the lead's / CI's view.
 
 → See [Core Concepts](getting-started/concepts.md) for how the two scores (export gate vs scene quality) and profiles fit together.

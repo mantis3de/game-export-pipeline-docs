@@ -27,7 +27,7 @@ echo $?     # 0 = pass · 1 = blocked · 2 = usage error
 ## GitHub Actions
 
 ```yaml
-name: Asset Preflight
+name: Asset Validator
 on: [push, pull_request]
 jobs:
   preflight:

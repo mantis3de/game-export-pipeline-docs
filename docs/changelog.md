@@ -36,7 +36,7 @@ that hardened the preview/isolate features against data loss.
 
 ---
 
-## [Unreleased] — Asset Preflight
+## [Unreleased] — Asset Validator
 
 A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.
@@ -122,7 +122,7 @@ team / pipeline tooling.
 - **glTF / GLB export** — Export Selected now offers **FBX or glTF 2.0** (GLB single-file or separate `.gltf`), for Godot and web pipelines. Same engine preset, cleanup, and budget gate; tangents per engine convention.
 - **Material / Texture checks+** — flags a **non-standard surface shader** (custom node group that won't bake to PBR) and **mismatched texture resolutions** within one material (both informational).
 - **Safe-only repairs** — the destructive geometry auto-fixes (fill holes, triangulate n-gons, remove loose / zero-area) were removed entirely. Geometry problems are now manual: **Select & Focus** takes you to the exact components and you fix them with Blender's own (undoable) tools.
-- **Viewport header button** — an always-visible **Preflight** button in the 3D viewport header that opens the window (turns red when the last scan found errors).
+- **Viewport header button** — an always-visible **Validator** button in the 3D viewport header that opens the window (turns red when the last scan found errors).
 - **Naming templates** + one-click auto-rename (`SM_{Category}_{Name}_{NN}`).
 - **Per-object / whole-scene Ignore** (mark intentional → `(ignored)` info).
 - **Asset Type** layer (PBR / Lightmap / Procedural / Kitbash-Atlas).
@@ -130,8 +130,8 @@ team / pipeline tooling.
 - **Persistent tabbed N-panel** (docked; buttons don't dismiss it) alongside the window.
 - **CI package** (`ci/` — GitHub Action + pre-commit) + shareable rule-packs.
 
-### Asset Preflight window
-- One centered, tabbed window — **Presets · Scope · Rules · Scan · Results** — opened from a single **Open Asset Preflight** button. Replaces the old *Validation* and *Fix* panels. Interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel.
+### Asset Validator window
+- One centered, tabbed window — **Presets · Scope · Rules · Scan · Results** — opened from a single **Open Asset Validator** button. Replaces the old *Validation* and *Fix* panels. Interactive viewport tools (Collision, LOD, Quick Reset, Export, FBX) stay in the N-panel.
 
 ### Validation Profiles
 - Editable, shareable [`profiles.json`](features/profiles.md) — engine/studio rule bundles (thresholds, checks, naming, collider conventions, per-issue severity overrides). Built-ins: **Unity Mobile/Desktop, Unreal, Godot 4, Marketplace**.

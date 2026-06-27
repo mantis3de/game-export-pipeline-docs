@@ -3,7 +3,7 @@
 The lead's loop: check a whole folder of exports and share one report with the team.
 
 1. **▶ Export** your assets to a folder (FBX / glTF / GLB / OBJ).
-2. **▶ Set the scope.** Asset Preflight → **Scope** → **Batch folder** = that folder, **Output** = where the report goes. Toggle **Subfolders** / **Delta**.
+2. **▶ Set the scope.** Asset Validator → **Scope** → **Batch folder** = that folder, **Output** = where the report goes. Toggle **Subfolders** / **Delta**.
 3. **▶ Scan.** **Scan** tab → **Scan Folder**. ✓ Each file is imported into a throwaway scene, validated with the active profile, removed. Import failures are flagged, not fatal.
 4. **▶ Open** the report → **Open HTML Report**.
 5. **▶ Share.** The `.html` is one self-contained file (no internet, no assets needed) — drop it in Slack / Drive / email. The `.json` beside it is for tooling/CI.

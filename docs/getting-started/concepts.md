@@ -42,7 +42,7 @@ The same validator runs in two modes:
 | | In-scene | Batch |
 |---|---|---|
 | **What** | Meshes in your open scene | A folder of exported files |
-| **Where** | Asset Preflight → Scan → Run Validation | Asset Preflight → Scan → Scan Folder, or the CLI |
+| **Where** | Asset Validator → Scan → Run Validation | Asset Validator → Scan → Scan Folder, or the CLI |
 | **Output** | On-screen results in the Scan tab + Report tab Export (JSON/HTML) | A shareable HTML report + JSON |
 | **Who** | The artist, while working | The lead / CI, before publish |
 
@@ -58,6 +58,6 @@ The exported report is **content-hashed** and reproducible: the same meshes + th
 
 ## Where things live
 
-- **Asset Preflight window** — validate, scan, fix, read the report (the daily driver). → [The Asset Preflight Window](../window.md)
+- **Asset Validator window** — validate, scan, fix, read the report (the daily driver). → [The Asset Validator Window](../window.md)
 - **Viewport tools** (N-panel) — things that must touch the viewport live: Collision, LOD generation/preview, Quick Reset, Export, FBX tools.
 - **`profiles.json`** — the rules (input). **Export Report / HTML** — the results (output). Two different files, two directions.

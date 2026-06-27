@@ -6,7 +6,7 @@ Point the addon at a **folder of exported assets** and get a single, shareable H
 
 ## Running a batch scan
 
-In the **Asset Preflight** window:
+In the **Asset Validator** window:
 
 1. **Scope** tab → set **Batch folder** (the exports) and **Output** (where the report goes — empty = the batch folder). Toggle **Subfolders** and **Delta** as needed.
 2. **Scan** tab → **Scan Folder**.

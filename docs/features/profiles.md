@@ -18,7 +18,7 @@ There are **no built-in presets** — every project's rules are different, so th
 
 ## Importing a preset
 
-In **Asset Preflight → Presets**:
+In **Asset Validator → Presets**:
 
 1. Click **Import Preset (.json)** and pick the file (e.g. one a studio sent you, or one exported from the [Specification Editor](specification-editor.md)).
 2. Every Rule is set to match the file immediately — engine, thresholds, all 56 granular checks, naming, budgets, severities. There is no dropdown and no separate Apply step.

@@ -5,7 +5,7 @@ A collision mesh should **not** be validated like a render mesh — colliders ar
 - **skips** it as a render asset (no false non-manifold / missing-UV / no-material errors), and
 - counts it as "collision present" for its render mesh (no false *missing collision* warning).
 
-Recognition is **configurable** in **Asset Preflight → Presets → Collider names**, and overridable per profile. Matching is **case-insensitive** and tolerant of Blender's `.001` duplicate suffix.
+Recognition is **configurable** in **Asset Validator → Presets → Collider names**, and overridable per profile. Matching is **case-insensitive** and tolerant of Blender's `.001` duplicate suffix.
 
 ---
 

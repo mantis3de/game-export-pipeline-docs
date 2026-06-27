@@ -10,7 +10,7 @@ without reading every asset card.
 After a batch scan the report carries a **RELEASE READY** or **BLOCKED** verdict.
 It appears in three places:
 
-- the **Project Health** line at the top of the Asset Preflight dashboard,
+- the **Project Health** line at the top of the Asset Validator dashboard,
 - a coloured badge above the Executive Summary in the **HTML report**,
 - a `release:` line in the **headless CLI** output.
 

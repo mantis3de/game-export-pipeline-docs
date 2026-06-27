@@ -1,6 +1,6 @@
 # Quick Start (5 Minutes)
 
-From a raw mesh to an engine-ready, validated asset — using the **Asset Preflight** window.
+From a raw mesh to an engine-ready, validated asset — using the **Asset Validator** window.
 
 !!! tip "Restart after installing"
     Blender caches addon code. After installing or updating, **fully quit and reopen Blender** before testing.
@@ -10,7 +10,7 @@ From a raw mesh to an engine-ready, validated asset — using the **Asset Prefli
 ## 1. Open the window
 
 1. In the 3D Viewport, press **N** to open the sidebar and select the **GameExport** tab.
-2. Click the big **Open Asset Preflight** button at the top.
+2. Click the big **Open Asset Validator** button at the top.
 
 A centered window opens with five tabs: **Presets · Rules · Scope · Scan · Report**.
 

@@ -1,6 +1,6 @@
-# The Asset Preflight Window
+# The Asset Validator Window
 
-Everything to do with validation now lives in one place: a centered, tabbed window opened from the **Open Asset Preflight** button at the top of the **GameExport** sidebar, or from the always-visible **Preflight** button in the 3D viewport header (top bar). The header button stays put through any operation and turns **red** when the last scan found errors, so the gate status is visible from anywhere.
+Everything to do with validation now lives in one place: a centered, tabbed window opened from the **Open Asset Validator** button at the top of the **GameExport** sidebar, or from the always-visible **Validator** button in the 3D viewport header (top bar). The header button stays put through any operation and turns **red** when the last scan found errors, so the gate status is visible from anywhere.
 
 It replaces the old scattered *Validation* and *Fix* panels. The interactive viewport tools (Individual Steps, Collision, LOD, Export) stay in the N-panel — see [Viewport Tools](panels/output.md).
 

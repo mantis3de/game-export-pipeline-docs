@@ -4,7 +4,7 @@ The everyday loop: a model is in your scene, make it engine-ready.
 
 > **▶ do · ✓ expect · ⚠ gotcha**
 
-1. **▶ Set the rules.** Asset Preflight → **Presets → Import Preset** (a studio's `.json`), or set thresholds/checks/engine by hand in **Rules**.
+1. **▶ Set the rules.** Asset Validator → **Presets → Import Preset** (a studio's `.json`), or set thresholds/checks/engine by hand in **Rules**.
 2. **▶ Select** the mesh(es). Nothing selected = whole scene.
 3. **▶ Validate.** **Scan** tab → **Run Validation**. ✓ The Scan tab fills with a score and grouped issues in place.
 4. **▶ Jump to a problem.** Expand an issue → **Select & Focus**. ✓ The exact faces/edges are selected and the **viewport zooms to them** (flipped faces turn red).

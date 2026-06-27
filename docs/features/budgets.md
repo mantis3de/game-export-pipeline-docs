@@ -19,7 +19,7 @@ Every profile carries a budget for the metrics that actually matter at runtime:
 When an asset is over budget you get a **Budget** issue with the exact number, e.g.
 `~96 MB textures over the 64 MB budget`, plus a **computable suggestion** — see below.
 
-Edit the limits in **Asset Preflight → Rules → Asset Budgets**, or per profile in
+Edit the limits in **Asset Validator → Rules → Asset Budgets**, or per profile in
 `profiles.json` (`budget` block). The **Budget** category has its own score.
 
 ---

@@ -64,5 +64,5 @@ The helper objects are **non-selectable**, so Pivot/Origin and other selection-b
 
 There is no separate modal browser. Isolation now lives where you need it:
 
-- **Validation** — in the Scope/Scan object list, **Isolate Selected** shows only the highlighted object and scopes the report to it; **Exit Isolate** restores your exact prior visibility. See [The Asset Preflight Window](../window.md).
+- **Validation** — in the Scope/Scan object list, **Isolate Selected** shows only the highlighted object and scopes the report to it; **Exit Isolate** restores your exact prior visibility. See [The Asset Validator Window](../window.md).
 - **LOD review** — the **Objects with LODs** list in *LOD Tools → Preview* isolates and previews a chain per row (colliders hidden), with **Exit Preview**. See [LOD Tools](../features/lod.md).

@@ -36,10 +36,10 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
 
 ---
 
-## Asset Preflight window & profiles
+## Asset Validator window & profiles
 
 ??? question "Where did the Validation and Fix panels go?"
-    They're now inside the **Asset Preflight** window — click **Open Asset Preflight** at the top of the GameExport tab. Validation and results live in **Scan**. The viewport tools (Individual Steps, Collision Setup, LOD Tools, Export) are still in the N-panel — manual fixes are in **Individual Steps**.
+    They're now inside the **Asset Validator** window — click **Open Asset Validator** at the top of the GameExport tab. Validation and results live in **Scan**. The viewport tools (Individual Steps, Collision Setup, LOD Tools, Export) are still in the N-panel — manual fixes are in **Individual Steps**.
 
 ??? question "The window closes when I click Scan Folder / Export / Fix."
     That's a Blender limitation: operator buttons in a dialog popup close it after running. Tab switches, picking a profile and **Run Validation** keep it open (they act in place). Just reopen the window with one click — your results are still there. For long issue lists, work in the **docked GameExport sidebar** instead — it has a real scrollbar.

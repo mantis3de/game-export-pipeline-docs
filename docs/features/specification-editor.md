@@ -11,7 +11,7 @@ This turns a fuzzy "requirements PDF" into a machine-readable spec that the arti
 1. **You** send the studio `SpecificationEditor.zip` (the HTML + a short README). It works offline — they just double-click the HTML.
 2. **The studio** fills in the project requirements: target engine, triangle/vertex/material limits, naming convention, UV/LOD/collision rules, and any of the individual checks.
 3. They click **Export Preset (.json)** at the bottom. The browser downloads `‹project›.profiles.json`.
-4. **You** receive that file and, in **Asset Preflight → Presets → Import Preset (.json)**, load it. Every Rule is now set to the studio's spec.
+4. **You** receive that file and, in **Asset Validator → Presets → Import Preset (.json)**, load it. Every Rule is now set to the studio's spec.
 5. **Run Validation** — the model is checked against exactly what the studio asked for.
 
 The same `.json` is the single source of truth: it drives validation and can be re-imported by anyone on the team.

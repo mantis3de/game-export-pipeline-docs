@@ -102,7 +102,7 @@ nav:
       - Installation: getting-started/installation.md
       - Quick Start (5 Minutes): getting-started/quick-start.md
       - Core Concepts: getting-started/concepts.md
-  - The Asset Preflight Window: window.md
+  - The Asset Validator Window: window.md
   - Features:
       - Budgets & Dashboard: features/budgets.md
       - Validation Rules (Presets): features/profiles.md
