@@ -1984,6 +1984,7 @@
 <li><strong>Origin to world zero</strong> — moves the object so its origin sits at <code>(0, 0, 0)</code>; geometry moves with it (no visual change).</li>
 <li><strong>Apply rotation + scale</strong> — bakes them so <code>rotation = 0°</code>, <code>scale = 1</code>.</li>
 </ol>
+<p>It runs per object (each gets its own correct pivot) and <strong>restores your original selection</strong> when done — you keep everything you had selected, not just the last object.</p>
 <div class="admonition warning">
 <p class="admonition-title">This moves objects in the scene</p>
 <p>Step 2 translates the object to world zero. Run it on a copy or a dedicated export collection, not on a laid-out scene.</p>

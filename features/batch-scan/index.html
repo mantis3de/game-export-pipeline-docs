@@ -1955,6 +1955,7 @@
 <li><strong>Health trend</strong> — an inline sparkline of average health across previous runs.</li>
 <li><strong>Duplicate-geometry banner</strong> — flags files sharing a mesh signature (catches accidental re-exports before publishing).</li>
 <li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, a ▸ chevron, and the issue list. Files <strong>with errors or warnings (or a failed import) are expanded by default</strong> so the reader sees the problems without clicking; clean files stay collapsed. Findings you marked intentional show a muted <strong>ignored</strong> tag.</li>
+<li><strong>LOD breakdown</strong> — when an object has a LOD chain, its card lists each level with its triangle count (<code>LODs (4): LOD0 5,000 tris · LOD1 2,500 · …</code>), computed from the <strong>real scene meshes</strong>, so it reflects hand-made LODs too — not the add-on's generation settings.</li>
 <li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed / <strong>Ignored</strong> (shows only the muted findings); sort by health, name, errors or tris; <strong>Expand all / Collapse all</strong>.</li>
 </ul>
 <p>Alongside the HTML, a <code>.json</code> with the same data is written — for tooling, diffing, and the CLI.</p>

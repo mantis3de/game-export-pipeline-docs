@@ -3597,8 +3597,8 @@
 <p><strong>Severity: Warning</strong> · <em>(Packed Images Forbidden)</em></p>
 <p>A texture is packed into the <code>.blend</code>, so it won't ship as an external file. Unpack images (File → External Data → Unpack) to a textures folder.</p>
 <h3 id="duplicate-material-name">Duplicate material name<a class="headerlink" href="#duplicate-material-name" title="Permanent link">&para;</a></h3>
-<p><strong>Severity: Warning</strong> · <em>(Unique Material Names)</em></p>
-<p>Two materials share a base name (<code>Metal</code> and <code>Metal.001</code>) — they import as separate slots and break material consistency. Rename or merge the duplicates.</p>
+<p><strong>Severity: Warning</strong> · <em>(Unique Material Names — </em><em>on by default</em><em>)</em></p>
+<p>Two or more materials share a base name (<code>Metal</code>, <code>Metal.001</code>, <code>Metal.002</code>…) — Blender's import duplicates that break material consistency across slots. This is a <strong>scene-wide</strong> finding (no single object), so it appears under the <strong>Scene-wide</strong> group in the report. Its <strong>Select &amp; Focus</strong> arrow opens the material editor on one of the duplicates so you can pick which to keep and reassign the rest by hand; the add-on never merges materials for you.</p>
 
 
 

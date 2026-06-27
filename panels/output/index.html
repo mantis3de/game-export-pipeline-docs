@@ -1185,10 +1185,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewport-helpers" class="md-nav__link">
+  <a href="#viewport-helpers-separate-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Viewport helpers
+        Viewport Helpers (separate panel)
       
     </span>
   </a>
@@ -1196,10 +1196,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#preview-isolate" class="md-nav__link">
+  <a href="#isolating-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preview / Isolate
+        Isolating objects
       
     </span>
   </a>
@@ -1914,10 +1914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#viewport-helpers" class="md-nav__link">
+  <a href="#viewport-helpers-separate-panel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Viewport helpers
+        Viewport Helpers (separate panel)
       
     </span>
   </a>
@@ -1925,10 +1925,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#preview-isolate" class="md-nav__link">
+  <a href="#isolating-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preview / Isolate
+        Isolating objects
       
     </span>
   </a>
@@ -2029,65 +2029,20 @@
 <h2 id="format-auto-cleanup">Format &amp; auto-cleanup<a class="headerlink" href="#format-auto-cleanup" title="Permanent link">&para;</a></h2>
 <p>Choose <strong>FBX</strong> or <strong>glTF/GLB</strong>. <strong>Auto-cleanup on Export</strong> applies, on temporary copies, the toggled steps (apply transforms / modifiers, triangulate, collect &amp; optionally rename textures) so your scene is never modified.</p>
 <hr />
-<h2 id="viewport-helpers">Viewport helpers<a class="headerlink" href="#viewport-helpers" title="Permanent link">&para;</a></h2>
-<p>The <strong>Viewport Helpers</strong> box draws non-destructive overlays:</p>
+<h2 id="viewport-helpers-separate-panel">Viewport Helpers (separate panel)<a class="headerlink" href="#viewport-helpers-separate-panel" title="Permanent link">&para;</a></h2>
+<p><strong>Viewport Helpers</strong> is its <strong>own panel at the top</strong> of the GameExport tab (above Asset Validator) — not part of the Export box. It draws non-destructive references:</p>
 <ul>
 <li><strong>Forward Axis: Unity / Unreal</strong> — two buttons; each draws an arrow for that engine's forward direction (Unity −Y, Unreal +X). A ✕ hides it. The choice is explicit per engine, independent of the export Engine setting.</li>
 <li><strong>Scale Ref: Show</strong> — a 1 m cube + a 1.8 m human-height box to check proportions (identical for Unity and Unreal). A ✕ hides it.</li>
 </ul>
-<p>Both are display-only and never touch the exported file.</p>
+<p>The helper objects are <strong>non-selectable</strong>, so Pivot/Origin and other selection-based tools can't move them, and they're excluded from validation. Both are display-only and never touch the exported file.</p>
 <hr />
-<h2 id="preview-isolate">Preview / Isolate<a class="headerlink" href="#preview-isolate" title="Permanent link">&para;</a></h2>
-<p>The <strong>Preview / Isolate</strong> button walks through the scene's mesh objects one at a time, hiding everything else. Colliders (<code>UCX_</code>/<code>UBX_</code>) are shown as part of the mesh they belong to, never as their own entries.</p>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mouse wheel · <code>↑</code> / <code>↓</code></td>
-<td>Previous / next mesh</td>
-</tr>
-<tr>
-<td><code>M</code></td>
-<td>Cycle isolation mode</td>
-</tr>
-<tr>
-<td><code>Enter</code> · <code>LMB</code></td>
-<td>Keep isolation and exit</td>
-</tr>
-<tr>
-<td><code>Esc</code> · <code>RMB</code></td>
-<td>Restore all and exit</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Mode</th>
-<th>Shows</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Mesh only</strong></td>
-<td>Just the render mesh</td>
-</tr>
-<tr>
-<td><strong>Mesh + Collider</strong></td>
-<td>The mesh and its colliders</td>
-</tr>
-<tr>
-<td><strong>Collider only</strong></td>
-<td>Just the colliders (check hull shape)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Restore All</strong> un-hides every object. Preview only toggles visibility — it never moves, deletes, or modifies geometry.</p>
+<h2 id="isolating-objects">Isolating objects<a class="headerlink" href="#isolating-objects" title="Permanent link">&para;</a></h2>
+<p>There is no separate modal browser. Isolation now lives where you need it:</p>
+<ul>
+<li><strong>Validation</strong> — in the Scope/Scan object list, <strong>Isolate Selected</strong> shows only the highlighted object and scopes the report to it; <strong>Exit Isolate</strong> restores your exact prior visibility. See <a href="../../window/">The Asset Preflight Window</a>.</li>
+<li><strong>LOD review</strong> — the <strong>Objects with LODs</strong> list in <em>LOD Tools → Preview</em> isolates and previews a chain per row (colliders hidden), with <strong>Exit Preview</strong>. See <a href="../../features/lod/">LOD Tools</a>.</li>
+</ul>
 
 
 

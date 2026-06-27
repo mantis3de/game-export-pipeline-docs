@@ -1979,8 +1979,9 @@
 <hr />
 <h2 id="scope-tab-what-to-validate">Scope tab — what to validate<a class="headerlink" href="#scope-tab-what-to-validate" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>In-scene scope</strong> — validation runs on <strong>selected</strong> meshes, or the <strong>whole scene</strong> if nothing is selected. The object list previews what will be checked, with an <strong>All</strong> toggle to tick / untick everything and a <em>Ticked: X/Y</em> count.</li>
+<li><strong>In-scene scope</strong> — validation runs on <strong>selected</strong> meshes, or the <strong>whole scene</strong> if nothing is selected. The object list previews what will be checked, with an <strong>All</strong> toggle to tick / untick everything and a <em>Ticked: X/Y</em> count. The Scope list is a <strong>selection list only</strong> — it shows object names without error/warning counts (those live in the Scan results).</li>
 <li><strong>List ↔ viewport sync</strong> — clicking a row (the highlight, not the tick) selects that object in the viewport and makes it active; selecting an object in the viewport / Outliner highlights its row. It works both ways.</li>
+<li><strong>Isolate mode (opt-in)</strong> — click <strong>Isolate Selected</strong> to enter Isolate mode: now clicking a row shows <strong>only</strong> that object in the viewport <em>and</em> scopes the report to it. <strong>Exit Isolate (show all)</strong> leaves the mode. Outside Isolate, clicking rows only selects — the report keeps showing the whole scene, so <strong>By Category</strong> browsing stays usable. Your manual visibility is snapshotted on enter and restored exactly on exit (objects you had hidden stay hidden).</li>
 <li><strong>Batch folder</strong> — set a folder of exported files plus the <strong>Subfolders</strong> / <strong>Delta</strong> toggles in the Scan tab. <em>(The report destination is set in the </em><em>Report</em><em> tab.)</em></li>
 </ul>
 <p>→ <a href="../features/batch-scan/">Batch Scan &amp; HTML Report</a></p>
@@ -2050,6 +2051,7 @@
 <h2 id="scan-tab-run-it-read-the-results">Scan tab — run it &amp; read the results<a class="headerlink" href="#scan-tab-run-it-read-the-results" title="Permanent link">&para;</a></h2>
 <p>The Scan tab is the <strong>action + on-screen results</strong> (no tab-hopping). A <strong>Scene / Folder</strong> toggle at the top picks what you validate.</p>
 <ul>
+<li><strong>Prepare (Scene Cleanup)</strong> — an optional one-click tidy of imported assets <em>before</em> validation. <strong>Scene Cleanup</strong> renames objects to the engine convention (<code>SM_</code> / <code>_LOD#</code> / <code>UCX_</code>/<code>UBX_</code>), normalises messy LOD names, groups each asset into its own collection, and <strong>un-parents colliders</strong> from their mesh (studio rule: colliders are siblings — parenting happens only at export; world transform is preserved). It recognises objects <strong>by name only</strong> (a wide set of collider suffixes — <code>_col</code>, <code>_collision</code>, <code>_ucx</code>, <code>_phys</code>, <code>_hitbox</code>, …) and leaves anything unclear untouched, reporting it. It's <strong>non-destructive / undoable</strong>. Tick <strong>Run automatically before Validation</strong> to run it on every scan (off by default).</li>
 <li><strong>Run Validation</strong> — <strong>scene mode</strong> validates in place (the window stays open) and shows the results below; <strong>folder mode</strong> scans the folder set in Scope and writes its report. <em>Run Validation only validates — it does not save a report. Saving/exporting is the </em><em>Report</em><em> tab's job.</em></li>
 <li><strong>Big scenes show progress</strong> — above ~200 objects, Run Validation (and Export) run in batches with a <strong>progress bar in the viewport header</strong> (<code>Validating 120/400 (30%) — Esc to cancel</code>) so Blender stays responsive instead of freezing. Press <strong>Esc</strong> to cancel.</li>
 <li>After a scene run you get:<ul>
@@ -2060,12 +2062,12 @@
 </li>
 <li><strong>Re-check</strong> — re-runs validation in place; use it after fixing something by hand instead of scrolling back up. There is <strong>no bulk auto-fix</strong> — repairs are manual, in the <a href="../panels/individual-steps/">Individual Steps</a> panel (Safe Repairs, Fix Names, transforms…). Geometry problems are fixed from <strong>Select &amp; Focus</strong>.</li>
 <li>
-<p><strong>Issue list</strong> — <strong>By Object</strong> or <strong>By Category</strong> (a toggle at the top). In By-Category there's an <strong>Expand all / Collapse all</strong> switch, and in the floating window each section header has a <strong>▲</strong> that jumps back to the top (a popup can't scroll, so it reopens fresh at the top). Each issue has:</p>
+<p><strong>Issue list</strong> — <strong>By Object</strong> or <strong>By Category</strong> (a toggle at the top). Findings that don't belong to one object (e.g. duplicate materials, whole-scene budgets) appear under a <strong>Scene-wide</strong> group and are always shown, even in Isolate mode. In By-Category there's an <strong>Expand all / Collapse all</strong> switch, and in the floating window each section header has a <strong>▲</strong> that jumps back to the top (a popup can't scroll, so it reopens fresh at the top). Each issue has:</p>
 <ul>
 <li><strong>Select &amp; Focus</strong> — selects the exact components, opens the right editor (UV / Shader / Material tab) and <strong>frames the viewport</strong> on the problem. Flipped faces enable the orientation overlay. Geometry problems are fixed by hand from here.</li>
 <li><strong>↻ Re-check</strong> — re-validate in place, right where you fixed it.</li>
 <li>
-<p><strong>Ignore</strong> — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an <code>(ignored)</code> info note (it stops affecting the asset score) but stays visible as an audit trail. <em>Ignored findings still count as </em><em>present</em><em> in Compare — muting never reads as a fix.</em></p>
+<p><strong>Ignore</strong> — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an <code>(ignored)</code> info note (it stops affecting the asset score) but stays visible as an audit trail. Scene-wide findings (no single object) are muted at the scene level by either icon. <em>Ignored findings still count as </em><em>present</em><em> in Compare — muting never reads as a fix.</em></p>
 </li>
 <li>
 <p><strong>Impact / Fix</strong> hints (when <em>Show Explanations</em> is on).</p>
