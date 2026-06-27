@@ -18,7 +18,7 @@
         <link rel="prev" href="../../features/bug-reporting/">
       
       
-        <link rel="next" href="../quick-reset/">
+        <link rel="next" href="../individual-steps/">
       
       
         
@@ -701,6 +701,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,7 +790,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -996,8 +1026,6 @@
       
         
       
-        
-      
     
     
     
@@ -1135,10 +1163,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prefix" class="md-nav__link">
+  <a href="#prefix-and-folders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prefix
+        Prefix and folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-auto-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format &amp; auto-cleanup
       
     </span>
   </a>
@@ -1171,34 +1210,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1881,10 +1892,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prefix" class="md-nav__link">
+  <a href="#prefix-and-folders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prefix
+        Prefix and folders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-auto-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Format &amp; auto-cleanup
       
     </span>
   </a>
@@ -1931,10 +1953,10 @@
 
 
 <h1 id="export-output-engine">Export (Output &amp; Engine)<a class="headerlink" href="#export-output-engine" title="Permanent link">&para;</a></h1>
-<p>The <strong>Export</strong> box at the top of the GameExport tab is always visible and is now the single place for everything export-related: the output <strong>Folder</strong>, the <strong>Engine</strong> preset, the filename <strong>Prefix</strong>, the <strong>FBX / glTF</strong> target, the <strong>Export Selected</strong> button, and the <strong>Auto-cleanup on Export</strong> toggles. <em>(The old separate "Export" panel was merged in here — there's no longer a duplicate folder field lower down.)</em></p>
+<p>The <strong>Export</strong> box at the top of the GameExport tab is always visible and is the single place for everything export-related: the output <strong>Folder</strong>, the <strong>Engine</strong> preset, the filename <strong>Prefix</strong>, the per-asset / textures <strong>subfolder</strong> toggles, the <strong>FBX / glTF</strong> target, the <strong>Export Selected</strong> button, and the <strong>Auto-cleanup on Export</strong> toggles.</p>
 <hr />
 <h2 id="output-folder">Output folder<a class="headerlink" href="#output-folder" title="Permanent link">&para;</a></h2>
-<p>The path field sets the root folder for all exported FBX files. Click the folder icon to browse, or type a path directly.</p>
+<p>The path field sets the root folder for exports. Click the folder icon to browse, or type a path.</p>
 <table>
 <thead>
 <tr>
@@ -1945,26 +1967,26 @@
 <tbody>
 <tr>
 <td><code>//GameAssets</code></td>
-<td>Relative to the current <code>.blend</code> file (recommended)</td>
+<td>Relative to the current <code>.blend</code> (recommended)</td>
 </tr>
 <tr>
 <td><code>/Users/me/Assets</code></td>
-<td>Absolute path</td>
+<td>Absolute (macOS/Linux)</td>
 </tr>
 <tr>
 <td><code>C:\Users\me\Assets</code></td>
-<td>Absolute path (Windows)</td>
+<td>Absolute (Windows)</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Relative paths travel with the project</p>
-<p>Using <code>//</code> keeps the export folder relative to the <code>.blend</code> file, so the path stays valid when the project is moved or shared. Absolute paths break when the folder structure changes.</p>
+<p><code>//</code> keeps the folder relative to the <code>.blend</code>, so it stays valid when the project is moved or shared.</p>
 </div>
-<p>If the export folder is not set (empty or <code>//</code>), the <strong>Export</strong> panel shows a warning and disables the export buttons until a path is entered.</p>
+<p>If the folder is empty or <code>//</code>, the box shows a warning and disables export until a path is entered.</p>
 <hr />
 <h2 id="engine-preset">Engine preset<a class="headerlink" href="#engine-preset" title="Permanent link">&para;</a></h2>
-<p>The <strong>Engine</strong> dropdown controls the axis orientation and scale factor used by the FBX exporter.</p>
+<p>The <strong>Engine</strong> dropdown controls the FBX axes/scale <strong>and</strong> how an asset's LODs and collider are written to disk. It is <strong>export-only</strong> — it does not affect validation or naming.</p>
 <table>
 <thead>
 <tr>
@@ -1972,7 +1994,6 @@
 <th>Forward</th>
 <th>Up</th>
 <th>Scale</th>
-<th>Notes</th>
 </tr>
 </thead>
 <tbody>
@@ -1981,48 +2002,43 @@
 <td>-Z</td>
 <td>Y</td>
 <td>1.0</td>
-<td>Unity standard</td>
 </tr>
 <tr>
 <td><strong>Unreal Engine</strong></td>
 <td>X</td>
 <td>Z</td>
-<td>1.0</td>
-<td>1 Blender metre = 100 cm in UE</td>
+<td>1.0 (1 m = 100 cm)</td>
 </tr>
 <tr>
 <td><strong>Godot</strong></td>
 <td>-Z</td>
 <td>Y</td>
 <td>1.0</td>
-<td>glTF-friendly</td>
-</tr>
-<tr>
-<td><strong>Custom</strong></td>
-<td><em>(manual)</em></td>
-<td><em>(manual)</em></td>
-<td><em>(manual)</em></td>
-<td>Set axes and scale manually</td>
 </tr>
 </tbody>
 </table>
-<p>Selecting a preset also updates the <strong>Forward Axis gizmo</strong> in the viewport (if it is enabled) so you can see the exported forward direction while modelling.</p>
-<p>→ Full axis and scale table: <a href="../../reference/engine-presets/">Engine Presets</a></p>
+<p><strong>Export Selected</strong> is asset-group aware: it folds an asset's <code>_LOD#</code> children and its collider into the asset, then writes them per engine — Unity/Godot get <strong>one nested FBX</strong>, Unreal gets the <strong>base + separate <code>_LOD#.fbx</code></strong> files. → <a href="../../reference/engine-presets/">Engine Presets</a>.</p>
 <hr />
-<h2 id="prefix">Prefix<a class="headerlink" href="#prefix" title="Permanent link">&para;</a></h2>
-<p>The <strong>Prefix</strong> field is prepended to every exported filename. The default is <code>SM_</code> (Static Mesh), which is the convention used by both Unreal Engine and many Unity pipelines.</p>
-<p>For example, a mesh named <code>Rock_01</code> with prefix <code>SM_</code> exports as <code>SM_Rock_01.fbx</code>.</p>
-<p>Leave the field empty to export without a prefix. The <strong>Fix Naming / Add Prefix</strong> operator in the <a href="../fix/">Fix</a> panel renames objects in the scene to match the prefix you set here.</p>
+<h2 id="prefix-and-folders">Prefix and folders<a class="headerlink" href="#prefix-and-folders" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Prefix</strong> — prepended to every exported filename, the <strong>same for all engines</strong> (export naming is engine-agnostic). Default <code>SM_</code>; clear it for none. Already-prefixed object names (e.g. after <strong>Fix Names</strong> in <a href="../individual-steps/#naming">Individual Steps</a>) are not doubled.</li>
+<li><strong>Subfolder per asset</strong> — write each asset into its own subfolder (named after its collection). Turn <strong>off</strong> when you already point at the asset's own folder, to avoid a folder-in-folder.</li>
+<li><strong>Textures in /Textures subfolder</strong> — when <em>Collect Textures</em> is on, put textures in a <code>Textures/</code> subfolder, or copy them next to the files.</li>
+</ul>
+<hr />
+<h2 id="format-auto-cleanup">Format &amp; auto-cleanup<a class="headerlink" href="#format-auto-cleanup" title="Permanent link">&para;</a></h2>
+<p>Choose <strong>FBX</strong> or <strong>glTF/GLB</strong>. <strong>Auto-cleanup on Export</strong> applies, on temporary copies, the toggled steps (apply transforms / modifiers, triangulate, collect &amp; optionally rename textures) so your scene is never modified.</p>
 <hr />
 <h2 id="viewport-helpers">Viewport helpers<a class="headerlink" href="#viewport-helpers" title="Permanent link">&para;</a></h2>
-<p>Two toggles in the <strong>Viewport Helpers</strong> box control non-destructive overlays drawn in the 3D viewport.</p>
-<p><strong>Forward Axis</strong> draws an arrow showing the direction that will be "forward" in the target engine after export. It updates automatically when you change the engine preset. Use it to align your mesh correctly without guessing.</p>
-<p><strong>Scale Ref</strong> draws two reference boxes — a 1×1×1 metre cube and a 1.8 m tall human-height box — so you can check your asset's scale against real-world proportions at a glance.</p>
-<p>Both overlays are display-only and have no effect on the exported file.</p>
+<p>The <strong>Viewport Helpers</strong> box draws non-destructive overlays:</p>
+<ul>
+<li><strong>Forward Axis: Unity / Unreal</strong> — two buttons; each draws an arrow for that engine's forward direction (Unity −Y, Unreal +X). A ✕ hides it. The choice is explicit per engine, independent of the export Engine setting.</li>
+<li><strong>Scale Ref: Show</strong> — a 1 m cube + a 1.8 m human-height box to check proportions (identical for Unity and Unreal). A ✕ hides it.</li>
+</ul>
+<p>Both are display-only and never touch the exported file.</p>
 <hr />
 <h2 id="preview-isolate">Preview / Isolate<a class="headerlink" href="#preview-isolate" title="Permanent link">&para;</a></h2>
-<p>The <strong>Preview / Isolate</strong> button starts a modal browser that walks through the mesh objects in your scene one at a time, hiding everything else so you can inspect each asset in isolation — with or without its collision meshes. Collision objects (<code>UCX_</code>/<code>UBX_</code>) are never listed as their own entries; they are shown as part of the mesh they belong to.</p>
-<p>While the modal is running, the viewport header shows the current object, its index, and the controls:</p>
+<p>The <strong>Preview / Isolate</strong> button walks through the scene's mesh objects one at a time, hiding everything else. Colliders (<code>UCX_</code>/<code>UBX_</code>) are shown as part of the mesh they belong to, never as their own entries.</p>
 <table>
 <thead>
 <tr>
@@ -2033,23 +2049,22 @@
 <tbody>
 <tr>
 <td>Mouse wheel · <code>↑</code> / <code>↓</code></td>
-<td>Move to the previous / next mesh</td>
+<td>Previous / next mesh</td>
 </tr>
 <tr>
 <td><code>M</code></td>
-<td>Cycle the isolation mode</td>
+<td>Cycle isolation mode</td>
 </tr>
 <tr>
 <td><code>Enter</code> · <code>LMB</code></td>
-<td>Keep the current isolation and exit</td>
+<td>Keep isolation and exit</td>
 </tr>
 <tr>
 <td><code>Esc</code> · <code>RMB</code></td>
-<td>Restore all objects and exit</td>
+<td>Restore all and exit</td>
 </tr>
 </tbody>
 </table>
-<p>The isolation mode cycles through three states, and your choice is remembered for the next session:</p>
 <table>
 <thead>
 <tr>
@@ -2064,19 +2079,15 @@
 </tr>
 <tr>
 <td><strong>Mesh + Collider</strong></td>
-<td>The render mesh and its <code>UCX_</code>/<code>UBX_</code> colliders</td>
+<td>The mesh and its colliders</td>
 </tr>
 <tr>
 <td><strong>Collider only</strong></td>
-<td>Just the colliders (useful for checking hull shape)</td>
+<td>Just the colliders (check hull shape)</td>
 </tr>
 </tbody>
 </table>
-<p>The <strong>Restore All</strong> button next to Preview un-hides every object in the scene. Use it if a preview session was interrupted and some objects are still hidden.</p>
-<div class="admonition note">
-<p class="admonition-title">Preview only changes visibility</p>
-<p>Isolating objects toggles their viewport visibility — it never moves, deletes, or modifies geometry. Exiting with <code>Esc</code> (or pressing Restore All) returns the scene to a fully visible state.</p>
-</div>
+<p><strong>Restore All</strong> un-hides every object. Preview only toggles visibility — it never moves, deletes, or modifies geometry.</p>
 
 
 
@@ -2129,13 +2140,13 @@
         
         
           
-          <a href="../quick-reset/" class="md-footer__link md-footer__link--next" aria-label="Next: Quick Reset">
+          <a href="../individual-steps/" class="md-footer__link md-footer__link--next" aria-label="Next: Individual Steps">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Quick Reset
+                Individual Steps
               </div>
             </div>
             <div class="md-footer__button md-icon">

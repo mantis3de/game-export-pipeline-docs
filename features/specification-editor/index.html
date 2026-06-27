@@ -12,13 +12,13 @@
         <meta name="author" content="Mantis3de">
       
       
-        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/bug-reporting/">
+        <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/features/specification-editor/">
       
       
-        <link rel="prev" href="../cli/">
+        <link rel="prev" href="../profiles/">
       
       
-        <link rel="next" href="../../panels/output/">
+        <link rel="next" href="../naming/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Bug Reporting & Diagnostics - Game Export Pipeline Documentation</title>
+        <title>Specification Editor - Game Export Pipeline Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bug-reporting-diagnostics" class="md-skip">
+        <a href="#specification-editor" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bug Reporting & Diagnostics
+              Specification Editor
             
           </span>
         </div>
@@ -813,10 +813,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../specification-editor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -832,6 +859,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-editor-covers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the editor covers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-html-and-not-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why HTML and not a server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-it-in-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping it in sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -981,37 +1072,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bug Reporting & Diagnostics
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../bug-reporting/" class="md-nav__link">
         
   
   
@@ -1027,70 +1091,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-it-does" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What it does
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sending-a-report" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Sending a report
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hard-crashes-segfaults" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hard crashes (segfaults)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#for-maintainers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        For maintainers
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1848,10 +1848,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-it-does" class="md-nav__link">
+  <a href="#the-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What it does
+        The workflow
       
     </span>
   </a>
@@ -1859,10 +1859,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sending-a-report" class="md-nav__link">
+  <a href="#what-the-editor-covers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sending a report
+        What the editor covers
       
     </span>
   </a>
@@ -1870,10 +1870,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hard-crashes-segfaults" class="md-nav__link">
+  <a href="#why-html-and-not-a-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hard crashes (segfaults)
+        Why HTML and not a server
       
     </span>
   </a>
@@ -1881,10 +1881,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#for-maintainers" class="md-nav__link">
+  <a href="#keeping-it-in-sync" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For maintainers
+        Keeping it in sync
       
     </span>
   </a>
@@ -1908,57 +1908,43 @@
 
 
 
-<h1 id="bug-reporting-diagnostics">Bug Reporting &amp; Diagnostics<a class="headerlink" href="#bug-reporting-diagnostics" title="Permanent link">&para;</a></h1>
-<p>Game Export Pipeline has a built-in, <strong>user-initiated</strong> bug reporter. It's <strong>offline and has no telemetry</strong> — nothing is sent automatically. When something goes wrong, the add-on captures a diagnostic report that you review and send yourself.</p>
-<p>Find it at the bottom of the main <strong>GameExport</strong> panel, under <strong>Report a problem</strong>.</p>
+<h1 id="specification-editor">Specification Editor<a class="headerlink" href="#specification-editor" title="Permanent link">&para;</a></h1>
+<p>The <strong>Specification Editor</strong> is a single, self-contained HTML file that lets a studio (or client) author a validation preset <strong>without Blender, without the addon, and without internet</strong>. They tick the project requirements in a browser, click <strong>Export Preset</strong>, and send back a <code>.json</code> the addon imports directly.</p>
+<p>This turns a fuzzy "requirements PDF" into a machine-readable spec that the artist's validator understands 1:1.</p>
 <hr />
-<h2 id="what-it-does">What it does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h2>
+<h2 id="the-workflow">The workflow<a class="headerlink" href="#the-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>You</strong> send the studio <code>SpecificationEditor.zip</code> (the HTML + a short README). It works offline — they just double-click the HTML.</li>
+<li><strong>The studio</strong> fills in the project requirements: target engine, triangle/vertex/material limits, naming convention, UV/LOD/collision rules, and any of the individual checks.</li>
+<li>They click <strong>Export Preset (.json)</strong> at the bottom. The browser downloads <code>‹project›.profiles.json</code>.</li>
+<li><strong>You</strong> receive that file and, in <strong>Asset Preflight → Presets → Import Preset (.json)</strong>, load it. Every Rule is now set to the studio's spec.</li>
+<li><strong>Run Validation</strong> — the model is checked against exactly what the studio asked for.</li>
+</ol>
+<p>The same <code>.json</code> is the single source of truth: it drives validation and can be re-imported by anyone on the team.</p>
+<hr />
+<h2 id="what-the-editor-covers">What the editor covers<a class="headerlink" href="#what-the-editor-covers" title="Permanent link">&para;</a></h2>
+<p>The editor mirrors the addon's <strong>Rules</strong> tab exactly — nothing the validator can check is missing:</p>
 <ul>
-<li><strong>Catches add-on errors</strong> instead of crashing Blender. If an operation (Export, Scan Folder, Fix Safe, Validation, FBX export, …) hits a Python error, it's captured: the panel shows <strong>"An error was captured"</strong>, the operation reports a clear message, and the traceback + context are written to a local log (<code>gep_error_log.txt</code> in your temp folder, size-capped).</li>
-<li><strong>Builds a diagnostic report</strong> with: add-on &amp; Blender versions, OS, Python, the active profile, scene stats (object / mesh counts — <strong>no file names</strong>), and the traceback. <strong>Local paths are scrubbed</strong> (your home folder becomes <code>~</code>, <code>/Users/&lt;name&gt;</code> / <code>/home/&lt;name&gt;</code> / <code>C:\Users\&lt;name&gt;</code> become <code>&lt;user&gt;</code>).</li>
+<li><strong>Engine</strong> (Unity / Unreal / Godot) and project name.</li>
+<li><strong>Limits &amp; budgets</strong> — triangles, <strong>vertices</strong>, <strong>object count</strong>, materials, texture VRAM (per-asset and whole-scene), max texture size, UV padding, texel density, LOD bounds tolerance.</li>
+<li><strong>Naming</strong> — strict ASCII, naming template, category and start index, collider prefixes/suffixes.</li>
+<li><strong>LOD required.</strong></li>
+<li><strong>Severity overrides</strong> — set any common finding to ERROR / WARNING / INFO (e.g. atlas asset → UV overlap = INFO, baked-lighting asset → missing lightmap = ERROR). This replaces the old per-kind "Asset Type" presets.</li>
+<li><strong>Checks</strong> — every category master + all 56 granular per-finding toggles (grouped by category under an <em>Advanced</em> expander).</li>
 </ul>
+<p>Each exported file is stamped with <code>generator</code> and <code>version</code> so you can always tell where a preset came from when diagnosing.</p>
 <hr />
-<h2 id="sending-a-report">Sending a report<a class="headerlink" href="#sending-a-report" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Button</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>GitHub Issue</strong></td>
-<td>Copies the report to your clipboard and opens a pre-filled new issue on the project's GitHub tracker — paste the report into the body and submit.</td>
-</tr>
-<tr>
-<td><strong>Copy</strong></td>
-<td>Copies the report to the clipboard so you can paste it anywhere (issue, email, Discord).</td>
-</tr>
-<tr>
-<td><strong>Save .txt</strong></td>
-<td>Writes the report as a <code>.txt</code> file (in your Report folder, or temp) and opens it.</td>
-</tr>
-<tr>
-<td><strong>Email</strong></td>
-<td>Copies the report and opens a pre-addressed email — paste it into the body and send.</td>
-</tr>
-<tr>
-<td><strong>Crash Log</strong></td>
-<td>Opens Blender's own <code>*.crash.txt</code> (see below).</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">You're always in control</p>
-<p>The report is copied / shown <strong>before</strong> you send it. Nothing leaves your machine on its own — no analytics, no background uploads.</p>
-</div>
+<h2 id="why-html-and-not-a-server">Why HTML and not a server<a class="headerlink" href="#why-html-and-not-a-server" title="Permanent link">&para;</a></h2>
+<p>A single local HTML file:</p>
+<ul>
+<li>needs no install, no account, no internet — the client just opens it;</li>
+<li>can be zipped and emailed;</li>
+<li>is the exact same file you could later host at a URL with no changes.</li>
+</ul>
+<p>The editor knows nothing about Blender — only the JSON schema. So the same file keeps working across addon versions as long as the schema is compatible (<code>schema: 1</code>).</p>
 <hr />
-<h2 id="hard-crashes-segfaults">Hard crashes (segfaults)<a class="headerlink" href="#hard-crashes-segfaults" title="Permanent link">&para;</a></h2>
-<p>If <strong>Blender itself</strong> crashes (a hard segfault, not a Python error), the add-on can't catch it — Python is already gone. In that case the only artefact is <strong>Blender's own crash log</strong>, a <code>*.crash.txt</code> in your temp folder. The <strong>Crash Log</strong> button opens the most recent one so you can attach it to your report.</p>
-<hr />
-<h2 id="for-maintainers">For maintainers<a class="headerlink" href="#for-maintainers" title="Permanent link">&para;</a></h2>
-<p>The GitHub issue target is the <code>ISSUES_URL</code> constant in <code>operators/diagnostics.py</code>. Point it at whichever repo hosts your issue tracker, make sure <strong>Issues</strong> are enabled on that repo, and (optionally) keep a <code>bug</code> label so the pre-fill can apply it.</p>
+<h2 id="keeping-it-in-sync">Keeping it in sync<a class="headerlink" href="#keeping-it-in-sync" title="Permanent link">&para;</a></h2>
+<p>The editor is generated from the addon's own rule schema, so it stays complete. If a future addon version adds a new rule, the editor is regenerated to include it, and the <code>schema</code> number guards compatibility. Always send the studio the editor that matches your addon version.</p>
 
 
 
@@ -1994,7 +1980,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../cli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Headless CLI (CI Gate)">
+          <a href="../profiles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Validation Rules (Presets)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2004,20 +1990,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Headless CLI (CI Gate)
+                Validation Rules (Presets)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../panels/output/" class="md-footer__link md-footer__link--next" aria-label="Next: Export (Output &amp; Engine)">
+          <a href="../naming/" class="md-footer__link md-footer__link--next" aria-label="Next: Naming Templates">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Export (Output & Engine)
+                Naming Templates
               </div>
             </div>
             <div class="md-footer__button md-icon">

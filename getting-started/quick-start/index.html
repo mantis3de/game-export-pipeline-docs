@@ -669,10 +669,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pick-your-engine-presets-tab" class="md-nav__link">
+  <a href="#2-set-the-rules-presets-rules-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pick your engine (Presets tab)
+        2. Set the rules (Presets / Rules tabs)
       
     </span>
   </a>
@@ -819,6 +819,8 @@
       
         
       
+        
+      
     
     
     
@@ -906,7 +908,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -1112,8 +1142,6 @@
       
         
       
-        
-      
     
     
     
@@ -1174,34 +1202,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1881,10 +1881,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pick-your-engine-presets-tab" class="md-nav__link">
+  <a href="#2-set-the-rules-presets-rules-tabs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Pick your engine (Presets tab)
+        2. Set the rules (Presets / Rules tabs)
       
     </span>
   </a>
@@ -1964,15 +1964,14 @@
 <li>In the 3D Viewport, press <strong>N</strong> to open the sidebar and select the <strong>GameExport</strong> tab.</li>
 <li>Click the big <strong>Open Asset Preflight</strong> button at the top.</li>
 </ol>
-<p>A centered window opens with five tabs: <strong>Presets · Scope · Rules · Scan · Results</strong>.</p>
+<p>A centered window opens with five tabs: <strong>Presets · Rules · Scope · Scan · Report</strong>.</p>
 <hr />
-<h2 id="2-pick-your-engine-presets-tab">2. Pick your engine (Presets tab)<a class="headerlink" href="#2-pick-your-engine-presets-tab" title="Permanent link">&para;</a></h2>
+<h2 id="2-set-the-rules-presets-rules-tabs">2. Set the rules (Presets / Rules tabs)<a class="headerlink" href="#2-set-the-rules-presets-rules-tabs" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Go to the <strong>Presets</strong> tab.</li>
-<li>Choose a <strong>Profile</strong> from the dropdown — e.g. <code>Unity — Desktop</code> or <code>Unreal — Desktop</code>.</li>
-<li>That's it — picking the profile <strong>applies it</strong> (no Apply button).</li>
+<li>Got a spec <code>.json</code> from a studio (or the <a href="../../features/specification-editor/">Specification Editor</a>)? In <strong>Presets</strong>, click <strong>Import Preset (.json)</strong> — it sets every Rule at once.</li>
+<li>No preset? Open the <strong>Rules</strong> tab and set thresholds, checks, naming, budgets and engine by hand.</li>
 </ol>
-<p>The profile sets the engine axes/scale, poly and texture thresholds, naming policy, and which issues are errors vs warnings. See <a href="../../features/profiles/">Validation Profiles</a>.</p>
+<p>The header shows <strong>Loaded: <code>&lt;file&gt;.json</code></strong> (or <em>Default (no preset)</em>). See <a href="../../features/profiles/">Validation Rules</a>.</p>
 <hr />
 <h2 id="3-validate-the-scene-scan-tab">3. Validate the scene (Scan tab)<a class="headerlink" href="#3-validate-the-scene-scan-tab" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1991,7 +1990,7 @@
 <p>For any issue:</p>
 <ul>
 <li><strong>Select &amp; Focus</strong> jumps to the exact faces/edges and <strong>zooms the viewport</strong> to them (flipped faces light up red).</li>
-<li><strong>Fix Safe Issues</strong> runs every non-destructive repair on the ticked objects (there's no per-issue fixer; destructive geometry repairs are done by hand from Select &amp; Focus).</li>
+<li>Repairs are manual, in the <strong>Individual Steps</strong> panel (Safe Repairs, Fix Names, transforms…); geometry problems are fixed by hand from Select &amp; Focus.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Re-validate after changes</p>

@@ -18,7 +18,7 @@
         <link rel="prev" href="../budgets/">
       
       
-        <link rel="next" href="../naming/">
+        <link rel="next" href="../specification-editor/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Validation Profiles - Game Export Pipeline Documentation</title>
+        <title>Validation Rules (Presets) - Game Export Pipeline Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#validation-profiles" class="md-skip">
+        <a href="#validation-rules-presets" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Validation Profiles
+              Validation Rules (Presets)
             
           </span>
         </div>
@@ -703,6 +703,8 @@
       
         
       
+        
+      
     
     
     
@@ -802,7 +804,7 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
   
 
     
@@ -820,7 +822,7 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
   
 
     
@@ -846,10 +848,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-a-profile" class="md-nav__link">
+  <a href="#where-rules-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using a profile
+        Where rules live
       
     </span>
   </a>
@@ -857,10 +859,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-your-own-profile-no-json-editing" class="md-nav__link">
+  <a href="#importing-a-preset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Save your own profile (no JSON editing)
+        Importing a preset
       
     </span>
   </a>
@@ -868,10 +870,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#built-in-profiles" class="md-nav__link">
+  <a href="#the-specification-editor-no-blender-needed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Built-in profiles
+        The Specification Editor (no Blender needed)
       
     </span>
   </a>
@@ -879,10 +881,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sharing-rules-with-the-team" class="md-nav__link">
+  <a href="#save-your-own-preset-no-json-editing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sharing rules with the team
+        Save your own preset (no JSON editing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-preset-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a preset controls
       
     </span>
   </a>
@@ -901,10 +914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-profiles-affect-results" class="md-nav__link">
+  <a href="#how-presets-affect-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How profiles affect results
+        How presets affect results
       
     </span>
   </a>
@@ -915,6 +928,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1112,8 +1153,6 @@
       
         
       
-        
-      
     
     
     
@@ -1174,34 +1213,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1870,10 +1881,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#using-a-profile" class="md-nav__link">
+  <a href="#where-rules-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using a profile
+        Where rules live
       
     </span>
   </a>
@@ -1881,10 +1892,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#save-your-own-profile-no-json-editing" class="md-nav__link">
+  <a href="#importing-a-preset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Save your own profile (no JSON editing)
+        Importing a preset
       
     </span>
   </a>
@@ -1892,10 +1903,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#built-in-profiles" class="md-nav__link">
+  <a href="#the-specification-editor-no-blender-needed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Built-in profiles
+        The Specification Editor (no Blender needed)
       
     </span>
   </a>
@@ -1903,10 +1914,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sharing-rules-with-the-team" class="md-nav__link">
+  <a href="#save-your-own-preset-no-json-editing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sharing rules with the team
+        Save your own preset (no JSON editing)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-preset-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What a preset controls
       
     </span>
   </a>
@@ -1925,10 +1947,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-profiles-affect-results" class="md-nav__link">
+  <a href="#how-presets-affect-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How profiles affect results
+        How presets affect results
       
     </span>
   </a>
@@ -1952,166 +1974,120 @@
 
 
 
-<h1 id="validation-profiles">Validation Profiles<a class="headerlink" href="#validation-profiles" title="Permanent link">&para;</a></h1>
-<p>A <strong>profile</strong> is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, and per-issue severity overrides — stored in an editable <code>profiles.json</code>. Pick one and the whole ruleset (including engine and naming prefix) loads at once.</p>
-<p>The point: commit one <code>profiles.json</code> to your project repo and <strong>everyone — and CI — validates identically</strong>.</p>
+<h1 id="validation-rules-presets">Validation Rules (Presets)<a class="headerlink" href="#validation-rules-presets" title="Permanent link">&para;</a></h1>
+<p>A <strong>preset</strong> is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, budgets, and per-issue severity overrides — stored in an editable <code>profiles.json</code>. Import one and the whole ruleset (including the target engine) loads into the <strong>Rules</strong> tab at once.</p>
+<p>The point: a studio defines the rules <strong>once</strong>, hands the artist a single <code>.json</code>, and <strong>everyone validates identically</strong> — no transcribing requirements from a PDF.</p>
+<p>There are <strong>no built-in presets</strong> — every project's rules are different, so the addon ships with none. You create your own (or receive one from the studio).</p>
 <hr />
-<h2 id="using-a-profile">Using a profile<a class="headerlink" href="#using-a-profile" title="Permanent link">&para;</a></h2>
-<p>In the <strong>Asset Preflight → Presets</strong> tab:</p>
+<h2 id="where-rules-live">Where rules live<a class="headerlink" href="#where-rules-live" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Presets</strong> tab — load/save the ruleset (<code>profiles.json</code>). This is the <em>input</em>.</li>
+<li><strong>Rules</strong> tab — every individual rule (naming, thresholds, budgets, checks, LOD). Importing a preset fills this tab; you can also set it all by hand.</li>
+<li><strong>Report</strong> (HTML/JSON) — the validation <em>results</em> after Run Validation. A different file, the opposite direction. Don't confuse the two.</li>
+</ul>
+<hr />
+<h2 id="importing-a-preset">Importing a preset<a class="headerlink" href="#importing-a-preset" title="Permanent link">&para;</a></h2>
+<p>In <strong>Asset Preflight → Presets</strong>:</p>
 <ol>
-<li>Pick a profile from the <strong>Profile</strong> dropdown — it <strong>applies immediately</strong>: thresholds, checks, severities, <strong>engine</strong> and <strong>naming</strong> (e.g. Unreal sets the <code>SM_</code> prefix) are written into the current settings in one step. <em>(There's no separate </em><em>Apply</em><em> button — selecting is applying.)</em></li>
-<li><strong>Run Validation</strong> to use them.</li>
+<li>Click <strong>Import Preset (.json)</strong> and pick the file (e.g. one a studio sent you, or one exported from the <a href="../specification-editor/">Specification Editor</a>).</li>
+<li>Every Rule is set to match the file immediately — engine, thresholds, all 56 granular checks, naming, budgets, severities. There is no dropdown and no separate Apply step.</li>
+<li>The header shows <strong>Loaded: <code>&lt;file&gt;.json</code></strong> so you always know which spec is driving the rules. If no spec is loaded (or the file was deleted) it shows <strong>Default (no preset)</strong>.</li>
+<li><strong>Run Validation</strong> — the model is checked against exactly what the spec asks for.</li>
 </ol>
-<p>Click <strong>Reload</strong> (↻) after editing <code>profiles.json</code> on disk, so the new values appear.</p>
 <div class="admonition note">
-<p class="admonition-title">Profiles drive the check toggles too</p>
-<p>Selecting a profile sets the <strong>check toggles</strong> in Rules — both the category masters and the 56 granular per-finding toggles. So built-in profiles differ in <em>what they check</em>, not just thresholds: e.g. <strong>Mobile — Low-End</strong> unticks the Normal / Metallic map checks (low-end mobile doesn't rely on them), while <strong>Marketplace</strong> keeps everything strict. Any manual tweak you make afterwards stays until you pick a profile again.</p>
+<p class="admonition-title">Unchecked in the spec = not validated</p>
+<p>If the preset unticks a check (say, lightmap UV), the validator will <strong>not</strong> report it. Every master check, every studio rule and all 56 granular findings honour their toggle — validation follows the JSON 1:1, never a hidden default.</p>
 </div>
-<h2 id="save-your-own-profile-no-json-editing">Save your own profile (no JSON editing)<a class="headerlink" href="#save-your-own-profile-no-json-editing" title="Permanent link">&para;</a></h2>
-<p>Tweaked the thresholds, checks, naming and budgets to suit your project? Save them as a named profile straight from the UI:</p>
-<ol>
-<li>Set the <strong>Rules file</strong> path to your project's <code>profiles.json</code> (it's created if it doesn't exist).</li>
-<li>Click <strong>Save Current as Profile…</strong>, type a name (e.g. <em>Studio — Unity</em>), confirm.</li>
-<li>The current engine, thresholds, checks, naming policy, collider conventions, budgets, release threshold and active severity overrides are written into that <code>profiles.json</code> as a new profile (re-using a name updates it). It's selected immediately.</li>
-</ol>
-<p>Commit the file to your repo and the whole team gets the profile — no one touches JSON by hand. The <strong>Asset Type</strong> is captured too, so loading the profile restores it (built-in profiles leave your Asset Type alone). Machine-specific things like export paths are deliberately <strong>not</strong> captured, so the profile stays a portable ruleset.</p>
 <hr />
-<h2 id="built-in-profiles">Built-in profiles<a class="headerlink" href="#built-in-profiles" title="Permanent link">&para;</a></h2>
+<h2 id="the-specification-editor-no-blender-needed">The Specification Editor (no Blender needed)<a class="headerlink" href="#the-specification-editor-no-blender-needed" title="Permanent link">&para;</a></h2>
+<p>The cleanest way for a studio to author a preset is the standalone <strong>Specification Editor</strong> — a single self-contained HTML file. The client opens it in any browser, ticks the requirements, clicks <strong>Export Preset</strong>, and sends back a <code>.json</code> the addon imports directly. See <a href="../specification-editor/">Specification Editor</a>.</p>
+<hr />
+<h2 id="save-your-own-preset-no-json-editing">Save your own preset (no JSON editing)<a class="headerlink" href="#save-your-own-preset-no-json-editing" title="Permanent link">&para;</a></h2>
+<p>Dialled the Rules in by hand and want to reuse them?</p>
+<ol>
+<li>Click <strong>Save Current Rules as .json…</strong>, choose a location and name (e.g. <em>Studio — Unity</em>).</li>
+<li>The current engine, thresholds, all check toggles, naming policy, collider conventions, budgets, the studio rules and the active severity overrides are written into a <code>profiles.json</code>. Re-using a name updates that entry.</li>
+</ol>
+<p>Commit the file to your repo and the whole team gets the ruleset. Machine-specific things like export paths are deliberately <strong>not</strong> captured, so the preset stays a portable ruleset.</p>
+<hr />
+<h2 id="what-a-preset-controls">What a preset controls<a class="headerlink" href="#what-a-preset-controls" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Profile</th>
-<th style="text-align: right;">Max tris</th>
-<th style="text-align: right;">Max tex</th>
-<th>Naming</th>
-<th>LOD</th>
-<th>Notable severities</th>
+<th>Section</th>
+<th>Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Unity — Mobile</strong></td>
-<td style="text-align: right;">20,000</td>
-<td style="text-align: right;">2048</td>
-<td>strict</td>
-<td>required</td>
-<td>HIGH_POLY, oversized &amp; non-PoT textures → <strong>error</strong>; lightmap → info</td>
+<td><strong>Engine</strong></td>
+<td>UNITY / UNREAL / GODOT — <em>export-only</em>, see below</td>
 </tr>
 <tr>
-<td><strong>Unity — Desktop</strong></td>
-<td style="text-align: right;">80,000</td>
-<td style="text-align: right;">4096</td>
-<td>relaxed</td>
-<td>—</td>
-<td>lightmap → info</td>
+<td><strong>Thresholds</strong></td>
+<td>max polygons, max texture size, UV padding, texel density, LOD bounds tolerance</td>
 </tr>
 <tr>
-<td><strong>Unreal — Desktop</strong></td>
-<td style="text-align: right;">120,000</td>
-<td style="text-align: right;">4096</td>
-<td>relaxed</td>
-<td>—</td>
-<td>missing lightmap → <strong>error</strong></td>
+<td><strong>Budgets</strong></td>
+<td>per-asset &amp; whole-scene triangles, materials, texture VRAM; <strong>max vertices</strong>, <strong>max object count</strong></td>
 </tr>
 <tr>
-<td><strong>Godot 4</strong></td>
-<td style="text-align: right;">100,000</td>
-<td style="text-align: right;">4096</td>
-<td>relaxed</td>
-<td>—</td>
-<td>defaults</td>
+<td><strong>Checks</strong></td>
+<td>the category masters + all 56 granular per-finding toggles</td>
 </tr>
 <tr>
-<td><strong>Generic — Marketplace</strong></td>
-<td style="text-align: right;">50,000</td>
-<td style="text-align: right;">4096</td>
-<td>strict</td>
-<td>—</td>
-<td>missing lightmap, non-PoT, missing collision, default/invalid names → <strong>error</strong></td>
+<td><strong>Studio rules</strong></td>
+<td>hidden objects forbidden, packed images forbidden, unique material names</td>
 </tr>
 <tr>
-<td><strong>Mobile — Low-End</strong></td>
-<td style="text-align: right;">10,000</td>
-<td style="text-align: right;">1024</td>
-<td>strict</td>
-<td>required</td>
-<td>high-poly, oversized &amp; non-PoT textures → <strong>error</strong></td>
+<td><strong>Naming</strong></td>
+<td>strict ASCII, naming template + category/start index, collider prefixes/suffixes</td>
 </tr>
 <tr>
-<td><strong>Mobile — High-End</strong></td>
-<td style="text-align: right;">35,000</td>
-<td style="text-align: right;">2048</td>
-<td>strict</td>
-<td>required</td>
-<td>high-poly, oversized textures → <strong>error</strong></td>
+<td><strong>LOD</strong></td>
+<td>LODs required, bounds tolerance</td>
 </tr>
 <tr>
-<td><strong>PC — Indie</strong></td>
-<td style="text-align: right;">150,000</td>
-<td style="text-align: right;">4096</td>
-<td>relaxed</td>
-<td>—</td>
-<td>lightmap → info</td>
-</tr>
-<tr>
-<td><strong>VR (90 fps)</strong></td>
-<td style="text-align: right;">30,000</td>
-<td style="text-align: right;">2048</td>
-<td>strict</td>
-<td>required</td>
-<td>high-poly, oversized textures → <strong>error</strong></td>
+<td><strong>Severity</strong></td>
+<td>per-issue ERROR / WARNING / INFO overrides</td>
 </tr>
 </tbody>
 </table>
-<p>Each profile also carries per-asset and whole-scene <strong>budgets</strong> (triangles, materials,
-texture VRAM) — see <a href="../budgets/">Budgets &amp; Dashboard</a>. These are starting points —
-copy and tune them for your studio.</p>
-<hr />
-<h2 id="sharing-rules-with-the-team">Sharing rules with the team<a class="headerlink" href="#sharing-rules-with-the-team" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Copy the addon's <code>profiles.json</code> into your project repo, e.g. <code>Project/preflight/profiles.json</code>.</li>
-<li>Edit it in any text editor (no Python).</li>
-<li>In <strong>Presets → Rules file</strong>, point at that path. Your project profiles <strong>override</strong> built-ins with the same <code>id</code> and <strong>add</strong> new ones.</li>
-<li>Commit it. Teammates pull and point the addon at the same file → identical rules.</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Rules in vs report out</p>
-<p><strong>Rules file</strong> is the <strong>input</strong> (the rules you load). <strong>Export Report</strong> / the HTML batch report is the <strong>output</strong> (the results). Two different files, two directions — don't confuse them.</p>
+<div class="admonition info">
+<p class="admonition-title">Engine is export-only</p>
+<p>The engine in a preset controls <strong>FBX axes/scale and the LOD file structure at export</strong> — nothing else. It does <strong>not</strong> change validation, naming or collider matching. So switching engine never silently flips a rule. See <a href="../../reference/engine-presets/">Engine Presets</a>.</p>
 </div>
 <hr />
 <h2 id="editing-profilesjson">Editing <code>profiles.json</code><a class="headerlink" href="#editing-profilesjson" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  &quot;schema&quot;: 1,
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  &quot;profiles&quot;: [
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    {
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>      &quot;id&quot;: &quot;studio_unity&quot;,
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>      &quot;name&quot;: &quot;Studio — Unity&quot;,
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      &quot;engine&quot;: &quot;UNITY&quot;,                     // UNITY | UNREAL | GODOT | CUSTOM
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      &quot;thresholds&quot;: {
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        &quot;poly_warn_threshold&quot;: 60000,
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        &quot;texture_size_warn&quot;: 2048
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>      },
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>      &quot;checks&quot;: { &quot;uv_padding_check&quot;: true, &quot;naming_default_check&quot;: true },
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>      &quot;naming&quot;: {
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        &quot;strict&quot;: true,
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        &quot;collider_suffixes&quot;: [&quot;_col&quot;, &quot;.collision&quot;]   // optional override
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>      },
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  &quot;generator&quot;: &quot;SpecificationEditor&quot;,        // free-text, for diagnostics
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  &quot;version&quot;: &quot;1.0.0&quot;,
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  &quot;profiles&quot;: [
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    {
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>      &quot;id&quot;: &quot;studio_unity&quot;,
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>      &quot;name&quot;: &quot;Studio — Unity&quot;,
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>      &quot;engine&quot;: &quot;UNITY&quot;,                      // UNITY | UNREAL | GODOT
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>      &quot;thresholds&quot;: { &quot;poly_warn_threshold&quot;: 60000, &quot;texture_size_warn&quot;: 2048 },
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>      &quot;budget&quot;: { &quot;max_tris&quot;: 60000, &quot;max_verts&quot;: 40000, &quot;max_object_count&quot;: 1,
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                  &quot;max_materials&quot;: 2, &quot;max_vram_mb&quot;: 128 },
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>      &quot;checks&quot;: { &quot;uv_padding_check&quot;: true, &quot;naming_default_check&quot;: true,
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                  &quot;check_packed_images&quot;: true, &quot;check_unique_materials&quot;: true },
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>      &quot;naming&quot;: { &quot;strict&quot;: true, &quot;template&quot;: &quot;SM_{Category}_{Name}_{NN}&quot;,
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                  &quot;category&quot;: &quot;Props&quot;, &quot;collider_suffixes&quot;: [&quot;_col&quot;, &quot;.collision&quot;] },
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>      &quot;lod&quot;: { &quot;required&quot;: false },
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>      &quot;severity&quot;: {
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        &quot;MISSING_LIGHTMAP&quot;: &quot;WARNING&quot;,       // ERROR | WARNING | INFO
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        &quot;DEFAULT_NAME&quot;: &quot;ERROR&quot;
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>      }
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    }
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>  ]
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>}
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>      &quot;severity&quot;: { &quot;MISSING_LIGHTMAP&quot;: &quot;WARNING&quot;, &quot;DEFAULT_NAME&quot;: &quot;ERROR&quot; }
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    }
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>  ]
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>}
 </span></code></pre></div>
-<p>Any field you omit falls back to a sensible default, so a minimal profile only needs <code>id</code>, <code>name</code>, and the few values you care about. Severity keys are validation <strong>issue IDs</strong> — see <a href="../../reference/validation-checks/">Validation Checks</a>. Full schema: <a href="../../reference/profiles-reference/">Profiles Reference</a>.</p>
+<p>Any field you omit falls back to a sensible default, so a minimal preset only needs <code>id</code>, <code>name</code>, and the values you care about. Severity keys are validation <strong>issue IDs</strong> — see <a href="../../reference/validation-checks/">Validation Checks</a>. Full schema: <a href="../../reference/profiles-reference/">Profiles Reference</a>.</p>
 <hr />
-<h2 id="how-profiles-affect-results">How profiles affect results<a class="headerlink" href="#how-profiles-affect-results" title="Permanent link">&para;</a></h2>
+<h2 id="how-presets-affect-results">How presets affect results<a class="headerlink" href="#how-presets-affect-results" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Thresholds / checks</strong> change <em>what</em> is detected (e.g. a 25k-tri mesh is fine on Desktop but fails Mobile's 20k budget).</li>
-<li><strong>Severity overrides</strong> change <em>how serious</em> a finding is — layered last, after the engine preset and Marketplace Strict, so the profile wins.</li>
-<li>The active profile and its severity overrides are recorded in the exported report's <code>config</code>, so a report always says which ruleset produced it.</li>
+<li><strong>Thresholds / checks</strong> change <em>what</em> is detected (a 25k-tri mesh is fine at 80k but fails a 20k budget).</li>
+<li><strong>Severity overrides</strong> change <em>how serious</em> a finding is (ERROR / WARNING / INFO) without dropping it. Use them to soften findings that are normal for an asset kind — e.g. an atlas asset where UV overlap should be INFO rather than a warning. (This replaces the old per-kind "Asset Type" presets.) After import, the active overrides are listed read-only in the <strong>Rules</strong> tab (e.g. <em>Missing lightmap UV → ERROR</em>) so you can confirm what the spec changed.</li>
+<li>The active spec file and its config are recorded in the exported report (the header reads <strong>Checked against: <code>&lt;file&gt;</code></strong>), so a report always says which ruleset produced it.</li>
 </ul>
 
 
@@ -2165,13 +2141,13 @@ copy and tune them for your studio.</p>
         
         
           
-          <a href="../naming/" class="md-footer__link md-footer__link--next" aria-label="Next: Naming Templates">
+          <a href="../specification-editor/" class="md-footer__link md-footer__link--next" aria-label="Next: Specification Editor">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Naming Templates
+                Specification Editor
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -701,6 +701,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,7 +790,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -994,8 +1024,6 @@
       
         
       
-        
-      
     
     
     
@@ -1056,34 +1084,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1917,7 +1917,7 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  &quot;profiles&quot;: [ { /* profile */ }, { /* profile */ } ]
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>}
 </span></code></pre></div>
-<p>Profiles are resolved in order: the addon's built-in <code>profiles.json</code> first, then your <strong>project</strong> file (set via <em>Presets → Rules file</em>). A project profile with the same <code>id</code> <strong>overrides</strong> the built-in; a new <code>id</code> is <strong>added</strong>.</p>
+<p>The addon ships with <strong>no built-in profiles</strong> — you import one (<strong>Presets → Import Preset</strong>) or build your own and <strong>Save Current Rules as .json</strong>. A file may hold several profiles in its <code>profiles</code> array; the importer applies the first one.</p>
 <hr />
 <h2 id="profile-fields">Profile fields<a class="headerlink" href="#profile-fields" title="Permanent link">&para;</a></h2>
 <table>
@@ -1940,13 +1940,13 @@
 <td><code>name</code></td>
 <td>string</td>
 <td>—</td>
-<td><strong>required</strong>, shown in the dropdown</td>
+<td><strong>required</strong>, display name</td>
 </tr>
 <tr>
 <td><code>engine</code></td>
 <td>string</td>
 <td><code>UNITY</code></td>
-<td><code>UNITY</code> / <code>UNREAL</code> / <code>GODOT</code> / <code>CUSTOM</code> — sets export axes/scale</td>
+<td><code>UNITY</code> / <code>UNREAL</code> / <code>GODOT</code> — sets export axes/scale &amp; LOD file structure (export-only)</td>
 </tr>
 <tr>
 <td><code>thresholds.poly_warn_threshold</code></td>
@@ -2126,9 +2126,9 @@
 <hr />
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Severity layering.</strong> Overrides are applied <em>last</em>, after the engine preset and Marketplace Strict — so the profile always wins.</li>
+<li><strong>Severity layering.</strong> Severity overrides come solely from the preset's <code>severity</code> map — there is no engine or asset-type layer (engine is export-only). To soften a finding for an atlas/procedural asset, set it to <code>INFO</code> in <code>severity</code>.</li>
 <li><strong><code>severity</code> keys are issue IDs.</strong> See <a href="../validation-checks/">Validation Checks</a> for the catalogue.</li>
-<li><strong>Recorded in reports.</strong> The active profile id and its severity overrides are written into the report's <code>config</code>, so a report always states which ruleset produced it.</li>
+<li><strong>Recorded in reports.</strong> The active spec file and its config are written into the report (header: <em>Checked against: <code>&lt;file&gt;</code></em>), so a report always states which ruleset produced it.</li>
 <li><strong>Validation.</strong> Bad profiles are reported on load (missing <code>id</code>/<code>name</code>, invalid severity value, unknown <code>engine</code>) and skipped rather than crashing.</li>
 </ul>
 

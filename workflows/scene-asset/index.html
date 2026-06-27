@@ -701,6 +701,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,7 +790,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -994,8 +1024,6 @@
       
         
       
-        
-      
     
     
     
@@ -1056,34 +1084,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1870,11 +1870,11 @@
 <p><strong>▶ do · ✓ expect · ⚠ gotcha</strong></p>
 </blockquote>
 <ol>
-<li><strong>▶ Pick the engine.</strong> Asset Preflight → <strong>Presets</strong> → choose <code>Unity — Desktop</code> / <code>Unreal — Desktop</code> (or Mobile) — it applies on selection.</li>
+<li><strong>▶ Set the rules.</strong> Asset Preflight → <strong>Presets → Import Preset</strong> (a studio's <code>.json</code>), or set thresholds/checks/engine by hand in <strong>Rules</strong>.</li>
 <li><strong>▶ Select</strong> the mesh(es). Nothing selected = whole scene.</li>
 <li><strong>▶ Validate.</strong> <strong>Scan</strong> tab → <strong>Run Validation</strong>. ✓ The Scan tab fills with a score and grouped issues in place.</li>
 <li><strong>▶ Jump to a problem.</strong> Expand an issue → <strong>Select &amp; Focus</strong>. ✓ The exact faces/edges are selected and the <strong>viewport zooms to them</strong> (flipped faces turn red).</li>
-<li><strong>▶ Fix.</strong> <strong>Fix Safe Issues</strong> runs every <em>non-destructive</em> repair on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry repairs are <strong>not</strong> auto-applied — fix those by hand from <strong>Select &amp; Focus</strong>.</li>
+<li><strong>▶ Fix.</strong> Repairs are manual, in <strong>Individual Steps</strong> (Safe Repairs, Fix Names, transforms…). Geometry problems are fixed by hand from <strong>Select &amp; Focus</strong>, then <strong>Re-check</strong>.</li>
 <li><strong>▶ Re-validate</strong> after any change — results refresh from the last run. Repeat until <strong>EXPORT READY</strong>.</li>
 <li><strong>▶ Save / share (optional).</strong> <strong>Report</strong> tab → set a <strong>Report folder</strong> → <strong>Export JSON</strong> (dated snapshot for Compare) or <strong>Export HTML</strong> (shareable report).</li>
 <li><strong>▶ Export the model</strong> via the Export panel / your pipeline.</li>

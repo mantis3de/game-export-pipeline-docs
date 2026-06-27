@@ -703,6 +703,8 @@
       
         
       
+        
+      
     
     
     
@@ -793,7 +795,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -902,10 +932,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#two-independent-settings" class="md-nav__link">
+  <a href="#one-setting-keep" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two independent settings
+        One setting: keep %
       
     </span>
   </a>
@@ -924,10 +954,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#export-lod-chains-unity-auto-lod-group" class="md-nav__link">
+  <a href="#exporting-lods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export LOD chains (Unity auto-LOD Group)
+        Exporting LODs
       
     </span>
   </a>
@@ -1101,8 +1131,6 @@
       
         
       
-        
-      
     
     
     
@@ -1163,34 +1191,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1859,10 +1859,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#two-independent-settings" class="md-nav__link">
+  <a href="#one-setting-keep" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two independent settings
+        One setting: keep %
       
     </span>
   </a>
@@ -1881,10 +1881,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#export-lod-chains-unity-auto-lod-group" class="md-nav__link">
+  <a href="#exporting-lods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Export LOD chains (Unity auto-LOD Group)
+        Exporting LODs
       
     </span>
   </a>
@@ -1933,41 +1933,31 @@
 <h1 id="lod-tools">LOD Tools<a class="headerlink" href="#lod-tools" title="Permanent link">&para;</a></h1>
 <p>Generate Level-of-Detail chains, set when each level appears on screen, preview the switching live in the viewport, and validate the result — all from the <strong>LOD Tools</strong> panel in the GameExport sidebar.</p>
 <hr />
-<h2 id="two-independent-settings">Two independent settings<a class="headerlink" href="#two-independent-settings" title="Permanent link">&para;</a></h2>
-<p>LOD has two knobs that are easy to confuse — they're different things:</p>
-<ul>
-<li><strong>Decimation — keep %</strong> — how many triangles each LOD keeps (LOD1 50 % / LOD2 25 % / LOD3 10 %). This is the geometry reduction.</li>
-<li><strong>Switch @ screen %</strong> — at what on-screen size each level takes over (LOD1 50 % / LOD2 25 % / LOD3 10 %). This is the switching policy. <strong>Values must descend</strong> (the object gets smaller on screen as it recedes).</li>
-</ul>
-<p>There are no presets — you set both directly, defaulting to 50 / 25 / 10. The <strong>Reference FOV</strong> is the vertical field of view the switch percentages are authored against.</p>
+<h2 id="one-setting-keep">One setting: keep %<a class="headerlink" href="#one-setting-keep" title="Permanent link">&para;</a></h2>
+<p>You set <strong>only</strong> the decimation — how many triangles each LOD keeps (LOD1 50 % / LOD2 25 % / LOD3 10 %). The <strong>switch @ screen %</strong> (when each level takes over) is <strong>derived automatically</strong> from the keep %, so the chain is always valid and descending. The <strong>Reference FOV</strong> is the vertical field of view the switch percentages are authored against.</p>
+<div class="admonition tip">
+<p class="admonition-title">Manual switch %</p>
+<p>Need precise control over the switching distances? Tick <strong>Set manually (advanced)</strong> under <em>Switch @ screen %</em> to edit LOD1/2/3 @ and Cull by hand. Otherwise the auto value is shown read-only (<em>Auto from keep %: 50 % / 25 % / 12 %</em>).</p>
+</div>
 <hr />
 <h2 id="generating-lods">Generating LODs<a class="headerlink" href="#generating-lods" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Select a <strong>clean</strong> base mesh (LOD0).</li>
-<li>Set the keep % and switch % and the <strong>Levels</strong> count (1–3).</li>
+<li>Select a base mesh (LOD0).</li>
+<li>Set the keep % and the <strong>Levels</strong> count (1–3).</li>
 <li>Click <strong>Generate LODs</strong>.</li>
 </ol>
-<p>This creates <code>Name_LOD1</code>, <code>Name_LOD2</code>, … beside the base and writes a <strong>switching policy</strong> onto LOD0 (visible in the <em>APPLIED on '…'</em> line). Re-running tops up the chain rather than clobbering it.</p>
-<p>Two decimation options refine the Collapse reduction:</p>
-<ul>
-<li><strong>Preserve Symmetry</strong> (with an X/Y/Z axis) keeps a symmetric asset symmetric through the reduction — leave off for asymmetric meshes.</li>
-<li><strong>Triangulate LODs</strong> emits clean triangles instead of n-gons, matching what engines triangulate to anyway.</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Fix the base first</p>
-<p>A base mesh with <strong>errors</strong> won't generate LODs — decimating a broken mesh just copies the defect into every level. Fix LOD0, or untick <strong>Validate Base First</strong> to force.</p>
-</div>
-<p><strong>Apply / Refresh Policy</strong> re-writes the policy onto selected chains <em>without</em> regenerating geometry — use it after changing the % or FOV.</p>
+<p>This creates <code>Name_LOD1</code>, <code>Name_LOD2</code>, … beside the base and writes a <strong>switching policy</strong> onto LOD0. Re-running tops up the chain rather than clobbering it. LODs are <strong>always triangulated</strong> (engines triangulate anyway).</p>
+<p>The base is <strong>always validated first</strong> — a base mesh with errors won't generate LODs, since decimating a broken mesh just copies the defect into every level. Fix LOD0, then generate.</p>
+<p><strong>Apply / Refresh Policy</strong> (next to the switch values) re-writes the policy onto selected chains <em>without</em> regenerating geometry — use it after changing the keep % or FOV. Select the base or any of its LODs first.</p>
 <hr />
-<h2 id="export-lod-chains-unity-auto-lod-group">Export LOD chains (Unity auto-LOD Group)<a class="headerlink" href="#export-lod-chains-unity-auto-lod-group" title="Permanent link">&para;</a></h2>
-<p><strong>Export LOD Chains (FBX)</strong> writes each base mesh <strong>and its LODs as one grouped FBX</strong>, with the meshes renamed to <code>Base_LOD0</code>, <code>Base_LOD1</code>, <code>Base_LOD2</code>… The export works on temporary duplicates — your scene meshes keep their working names (<code>Base</code>, <code>Base_LOD1</code>…) and are never modified. Select the base (or any of its LODs) and export, or run it on the whole scene. Set the <strong>Export Folder</strong> in the Output panel first.</p>
-<p>How each engine treats the result differs — the panel shows the right hint for your active engine:</p>
+<h2 id="exporting-lods">Exporting LODs<a class="headerlink" href="#exporting-lods" title="Permanent link">&para;</a></h2>
+<p>There is no separate LOD export button — the main <strong>Export Selected</strong> (Export box) handles LODs and groups them per engine automatically:</p>
 <ul>
-<li><strong>Unity</strong> — recognises the <code>_LOD0/_LOD1/…</code> naming and <strong>automatically creates a LOD Group</strong> component on import. No manual setup. This is the happy path.</li>
-<li><strong>Unreal</strong> — <strong>auto-generates</strong> LODs itself (Static Mesh → <em>Number of LODs</em> + reduction), and does <strong>not</strong> auto-group from <code>_LOD</code> names (that needs an FBX <em>LODGroup</em> node, which Blender's exporter can't write). So you normally let Unreal build LODs. Use this export only when you want your <strong>own authored</strong> LODs: import the base, then in the <strong>Static Mesh Editor</strong> use <strong>Import Mesh LOD</strong> per level.</li>
-<li><strong>Godot 4</strong> — <strong>auto-generates</strong> LODs on import via meshoptimizer, so you normally <strong>don't</strong> ship manual LOD meshes. Exporting <code>_LODn</code> chains for Godot would import them as separate meshes; let Godot handle LODs instead.</li>
+<li><strong>Unity / Godot</strong> — one FBX per asset with the LODs nested as <code>_LOD0/_LOD1/…</code>; Unity auto-creates the LOD Group on import.</li>
+<li><strong>Unreal</strong> — the base FBX (<code>SM_Asset.fbx</code>) plus a <strong>separate file per level</strong> (<code>SM_Asset_LOD1.fbx</code>, …). Import the base, then add each <code>_LOD#.fbx</code> as an LOD level.</li>
 </ul>
-<p>So this feature is primarily for <strong>Unity</strong> (the only one of the three that does <strong>not</strong> auto-generate LODs). For Unreal/Godot it's optional — only when you want hand-made LODs instead of the engine's. Sources: <a href="https://docs.unity3d.com/6000.1/Documentation/Manual/importing-lod-meshes.html">Unity LOD import</a>, <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/importing-static-mesh-lods-using-fbx-in-unreal-engine">Unreal static-mesh LODs</a>, <a href="https://docs.godotengine.org/en/stable/tutorials/3d/mesh_lod.html">Godot mesh LOD</a>.</p>
+<p>Select the asset (the base pulls in its LODs and collider) and click Export Selected. → <a href="../../reference/engine-presets/">Engine Presets</a>.</p>
+<p>Background: Unity is the only one of the three that does <strong>not</strong> auto-generate LODs from a mesh, so it needs the decimated meshes you provide. Unreal and Godot can auto-generate, so shipping your own LODs there is optional. Sources: <a href="https://docs.unity3d.com/6000.1/Documentation/Manual/importing-lod-meshes.html">Unity LOD import</a>, <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/importing-static-mesh-lods-using-fbx-in-unreal-engine">Unreal static-mesh LODs</a>, <a href="https://docs.godotengine.org/en/stable/tutorials/3d/mesh_lod.html">Godot mesh LOD</a>.</p>
 <hr />
 <h2 id="preview-runtime-emulator">Preview (runtime emulator)<a class="headerlink" href="#preview-runtime-emulator" title="Permanent link">&para;</a></h2>
 <p>The preview shows exactly which level the engine would display at a given camera distance, using the same screen-size math the policy stores.</p>
@@ -1980,7 +1970,7 @@
 <p>→ The full screen-size model is documented in <code>LOD_SPEC.md</code> in the addon.</p>
 <hr />
 <h2 id="lod-validation">LOD validation<a class="headerlink" href="#lod-validation" title="Permanent link">&para;</a></h2>
-<p>When a chain exists, <strong>Run Validation</strong> adds an <strong>LOD</strong> category:</p>
+<p>The <strong>Check LOD chains</strong> toggle lives in the <strong>Rules</strong> tab (it's a validation rule, not a generation tool). It validates <strong>any</strong> LOD chain — generated, imported, or hand-made — so it catches problems even in LODs the addon didn't build. When a chain exists, <strong>Run Validation</strong> adds an <strong>LOD</strong> category:</p>
 <table>
 <thead>
 <tr>

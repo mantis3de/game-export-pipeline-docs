@@ -699,6 +699,8 @@
       
         
       
+        
+      
     
     
     
@@ -786,7 +788,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -992,8 +1022,6 @@
       
         
       
-        
-      
     
     
     
@@ -1054,34 +1082,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1775,6 +1775,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spec-driven-rules-engine-as-export-panel-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec-driven rules, engine-as-export, panel cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bug-reporting-release-polish-14x-15x" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2107,6 +2118,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#spec-driven-rules-engine-as-export-panel-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spec-driven rules, engine-as-export, panel cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bug-reporting-release-polish-14x-15x" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2415,6 +2437,21 @@
 <h2 id="unreleased-asset-preflight">[Unreleased] — Asset Preflight<a class="headerlink" href="#unreleased-asset-preflight" title="Permanent link">&para;</a></h2>
 <p>A major workflow update turning the panel sprawl into one tabbed window and adding
 team / pipeline tooling.</p>
+<h3 id="spec-driven-rules-engine-as-export-panel-cleanup">Spec-driven rules, engine-as-export, panel cleanup<a class="headerlink" href="#spec-driven-rules-engine-as-export-panel-cleanup" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Specification Editor</strong> — a new standalone HTML file a studio fills in (no Blender, no install, offline) to author a preset; <strong>Export Preset</strong> downloads a <code>profiles.json</code> the addon imports directly. Mirrors every Rule, including all 56 granular checks. See <a href="../features/specification-editor/">Specification Editor</a>.</li>
+<li><strong>Import Preset (.json)</strong> — Presets tab now imports a spec file and sets <strong>every</strong> Rule to match it in one step; the header shows <strong>Loaded: <code>&lt;file&gt;</code></strong> (or <em>Default (no preset)</em> when none/missing). The profile dropdown and the built-in presets were removed — every project's rules differ, so none ship by default.</li>
+<li><strong>Rules tab is the single ruleset</strong> — Asset Type, Naming (template + category/start index) and Collider names moved here from Presets; tab order is now <strong>Presets · Rules · Scope · Scan · Report</strong>. The Rules layout mirrors the Specification Editor (limits together, checks together).</li>
+<li><strong>Engine is export-only</strong> — the engine setting now controls <strong>only</strong> FBX axes/scale and the LOD/collider file structure at export. It no longer changes validation, naming or matching. The <strong>Custom</strong> engine and <strong>Marketplace Strict</strong> (an opaque severity bundle) were removed; studios set the individual severities they need in the preset.</li>
+<li><strong>Engine-aware export</strong> — <strong>Export Selected</strong> is asset-group aware: Unity/Godot get one nested FBX (<code>_LOD#</code> + child collider); Unreal gets the base + <strong>separate <code>_LOD#.fbx</code></strong> files. New <strong>Subfolder per asset</strong> (all engines) and <strong>Textures in /Textures subfolder</strong> toggles. Collider↔mesh matching is <code>SM_</code>/index-agnostic, so <code>UBX_SM_Chair_01</code> pairs with <code>SM_Chair_01</code>.</li>
+<li><strong>New studio rules (opt-in)</strong> — Max Vertices, Max Object Count, Hidden Objects Forbidden, Packed Images Forbidden, Unique Material Names. LODs are excluded from the Scope/Scan list (validated as chains, not per-mesh).</li>
+<li><strong>Asset Type removed</strong> — the per-kind severity presets (PBR/Lightmap/Procedural/Kitbash) were dropped; a studio now expresses the same adjustments directly via the preset's <code>severity</code> map (downgrade UV overlap to INFO, raise missing lightmap to ERROR, …), which the Specification Editor now exposes. One path, no hidden layer.</li>
+<li><strong>Fix Names</strong> — one manual button renames a whole asset group to engine-correct names (<code>SM_</code> / <code>_LOD#</code> / <code>UCX_</code>/<code>UBX_</code>), pulling LODs and colliders in by name. Automatic SM_ renaming on safe-fix was removed.</li>
+<li><strong>Panel consolidation</strong> — the standalone <em>Quick Reset</em> and <em>Fix</em> panels were folded into <strong>Individual Steps</strong> (Prepare · Naming · Pivot/Origin · Transforms &amp; Mesh · UV · Safe Repairs · Cleanup); the <em>Engine Scale</em> panel was removed; <em>Add Missing Material</em> and the bulk <em>Fix Safe Issues</em> were removed (repairs are manual now). Viewport Helpers split into per-engine <strong>Forward Axis: Unity/Unreal</strong> and a single <strong>Scale Ref</strong>.</li>
+<li><strong>LOD simplification</strong> — you set only <strong>keep %</strong>; the <strong>switch %</strong> is derived automatically (manual under <em>Advanced</em>). LODs are always triangulated, the base is always validated first, and <em>Export LOD Chains</em> / <em>Preserve Symmetry</em> were removed. The LOD-validation toggle lives in Rules and validates any chain (generated, imported or hand-made).</li>
+<li><strong>Report</strong> — the HTML header now reads <strong>Checked against: <code>&lt;spec&gt;</code></strong>; files with errors/warnings are <strong>expanded by default</strong> so problems are visible without clicking; the config snapshot records the new rules for accurate delta/regression.</li>
+<li><strong>Severity overrides visible</strong> — after importing a preset, its per-issue severity overrides are listed read-only in the Rules tab (e.g. <em>Missing lightmap UV → ERROR</em>), so the artist can confirm exactly what the spec changed.</li>
+</ul>
 <h3 id="bug-reporting-release-polish-14x-15x">Bug reporting &amp; release polish (1.4.x – 1.5.x)<a class="headerlink" href="#bug-reporting-release-polish-14x-15x" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Built-in bug reporter</strong> — add-on errors are captured (traceback + scrubbed context) instead of crashing Blender, and surfaced under <strong>Report a problem</strong> in the main panel. Send via <strong>GitHub Issue</strong> (pre-filled), <strong>Copy</strong>, <strong>Save .txt</strong> or <strong>Email</strong>; a <strong>Crash Log</strong> button opens Blender's own <code>*.crash.txt</code> for hard crashes. <strong>Offline, user-initiated, no telemetry</strong> — local paths are scrubbed. See <a href="../features/bug-reporting/">Bug Reporting &amp; Diagnostics</a>.</li>

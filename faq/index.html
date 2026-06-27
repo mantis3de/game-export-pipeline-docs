@@ -701,6 +701,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,7 +790,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -994,8 +1024,6 @@
       
         
       
-        
-      
     
     
     
@@ -1056,34 +1084,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -2011,7 +2011,7 @@
 <h2 id="asset-preflight-window-profiles">Asset Preflight window &amp; profiles<a class="headerlink" href="#asset-preflight-window-profiles" title="Permanent link">&para;</a></h2>
 <details class="question">
 <summary>Where did the Validation and Fix panels go?</summary>
-<p>They're now inside the <strong>Asset Preflight</strong> window — click <strong>Open Asset Preflight</strong> at the top of the GameExport tab. Validation lives in <strong>Scan</strong>, results and fixes in <strong>Results</strong>. The viewport tools (Collision, LOD, Quick Reset, Export, FBX) are still in the N-panel.</p>
+<p>They're now inside the <strong>Asset Preflight</strong> window — click <strong>Open Asset Preflight</strong> at the top of the GameExport tab. Validation and results live in <strong>Scan</strong>. The viewport tools (Individual Steps, Collision Setup, LOD Tools, Export) are still in the N-panel — manual fixes are in <strong>Individual Steps</strong>.</p>
 </details>
 <details class="question">
 <summary>The window closes when I click Scan Folder / Export / Fix.</summary>
@@ -2082,12 +2082,12 @@
 <hr />
 <h2 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h2>
 <details class="question">
-<summary>Fix Naming renamed my objects but now my collision meshes are mismatched.</summary>
-<p>When the render mesh is renamed (e.g. from <code>Rock_01</code> to <code>SM_Rock_01</code>), existing collision meshes keep their old names (<code>UCX_Rock_01</code>). Delete the old collision meshes and regenerate them after renaming, or rename them manually to match the new render mesh name.</p>
+<summary>Will renaming my mesh break its collision/LOD names?</summary>
+<p>No — <strong>Fix Names</strong> (Individual Steps → Naming) renames the <strong>whole asset group</strong> at once: select the render mesh and it pulls in the LODs and colliders from the scene and renames them together (<code>Rock_01</code> → <code>SM_Rock_01</code>, <code>UCX_Rock_01</code> → <code>UCX_SM_Rock_01</code>). Validation also matches colliders to meshes regardless of the <code>SM_</code> prefix, so a mismatch won't cause a false "no collision" warning.</p>
 </details>
 <details class="question">
-<summary>Apply Modifiers in the Fix panel destroyed my modifier stack.</summary>
-<p>The <strong>Apply Modifiers</strong> button in the Fix panel is destructive — it applies and removes modifiers from the actual scene objects. Use the <strong>Apply Modifiers</strong> toggle in the <strong>Export</strong> panel instead, which applies modifiers only on a temporary export copy and leaves your stack intact.</p>
+<summary>Apply Modifiers destroyed my modifier stack.</summary>
+<p>The <strong>Apply Modifiers</strong> button (Individual Steps → Transforms &amp; Mesh) is destructive — it applies and removes modifiers from the actual scene objects. Use the <strong>Apply Modifiers</strong> toggle in the <strong>Export</strong> box instead, which applies modifiers only on a temporary export copy and leaves your stack intact.</p>
 </details>
 
 

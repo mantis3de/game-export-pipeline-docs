@@ -703,6 +703,8 @@
       
         
       
+        
+      
     
     
     
@@ -793,7 +795,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -1101,8 +1131,6 @@
       
         
       
-        
-      
     
     
     
@@ -1163,34 +1191,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1954,7 +1954,7 @@
 <li><strong>Export Risk Level</strong> — <em>Safe to Export</em> / <em>Export with Known Issues</em> / <em>Export Not Recommended</em>.</li>
 <li><strong>Health trend</strong> — an inline sparkline of average health across previous runs.</li>
 <li><strong>Duplicate-geometry banner</strong> — flags files sharing a mesh signature (catches accidental re-exports before publishing).</li>
-<li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, a ▸ chevron (click the card to expand), and the issue list. Findings you marked intentional show a muted <strong>ignored</strong> tag.</li>
+<li><strong>Per-file cards</strong> — health badge, mesh/tri counts, error/warning counts, a ▸ chevron, and the issue list. Files <strong>with errors or warnings (or a failed import) are expanded by default</strong> so the reader sees the problems without clicking; clean files stay collapsed. Findings you marked intentional show a muted <strong>ignored</strong> tag.</li>
 <li><strong>Filter / sort / search</strong> — All / Fail / Warning / Pass / Import-failed / <strong>Ignored</strong> (shows only the muted findings); sort by health, name, errors or tris; <strong>Expand all / Collapse all</strong>.</li>
 </ul>
 <p>Alongside the HTML, a <code>.json</code> with the same data is written — for tooling, diffing, and the CLI.</p>

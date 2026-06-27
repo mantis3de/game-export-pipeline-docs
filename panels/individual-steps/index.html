@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://mantis3de.github.io/game-export-pipeline/panels/individual-steps/">
       
       
-        <link rel="prev" href="../quick-reset/">
+        <link rel="prev" href="../output/">
       
       
         <link rel="next" href="../collision-setup/">
@@ -701,6 +701,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,7 +790,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -996,8 +1026,6 @@
       
         
       
-        
-      
     
     
     
@@ -1078,34 +1106,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1169,10 +1169,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pivot" class="md-nav__link">
+  <a href="#prepare" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pivot
+        Prepare
       
     </span>
   </a>
@@ -1180,10 +1180,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transforms-and-modifiers" class="md-nav__link">
+  <a href="#naming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transforms and modifiers
+        Naming
       
     </span>
   </a>
@@ -1191,10 +1191,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triangulate" class="md-nav__link">
+  <a href="#pivot-origin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triangulate
+        Pivot / Origin
       
     </span>
   </a>
@@ -1202,10 +1202,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh-data-object-name" class="md-nav__link">
+  <a href="#transforms-mesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mesh Data = Object Name
+        Transforms &amp; Mesh
       
     </span>
   </a>
@@ -1213,10 +1213,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-lightmap-uv" class="md-nav__link">
+  <a href="#uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add Lightmap UV
+        UV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-repairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Repairs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup
       
     </span>
   </a>
@@ -1859,10 +1881,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pivot" class="md-nav__link">
+  <a href="#prepare" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pivot
+        Prepare
       
     </span>
   </a>
@@ -1870,10 +1892,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transforms-and-modifiers" class="md-nav__link">
+  <a href="#naming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Transforms and modifiers
+        Naming
       
     </span>
   </a>
@@ -1881,10 +1903,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triangulate" class="md-nav__link">
+  <a href="#pivot-origin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triangulate
+        Pivot / Origin
       
     </span>
   </a>
@@ -1892,10 +1914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh-data-object-name" class="md-nav__link">
+  <a href="#transforms-mesh" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mesh Data = Object Name
+        Transforms &amp; Mesh
       
     </span>
   </a>
@@ -1903,10 +1925,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-lightmap-uv" class="md-nav__link">
+  <a href="#uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add Lightmap UV
+        UV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safe-repairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Repairs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup
       
     </span>
   </a>
@@ -1931,9 +1975,30 @@
 
 
 <h1 id="individual-steps">Individual Steps<a class="headerlink" href="#individual-steps" title="Permanent link">&para;</a></h1>
-<p>The <strong>Individual Steps</strong> panel exposes each preparation operation separately, for when you need more control than the one-click <a href="../quick-reset/">Quick Reset</a>.</p>
+<p>The <strong>Individual Steps</strong> panel is the single place for manual, one-by-one preparation and repair operations. It's grouped into labelled boxes so related actions sit together. (The old <em>Quick Reset</em> and <em>Fix</em> panels were folded into this one.)</p>
 <hr />
-<h2 id="pivot">Pivot<a class="headerlink" href="#pivot" title="Permanent link">&para;</a></h2>
+<h2 id="prepare">Prepare<a class="headerlink" href="#prepare" title="Permanent link">&para;</a></h2>
+<p><strong>Pivot + Origin + Apply Scale</strong> runs the three steps most artists do before every export, in order:</p>
+<ol>
+<li><strong>Pivot to bottom</strong> — origin to the bottom-centre of the bounding box, so the mesh sits on the ground plane in-engine.</li>
+<li><strong>Origin to world zero</strong> — moves the object so its origin sits at <code>(0, 0, 0)</code>; geometry moves with it (no visual change).</li>
+<li><strong>Apply rotation + scale</strong> — bakes them so <code>rotation = 0°</code>, <code>scale = 1</code>.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">This moves objects in the scene</p>
+<p>Step 2 translates the object to world zero. Run it on a copy or a dedicated export collection, not on a laid-out scene.</p>
+</div>
+<hr />
+<h2 id="naming">Naming<a class="headerlink" href="#naming" title="Permanent link">&para;</a></h2>
+<p><strong>Fix Names (SM_ / LOD / UCX_UBX)</strong> renames the selected asset to engine-correct names in one click — manual, never automatic:</p>
+<ul>
+<li>render mesh → <code>SM_&lt;Name&gt;</code></li>
+<li>LODs → <code>SM_&lt;Name&gt;_LOD#</code></li>
+<li>colliders → <code>UCX_</code>/<code>UBX_&lt;Name&gt;</code> (keeps the kind, follows the mesh's final name, indexes multi-hull as <code>_01/_02</code>)</li>
+</ul>
+<p>You only need to select the render mesh — Fix Names pulls in its LODs and colliders from the scene by name and renames the whole asset group together.</p>
+<hr />
+<h2 id="pivot-origin">Pivot / Origin<a class="headerlink" href="#pivot-origin" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1944,20 +2009,20 @@
 <tbody>
 <tr>
 <td><strong>Pivot Bottom</strong></td>
-<td>Moves the origin to the bottom-centre of the bounding box. Use for props, furniture, architecture — anything that sits on a surface.</td>
+<td>Origin to the bottom-centre of the bounding box (props, furniture, anything that sits on a surface).</td>
 </tr>
 <tr>
 <td><strong>Pivot Center</strong></td>
-<td>Moves the origin to the geometric centre of the bounding box. Use for objects that rotate around their centre (wheels, doors, weapons).</td>
+<td>Origin to the geometric centre (wheels, doors, weapons that rotate around their centre).</td>
 </tr>
 <tr>
 <td><strong>Set Game Pivot</strong></td>
-<td>Applies the right convention for the chosen <strong>asset type</strong> in one click — Prop / Architecture / Foliage get a bottom-centre origin; Weapon / Vehicle get a bounds-centre origin. Handy when you don't have a tech artist enforcing pivot rules.</td>
+<td>Applies the pivot convention for the chosen <strong>pivot preset</strong> (Prop / Architecture / Weapon / Vehicle…) in one click.</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="transforms-and-modifiers">Transforms and modifiers<a class="headerlink" href="#transforms-and-modifiers" title="Permanent link">&para;</a></h2>
+<h2 id="transforms-mesh">Transforms &amp; Mesh<a class="headerlink" href="#transforms-mesh" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1968,38 +2033,92 @@
 <tbody>
 <tr>
 <td><strong>Apply Transforms</strong></td>
-<td>Bakes the current location, rotation, and scale into the mesh data and resets all three to their identity values (<code>location = 0</code>, <code>rotation = 0°</code>, <code>scale = 1</code>).</td>
+<td>Bakes location, rotation and scale into the mesh data and resets all three to identity.</td>
 </tr>
 <tr>
 <td><strong>Apply Modifiers</strong></td>
-<td>Applies all modifiers on the selected objects and removes them from the modifier stack. The mesh is converted to its final evaluated state.</td>
+<td>Applies and removes all modifiers (destructive — prefer the Export panel's <em>Apply Modifiers</em> toggle if you still need them).</td>
+</tr>
+<tr>
+<td><strong>Triangulate</strong></td>
+<td>Converts n-gons/quads to triangles, with control over the result.</td>
+</tr>
+<tr>
+<td><strong>Mesh Data = Object Name</strong></td>
+<td>Renames each mesh data-block to match its object (shared/linked meshes are skipped).</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Apply Modifiers is destructive</p>
-<p>Once modifiers are applied they cannot be recovered (unless you undo). Run this only when the modifier stack is finalised. The <strong>Export</strong> panel has an <strong>Apply Modifiers</strong> toggle that applies modifiers during export without touching the original stack — prefer that approach if you still need the modifiers for further editing.</p>
-</div>
 <hr />
-<h2 id="triangulate">Triangulate<a class="headerlink" href="#triangulate" title="Permanent link">&para;</a></h2>
-<p><strong>Triangulate</strong> converts all n-gons and quads to triangles using Blender's standard triangulation algorithm. Game engines triangulate meshes at import anyway — doing it explicitly in Blender gives you control over the result and avoids engine-specific triangulation artefacts on curved surfaces.</p>
-<p>This is the same operation as adding a <strong>Triangulate</strong> modifier and applying it.</p>
+<h2 id="uv">UV<a class="headerlink" href="#uv" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add Lightmap UV</strong></td>
+<td>Creates a second UV channel (Lightmap Pack) for baked GI. No-op if two channels already exist.</td>
+</tr>
+<tr>
+<td><strong>Add UV Map (Smart Project)</strong></td>
+<td>Generates a base UV channel via Smart UV Project for meshes with none.</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="mesh-data-object-name">Mesh Data = Object Name<a class="headerlink" href="#mesh-data-object-name" title="Permanent link">&para;</a></h2>
-<p><strong>Mesh Data = Object Name</strong> renames each mesh data-block to match its object's name — object <code>Barrel_01</code> gets a mesh data-block named <code>Barrel_01</code>. This keeps the Outliner tidy and avoids the mismatched <code>Cube.001</code> / <code>Barrel_01</code> pairs that some engines and pipeline scripts trip over.</p>
-<p>Acts on the <strong>selection</strong>, or the <strong>whole scene</strong> if nothing is selected.</p>
-<div class="admonition note">
-<p class="admonition-title">Shared meshes are skipped</p>
-<p>A mesh data-block used by several objects (linked duplicates) is left untouched — renaming it to match one object would be ambiguous. The status line reports how many were renamed and how many shared meshes were skipped.</p>
-</div>
+<h2 id="safe-repairs">Safe Repairs<a class="headerlink" href="#safe-repairs" title="Permanent link">&para;</a></h2>
+<p>Non-destructive, undoable fixes — apply the ones you need by hand:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recalculate Normals</strong></td>
+<td>Recomputes normals facing outside (fixes flipped faces).</td>
+</tr>
+<tr>
+<td><strong>Fix Negative Scale</strong></td>
+<td>Applies mirrored (negative) scale and flips normals back.</td>
+</tr>
+<tr>
+<td><strong>Remove Empty Mat Slots</strong></td>
+<td>Removes empty material slots.</td>
+</tr>
+</tbody>
+</table>
+<p>Geometry repairs (holes, n-gons, loose/zero-area faces) stay manual: use <strong>Select &amp; Focus</strong> in the results, then Blender's own tools.</p>
 <hr />
-<h2 id="add-lightmap-uv">Add Lightmap UV<a class="headerlink" href="#add-lightmap-uv" title="Permanent link">&para;</a></h2>
-<p><strong>Add Lightmap UV</strong> creates a second UV channel (<code>UVMap.001</code> by default) using Blender's <strong>Lightmap Pack</strong> algorithm. The second channel is required by real-time GI and baked lighting in both Unity and Unreal Engine.</p>
-<div class="admonition note">
-<p class="admonition-title">A second UV channel already exists?</p>
-<p>If the mesh already has two or more UV channels, this button is a no-op — it will not overwrite or duplicate an existing channel.</p>
-</div>
-<p>If you need more control over the lightmap layout (padding, island scale), use Blender's <strong>UV Editor → Lightmap Pack</strong> directly and skip this button.</p>
+<h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Remove All Collision</strong></td>
+<td>Deletes every collider in the scene (any configured naming).</td>
+</tr>
+<tr>
+<td><strong>Remove All LODs</strong></td>
+<td>Deletes generated LOD children (<code>_LOD1+</code>); the base stays.</td>
+</tr>
+<tr>
+<td><strong>Dissolve Collections</strong></td>
+<td>Flattens collections back to the scene root.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -2035,7 +2154,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../quick-reset/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quick Reset">
+          <a href="../output/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Export (Output &amp; Engine)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2045,7 +2164,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Quick Reset
+                Export (Output & Engine)
               </div>
             </div>
           </a>

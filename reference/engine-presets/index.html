@@ -701,6 +701,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,7 +790,35 @@
   <span class="md-ellipsis">
     
   
-    Validation Profiles
+    Validation Rules (Presets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/specification-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Specification Editor
   
 
     
@@ -994,8 +1024,6 @@
       
         
       
-        
-      
     
     
     
@@ -1056,34 +1084,6 @@
     
   
     Export (Output & Engine)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../panels/quick-reset/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Quick Reset
   
 
     
@@ -1430,10 +1430,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-preset" class="md-nav__link">
+  <a href="#export-structure-per-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom preset
+        Export structure per engine
       
     </span>
   </a>
@@ -1870,10 +1870,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-preset" class="md-nav__link">
+  <a href="#export-structure-per-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom preset
+        Export structure per engine
       
     </span>
   </a>
@@ -1909,24 +1909,27 @@
 
 
 <h1 id="engine-presets">Engine Presets<a class="headerlink" href="#engine-presets" title="Permanent link">&para;</a></h1>
-<p>The <strong>Engine</strong> dropdown in the <a href="../../panels/output/">Output</a> panel configures the axis orientation and scale factor that Game Export Pipeline applies when exporting FBX files. This page explains what each preset does and why the values differ between engines.</p>
+<p>The <strong>Engine</strong> dropdown in the <a href="../../panels/output/">Export</a> box configures the FBX axis orientation, the scale factor, and the <strong>LOD/collider file structure</strong> used at export. This page explains what each preset does and why the values differ.</p>
+<div class="admonition info">
+<p class="admonition-title">Engine is export-only</p>
+<p>The engine setting affects <strong>export only</strong> — axes, scale, and how LODs/colliders are packed into FBX. It does <strong>not</strong> change validation, naming, or collider matching, and the scene layout is identical regardless of engine. Switching engine never silently flips a rule.</p>
+</div>
 <hr />
 <h2 id="why-axes-and-scale-matter">Why axes and scale matter<a class="headerlink" href="#why-axes-and-scale-matter" title="Permanent link">&para;</a></h2>
-<p>Blender uses a right-handed coordinate system with <strong>Z as up</strong> and <strong>-Y as forward</strong> by default. The three major game engines each use a different convention:</p>
+<p>Blender uses a right-handed system with <strong>Z up</strong> and <strong>-Y forward</strong>. The engines differ:</p>
 <ul>
-<li><strong>Unity</strong> uses Y-up, with -Z as forward (left-handed).</li>
-<li><strong>Unreal Engine</strong> uses Z-up, with X as forward (left-handed).</li>
-<li><strong>Godot</strong> uses Y-up, with -Z as forward (right-handed), mirroring the glTF standard.</li>
+<li><strong>Unity</strong> — Y-up, -Z forward (left-handed).</li>
+<li><strong>Unreal Engine</strong> — Z-up, X forward (left-handed).</li>
+<li><strong>Godot</strong> — Y-up, -Z forward (right-handed), mirroring glTF.</li>
 </ul>
-<p>If you export an FBX without correcting for these differences, your asset will import rotated 90° or facing the wrong direction. The preset handles this correction invisibly.</p>
-<hr />
+<p>Export without correcting and the asset imports rotated or facing the wrong way. The preset handles this invisibly.</p>
 <h2 id="preset-values">Preset values<a class="headerlink" href="#preset-values" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Preset</th>
-<th>Forward axis</th>
-<th>Up axis</th>
+<th>Forward</th>
+<th>Up</th>
 <th>Scale</th>
 <th>Notes</th>
 </tr>
@@ -1937,48 +1940,53 @@
 <td>-Z</td>
 <td>Y</td>
 <td>1.0</td>
-<td>Matches Unity's default FBX import settings</td>
+<td>Unity's default FBX import</td>
 </tr>
 <tr>
 <td><strong>Unreal Engine</strong></td>
 <td>X</td>
 <td>Z</td>
 <td>1.0</td>
-<td>1 Blender metre = 100 Unreal cm</td>
+<td>1 Blender m = 100 Unreal cm</td>
 </tr>
 <tr>
 <td><strong>Godot</strong></td>
 <td>-Z</td>
 <td>Y</td>
 <td>1.0</td>
-<td>Compatible with Godot's glTF importer</td>
-</tr>
-<tr>
-<td><strong>Custom</strong></td>
-<td><em>(user-defined)</em></td>
-<td><em>(user-defined)</em></td>
-<td><em>(user-defined)</em></td>
-<td>Full manual control</td>
+<td>glTF-friendly</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Unreal scale</p>
-<p>Unreal Engine works in centimetres. 1 metre in Blender equals 100 centimetres in Unreal, so a 1 m cube in Blender arrives as a 100 cm (1 m) cube in Unreal — no scaling correction is needed. The scale value is <code>1.0</code> because Blender's FBX exporter already handles the metre/centimetre conversion internally when the axes are set correctly.</p>
-</div>
+<p><em>(The old "Custom" preset was removed — the three engines cover the supported targets.)</em></p>
 <hr />
-<h2 id="custom-preset">Custom preset<a class="headerlink" href="#custom-preset" title="Permanent link">&para;</a></h2>
-<p>When <strong>Custom</strong> is selected, three extra fields appear in the <strong>Engine Scale</strong> panel:</p>
-<ul>
-<li><strong>Forward</strong> — the Blender axis that maps to the engine's forward direction.</li>
-<li><strong>Up</strong> — the Blender axis that maps to the engine's up direction.</li>
-<li><strong>Scale</strong> — a multiplier applied to all geometry on export.</li>
-</ul>
-<p>Available axis values: <code>X</code>, <code>-X</code>, <code>Y</code>, <code>-Y</code>, <code>Z</code>, <code>-Z</code>.</p>
-<p>Use the Custom preset for engines not covered by the three presets (e.g. CryEngine, O3DE, custom in-house engines), or when a project has non-standard import settings.</p>
+<h2 id="export-structure-per-engine">Export structure per engine<a class="headerlink" href="#export-structure-per-engine" title="Permanent link">&para;</a></h2>
+<p>The engine also decides how a multi-part asset (render mesh + LODs + collider) is written:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Colliders</th>
+<th>LODs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unity / Godot</strong></td>
+<td>nested as a child in <strong>one FBX</strong></td>
+<td>nested in the same FBX as <code>_LOD0/_LOD1…</code> (Unity auto-builds the LOD Group)</td>
+</tr>
+<tr>
+<td><strong>Unreal</strong></td>
+<td>sibling in the base FBX, matched by <code>UCX_</code>/<code>UBX_</code> name</td>
+<td><strong>separate file per level</strong>: <code>SM_Asset.fbx</code>, <code>SM_Asset_LOD1.fbx</code>, …</td>
+</tr>
+</tbody>
+</table>
+<p>In the scene, colliders and LODs are always plain siblings in collections — the nesting/splitting happens only at export.</p>
 <hr />
 <h2 id="forward-axis-gizmo">Forward Axis gizmo<a class="headerlink" href="#forward-axis-gizmo" title="Permanent link">&para;</a></h2>
-<p>When <strong>Viewport Helpers → Forward Axis</strong> is enabled, an arrow is drawn in the 3D viewport showing the direction that will be "forward" after export. It updates automatically when the engine preset changes, so you can check your mesh orientation without exporting a test FBX.</p>
+<p>The <strong>Viewport Helpers</strong> box has separate <strong>Forward Axis: Unity / Unreal</strong> buttons that draw an arrow showing the exported forward direction for that engine (Unity −Y, Unreal +X), so you can check orientation without exporting. Because the gizmo is now an explicit per-engine choice, it no longer follows the export Engine setting.</p>
 
 
 
