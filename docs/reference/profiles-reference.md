@@ -13,7 +13,7 @@ The full schema for `profiles.json`. See [Validation Profiles](../features/profi
 }
 ```
 
-Profiles are resolved in order: the addon's built-in `profiles.json` first, then your **project** file (set via *Presets → Rules file*). A project profile with the same `id` **overrides** the built-in; a new `id` is **added**.
+The addon ships with **no built-in profiles** — you import one (**Presets → Import Preset**) or build your own and **Save Current Rules as .json**. A file may hold several profiles in its `profiles` array; the importer applies the first one.
 
 ---
 
@@ -22,8 +22,8 @@ Profiles are resolved in order: the addon's built-in `profiles.json` first, then
 | Field | Type | Default | Notes |
 |---|---|---|---|
 | `id` | string | — | **required**, unique key |
-| `name` | string | — | **required**, shown in the dropdown |
-| `engine` | string | `UNITY` | `UNITY` / `UNREAL` / `GODOT` / `CUSTOM` — sets export axes/scale |
+| `name` | string | — | **required**, display name |
+| `engine` | string | `UNITY` | `UNITY` / `UNREAL` / `GODOT` — sets export axes/scale & LOD file structure (export-only) |
 | `thresholds.poly_warn_threshold` | int | 100000 | triangle budget |
 | `thresholds.texture_size_warn` | int | 4096 | oversized-texture px |
 | `thresholds.texel_per_tri_warn` | int | 50000 | texel density warning |
@@ -72,7 +72,7 @@ Any omitted field falls back to its default, so a minimal profile is just `id`, 
 
 ## Notes
 
-- **Severity layering.** Overrides are applied *last*, after the engine preset and Marketplace Strict — so the profile always wins.
+- **Severity layering.** Severity overrides come solely from the preset's `severity` map — there is no engine or asset-type layer (engine is export-only). To soften a finding for an atlas/procedural asset, set it to `INFO` in `severity`.
 - **`severity` keys are issue IDs.** See [Validation Checks](validation-checks.md) for the catalogue.
-- **Recorded in reports.** The active profile id and its severity overrides are written into the report's `config`, so a report always states which ruleset produced it.
+- **Recorded in reports.** The active spec file and its config are written into the report (header: *Checked against: `<file>`*), so a report always states which ruleset produced it.
 - **Validation.** Bad profiles are reported on load (missing `id`/`name`, invalid severity value, unknown `engine`) and skipped rather than crashing.

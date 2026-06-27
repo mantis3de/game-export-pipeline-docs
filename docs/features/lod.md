@@ -4,48 +4,39 @@ Generate Level-of-Detail chains, set when each level appears on screen, preview 
 
 ---
 
-## Two independent settings
+## One setting: keep %
 
-LOD has two knobs that are easy to confuse — they're different things:
+You set **only** the decimation — how many triangles each LOD keeps (LOD1 50 % / LOD2 25 % / LOD3 10 %). The **switch @ screen %** (when each level takes over) is **derived automatically** from the keep %, so the chain is always valid and descending. The **Reference FOV** is the vertical field of view the switch percentages are authored against.
 
-- **Decimation — keep %** — how many triangles each LOD keeps (LOD1 50 % / LOD2 25 % / LOD3 10 %). This is the geometry reduction.
-- **Switch @ screen %** — at what on-screen size each level takes over (LOD1 50 % / LOD2 25 % / LOD3 10 %). This is the switching policy. **Values must descend** (the object gets smaller on screen as it recedes).
-
-There are no presets — you set both directly, defaulting to 50 / 25 / 10. The **Reference FOV** is the vertical field of view the switch percentages are authored against.
+!!! tip "Manual switch %"
+    Need precise control over the switching distances? Tick **Set manually (advanced)** under *Switch @ screen %* to edit LOD1/2/3 @ and Cull by hand. Otherwise the auto value is shown read-only (*Auto from keep %: 50 % / 25 % / 12 %*).
 
 ---
 
 ## Generating LODs
 
-1. Select a **clean** base mesh (LOD0).
-2. Set the keep % and switch % and the **Levels** count (1–3).
+1. Select a base mesh (LOD0).
+2. Set the keep % and the **Levels** count (1–3).
 3. Click **Generate LODs**.
 
-This creates `Name_LOD1`, `Name_LOD2`, … beside the base and writes a **switching policy** onto LOD0 (visible in the *APPLIED on '…'* line). Re-running tops up the chain rather than clobbering it.
+This creates `Name_LOD1`, `Name_LOD2`, … beside the base and writes a **switching policy** onto LOD0. Re-running tops up the chain rather than clobbering it. LODs are **always triangulated** (engines triangulate anyway).
 
-Two decimation options refine the Collapse reduction:
+The base is **always validated first** — a base mesh with errors won't generate LODs, since decimating a broken mesh just copies the defect into every level. Fix LOD0, then generate.
 
-- **Preserve Symmetry** (with an X/Y/Z axis) keeps a symmetric asset symmetric through the reduction — leave off for asymmetric meshes.
-- **Triangulate LODs** emits clean triangles instead of n-gons, matching what engines triangulate to anyway.
-
-!!! warning "Fix the base first"
-    A base mesh with **errors** won't generate LODs — decimating a broken mesh just copies the defect into every level. Fix LOD0, or untick **Validate Base First** to force.
-
-**Apply / Refresh Policy** re-writes the policy onto selected chains *without* regenerating geometry — use it after changing the % or FOV.
+**Apply / Refresh Policy** (next to the switch values) re-writes the policy onto selected chains *without* regenerating geometry — use it after changing the keep % or FOV. Select the base or any of its LODs first.
 
 ---
 
-## Export LOD chains (Unity auto-LOD Group)
+## Exporting LODs
 
-**Export LOD Chains (FBX)** writes each base mesh **and its LODs as one grouped FBX**, with the meshes renamed to `Base_LOD0`, `Base_LOD1`, `Base_LOD2`… The export works on temporary duplicates — your scene meshes keep their working names (`Base`, `Base_LOD1`…) and are never modified. Select the base (or any of its LODs) and export, or run it on the whole scene. Set the **Export Folder** in the Output panel first.
+There is no separate LOD export button — the main **Export Selected** (Export box) handles LODs and groups them per engine automatically:
 
-How each engine treats the result differs — the panel shows the right hint for your active engine:
+- **Unity / Godot** — one FBX per asset with the LODs nested as `_LOD0/_LOD1/…`; Unity auto-creates the LOD Group on import.
+- **Unreal** — the base FBX (`SM_Asset.fbx`) plus a **separate file per level** (`SM_Asset_LOD1.fbx`, …). Import the base, then add each `_LOD#.fbx` as an LOD level.
 
-- **Unity** — recognises the `_LOD0/_LOD1/…` naming and **automatically creates a LOD Group** component on import. No manual setup. This is the happy path.
-- **Unreal** — **auto-generates** LODs itself (Static Mesh → *Number of LODs* + reduction), and does **not** auto-group from `_LOD` names (that needs an FBX *LODGroup* node, which Blender's exporter can't write). So you normally let Unreal build LODs. Use this export only when you want your **own authored** LODs: import the base, then in the **Static Mesh Editor** use **Import Mesh LOD** per level.
-- **Godot 4** — **auto-generates** LODs on import via meshoptimizer, so you normally **don't** ship manual LOD meshes. Exporting `_LODn` chains for Godot would import them as separate meshes; let Godot handle LODs instead.
+Select the asset (the base pulls in its LODs and collider) and click Export Selected. → [Engine Presets](../reference/engine-presets.md).
 
-So this feature is primarily for **Unity** (the only one of the three that does **not** auto-generate LODs). For Unreal/Godot it's optional — only when you want hand-made LODs instead of the engine's. Sources: [Unity LOD import](https://docs.unity3d.com/6000.1/Documentation/Manual/importing-lod-meshes.html), [Unreal static-mesh LODs](https://dev.epicgames.com/documentation/en-us/unreal-engine/importing-static-mesh-lods-using-fbx-in-unreal-engine), [Godot mesh LOD](https://docs.godotengine.org/en/stable/tutorials/3d/mesh_lod.html).
+Background: Unity is the only one of the three that does **not** auto-generate LODs from a mesh, so it needs the decimated meshes you provide. Unreal and Godot can auto-generate, so shipping your own LODs there is optional. Sources: [Unity LOD import](https://docs.unity3d.com/6000.1/Documentation/Manual/importing-lod-meshes.html), [Unreal static-mesh LODs](https://dev.epicgames.com/documentation/en-us/unreal-engine/importing-static-mesh-lods-using-fbx-in-unreal-engine), [Godot mesh LOD](https://docs.godotengine.org/en/stable/tutorials/3d/mesh_lod.html).
 
 ---
 
@@ -65,7 +56,7 @@ While **Preview** is on, editing the switch % updates the view **live** — no n
 
 ## LOD validation
 
-When a chain exists, **Run Validation** adds an **LOD** category:
+The **Check LOD chains** toggle lives in the **Rules** tab (it's a validation rule, not a generation tool). It validates **any** LOD chain — generated, imported, or hand-made — so it catches problems even in LODs the addon didn't build. When a chain exists, **Run Validation** adds an **LOD** category:
 
 | Check | Severity | Meaning |
 |---|---|---|

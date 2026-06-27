@@ -105,7 +105,8 @@ nav:
   - The Asset Preflight Window: window.md
   - Features:
       - Budgets & Dashboard: features/budgets.md
-      - Validation Profiles: features/profiles.md
+      - Validation Rules (Presets): features/profiles.md
+      - Specification Editor: features/specification-editor.md
       - Naming Templates: features/naming.md
       - LOD Tools: features/lod.md
       - Batch Scan & HTML Report: features/batch-scan.md
@@ -114,7 +115,6 @@ nav:
       - Bug Reporting & Diagnostics: features/bug-reporting.md
   - Viewport Tools:
       - Export (Output & Engine): panels/output.md
-      - Quick Reset: panels/quick-reset.md
       - Individual Steps: panels/individual-steps.md
       - Collision Setup: panels/collision-setup.md
       - Scene Organization: panels/scene-organization.md
@@ -141,4 +141,5 @@ not_in_nav: |
   /panels/fix.md
   /panels/export.md
   /panels/fbx-tools.md
+  /panels/quick-reset.md
   /reference/collision-naming.md

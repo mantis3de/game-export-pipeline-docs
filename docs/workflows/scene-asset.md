@@ -4,11 +4,11 @@ The everyday loop: a model is in your scene, make it engine-ready.
 
 > **▶ do · ✓ expect · ⚠ gotcha**
 
-1. **▶ Pick the engine.** Asset Preflight → **Presets** → choose `Unity — Desktop` / `Unreal — Desktop` (or Mobile) — it applies on selection.
+1. **▶ Set the rules.** Asset Preflight → **Presets → Import Preset** (a studio's `.json`), or set thresholds/checks/engine by hand in **Rules**.
 2. **▶ Select** the mesh(es). Nothing selected = whole scene.
 3. **▶ Validate.** **Scan** tab → **Run Validation**. ✓ The Scan tab fills with a score and grouped issues in place.
 4. **▶ Jump to a problem.** Expand an issue → **Select & Focus**. ✓ The exact faces/edges are selected and the **viewport zooms to them** (flipped faces turn red).
-5. **▶ Fix.** **Fix Safe Issues** runs every *non-destructive* repair on the ticked objects (apply scale/rotation, names, materials, lightmap UV). Destructive geometry repairs are **not** auto-applied — fix those by hand from **Select & Focus**.
+5. **▶ Fix.** Repairs are manual, in **Individual Steps** (Safe Repairs, Fix Names, transforms…). Geometry problems are fixed by hand from **Select & Focus**, then **Re-check**.
 6. **▶ Re-validate** after any change — results refresh from the last run. Repeat until **EXPORT READY**.
 7. **▶ Save / share (optional).** **Report** tab → set a **Report folder** → **Export JSON** (dated snapshot for Compare) or **Export HTML** (shareable report).
 8. **▶ Export the model** via the Export panel / your pipeline.

@@ -22,7 +22,7 @@ Game Export Pipeline turns the tedious pre-export checklist — scale applied? U
 
     ---
 
-    One centered, tabbed window — **Presets · Scope · Rules · Scan · Results** — replaces the old panel sprawl. Validate, pick objects, fix, and read the report in one place.
+    One centered, tabbed window — **Presets · Rules · Scope · Scan · Report** — replaces the old panel sprawl. Validate, pick objects, fix, and read the report in one place.
 
 -   :material-chart-box: **[Budgets & Dashboard](features/budgets.md)**
 
@@ -30,11 +30,11 @@ Game Export Pipeline turns the tedious pre-export checklist — scale applied? U
 
     Per-asset and whole-project budgets for triangles, draw calls and texture memory, with a **Project Health** dashboard and used/limit/% bars. Over-budget findings come with computed savings.
 
--   :material-tune-variant: **[Validation Profiles](features/profiles.md)**
+-   :material-tune-variant: **[Validation Rules (Presets)](features/profiles.md)**
 
     ---
 
-    Engine-aware rule bundles (Unity Mobile/Desktop, Unreal, Godot, Marketplace, Mobile Low/High, PC Indie, VR) in an editable `profiles.json`. Commit one file to your repo and the whole team validates identically.
+    The studio defines the ruleset once in an editable `profiles.json` — or in the no-install **[Specification Editor](features/specification-editor.md)** — and the artist imports it. Everyone validates identically, no transcribing from a PDF.
 
 -   :material-decagram: **[LOD Tools](features/lod.md)**
 

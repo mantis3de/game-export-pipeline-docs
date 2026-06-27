@@ -31,7 +31,7 @@ It contains:
 - **Export Risk Level** — *Safe to Export* / *Export with Known Issues* / *Export Not Recommended*.
 - **Health trend** — an inline sparkline of average health across previous runs.
 - **Duplicate-geometry banner** — flags files sharing a mesh signature (catches accidental re-exports before publishing).
-- **Per-file cards** — health badge, mesh/tri counts, error/warning counts, a ▸ chevron (click the card to expand), and the issue list. Findings you marked intentional show a muted **ignored** tag.
+- **Per-file cards** — health badge, mesh/tri counts, error/warning counts, a ▸ chevron, and the issue list. Files **with errors or warnings (or a failed import) are expanded by default** so the reader sees the problems without clicking; clean files stay collapsed. Findings you marked intentional show a muted **ignored** tag.
 - **Filter / sort / search** — All / Fail / Warning / Pass / Import-failed / **Ignored** (shows only the muted findings); sort by health, name, errors or tris; **Expand all / Collapse all**.
 
 Alongside the HTML, a `.json` with the same data is written — for tooling, diffing, and the CLI.

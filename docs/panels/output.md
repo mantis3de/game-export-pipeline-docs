@@ -1,87 +1,80 @@
 # Export (Output & Engine)
 
-The **Export** box at the top of the GameExport tab is always visible and is now the single place for everything export-related: the output **Folder**, the **Engine** preset, the filename **Prefix**, the **FBX / glTF** target, the **Export Selected** button, and the **Auto-cleanup on Export** toggles. *(The old separate "Export" panel was merged in here — there's no longer a duplicate folder field lower down.)*
+The **Export** box at the top of the GameExport tab is always visible and is the single place for everything export-related: the output **Folder**, the **Engine** preset, the filename **Prefix**, the per-asset / textures **subfolder** toggles, the **FBX / glTF** target, the **Export Selected** button, and the **Auto-cleanup on Export** toggles.
 
 ---
 
 ## Output folder
 
-The path field sets the root folder for all exported FBX files. Click the folder icon to browse, or type a path directly.
+The path field sets the root folder for exports. Click the folder icon to browse, or type a path.
 
 | Path format | Meaning |
 |---|---|
-| `//GameAssets` | Relative to the current `.blend` file (recommended) |
-| `/Users/me/Assets` | Absolute path |
-| `C:\Users\me\Assets` | Absolute path (Windows) |
+| `//GameAssets` | Relative to the current `.blend` (recommended) |
+| `/Users/me/Assets` | Absolute (macOS/Linux) |
+| `C:\Users\me\Assets` | Absolute (Windows) |
 
 !!! tip "Relative paths travel with the project"
-    Using `//` keeps the export folder relative to the `.blend` file, so the path stays valid when the project is moved or shared. Absolute paths break when the folder structure changes.
+    `//` keeps the folder relative to the `.blend`, so it stays valid when the project is moved or shared.
 
-If the export folder is not set (empty or `//`), the **Export** panel shows a warning and disables the export buttons until a path is entered.
+If the folder is empty or `//`, the box shows a warning and disables export until a path is entered.
 
 ---
 
 ## Engine preset
 
-The **Engine** dropdown controls the axis orientation and scale factor used by the FBX exporter.
+The **Engine** dropdown controls the FBX axes/scale **and** how an asset's LODs and collider are written to disk. It is **export-only** — it does not affect validation or naming.
 
-| Preset | Forward | Up | Scale | Notes |
-|---|---|---|---|---|
-| **Unity** | -Z | Y | 1.0 | Unity standard |
-| **Unreal Engine** | X | Z | 1.0 | 1 Blender metre = 100 cm in UE |
-| **Godot** | -Z | Y | 1.0 | glTF-friendly |
-| **Custom** | _(manual)_ | _(manual)_ | _(manual)_ | Set axes and scale manually |
+| Preset | Forward | Up | Scale |
+|---|---|---|---|
+| **Unity** | -Z | Y | 1.0 |
+| **Unreal Engine** | X | Z | 1.0 (1 m = 100 cm) |
+| **Godot** | -Z | Y | 1.0 |
 
-Selecting a preset also updates the **Forward Axis gizmo** in the viewport (if it is enabled) so you can see the exported forward direction while modelling.
-
-→ Full axis and scale table: [Engine Presets](../reference/engine-presets.md)
+**Export Selected** is asset-group aware: it folds an asset's `_LOD#` children and its collider into the asset, then writes them per engine — Unity/Godot get **one nested FBX**, Unreal gets the **base + separate `_LOD#.fbx`** files. → [Engine Presets](../reference/engine-presets.md).
 
 ---
 
-## Prefix
+## Prefix and folders
 
-The **Prefix** field is prepended to every exported filename. The default is `SM_` (Static Mesh), which is the convention used by both Unreal Engine and many Unity pipelines.
+- **Prefix** — prepended to every exported filename, the **same for all engines** (export naming is engine-agnostic). Default `SM_`; clear it for none. Already-prefixed object names (e.g. after **Fix Names** in [Individual Steps](individual-steps.md#naming)) are not doubled.
+- **Subfolder per asset** — write each asset into its own subfolder (named after its collection). Turn **off** when you already point at the asset's own folder, to avoid a folder-in-folder.
+- **Textures in /Textures subfolder** — when *Collect Textures* is on, put textures in a `Textures/` subfolder, or copy them next to the files.
 
-For example, a mesh named `Rock_01` with prefix `SM_` exports as `SM_Rock_01.fbx`.
+---
 
-Leave the field empty to export without a prefix. The **Fix Naming / Add Prefix** operator in the [Fix](fix.md) panel renames objects in the scene to match the prefix you set here.
+## Format & auto-cleanup
+
+Choose **FBX** or **glTF/GLB**. **Auto-cleanup on Export** applies, on temporary copies, the toggled steps (apply transforms / modifiers, triangulate, collect & optionally rename textures) so your scene is never modified.
 
 ---
 
 ## Viewport helpers
 
-Two toggles in the **Viewport Helpers** box control non-destructive overlays drawn in the 3D viewport.
+The **Viewport Helpers** box draws non-destructive overlays:
 
-**Forward Axis** draws an arrow showing the direction that will be "forward" in the target engine after export. It updates automatically when you change the engine preset. Use it to align your mesh correctly without guessing.
+- **Forward Axis: Unity / Unreal** — two buttons; each draws an arrow for that engine's forward direction (Unity −Y, Unreal +X). A ✕ hides it. The choice is explicit per engine, independent of the export Engine setting.
+- **Scale Ref: Show** — a 1 m cube + a 1.8 m human-height box to check proportions (identical for Unity and Unreal). A ✕ hides it.
 
-**Scale Ref** draws two reference boxes — a 1×1×1 metre cube and a 1.8 m tall human-height box — so you can check your asset's scale against real-world proportions at a glance.
-
-Both overlays are display-only and have no effect on the exported file.
+Both are display-only and never touch the exported file.
 
 ---
 
 ## Preview / Isolate
 
-The **Preview / Isolate** button starts a modal browser that walks through the mesh objects in your scene one at a time, hiding everything else so you can inspect each asset in isolation — with or without its collision meshes. Collision objects (`UCX_`/`UBX_`) are never listed as their own entries; they are shown as part of the mesh they belong to.
-
-While the modal is running, the viewport header shows the current object, its index, and the controls:
+The **Preview / Isolate** button walks through the scene's mesh objects one at a time, hiding everything else. Colliders (`UCX_`/`UBX_`) are shown as part of the mesh they belong to, never as their own entries.
 
 | Control | Action |
 |---|---|
-| Mouse wheel · `↑` / `↓` | Move to the previous / next mesh |
-| `M` | Cycle the isolation mode |
-| `Enter` · `LMB` | Keep the current isolation and exit |
-| `Esc` · `RMB` | Restore all objects and exit |
-
-The isolation mode cycles through three states, and your choice is remembered for the next session:
+| Mouse wheel · `↑` / `↓` | Previous / next mesh |
+| `M` | Cycle isolation mode |
+| `Enter` · `LMB` | Keep isolation and exit |
+| `Esc` · `RMB` | Restore all and exit |
 
 | Mode | Shows |
 |---|---|
 | **Mesh only** | Just the render mesh |
-| **Mesh + Collider** | The render mesh and its `UCX_`/`UBX_` colliders |
-| **Collider only** | Just the colliders (useful for checking hull shape) |
+| **Mesh + Collider** | The mesh and its colliders |
+| **Collider only** | Just the colliders (check hull shape) |
 
-The **Restore All** button next to Preview un-hides every object in the scene. Use it if a preview session was interrupted and some objects are still hidden.
-
-!!! note "Preview only changes visibility"
-    Isolating objects toggles their viewport visibility — it never moves, deletes, or modifies geometry. Exiting with `Esc` (or pressing Restore All) returns the scene to a fully visible state.
+**Restore All** un-hides every object. Preview only toggles visibility — it never moves, deletes, or modifies geometry.

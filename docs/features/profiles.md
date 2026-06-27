@@ -1,64 +1,67 @@
-# Validation Profiles
+# Validation Rules (Presets)
 
-A **profile** is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, and per-issue severity overrides — stored in an editable `profiles.json`. Pick one and the whole ruleset (including engine and naming prefix) loads at once.
+A **preset** is a named bundle of validation rules — thresholds, which checks run, naming policy, collider conventions, budgets, and per-issue severity overrides — stored in an editable `profiles.json`. Import one and the whole ruleset (including the target engine) loads into the **Rules** tab at once.
 
-The point: commit one `profiles.json` to your project repo and **everyone — and CI — validates identically**.
+The point: a studio defines the rules **once**, hands the artist a single `.json`, and **everyone validates identically** — no transcribing requirements from a PDF.
 
----
-
-## Using a profile
-
-In the **Asset Preflight → Presets** tab:
-
-1. Pick a profile from the **Profile** dropdown — it **applies immediately**: thresholds, checks, severities, **engine** and **naming** (e.g. Unreal sets the `SM_` prefix) are written into the current settings in one step. *(There's no separate **Apply** button — selecting is applying.)*
-2. **Run Validation** to use them.
-
-Click **Reload** (↻) after editing `profiles.json` on disk, so the new values appear.
-
-!!! note "Profiles drive the check toggles too"
-    Selecting a profile sets the **check toggles** in Rules — both the category masters and the 56 granular per-finding toggles. So built-in profiles differ in *what they check*, not just thresholds: e.g. **Mobile — Low-End** unticks the Normal / Metallic map checks (low-end mobile doesn't rely on them), while **Marketplace** keeps everything strict. Any manual tweak you make afterwards stays until you pick a profile again.
-
-## Save your own profile (no JSON editing)
-
-Tweaked the thresholds, checks, naming and budgets to suit your project? Save them as a named profile straight from the UI:
-
-1. Set the **Rules file** path to your project's `profiles.json` (it's created if it doesn't exist).
-2. Click **Save Current as Profile…**, type a name (e.g. *Studio — Unity*), confirm.
-3. The current engine, thresholds, checks, naming policy, collider conventions, budgets, release threshold and active severity overrides are written into that `profiles.json` as a new profile (re-using a name updates it). It's selected immediately.
-
-Commit the file to your repo and the whole team gets the profile — no one touches JSON by hand. The **Asset Type** is captured too, so loading the profile restores it (built-in profiles leave your Asset Type alone). Machine-specific things like export paths are deliberately **not** captured, so the profile stays a portable ruleset.
+There are **no built-in presets** — every project's rules are different, so the addon ships with none. You create your own (or receive one from the studio).
 
 ---
 
-## Built-in profiles
+## Where rules live
 
-| Profile | Max tris | Max tex | Naming | LOD | Notable severities |
-|---|---:|---:|---|---|---|
-| **Unity — Mobile** | 20,000 | 2048 | strict | required | HIGH_POLY, oversized & non-PoT textures → **error**; lightmap → info |
-| **Unity — Desktop** | 80,000 | 4096 | relaxed | — | lightmap → info |
-| **Unreal — Desktop** | 120,000 | 4096 | relaxed | — | missing lightmap → **error** |
-| **Godot 4** | 100,000 | 4096 | relaxed | — | defaults |
-| **Generic — Marketplace** | 50,000 | 4096 | strict | — | missing lightmap, non-PoT, missing collision, default/invalid names → **error** |
-| **Mobile — Low-End** | 10,000 | 1024 | strict | required | high-poly, oversized & non-PoT textures → **error** |
-| **Mobile — High-End** | 35,000 | 2048 | strict | required | high-poly, oversized textures → **error** |
-| **PC — Indie** | 150,000 | 4096 | relaxed | — | lightmap → info |
-| **VR (90 fps)** | 30,000 | 2048 | strict | required | high-poly, oversized textures → **error** |
-
-Each profile also carries per-asset and whole-scene **budgets** (triangles, materials,
-texture VRAM) — see [Budgets & Dashboard](budgets.md). These are starting points —
-copy and tune them for your studio.
+- **Presets** tab — load/save the ruleset (`profiles.json`). This is the *input*.
+- **Rules** tab — every individual rule (naming, thresholds, budgets, checks, LOD). Importing a preset fills this tab; you can also set it all by hand.
+- **Report** (HTML/JSON) — the validation *results* after Run Validation. A different file, the opposite direction. Don't confuse the two.
 
 ---
 
-## Sharing rules with the team
+## Importing a preset
 
-1. Copy the addon's `profiles.json` into your project repo, e.g. `Project/preflight/profiles.json`.
-2. Edit it in any text editor (no Python).
-3. In **Presets → Rules file**, point at that path. Your project profiles **override** built-ins with the same `id` and **add** new ones.
-4. Commit it. Teammates pull and point the addon at the same file → identical rules.
+In **Asset Preflight → Presets**:
 
-!!! tip "Rules in vs report out"
-    **Rules file** is the **input** (the rules you load). **Export Report** / the HTML batch report is the **output** (the results). Two different files, two directions — don't confuse them.
+1. Click **Import Preset (.json)** and pick the file (e.g. one a studio sent you, or one exported from the [Specification Editor](specification-editor.md)).
+2. Every Rule is set to match the file immediately — engine, thresholds, all 56 granular checks, naming, budgets, severities. There is no dropdown and no separate Apply step.
+3. The header shows **Loaded: `<file>.json`** so you always know which spec is driving the rules. If no spec is loaded (or the file was deleted) it shows **Default (no preset)**.
+4. **Run Validation** — the model is checked against exactly what the spec asks for.
+
+!!! note "Unchecked in the spec = not validated"
+    If the preset unticks a check (say, lightmap UV), the validator will **not** report it. Every master check, every studio rule and all 56 granular findings honour their toggle — validation follows the JSON 1:1, never a hidden default.
+
+---
+
+## The Specification Editor (no Blender needed)
+
+The cleanest way for a studio to author a preset is the standalone **Specification Editor** — a single self-contained HTML file. The client opens it in any browser, ticks the requirements, clicks **Export Preset**, and sends back a `.json` the addon imports directly. See [Specification Editor](specification-editor.md).
+
+---
+
+## Save your own preset (no JSON editing)
+
+Dialled the Rules in by hand and want to reuse them?
+
+1. Click **Save Current Rules as .json…**, choose a location and name (e.g. *Studio — Unity*).
+2. The current engine, thresholds, all check toggles, naming policy, collider conventions, budgets, the studio rules and the active severity overrides are written into a `profiles.json`. Re-using a name updates that entry.
+
+Commit the file to your repo and the whole team gets the ruleset. Machine-specific things like export paths are deliberately **not** captured, so the preset stays a portable ruleset.
+
+---
+
+## What a preset controls
+
+| Section | Examples |
+|---|---|
+| **Engine** | UNITY / UNREAL / GODOT — *export-only*, see below |
+| **Thresholds** | max polygons, max texture size, UV padding, texel density, LOD bounds tolerance |
+| **Budgets** | per-asset & whole-scene triangles, materials, texture VRAM; **max vertices**, **max object count** |
+| **Checks** | the category masters + all 56 granular per-finding toggles |
+| **Studio rules** | hidden objects forbidden, packed images forbidden, unique material names |
+| **Naming** | strict ASCII, naming template + category/start index, collider prefixes/suffixes |
+| **LOD** | LODs required, bounds tolerance |
+| **Severity** | per-issue ERROR / WARNING / INFO overrides |
+
+!!! info "Engine is export-only"
+    The engine in a preset controls **FBX axes/scale and the LOD file structure at export** — nothing else. It does **not** change validation, naming or collider matching. So switching engine never silently flips a rule. See [Engine Presets](../reference/engine-presets.md).
 
 ---
 
@@ -67,36 +70,33 @@ copy and tune them for your studio.
 ```jsonc
 {
   "schema": 1,
+  "generator": "SpecificationEditor",        // free-text, for diagnostics
+  "version": "1.0.0",
   "profiles": [
     {
       "id": "studio_unity",
       "name": "Studio — Unity",
-      "engine": "UNITY",                     // UNITY | UNREAL | GODOT | CUSTOM
-      "thresholds": {
-        "poly_warn_threshold": 60000,
-        "texture_size_warn": 2048
-      },
-      "checks": { "uv_padding_check": true, "naming_default_check": true },
-      "naming": {
-        "strict": true,
-        "collider_suffixes": ["_col", ".collision"]   // optional override
-      },
+      "engine": "UNITY",                      // UNITY | UNREAL | GODOT
+      "thresholds": { "poly_warn_threshold": 60000, "texture_size_warn": 2048 },
+      "budget": { "max_tris": 60000, "max_verts": 40000, "max_object_count": 1,
+                  "max_materials": 2, "max_vram_mb": 128 },
+      "checks": { "uv_padding_check": true, "naming_default_check": true,
+                  "check_packed_images": true, "check_unique_materials": true },
+      "naming": { "strict": true, "template": "SM_{Category}_{Name}_{NN}",
+                  "category": "Props", "collider_suffixes": ["_col", ".collision"] },
       "lod": { "required": false },
-      "severity": {
-        "MISSING_LIGHTMAP": "WARNING",       // ERROR | WARNING | INFO
-        "DEFAULT_NAME": "ERROR"
-      }
+      "severity": { "MISSING_LIGHTMAP": "WARNING", "DEFAULT_NAME": "ERROR" }
     }
   ]
 }
 ```
 
-Any field you omit falls back to a sensible default, so a minimal profile only needs `id`, `name`, and the few values you care about. Severity keys are validation **issue IDs** — see [Validation Checks](../reference/validation-checks.md). Full schema: [Profiles Reference](../reference/profiles-reference.md).
+Any field you omit falls back to a sensible default, so a minimal preset only needs `id`, `name`, and the values you care about. Severity keys are validation **issue IDs** — see [Validation Checks](../reference/validation-checks.md). Full schema: [Profiles Reference](../reference/profiles-reference.md).
 
 ---
 
-## How profiles affect results
+## How presets affect results
 
-- **Thresholds / checks** change *what* is detected (e.g. a 25k-tri mesh is fine on Desktop but fails Mobile's 20k budget).
-- **Severity overrides** change *how serious* a finding is — layered last, after the engine preset and Marketplace Strict, so the profile wins.
-- The active profile and its severity overrides are recorded in the exported report's `config`, so a report always says which ruleset produced it.
+- **Thresholds / checks** change *what* is detected (a 25k-tri mesh is fine at 80k but fails a 20k budget).
+- **Severity overrides** change *how serious* a finding is (ERROR / WARNING / INFO) without dropping it. Use them to soften findings that are normal for an asset kind — e.g. an atlas asset where UV overlap should be INFO rather than a warning. (This replaces the old per-kind "Asset Type" presets.) After import, the active overrides are listed read-only in the **Rules** tab (e.g. *Missing lightmap UV → ERROR*) so you can confirm what the spec changed.
+- The active spec file and its config are recorded in the exported report (the header reads **Checked against: `<file>`**), so a report always says which ruleset produced it.

@@ -12,17 +12,16 @@ From a raw mesh to an engine-ready, validated asset — using the **Asset Prefli
 1. In the 3D Viewport, press **N** to open the sidebar and select the **GameExport** tab.
 2. Click the big **Open Asset Preflight** button at the top.
 
-A centered window opens with five tabs: **Presets · Scope · Rules · Scan · Results**.
+A centered window opens with five tabs: **Presets · Rules · Scope · Scan · Report**.
 
 ---
 
-## 2. Pick your engine (Presets tab)
+## 2. Set the rules (Presets / Rules tabs)
 
-1. Go to the **Presets** tab.
-2. Choose a **Profile** from the dropdown — e.g. `Unity — Desktop` or `Unreal — Desktop`.
-3. That's it — picking the profile **applies it** (no Apply button).
+1. Got a spec `.json` from a studio (or the [Specification Editor](../features/specification-editor.md))? In **Presets**, click **Import Preset (.json)** — it sets every Rule at once.
+2. No preset? Open the **Rules** tab and set thresholds, checks, naming, budgets and engine by hand.
 
-The profile sets the engine axes/scale, poly and texture thresholds, naming policy, and which issues are errors vs warnings. See [Validation Profiles](../features/profiles.md).
+The header shows **Loaded: `<file>.json`** (or *Default (no preset)*). See [Validation Rules](../features/profiles.md).
 
 ---
 
@@ -46,7 +45,7 @@ After **Run Validation**, the **Scan** tab shows the results in place:
 For any issue:
 
 - **Select & Focus** jumps to the exact faces/edges and **zooms the viewport** to them (flipped faces light up red).
-- **Fix Safe Issues** runs every non-destructive repair on the ticked objects (there's no per-issue fixer; destructive geometry repairs are done by hand from Select & Focus).
+- Repairs are manual, in the **Individual Steps** panel (Safe Repairs, Fix Names, transforms…); geometry problems are fixed by hand from Select & Focus.
 
 !!! warning "Re-validate after changes"
     The report reflects the **last** run. After changing a threshold or fixing in Edit Mode, click **Run Validation** again.

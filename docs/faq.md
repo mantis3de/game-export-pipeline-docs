@@ -39,7 +39,7 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
 ## Asset Preflight window & profiles
 
 ??? question "Where did the Validation and Fix panels go?"
-    They're now inside the **Asset Preflight** window — click **Open Asset Preflight** at the top of the GameExport tab. Validation lives in **Scan**, results and fixes in **Results**. The viewport tools (Collision, LOD, Quick Reset, Export, FBX) are still in the N-panel.
+    They're now inside the **Asset Preflight** window — click **Open Asset Preflight** at the top of the GameExport tab. Validation and results live in **Scan**. The viewport tools (Individual Steps, Collision Setup, LOD Tools, Export) are still in the N-panel — manual fixes are in **Individual Steps**.
 
 ??? question "The window closes when I click Scan Folder / Export / Fix."
     That's a Blender limitation: operator buttons in a dialog popup close it after running. Tab switches, picking a profile and **Run Validation** keep it open (they act in place). Just reopen the window with one click — your results are still there. For long issue lists, work in the **docked GameExport sidebar** instead — it has a real scrollbar.
@@ -102,8 +102,8 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
 
 ## Fix
 
-??? question "Fix Naming renamed my objects but now my collision meshes are mismatched."
-    When the render mesh is renamed (e.g. from `Rock_01` to `SM_Rock_01`), existing collision meshes keep their old names (`UCX_Rock_01`). Delete the old collision meshes and regenerate them after renaming, or rename them manually to match the new render mesh name.
+??? question "Will renaming my mesh break its collision/LOD names?"
+    No — **Fix Names** (Individual Steps → Naming) renames the **whole asset group** at once: select the render mesh and it pulls in the LODs and colliders from the scene and renames them together (`Rock_01` → `SM_Rock_01`, `UCX_Rock_01` → `UCX_SM_Rock_01`). Validation also matches colliders to meshes regardless of the `SM_` prefix, so a mismatch won't cause a false "no collision" warning.
 
-??? question "Apply Modifiers in the Fix panel destroyed my modifier stack."
-    The **Apply Modifiers** button in the Fix panel is destructive — it applies and removes modifiers from the actual scene objects. Use the **Apply Modifiers** toggle in the **Export** panel instead, which applies modifiers only on a temporary export copy and leaves your stack intact.
+??? question "Apply Modifiers destroyed my modifier stack."
+    The **Apply Modifiers** button (Individual Steps → Transforms & Mesh) is destructive — it applies and removes modifiers from the actual scene objects. Use the **Apply Modifiers** toggle in the **Export** box instead, which applies modifiers only on a temporary export copy and leaves your stack intact.

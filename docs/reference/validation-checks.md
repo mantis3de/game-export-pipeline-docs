@@ -39,7 +39,7 @@ The X, Y, and Z scale values are not equal. This can distort physics collision s
 
 The object's origin (pivot point) is not at world `(0, 0, 0)`. Most engines import the FBX with the pivot at the origin — if the pivot is offset the asset will appear displaced when dropped into a scene.
 
-**Fix:** Use **Quick Reset** (pivot → bottom, origin → world zero) or **Individual Steps → Apply Transforms** after positioning the origin manually.
+**Fix:** Use **Individual Steps → Prepare → Pivot + Origin + Apply Scale** (pivot → bottom, origin → world zero).
 
 ### Parent has unapplied scale
 **Severity: Warning**
@@ -149,9 +149,9 @@ Disabled when **Check UV Overlap** is off.
 
 The mesh has only one UV channel. A second channel is required for baked lighting (Unity Lightmapper, Unreal Engine Lightmass / Lumen baking).
 
-Severity depends on the engine preset and Marketplace Strict mode: Warning for Unity (Unity can generate lightmap UVs on import), Error for Unreal Engine and when Marketplace Strict is on.
+Default severity is Warning. A preset can raise it to Error via a severity override (e.g. a studio that bakes lighting).
 
-**Fix:** Use **Fix → Add Lightmap UV** or **Individual Steps → Add Lightmap UV**.
+**Fix:** Use **Individual Steps → UV → Add Lightmap UV**.
 
 ### UV padding too small (lightmap channel)
 **Severity: Warning**
@@ -215,7 +215,7 @@ Disabled when **Check Material Graph** is off.
 
 The active Material Output is driven by a custom node group instead of a Principled BSDF. Game engines bake materials from the Principled BSDF, so a custom shader (a stylised/toon setup, a reusable node group, etc.) will not import as authored — it typically falls back to a flat colour or a missing/pink material.
 
-Informational only, so it never blocks export. On a Procedural/Shader asset type this is expected.
+Informational only, so it never blocks export. For procedural / shader-driven assets this is expected.
 
 **Fix:** Drive the surface with a Principled BSDF, or bake your custom shader down to PBR textures before exporting.
 
@@ -237,7 +237,7 @@ A texture node references an image file that does not exist at the stored path. 
 
 A texture's width or height is not a power of two (e.g. 512, 1024, 2048, 4096). Non-power-of-two textures cannot be mipmapped correctly in most real-time engines and waste GPU memory.
 
-On Marketplace Strict mode this becomes an Error.
+A preset can raise this to an Error via a severity override.
 
 **Fix:** Resize the texture to the nearest power of two in an image editor before re-importing it into Blender.
 
@@ -291,18 +291,18 @@ Disabled when **Check Textures** is off.
 
 The object uses a default Blender name (Cube, Sphere, Cylinder, Plane, etc.). These names carry no meaning in the engine asset browser and make it difficult to identify assets.
 
-Becomes an Error when Marketplace Strict is on.
+A preset can raise this to an Error via a severity override.
 
-**Fix:** Rename the object, or use **Fix → Fix Naming / Add Prefix** to apply the configured prefix and rename automatically.
+**Fix:** Rename the object, or use **Individual Steps → Naming → Fix Names** to apply the engine-correct prefix automatically.
 
 ### Special characters in name
 **Severity: Warning / Error**
 
 The object name contains characters outside letters, digits, underscores, hyphens, dots, and spaces. Some engines and import pipelines reject or mangle names with special characters.
 
-When **Strict Naming (ASCII)** is enabled, non-ASCII characters (ą, é, ś, etc.) are also flagged. Becomes an Error when Marketplace Strict is on.
+When **Strict Naming (ASCII)** is enabled, non-ASCII characters (ą, é, ś, etc.) are also flagged. A preset can raise this to an Error via a severity override.
 
-**Fix:** Rename the object to use only safe characters, or use **Fix → Fix Naming / Add Prefix** to strip problematic characters automatically.
+**Fix:** Rename the object to use only safe characters, or use **Individual Steps → Naming → Fix Names**.
 
 ### Off naming convention
 **Severity: Warning**
@@ -341,9 +341,9 @@ The asset's estimated texture memory (uncompressed upper bound) exceeds the budg
 
 No collider was found for this render mesh under any recognised naming convention — `UCX_`/`UBX_`/`USP_`/`UCP_`, `*_collision`, `*.collision`, `*_col`, Godot `-colonly`, and others. The mesh will import without physics collision unless the engine generates its own.
 
-Recognition is configurable (Presets → *Collider names*, or per profile), and colliders are matched to their render mesh automatically — so `Barrel_01.collision` pairs with `Barrel_01` even without the Unreal `UCX_` convention. Becomes an Error when Marketplace Strict is on.
+Recognition is configurable (Rules → *Collider names*, or per preset), and colliders are matched to their render mesh automatically — so `UBX_SM_Chair_01` pairs with `SM_Chair_01` regardless of the `SM_` prefix or a hull index. A preset can raise this to an Error via a severity override.
 
-**Fix:** Use **Collision Setup → UCX_ Hull** or **UBX_ Box**, or use **Fix → Add Missing Collision**.
+**Fix:** Use **Collision Setup → UCX_ Hull** or **UBX_ Box**.
 
 → [Collider Naming](collider-naming.md)
 
@@ -391,3 +391,34 @@ The on-screen switch percentages are not strictly descending or out of range (er
 A heavily decimated level is set to activate while the object is still large on screen — its low-poly silhouette would pop in too close.
 
 → Issue IDs used here (`LOD_NOT_REDUCED`, `LOD_THRESHOLD_ORDER`, …) can be remapped per profile in [`profiles.json`](profiles-reference.md).
+
+---
+
+## Studio rules (opt-in)
+
+These extra checks are **off by default** — a studio enables only the ones its spec needs (Rules → *Limits & Budgets* / *Studio rules*, or via the imported preset).
+
+### Over vertex budget
+**Severity: Warning** · *(Max Vertices)*
+
+The asset has more vertices than the configured limit — vertex count drives GPU transform cost independent of triangles.
+
+### Too many objects
+**Severity: Warning** · *(Max Object Count)*
+
+The validated scope has more mesh objects than allowed — extra objects mean extra draw calls and a messier import. Useful for a "one mesh per asset" rule.
+
+### Hidden object
+**Severity: Warning** · *(Hidden Objects Forbidden)*
+
+A mesh object is hidden in the viewport — easy to export by accident or forget. Unhide it (and keep it) or delete it before export.
+
+### Packed image
+**Severity: Warning** · *(Packed Images Forbidden)*
+
+A texture is packed into the `.blend`, so it won't ship as an external file. Unpack images (File → External Data → Unpack) to a textures folder.
+
+### Duplicate material name
+**Severity: Warning** · *(Unique Material Names)*
+
+Two materials share a base name (`Metal` and `Metal.001`) — they import as separate slots and break material consistency. Rename or merge the duplicates.

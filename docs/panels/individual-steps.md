@@ -1,55 +1,82 @@
 # Individual Steps
 
-The **Individual Steps** panel exposes each preparation operation separately, for when you need more control than the one-click [Quick Reset](quick-reset.md).
+The **Individual Steps** panel is the single place for manual, one-by-one preparation and repair operations. It's grouped into labelled boxes so related actions sit together. (The old *Quick Reset* and *Fix* panels were folded into this one.)
 
 ---
 
-## Pivot
+## Prepare
+
+**Pivot + Origin + Apply Scale** runs the three steps most artists do before every export, in order:
+
+1. **Pivot to bottom** — origin to the bottom-centre of the bounding box, so the mesh sits on the ground plane in-engine.
+2. **Origin to world zero** — moves the object so its origin sits at `(0, 0, 0)`; geometry moves with it (no visual change).
+3. **Apply rotation + scale** — bakes them so `rotation = 0°`, `scale = 1`.
+
+!!! warning "This moves objects in the scene"
+    Step 2 translates the object to world zero. Run it on a copy or a dedicated export collection, not on a laid-out scene.
+
+---
+
+## Naming
+
+**Fix Names (SM_ / LOD / UCX_UBX)** renames the selected asset to engine-correct names in one click — manual, never automatic:
+
+- render mesh → `SM_<Name>`
+- LODs → `SM_<Name>_LOD#`
+- colliders → `UCX_`/`UBX_<Name>` (keeps the kind, follows the mesh's final name, indexes multi-hull as `_01/_02`)
+
+You only need to select the render mesh — Fix Names pulls in its LODs and colliders from the scene by name and renames the whole asset group together.
+
+---
+
+## Pivot / Origin
 
 | Button | What it does |
 |---|---|
-| **Pivot Bottom** | Moves the origin to the bottom-centre of the bounding box. Use for props, furniture, architecture — anything that sits on a surface. |
-| **Pivot Center** | Moves the origin to the geometric centre of the bounding box. Use for objects that rotate around their centre (wheels, doors, weapons). |
-| **Set Game Pivot** | Applies the right convention for the chosen **asset type** in one click — Prop / Architecture / Foliage get a bottom-centre origin; Weapon / Vehicle get a bounds-centre origin. Handy when you don't have a tech artist enforcing pivot rules. |
+| **Pivot Bottom** | Origin to the bottom-centre of the bounding box (props, furniture, anything that sits on a surface). |
+| **Pivot Center** | Origin to the geometric centre (wheels, doors, weapons that rotate around their centre). |
+| **Set Game Pivot** | Applies the pivot convention for the chosen **pivot preset** (Prop / Architecture / Weapon / Vehicle…) in one click. |
 
 ---
 
-## Transforms and modifiers
+## Transforms & Mesh
 
 | Button | What it does |
 |---|---|
-| **Apply Transforms** | Bakes the current location, rotation, and scale into the mesh data and resets all three to their identity values (`location = 0`, `rotation = 0°`, `scale = 1`). |
-| **Apply Modifiers** | Applies all modifiers on the selected objects and removes them from the modifier stack. The mesh is converted to its final evaluated state. |
-
-!!! warning "Apply Modifiers is destructive"
-    Once modifiers are applied they cannot be recovered (unless you undo). Run this only when the modifier stack is finalised. The **Export** panel has an **Apply Modifiers** toggle that applies modifiers during export without touching the original stack — prefer that approach if you still need the modifiers for further editing.
-
----
-
-## Triangulate
-
-**Triangulate** converts all n-gons and quads to triangles using Blender's standard triangulation algorithm. Game engines triangulate meshes at import anyway — doing it explicitly in Blender gives you control over the result and avoids engine-specific triangulation artefacts on curved surfaces.
-
-This is the same operation as adding a **Triangulate** modifier and applying it.
+| **Apply Transforms** | Bakes location, rotation and scale into the mesh data and resets all three to identity. |
+| **Apply Modifiers** | Applies and removes all modifiers (destructive — prefer the Export panel's *Apply Modifiers* toggle if you still need them). |
+| **Triangulate** | Converts n-gons/quads to triangles, with control over the result. |
+| **Mesh Data = Object Name** | Renames each mesh data-block to match its object (shared/linked meshes are skipped). |
 
 ---
 
-## Mesh Data = Object Name
+## UV
 
-**Mesh Data = Object Name** renames each mesh data-block to match its object's name — object `Barrel_01` gets a mesh data-block named `Barrel_01`. This keeps the Outliner tidy and avoids the mismatched `Cube.001` / `Barrel_01` pairs that some engines and pipeline scripts trip over.
-
-Acts on the **selection**, or the **whole scene** if nothing is selected.
-
-!!! note "Shared meshes are skipped"
-    A mesh data-block used by several objects (linked duplicates) is left untouched — renaming it to match one object would be ambiguous. The status line reports how many were renamed and how many shared meshes were skipped.
+| Button | What it does |
+|---|---|
+| **Add Lightmap UV** | Creates a second UV channel (Lightmap Pack) for baked GI. No-op if two channels already exist. |
+| **Add UV Map (Smart Project)** | Generates a base UV channel via Smart UV Project for meshes with none. |
 
 ---
 
-## Add Lightmap UV
+## Safe Repairs
 
-**Add Lightmap UV** creates a second UV channel (`UVMap.001` by default) using Blender's **Lightmap Pack** algorithm. The second channel is required by real-time GI and baked lighting in both Unity and Unreal Engine.
+Non-destructive, undoable fixes — apply the ones you need by hand:
 
-!!! note "A second UV channel already exists?"
-    If the mesh already has two or more UV channels, this button is a no-op — it will not overwrite or duplicate an existing channel.
+| Button | What it does |
+|---|---|
+| **Recalculate Normals** | Recomputes normals facing outside (fixes flipped faces). |
+| **Fix Negative Scale** | Applies mirrored (negative) scale and flips normals back. |
+| **Remove Empty Mat Slots** | Removes empty material slots. |
 
-If you need more control over the lightmap layout (padding, island scale), use Blender's **UV Editor → Lightmap Pack** directly and skip this button.
+Geometry repairs (holes, n-gons, loose/zero-area faces) stay manual: use **Select & Focus** in the results, then Blender's own tools.
+
+---
+
+## Cleanup
+
+| Button | What it does |
+|---|---|
+| **Remove All Collision** | Deletes every collider in the scene (any configured naming). |
+| **Remove All LODs** | Deletes generated LOD children (`_LOD1+`); the base stays. |
+| **Dissolve Collections** | Flattens collections back to the scene root. |
