@@ -1763,6 +1763,67 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#19x-report-accuracy-release-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [1.9.x] — Report accuracy &amp; release cleanup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[1.9.x] — Report accuracy &amp; release cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reports-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reports &amp; diff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select &amp; Focus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#18x-isolate-lod-browsing-data-safety-hardening" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2001,7 +2062,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#select-focus" class="md-nav__link">
+  <a href="#select-focus_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Select &amp; Focus
@@ -2167,6 +2228,67 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#19x-report-accuracy-release-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        [1.9.x] — Report accuracy &amp; release cleanup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[1.9.x] — Report accuracy &amp; release cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reports-diff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reports &amp; diff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Select &amp; Focus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Release cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#18x-isolate-lod-browsing-data-safety-hardening" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2405,7 +2527,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#select-focus" class="md-nav__link">
+  <a href="#select-focus_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Select &amp; Focus
@@ -2555,6 +2677,30 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h1>
 <p>All notable changes are documented here. The format follows <a href="https://keepachangelog.com/">Keep a Changelog</a>, versioning follows <a href="https://semver.org/">Semantic Versioning</a>.</p>
+<hr />
+<h2 id="19x-report-accuracy-release-cleanup">[1.9.x] — Report accuracy &amp; release cleanup<a class="headerlink" href="#19x-report-accuracy-release-cleanup" title="Permanent link">&para;</a></h2>
+<h3 id="reports-diff">Reports &amp; diff<a class="headerlink" href="#reports-diff" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Deterministic missing-texture check.</strong> A texture whose file is missing on disk is now always flagged (unless it's packed into the .blend). Pixels merely cached in memory (<code>has_data</code>) no longer mask a missing file — they don't survive a fresh open or reach the build machine. This removed a case where a finding showed live but vanished on the exported report.</li>
+<li><strong>Nothing is dropped from the report.</strong> Findings attached to LOD children (<code>Name_LOD#</code>) are folded onto their base asset, and scene-wide findings with no object (e.g. duplicate materials) get a synthetic <strong>(Scene-wide)</strong> card — so the HTML/JSON report and the <strong>Compare</strong> diff reflect every finding the validator raised.</li>
+<li><strong>HTML report opens fully expanded</strong> by default (every card), so all findings are visible at a glance; Expand all / Collapse all still works. The (Scene-wide) card has no thumbnail/mesh stats (it isn't an object).</li>
+<li><strong>Per-object LOD triangle breakdown</strong> in each card, from the real scene meshes.</li>
+<li><strong>Compare writes a unique file per pair</strong> (<code>compare_&lt;base&gt;__&lt;target&gt;.html</code>) instead of overwriting one name, and the result message names the two snapshots compared — no more opening a stale diff by accident.</li>
+</ul>
+<h3 id="ignore">Ignore<a class="headerlink" href="#ignore" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Scene-wide findings are ignorable</strong> (ghost/globe) and stored per scene.</li>
+<li><strong>Dead ignore marks are auto-pruned</strong> on validation: an ignore for an issue that no longer fires on an object (fixed, or never applicable) is removed, so the Ignored list stays honest.</li>
+</ul>
+<h3 id="select-focus">Select &amp; Focus<a class="headerlink" href="#select-focus" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Inspecting a <strong>UV1 (lightmap)</strong> issue keeps <strong>UV0 as the render/display layer</strong>, so the 3D viewport texture no longer switches to the lightmap while you fix UV1 in the editor.</li>
+</ul>
+<h3 id="release-cleanup">Release cleanup<a class="headerlink" href="#release-cleanup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Removed dead registration path in <code>operators/__init__.py</code>; excluded leftover/empty modules from the shipped add-on.</li>
+<li>LOD chain collection for the report is built once per pass (O(N) instead of O(N²) on large scenes).</li>
+</ul>
 <hr />
 <h2 id="18x-isolate-lod-browsing-data-safety-hardening">[1.8.x] — Isolate, LOD browsing &amp; data-safety hardening<a class="headerlink" href="#18x-isolate-lod-browsing-data-safety-hardening" title="Permanent link">&para;</a></h2>
 <p>Workflow polish around validation browsing and LOD review, plus a release audit
@@ -2717,7 +2863,7 @@ team / pipeline tooling.</p>
 <ul>
 <li>Broad, <strong>configurable</strong> <a href="../reference/collider-naming/">collider naming</a> (Unreal <code>UCX_/UBX_/USP_/UCP_</code>, <code>*.collision</code>, <code>*_col</code>, Godot <code>-colonly</code>, …), matched to the render mesh — no more false errors on imported colliders.</li>
 </ul>
-<h3 id="select-focus">Select &amp; Focus<a class="headerlink" href="#select-focus" title="Permanent link">&para;</a></h3>
+<h3 id="select-focus_1">Select &amp; Focus<a class="headerlink" href="#select-focus_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Now <strong>frames the 3D viewport</strong> on the selected problem and enables the face-orientation overlay for flipped faces.</li>
 </ul>

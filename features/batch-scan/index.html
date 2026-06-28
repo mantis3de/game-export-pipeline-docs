@@ -1966,8 +1966,9 @@
 <ul>
 <li>a one-number <strong><code>%</code> improvement</strong> + headline cards — avg health <code>base → target</code>, open issues <code>base → target</code>, <strong>Fixed</strong>, <strong>New</strong>, <strong>Ignored (muted)</strong>, assets improved / regressed,</li>
 <li><strong>Most improved</strong> and <strong>Worst regressions</strong> assets (with score deltas),</li>
-<li>the <strong>Fixed</strong>, <strong>New</strong>, and <strong>Ignored</strong> finding lists (asset — rule).</li>
+<li>the <strong>Fixed</strong>, <strong>New</strong>, and <strong>Ignored</strong> finding lists (asset — rule); ignored rows note the original severity (e.g. <em>muted from error</em>).</li>
 </ul>
+<p>Each comparison is written to a <strong>unique file</strong> named after the two snapshots (<code>compare_&lt;base&gt;__&lt;target&gt;.html</code>), so a fresh diff never overwrites or reopens an older one, and the result message names exactly which two snapshots were compared.</p>
 <p><strong>Fixed</strong> means an actionable finding resolved entirely; <strong>Ignored</strong> means muted-but-still-present (muting never counts as a fix). Comparison runs on the deterministic JSON, not the HTML.</p>
 <hr />
 <h2 id="delta-scan">Delta scan<a class="headerlink" href="#delta-scan" title="Permanent link">&para;</a></h2>
