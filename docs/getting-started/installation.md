@@ -17,12 +17,12 @@ This page walks you through installing Game Export Pipeline into Blender and ver
 
 1. Open Blender and go to **Edit → Preferences → Add-ons**.
 2. Click **Install…** (top-right corner of the Add-ons panel).
-3. Navigate to the downloaded `game_export_pipeline_v1.0.0.zip` file, select it, and click **Install Add-on**.
+3. Navigate to the downloaded `game_export_pipeline_v1.5.1.zip` file, select it, and click **Install Add-on**.
 4. The addon appears in the list. Tick the checkbox next to **Import-Export: Game Asset Export Pipeline** to enable it.
 5. Click **Save Preferences** to keep it enabled across restarts.
 
 !!! warning "Install the zip, not the extracted folder"
-    Blender expects the compressed `.zip` file, not the extracted `game_export_pipeline_v1.8.2/` folder. If you accidentally extracted it, re-zip the folder before installing.
+    Blender expects the compressed `.zip` file, not the extracted `game_export_pipeline_v1.5.1/` folder. If you accidentally extracted it, re-zip the folder before installing.
 
 ## Verify the installation
 

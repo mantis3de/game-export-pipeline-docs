@@ -10,7 +10,7 @@ Common questions about Game Export Pipeline. Can't find your answer? Reach out t
     Confirm the addon is enabled: open **Edit → Preferences → Add-ons**, search for "Game Asset Export Pipeline", and make sure the checkbox is ticked. If the checkbox is on but the tab is still missing, check the Blender System Console (`Window → Toggle System Console` on Windows, or launch Blender from a terminal on macOS/Linux) for registration errors.
 
 ??? question "I installed the extracted folder instead of the zip and now I get an import error."
-    Remove the broken install from **Preferences → Add-ons**, then re-zip the `game_export_pipeline_v1.0.0` folder and install the `.zip` file. Blender expects the compressed archive, not the folder itself.
+    Remove the broken install from **Preferences → Add-ons**, then re-zip the `game_export_pipeline_v1.5.1` folder and install the `.zip` file. Blender expects the compressed archive, not the folder itself.
 
 ??? question "Do I get future updates for free?"
     Yes. Download the latest version from your store account. Check the [Changelog](changelog.md) for what's new.
