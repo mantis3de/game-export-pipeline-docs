@@ -47,7 +47,9 @@ Tick **2 or more** snapshots and press **Compare Selected** for a self-contained
 
 - a one-number **`%` improvement** + headline cards — avg health `base → target`, open issues `base → target`, **Fixed**, **New**, **Ignored (muted)**, assets improved / regressed,
 - **Most improved** and **Worst regressions** assets (with score deltas),
-- the **Fixed**, **New**, and **Ignored** finding lists (asset — rule).
+- the **Fixed**, **New**, and **Ignored** finding lists (asset — rule); ignored rows note the original severity (e.g. *muted from error*).
+
+Each comparison is written to a **unique file** named after the two snapshots (`compare_<base>__<target>.html`), so a fresh diff never overwrites or reopens an older one, and the result message names exactly which two snapshots were compared.
 
 **Fixed** means an actionable finding resolved entirely; **Ignored** means muted-but-still-present (muting never counts as a fix). Comparison runs on the deterministic JSON, not the HTML.
 

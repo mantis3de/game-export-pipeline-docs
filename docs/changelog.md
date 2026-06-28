@@ -4,6 +4,28 @@ All notable changes are documented here. The format follows [Keep a Changelog](h
 
 ---
 
+## [1.9.x] — Report accuracy & release cleanup
+
+### Reports & diff
+- **Deterministic missing-texture check.** A texture whose file is missing on disk is now always flagged (unless it's packed into the .blend). Pixels merely cached in memory (`has_data`) no longer mask a missing file — they don't survive a fresh open or reach the build machine. This removed a case where a finding showed live but vanished on the exported report.
+- **Nothing is dropped from the report.** Findings attached to LOD children (`Name_LOD#`) are folded onto their base asset, and scene-wide findings with no object (e.g. duplicate materials) get a synthetic **(Scene-wide)** card — so the HTML/JSON report and the **Compare** diff reflect every finding the validator raised.
+- **HTML report opens fully expanded** by default (every card), so all findings are visible at a glance; Expand all / Collapse all still works. The (Scene-wide) card has no thumbnail/mesh stats (it isn't an object).
+- **Per-object LOD triangle breakdown** in each card, from the real scene meshes.
+- **Compare writes a unique file per pair** (`compare_<base>__<target>.html`) instead of overwriting one name, and the result message names the two snapshots compared — no more opening a stale diff by accident.
+
+### Ignore
+- **Scene-wide findings are ignorable** (ghost/globe) and stored per scene.
+- **Dead ignore marks are auto-pruned** on validation: an ignore for an issue that no longer fires on an object (fixed, or never applicable) is removed, so the Ignored list stays honest.
+
+### Select & Focus
+- Inspecting a **UV1 (lightmap)** issue keeps **UV0 as the render/display layer**, so the 3D viewport texture no longer switches to the lightmap while you fix UV1 in the editor.
+
+### Release cleanup
+- Removed dead registration path in `operators/__init__.py`; excluded leftover/empty modules from the shipped add-on.
+- LOD chain collection for the report is built once per pass (O(N) instead of O(N²) on large scenes).
+
+---
+
 ## [1.8.x] — Isolate, LOD browsing & data-safety hardening
 
 Workflow polish around validation browsing and LOD review, plus a release audit

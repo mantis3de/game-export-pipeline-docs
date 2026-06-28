@@ -95,7 +95,7 @@ The Scan tab is the **action + on-screen results** (no tab-hopping). A **Scene /
     - **Ignore** — mark a finding intentional, on this object (ghost) or every mesh in the scene (globe). Downgraded to an `(ignored)` info note (it stops affecting the asset score) but stays visible as an audit trail. Scene-wide findings (no single object) are muted at the scene level by either icon. *Ignored findings still count as **present** in Compare — muting never reads as a fix.*
 
     - **Impact / Fix** hints (when *Show Explanations* is on).
-- **Ignored** — a **Show / Hide** toggle previews exactly what's muted (scoped to the ticked objects); each row has a **✕** to un-ignore that single finding, plus **Un-ignore All**.
+- **Ignored** — a **Show / Hide** toggle previews exactly what's muted (scoped to the ticked objects); each row has a **✕** to un-ignore that single finding, plus **Un-ignore All**. Ignore marks for issues that no longer fire on an object (fixed, or not applicable) are **auto-pruned** on the next validation, so the list never shows stale entries.
 
 → [Validate a Scene Asset](workflows/scene-asset.md) for the full loop.
 
